@@ -33,15 +33,30 @@ for hx, t, reg, own, cs, tm, lat, lon, alt in rows:
     if not a: continue
     code = a[1]
     if s and s[0] != code and s[2] and tm - s[1] <= MAX_MIN:
-        legs.append([hx, t, reg, own, lastcs.get(hx, ''), s[0], code, int(tm // 1440)])
+        legs.append([hx, t, reg, own, lastcs.get(hx, ''), s[0], code, int(tm // 1440), int(tm)])
     if not s or s[2] or (s[0] != code and alt == -1): st[hx] = [code, tm, 0, tm]
     elif s[0] == code: s[1] = tm; s[3] = tm
-with open('legs.csv', 'w', newline='') as f:
-    csv.writer(f).writerows([['hex', 'type', 'reg', 'ownOp', 'callsign', 'from', 'to', 'day']] + legs)
+# CENTCOM = these ICAO prefixes, or OurAirports local idents of these countries (e.g. AE-0026)
+CENTCOM_ICAO = ('OA', 'OB', 'HE', 'OI', 'OR', 'LL', 'OJ', 'OK', 'OL', 'OO', 'OP', 'OT', 'OE', 'OS', 'OM', 'OY', 'UA', 'UC', 'UT')
+CENTCOM_ISO = ('AF', 'BH', 'EG', 'IR', 'IQ', 'IL', 'JO', 'KW', 'LB', 'OM', 'PK', 'QA', 'SA', 'SY', 'AE', 'YE', 'KZ', 'KG', 'TJ', 'TM', 'UZ')
+def centcom(code):
+    return code[:2] in CENTCOM_ICAO if len(code) == 4 and code.isalpha() else code.split('-')[0] in CENTCOM_ISO
+FEED_MIN = 7 * 1440                       # earlier legs up to 7 days before entering CENTCOM count as feeders
+entries = collections.defaultdict(list)   # hex -> times it landed in CENTCOM from outside
+for l in legs:
+    if centcom(l[6]) and not centcom(l[5]): entries[l[0]].append(l[8])
+def keep(l):
+    if centcom(l[5]) or centcom(l[6]): return True
+    return any(0 <= e - l[8] <= FEED_MIN for e in entries.get(l[0], []))
+kept = [l for l in legs if keep(l)]
+head = ['hex', 'type', 'reg', 'ownOp', 'callsign', 'from', 'to', 'day', 'time_min']
+for name, rows_ in (('legs_all.csv', legs), ('legs.csv', kept)):
+    with open(name, 'w', newline='') as f:
+        csv.writer(f).writerows([head] + rows_)
 agg = {}
-for hx, t, reg, own, cs, fr, to, day in legs:
+for hx, t, reg, own, cs, fr, to, day, tmin in kept:
     k = hx + '|' + (t or '?').upper() + '|' + fr + '>' + to
     e = agg.setdefault(k, [0, day, cs, own]); e[0] += 1
     if day >= e[1]: e[1] = day; e[2] = cs or e[2]
 json.dump(agg, open('routes.json', 'w'), separators=(',', ':'))
-print(len(rows), 'events', len(legs), 'legs', len(agg), 'hex-routes')
+print(len(rows), 'events', len(legs), 'legs worldwide', len(kept), 'CENTCOM + feeder legs', len(agg), 'hex-routes')
