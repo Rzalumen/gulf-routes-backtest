@@ -66,11 +66,12 @@ jobs:
         run: |
           gunzip events/*.gz
           python3 build_routes.py
-          gzip -9k legs.csv
+          gzip -9k legs.csv legs_all.csv
       - uses: actions/upload-artifact@v4
         with:
           name: routes-result
           path: |
             routes.json
             legs.csv.gz
+            legs_all.csv.gz
           retention-days: 30
