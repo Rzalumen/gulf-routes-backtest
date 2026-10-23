@@ -37,7 +37,7 @@ jobs:
       - name: Stream the day archive and keep military / VIP aircraft only
         run: |
           D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=events-${{ matrix.day }}.csv
-          for n in 0 1 2; do
+          for n in 0 1 2 0tmp 1tmp; do
             TAG=v$D-planes-readsb-prod-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
             if curl -sfIL "$URL.aa" >/dev/null; then
               (curl -sfL "$URL.aa"; curl -sfL "$URL.ab" 2>/dev/null; curl -sfL "$URL.ac" 2>/dev/null) | python3 extract_day.py > "$OUT"
