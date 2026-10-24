@@ -41,10 +41,10 @@ jobs:
             TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
             if curl -sfIL "$URL.aa" >/dev/null; then
               (curl -sfL "$URL.aa"; curl -sfL "$URL.ab" 2>/dev/null; curl -sfL "$URL.ac" 2>/dev/null) | python3 extract_day.py > "$OUT"
-              echo "$TAG → $(wc -l < "$OUT") events"; break
+              echo "$TAG → $(wc -l < "$OUT") events"; test -s "$OUT" && break
             elif curl -sfIL "$URL" >/dev/null; then   # some days are published as one .tar, not split parts (24 Oct 2026)
               curl -sfL "$URL" | python3 extract_day.py > "$OUT"
-              echo "$TAG (single .tar) → $(wc -l < "$OUT") events"; break
+              echo "$TAG (single .tar) → $(wc -l < "$OUT") events"; test -s "$OUT" && break
             fi
           done
           test -s "$OUT" || { echo "no archive for ${{ matrix.day }}"; : > "$OUT"; }
