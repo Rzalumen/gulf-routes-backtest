@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
   actions: read
+concurrency:
+  group: data-branches
+  cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -23,5 +26,7 @@ jobs:
           cd out
           git init -q -b results
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git fetch -q --depth 1 "$R" results; then git reset -q --soft FETCH_HEAD; fi   # keep history, no force push (review 25 Oct 2026)
           git add -A && git commit -qm "Backtest result from run ${{ inputs.run_id }}"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" results
+          git push "$R" HEAD:results

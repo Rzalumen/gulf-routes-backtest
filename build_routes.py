@@ -39,8 +39,14 @@ for hx, t, reg, own, cs, tm, lat, lon, alt in rows:
 # CENTCOM = these ICAO prefixes, or OurAirports local idents of these countries (e.g. AE-0026)
 CENTCOM_ICAO = ('OA', 'OB', 'HE', 'OI', 'OR', 'LL', 'OJ', 'OK', 'OL', 'OO', 'OP', 'OT', 'OE', 'OS', 'OM', 'OY', 'UA', 'UC', 'UT')
 CENTCOM_ISO = ('AF', 'BH', 'EG', 'IR', 'IQ', 'IL', 'JO', 'KW', 'LB', 'OM', 'PK', 'QA', 'SA', 'SY', 'AE', 'YE', 'KZ', 'KG', 'TJ', 'TM', 'UZ')
+APT_POS = {a[1]: (a[2] / 100, a[3] / 100) for a in apts}
 def centcom(code):
-    return code[:2] in CENTCOM_ICAO if len(code) == 4 and code.isalpha() else code.split('-')[0] in CENTCOM_ISO
+    if len(code) == 4 and code.isalpha():
+        return code[:2] in CENTCOM_ICAO
+    if len(code) == 4 and code[:2] in CENTCOM_ICAO and code[:2].isalpha():   # OP12, OY74, HE16, UT1G … (review 25 Oct 2026)
+        la, lo = APT_POS.get(code, (0, 0))
+        return 10 <= la <= 46 and 24 <= lo <= 80
+    return code.split('-')[0] in CENTCOM_ISO
 FEED_MIN = 7 * 1440                       # earlier legs up to 7 days before entering CENTCOM count as feeders
 entries = collections.defaultdict(list)   # hex -> times it landed in CENTCOM from outside
 for l in legs:

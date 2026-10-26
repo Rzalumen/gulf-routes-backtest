@@ -32,7 +32,8 @@ for m in tf:
     if not ((j.get('dbFlags') or 0) & 1 or reg in VIP_REGS or reg.startswith('EP-IG')):
         continue
     hx, t, own = str(j.get('icao', '')).lower().lstrip('~'), j.get('t') or '', j.get('ownOp') or ''
-    base, cs, low, code, last, lastg = j.get('timestamp', 0), '', False, None, None, None
+    base, cs, low, code, last, lastg = j.get('timestamp', 0), '', True, None, None, None   # low=True at day start: a take-off that
+    # crosses midnight UTC still gets its first 3,000 ft+ point written (review 25 Oct 2026: such legs were lost)
     def row(tm, lat, lon, alt):
         return [hx, t, reg, own, cs, tm, round(lat, 4), round(lon, 4), alt]
     def flush():                                       # last on-the-ground point, then the last point of the stay
