@@ -1,0 +1,108 @@
+name: Daily history (adsb.lol → history-2025)
+# Every day: read yesterday's adsb.lol world history, keep military / VIP aircraft (extract_day.py),
+# add the day to the history-2025 branch and rebuild legs + routes. Days already in the branch are skipped.
+# Pattern system step 1 (Reza 27 Oct 2026: "i need a fucking extensive plan to start running this now").
+on:
+  schedule:
+    - cron: '37 4 * * *'     # 04:37 UTC; adsb.lol publishes the previous day's archive overnight
+  workflow_dispatch:
+    inputs:
+      start:
+        description: First day (YYYY-MM-DD, empty = yesterday)
+        default: ''
+      end:
+        description: Last day (YYYY-MM-DD, empty = same as first)
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: data-branches
+  cancel-in-progress: false
+jobs:
+  days:
+    runs-on: ubuntu-latest
+    outputs:
+      list: ${{ steps.d.outputs.list }}
+    steps:
+      - id: d
+        env:
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: |
+          git init -q x && cd x
+          git fetch -q --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" history-2025
+          git ls-tree --name-only FETCH_HEAD events/ > ../have.txt
+          cd ..
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import datetime, json, os
+          y = datetime.date.today() - datetime.timedelta(1)
+          a = datetime.date.fromisoformat(os.environ['START']) if os.environ.get('START') else y
+          b = datetime.date.fromisoformat(os.environ['END']) if os.environ.get('END') else a
+          have = set(open('have.txt').read().split())
+          days = [(a + datetime.timedelta(d)).isoformat() for d in range((b - a).days + 1)]
+          days = [d for d in days if 'events/events-%s.csv.gz' % d not in have]
+          print('list=' + json.dumps(days))
+          EOF
+  extract:
+    needs: days
+    if: needs.days.outputs.list != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        day: ${{ fromJson(needs.days.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stream the day archive and keep military / VIP aircraft only
+        run: |
+          D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=events-${{ matrix.day }}.csv
+          for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do
+            TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
+            rm -f part.* "$OUT"
+            if curl -sfIL "$URL.aa" >/dev/null; then
+              ok=1; for s in aa ab ac ad ae af ag ah; do
+                curl -sfIL "$URL.$s" >/dev/null || break
+                curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
+              done
+              [ "$ok" = 1 ] && cat part.* | python3 extract_day.py > "$OUT" || rm -f "$OUT"
+              rm -f part.*
+            elif curl -sfIL "$URL" >/dev/null; then
+              curl -sfL --retry 3 -o part.tar "$URL" && python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
+              rm -f part.tar
+            fi
+            [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") events"; break; }
+          done
+          test -s "$OUT" || { echo "::error::no complete archive for ${{ matrix.day }} (adsb.lol may not have published it yet)"; exit 1; }
+          gzip -9 "$OUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: events-${{ matrix.day }}
+          path: events-${{ matrix.day }}.csv.gz
+          retention-days: 7
+  commit:
+    needs: extract
+    if: always() && needs.extract.result != 'skipped'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: events-*
+          path: new
+          merge-multiple: true
+      - name: Add the new days to history-2025, rebuild legs and routes, commit (no force push)
+        run: |
+          ls new/*.csv.gz >/dev/null 2>&1 || { echo "nothing new"; exit 0; }
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir out && cd out && git init -q -b history-2025
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" history-2025 && git reset -q --hard FETCH_HEAD
+          cp -n ../new/*.csv.gz events/
+          mkdir -p ../work/events
+          for f in events/*.csv.gz; do gunzip -c "$f" > "../work/events/$(basename "${f%.gz}")"; done
+          cp ../build_routes.py ../airports.json ../work/
+          (cd ../work && python3 build_routes.py)
+          cp ../work/routes.json ../work/legs.csv . && gzip -9c ../work/legs_all.csv > legs_all.csv.gz
+          git add -A && git commit -qm "Daily history: $(cd ../new && ls | sed 's/events-//;s/.csv.gz//' | tr '\n' ' ')" && git push "$R" HEAD:history-2025
