@@ -26,7 +26,11 @@ jobs:
           pages, n = [], 0
           for off in range(0, 1500, 30):
               body = urllib.parse.urlencode({'searchType': 0, 'designatorsForLocation': firs, 'notamsOnly': 'false', 'offset': off, 'notamsPerPage': 30}).encode()
-              t = urllib.request.urlopen(urllib.request.Request('https://notams.aim.faa.gov/notamSearch/search', body, ua), timeout=30).read().decode()
+              try:
+                  t = urllib.request.urlopen(urllib.request.Request('https://notams.aim.faa.gov/notamSearch/search', body, ua), timeout=30).read().decode()
+              except Exception as e:
+                  print('::error::FAA refused: ' + repr(e)[:300] + ' ' + (e.read().decode('utf-8', 'ignore')[:200] if hasattr(e, 'read') else ''))
+                  raise SystemExit(1)
               lst = json.loads(t).get('notamList') or []
               if not lst: break
               n += len(lst); pages.append(t)
