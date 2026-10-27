@@ -19,6 +19,15 @@ def near(lat, lon):
                 if d < bd: bd, best = d, a
     return best
 w = csv.writer(sys.stdout)
+import os
+COV = os.environ.get('COV_OUT')   # coverage control (27 Oct 2026): ALL aircraft per region, civil included, and how many were MLAT-located
+def creg(lat, lon):
+    if 10 <= lat <= 42 and 25 <= lon <= 75: return 'CENTCOM'
+    if 34 <= lat <= 72 and -12 <= lon < 25: return 'EUROPE'
+    if 20 <= lat <= 72 and -60 <= lon < -12: return 'ATLANTIC'
+    if lon < -60: return 'AMERICAS'
+    return 'OTHER'
+cov = collections.defaultdict(lambda: [0, 0, 0])   # region -> [aircraft, of them civil, of them seen by MLAT]
 tf = tarfile.open(fileobj=sys.stdin.buffer, mode='r|')
 for m in tf:
     if not m.isfile() or '/traces/' not in '/' + m.name or 'trace_full_' not in m.name:
@@ -28,6 +37,14 @@ for m in tf:
         j = json.loads(gzip.decompress(raw) if raw[:2] == b'\x1f\x8b' else raw)
     except Exception:
         continue
+    if COV:
+        rs, ml = set(), set()
+        for p in j.get('trace') or []:
+            if isinstance(p[1], (int, float)) and isinstance(p[3], (int, float)) and p[3] >= 3000:
+                rg = creg(p[1], p[2]); rs.add(rg)
+                if len(p) > 9 and isinstance(p[9], str) and p[9].startswith('mlat'): ml.add(rg)
+        for rg in rs:
+            c = cov[rg]; c[0] += 1; c[1] += 0 if (j.get('dbFlags') or 0) & 1 else 1; c[2] += rg in ml
     reg = str(j.get('r') or '').upper()
     if not ((j.get('dbFlags') or 0) & 1 or reg in VIP_REGS or reg.startswith('EP-IG')):
         continue
@@ -61,3 +78,5 @@ for m in tf:
             flush(); last = lastg = None
             w.writerow(row(tm, p[1], p[2], int(a))); low, code = False, None
     flush()
+if COV:
+    json.dump({k: {'aircraft': v[0], 'civil': v[1], 'mlat': v[2]} for k, v in cov.items()}, open(COV, 'w'))

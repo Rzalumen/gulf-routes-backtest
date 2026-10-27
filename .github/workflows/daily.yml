@@ -66,10 +66,10 @@ jobs:
                 curl -sfIL "$URL.$s" >/dev/null || break
                 curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
               done
-              [ "$ok" = 1 ] && cat part.* | python3 extract_day.py > "$OUT" || rm -f "$OUT"
+              [ "$ok" = 1 ] && cat part.* | COV_OUT=coverage-${{ matrix.day }}.json python3 extract_day.py > "$OUT" || rm -f "$OUT"
               rm -f part.*
             elif curl -sfIL "$URL" >/dev/null; then
-              curl -sfL --retry 3 -o part.tar "$URL" && python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
+              curl -sfL --retry 3 -o part.tar "$URL" && COV_OUT=coverage-${{ matrix.day }}.json python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
               rm -f part.tar
             fi
             [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") events"; break; }
@@ -79,7 +79,9 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: events-${{ matrix.day }}
-          path: events-${{ matrix.day }}.csv.gz
+          path: |
+            events-${{ matrix.day }}.csv.gz
+            coverage-${{ matrix.day }}.json
           retention-days: 7
   commit:
     needs: extract
@@ -100,6 +102,7 @@ jobs:
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" history-2025 && git reset -q --hard FETCH_HEAD
           cp -n ../new/*.csv.gz events/
+          mkdir -p coverage && cp ../new/coverage-*.json coverage/ 2>/dev/null || true   # civil traffic per region (coverage guard)
           mkdir -p ../work/events
           for f in events/*.csv.gz; do gunzip -c "$f" > "../work/events/$(basename "${f%.gz}")"; done
           cp ../build_routes.py ../airports.json ../work/

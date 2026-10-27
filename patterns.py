@@ -39,11 +39,24 @@ STAGING = {'LEMO': 'Morón', 'LERT': 'Rota', 'LPLA': 'Lajes', 'LLBG': 'Ben Gurio
 # ---- load: one entry per (day, hex) with type, callsign, regions flown ----
 act = collections.defaultdict(dict)          # day -> hex -> [type, cs, set(regions)]
 first = {}                                    # hex -> first day ever seen
+civil = {}                                     # day -> region -> civil aircraft seen (coverage/coverage-<day>.json, from 27 Oct 2026)
+for f in glob.glob('coverage/coverage-*.json'):
+    civil[dnum(f[-15:-5])] = {k: v.get('civil', 0) for k, v in json.load(open(f)).items()}
+nrows = collections.Counter()                  # day -> event rows (day archive size check)
+seenrow = set()                                # (day, hex) already had a row
 for f in sorted(glob.glob('events/events-*.csv.gz')):
     for r in csv.reader(gzip.open(f, 'rt')):
         hx, t, reg, own, cs, tm, lat, lon, alt = r
+        nrows[int(float(tm) // 1440)] += 1
         if not force(hx): continue
         d = int(float(tm) // 1440)
+        # Same counting for every day: from 24 Oct 2026 extract_day.py also writes each plane's first airborne point of the
+        # day (planes already flying at midnight); the 541 days extracted before that fix never have it. Skip that row so
+        # old and new days compare like with like (27 Oct 2026: it made 17 US tankers over CENTCOM look like a surge from 0).
+        k = (d, hx)
+        if k not in seenrow:
+            seenrow.add(k)
+            if int(alt) >= 3000: continue
         e = act[d].setdefault(hx, [t, cs, set()])
         if cs: e[1] = cs
         if int(alt) >= 3000: e[2].add(region(float(lat), float(lon)))
@@ -66,6 +79,20 @@ D = dnum(sys.argv[1]) if len(sys.argv) > 1 else max(act)
 def count(d, g, reg_=None):
     return sum(1 for hx, (t, cs, rs) in act.get(d, {}).items()
                if GROUP.get(t.upper()) == g and force(hx) == 'US' and (reg_ is None or reg_ in rs))
+# ---- 0. coverage guard: civil traffic over a region jumps too = the receivers changed, not a military surge ----
+# Found 27 Oct 2026: from 24 Oct adsb.lol suddenly saw US tankers over Israel / Al Dhafra, located only by MLAT (new receivers);
+# without this it read as '17 tankers over CENTCOM vs normal 0'. Other countries' military is NOT a usable control: they
+# surge with real build-ups too (18 Feb 2026). Civil counts exist only from 16 Oct 2026; earlier days have no guard.
+def med56(fn):
+    h = [fn(d) for d in range(D - 56, D) if d in act]
+    return statistics.median(h) if h else 0
+cov = {}
+for rg in ('CENTCOM', 'EUROPE', 'ATLANTIC'):
+    prev = [civil[d].get(rg, 0) for d in range(D - 56, D) if d in civil]
+    if D in civil and len(prev) >= 3:
+        n, m = civil[D].get(rg, 0), statistics.median(prev)
+        if n >= 1.5 * m and n >= m + 50: cov[rg] = (n, m)
+partial = nrows[D] < 0.5 * med56(lambda d: nrows[d])
 # ---- 1. group counts vs the previous 56 days ----
 rows = []
 for g in GROUPS:
@@ -75,6 +102,9 @@ for g in GROUPS:
         n, med = count(D, g, rg), statistics.median(hist)
         p95 = sorted(hist)[int(0.95 * (len(hist) - 1))]
         flag = '⚠️' if n > p95 and n >= med + 3 else ('↓' if n < sorted(hist)[int(0.05 * (len(hist) - 1))] else '')
+        if rg is None: flag = ''   # world total: information only (mixes US home training with deployments)
+        if flag == '⚠️' and rg in cov: flag = '⚙️'   # explained by the coverage jump, not counted as a surge
+        if flag == '↓' and partial: flag = '⚙️'
         rows.append({'group': g, 'region': rg or 'ALL', 'n': n, 'median': med, 'p95': p95, 'flag': flag})
 # ---- 1b. Atlantic crossings US -> Europe, last 7 days vs the 8 weeks before ----
 xrows = []
@@ -105,11 +135,15 @@ for hx, (t, cs, rs) in sorted(act.get(D, {}).items()):
             lab, why = '⚠️ staging base', '%s into %s (%s), none in the previous 56 days' % (t, STAGING[to], to, )
     tags.append({'hex': hx, 'force': force(hx), 'type': t, 'cs': cs, 'group': g, 'regions': sorted(rs), 'label': lab, 'why': why,
                  'routes': ['%s>%s' % x for x in my]})
-out = {'day': dstr(D), 'counts': rows, 'atlantic': xrows, 'aircraft': tags}
+out = {'day': dstr(D), 'coverage_jump': cov, 'partial_day': partial, 'counts': rows, 'atlantic': xrows, 'aircraft': tags}
 json.dump(out, open('patterns-%s.json' % dstr(D), 'w'), ensure_ascii=False, indent=0)
 
 # ---- owner text ----
 L = ['📈 PATTERNS · %s (free ADS-B, US military counted)' % dstr(D), '']
+for rg, (n, m) in cov.items():
+    L.append('⚙️ Coverage jump %s: %d civil aircraft seen vs normal %g — receivers changed, military counts there are not a surge' % (rg, n, m))
+if partial: L.append('⚙️ Partial day: %d events vs normal %g — counts are low' % (nrows[D], med56(lambda d: nrows[d])))
+if cov or partial: L.append('')
 for r in rows:
     if r['flag'] or r['region'] == 'ALL':
         L.append('%s %s %s: %d (normal %g, high %d)' % (r['flag'] or '·', r['group'], r['region'], r['n'], r['median'], r['p95']))
