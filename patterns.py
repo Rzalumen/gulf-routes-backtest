@@ -92,7 +92,8 @@ for rg in ('CENTCOM', 'EUROPE', 'ATLANTIC'):
     if D in civil and len(prev) >= 3:
         n, m = civil[D].get(rg, 0), statistics.median(prev)
         if n >= 1.5 * m and n >= m + 50: cov[rg] = (n, m)
-partial = nrows[D] < 0.5 * med56(lambda d: nrows[d])
+same_wd = [nrows[d] for d in range(D - 56, D, 7) if d in nrows] or [0]   # same weekday: weekends have ~1/3 of the US training traffic
+partial = nrows[D] < 0.5 * statistics.median(same_wd)
 # ---- 1. group counts vs the previous 56 days ----
 rows = []
 for g in GROUPS:
@@ -142,7 +143,7 @@ json.dump(out, open('patterns-%s.json' % dstr(D), 'w'), ensure_ascii=False, inde
 L = ['📈 PATTERNS · %s (free ADS-B, US military counted)' % dstr(D), '']
 for rg, (n, m) in cov.items():
     L.append('⚙️ Coverage jump %s: %d civil aircraft seen vs normal %g — receivers changed, military counts there are not a surge' % (rg, n, m))
-if partial: L.append('⚙️ Partial day: %d events vs normal %g — counts are low' % (nrows[D], med56(lambda d: nrows[d])))
+if partial: L.append('⚙️ Partial day: %d events vs normal %g for this weekday — counts are low' % (nrows[D], statistics.median(same_wd)))
 if cov or partial: L.append('')
 for r in rows:
     if r['flag'] or r['region'] == 'ALL':
