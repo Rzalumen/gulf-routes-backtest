@@ -109,3 +109,12 @@ jobs:
           (cd ../work && python3 build_routes.py)
           cp ../work/routes.json ../work/legs.csv . && gzip -9c ../work/legs_all.csv > legs_all.csv.gz
           git add -A && git commit -qm "Daily history: $(cd ../new && ls | sed 's/events-//;s/.csv.gz//' | tr '\n' ' ')" && git push "$R" HEAD:history-2025
+      - name: Refresh map/lastland.json on map-service (bot's "Last landed" line, Reza 27 Oct 2026)
+        run: |
+          [ -f work/legs_all.csv ] || { echo "no new legs"; exit 0; }
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir ms && cd ms && git init -q -b map-service
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" map-service && git reset -q --hard FETCH_HEAD
+          python3 ../make_lastland.py ../work/legs_all.csv map/lastland.json
+          git add map/lastland.json && git commit -qm "lastland.json: daily refresh" && git push "$R" HEAD:map-service || echo "unchanged"
