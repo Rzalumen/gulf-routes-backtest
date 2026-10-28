@@ -1,0 +1,40 @@
+name: ACARS archive (Airframes → acars-data)
+# Hourly: every Airframes message from US/UK military aircraft is added to the acars-data branch.
+# Nothing is ever deleted (Reza 28 Oct 2026: "save records, don't toss data out"). See acars/archive.py.
+# Needs repo secret AIRFRAMES_KEY (Reza adds it himself). Requests: ~1 per active hex per hour, well under Pro's 50,000/day.
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: Pull the last month for every known hex (first run)
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: acars-data
+  cancel-in-progress: false
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - name: Archive new messages
+        env:
+          AIRFRAMES_KEY: ${{ secrets.AIRFRAMES_KEY }}
+          BACKFILL: ${{ inputs.backfill }}
+          LEGS: ${{ github.workspace }}/legs.csv
+        run: |
+          test -n "$AIRFRAMES_KEY" || { echo "::error::repo secret AIRFRAMES_KEY not set"; exit 1; }
+          python3 acars/archive.py --selftest
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if [ "$BACKFILL" = "true" ]; then git fetch -q --depth 1 "$R" history-2025 && git show FETCH_HEAD:legs.csv > legs.csv; fi
+          mkdir out && cd out && git init -q -b acars-data
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" acars-data && git reset -q --hard FETCH_HEAD || echo "new branch"
+          mkdir -p acars && cd acars
+          python3 ../../acars/archive.py . $([ "$BACKFILL" = "true" ] && echo --backfill)
+          cd .. && git add -A && git commit -qm "ACARS archive $(date -u +%FT%H:%MZ)" && git push "$R" HEAD:acars-data || echo "nothing new"
