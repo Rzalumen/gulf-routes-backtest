@@ -17,6 +17,7 @@ Usage: AIRFRAMES_KEY=… archive.py <data dir> [--backfill]   |   archive.py --s
 import csv, datetime, json, os, re, sys, time, urllib.request, urllib.error
 
 API = 'https://api.airframes.io/v1/messages'
+STATS = {'http': {}, 'hexes': 0, 'from_bot': 0}   # written into latest.json so the bot side can see why a run found nothing
 KEEP_DAYS = 3
 
 # ICAO address blocks (only used on military-flagged lists, so airliners of these countries never enter)
@@ -54,8 +55,10 @@ def get(url, headers=None, tries=4):
     for i in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=headers or {}), timeout=60) as r:
+                STATS['http']['200'] = STATS['http'].get('200', 0) + 1
                 return json.load(r)
         except urllib.error.HTTPError as e:
+            STATS['http'][str(e.code)] = STATS['http'].get(str(e.code), 0) + 1
             if e.code == 429 and i < tries - 1:
                 time.sleep(int(e.headers.get('Retry-After') or 15) + 1); continue
             print('HTTP', e.code, url.split('?')[0]); return None
@@ -90,7 +93,7 @@ def main(d, backfill):
     if backfill and os.path.exists(legs):
         cut = (now.date() - datetime.date(1970, 1, 1)).days - 30
         hexes |= {r['hex'].upper().lstrip('~') for r in csv.DictReader(open(legs)) if int(r['day']) >= cut and mil(r['hex'].lstrip('~'))}
-    print('hexes', len(hexes))
+    print('hexes', len(hexes)); STATS['hexes'] = len(hexes); STATS['from_bot'] = len(sent)
     seen = {}   # day file -> set of ids already stored
     def ids(day):
         if day not in seen:
@@ -148,7 +151,7 @@ def latest(d, now):
             p = parse(m.get('text'))
             if p: x['dest'] = dict(p, t=m.get('timestamp')); x['dmsg'] = slim(m)
         if len(x['msgs']) < 3: x['msgs'].append(slim(m))
-    out = {'t': now.isoformat(timespec='seconds'), 'planes': sorted(per.values(), key=lambda x: str(x['last']), reverse=True),
+    out = {'t': now.isoformat(timespec='seconds'), 'stats': STATS, 'planes': sorted(per.values(), key=lambda x: str(x['last']), reverse=True),
            'recent': [[m.get('timestamp'), m.get('_hex'), (m.get('airframe') or {}).get('tail') or '', callsign(m.get('text')), m.get('label') or '', (m.get('text') or '')[:240]] for m in rows[:40]]}
     json.dump(out, open(os.path.join(d, 'latest.json'), 'w'), separators=(',', ':'))
     print('latest planes', len(per), 'messages 24h', len(rows))
