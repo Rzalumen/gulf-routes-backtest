@@ -63,6 +63,7 @@ def get(url, headers=None, tries=4):
                 time.sleep(int(e.headers.get('Retry-After') or 15) + 1); continue
             print('HTTP', e.code, url.split('?')[0]); return None
         except Exception as e:
+            STATS['http']['ERR ' + type(e).__name__] = STATS['http'].get('ERR ' + type(e).__name__, 0) + 1
             print('ERR', e); time.sleep(5)
     return None
 
