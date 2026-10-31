@@ -14,11 +14,15 @@ Every run:
      plus the newest 60 messages overall for the dashboard ACARS card.
 Usage: AIRFRAMES_KEY=… archive.py <data dir> [--backfill]   |   archive.py --selftest
 """
-import csv, datetime, json, os, re, sys, time, urllib.request, urllib.error
+import csv, datetime, json, os, re, subprocess, sys, time, urllib.request, urllib.error
 
 API = 'https://api.airframes.io/v1/messages'
 STATS = {'http': {}, 'hexes': 0, 'from_bot': 0}   # written into latest.json so the bot side can see why a run found nothing
 KEEP_DAYS = 3
+# libacars decode_acars_apps (MIT, github.com/szpajder/libacars v2.2.1), built by the workflow: turns the binary FANS-1/A
+# CPDLC / ADS-C payloads (#MD/AA … .AT1. etc.) into readable text. Unset or missing = no decoding, archive runs as before.
+LA = os.environ.get('LIBACARS_DECODE', '')
+LA_NEED = re.compile(r'\.(AT1|CR1|CC1|DR1|ADS)\.')
 
 # ICAO address blocks (only used on military-flagged lists, so airliners of these countries never enter)
 BLOCKS = {'US': (0xADF7C8, 0xAFFFFF), 'UK': (0x43C000, 0x43CFFF), 'IL': (0x738000, 0x73FFFF),
@@ -50,6 +54,19 @@ def parse(tx):
 def callsign(tx):
     m = re.search(r'/ID\w+,([A-Z]{2,6}\d{1,4})\b', tx or '')
     return m[1] if m else ''
+
+def decode(m):
+    """Readable libacars text for CPDLC / ADS-C / media-advisory messages ('' when not needed or not possible)."""
+    tx, lab = m.get('text') or '', m.get('label') or ''
+    if not LA or not os.path.exists(LA) or len(lab) != 2 or not (LA_NEED.search(tx) or lab == 'SA'): return ''
+    dirs = {'uplink': ['u'], 'downlink': ['d']}.get(m.get('linkDirection'), ['d', 'u'])
+    for dr in dirs:
+        try: out = subprocess.run([LA, dr, lab, tx], capture_output=True, text=True, timeout=10).stdout
+        except Exception: return ''
+        out = (out[len(tx):] if out.startswith(tx) else out).strip()   # the tool echoes the message first
+        if out and not re.search(r'unparseable|error|unknown', out, re.I):
+            STATS['decoded'] = STATS.get('decoded', 0) + 1; return out[:1500]
+    return ''
 
 def get(url, headers=None, tries=4):
     for i in range(tries):
@@ -110,6 +127,7 @@ def main(d, backfill):
     dest = open(dp, 'a', newline=''); w = csv.writer(dest)
     if new_dest: w.writerow(['msg_time', 'hex', 'tail', 'callsign', 'kind', 'from', 'to', 'eta', 'msg_id'])
     n_new = n_dest = 0
+    STATS['libacars'] = bool(LA and os.path.exists(LA))   # visible in latest.json (run logs can't be read from the bot side)
     for h in sorted(hexes):
         ms = messages(h, key, 'last-month' if backfill else 'last-day', 30 if backfill else 10)
         if ms: known[h] = now.isoformat(timespec='seconds')
@@ -121,6 +139,8 @@ def main(d, backfill):
             st = m.get('station') or {}
             m['station'] = {k: st.get(k) for k in ('ident', 'sourceType', 'sourceProtocol', 'nearestAirportIcao')}
             m['_hex'] = h
+            dec = decode(m)
+            if dec: m['decoded'] = dec
             with open(os.path.join(d, 'msgs', day + '.jsonl'), 'a') as f: f.write(json.dumps(m, separators=(',', ':')) + '\n')
             ids(day).add(m['id']); n_new += 1
             p = parse(m.get('text'))
@@ -142,9 +162,14 @@ def latest(d, now):
             rows += [m for m in map(json.loads, open(p)) if str(m.get('timestamp') or '') >= cut]
     rows.sort(key=lambda m: str(m.get('timestamp')), reverse=True)
     per = {}
+    budget = [30000]   # decoded text in latest.json, total chars: the bot caches this file in CacheService (100 KB cap per value)
+    def dec(m):
+        t = re.sub(r'\n\s+', '\n', m.get('decoded') or decode(m))[:600]
+        if len(t) > budget[0]: return ''
+        budget[0] -= len(t); return t
     def slim(m):   # what the bot's accuracy gate needs, kept small (CacheService holds 100 KB)
         return {'timestamp': m.get('timestamp'), 'label': m.get('label') or '', 'text': (m.get('text') or '')[:240],
-                'airframe': {'tail': (m.get('airframe') or {}).get('tail') or m.get('tail') or ''}}
+                'airframe': {'tail': (m.get('airframe') or {}).get('tail') or m.get('tail') or ''}, 'dec': dec(m)}
     for m in rows:
         h = m.get('_hex') or ''
         x = per.setdefault(h, {'hex': h, 'country': country(h), 'tail': (m.get('airframe') or {}).get('tail') or m.get('tail') or '',
@@ -179,6 +204,7 @@ def selftest():
     latest(t, now)
     L = json.load(open(os.path.join(t, 'latest.json')))
     assert L['planes'][0]['dest']['to'] == 'ETAR' and L['planes'][0]['dmsg']['airframe']['tail'] == '96-0002' and L['planes'][0]['cs'] == 'RCH5040' and L['planes'][0]['country'] == 'US' and len(L['recent']) == 1
+    assert decode({'label': 'H1', 'text': '- #MD/AA USADCXA.AT1.33122AA8'}) == '' or LA   # no tool → no decode, no crash
     print('selftest ok')
 
 if __name__ == '__main__':

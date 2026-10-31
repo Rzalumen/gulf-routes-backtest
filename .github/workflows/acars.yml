@@ -28,6 +28,21 @@ jobs:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: acars   # only the script: keeps each run short (Actions minutes)
+      - name: Cache libacars
+        id: la
+        uses: actions/cache@v4
+        with:
+          path: ~/libacars
+          key: libacars-v2.2.1-${{ runner.os }}
+      - name: Build libacars v2.2.1 (CPDLC / ADS-C decoder, MIT, github.com/szpajder/libacars)
+        if: steps.la.outputs.cache-hit != 'true'
+        continue-on-error: true   # no decoder = archive still runs, messages just stay undecoded
+        run: |
+          curl -fsSL -o /tmp/la.tar.gz https://github.com/szpajder/libacars/archive/refs/tags/v2.2.1.tar.gz
+          tar xzf /tmp/la.tar.gz -C /tmp && cd /tmp/libacars-2.2.1 && mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$HOME/libacars -DCMAKE_INSTALL_LIBDIR=lib .. > /dev/null
+          make -j4 > /dev/null && make install > /dev/null
+          ls -la $HOME/libacars/bin
       - name: Archive new messages
         env:
           AIRFRAMES_KEY: ${{ secrets.AIRFRAMES_KEY }}
@@ -36,6 +51,8 @@ jobs:
           LEGS: ${{ github.workspace }}/legs.csv
         run: |
           test -n "$AIRFRAMES_KEY" || { echo "::error::repo secret AIRFRAMES_KEY not set"; exit 1; }
+          export LD_LIBRARY_PATH=$HOME/libacars/lib LIBACARS_DECODE=$HOME/libacars/bin/decode_acars_apps
+          if [ -x "$LIBACARS_DECODE" ]; then "$LIBACARS_DECODE" d H1 '- #MD/AA USADCXA.AT1.33122AA89048DD714E0CE41067549F3A4CF2A7742840BF3C' | head -20 || true; else echo "::warning::libacars not available - no CPDLC decoding this run"; fi
           python3 acars/archive.py --selftest
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           if [ "$BACKFILL" = "true" ]; then git fetch -q --depth 1 "$R" history-2025 && git show FETCH_HEAD:legs.csv > legs.csv; fi
