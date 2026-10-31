@@ -1,10 +1,14 @@
 name: ACARS archive (Airframes → acars-data)
-# Hourly: every Airframes message from US/UK military aircraft is added to the acars-data branch.
-# Nothing is ever deleted (Reza 28 Oct 2026: "save records, don't toss data out"). See acars/archive.py.
-# Needs repo secret AIRFRAMES_KEY (Reza adds it himself). Requests: ~1 per active hex per hour, well under Pro's 50,000/day.
+# Started by the Gulf Alerts bot (repository_dispatch "acars", payload hexes = its in-scope aircraft worldwide:
+# US, UK, Israel, Russia, China military + government). Every Airframes message is added to the acars-data branch and
+# acars/latest.json (last 24 h digest) is what the bot reads back. Nothing is ever deleted (Reza 28 Oct 2026).
+# Google quota: none here — all Airframes requests run on GitHub. Backup cron every 3 h (GitHub's cron is unreliable).
+# Needs repo secret AIRFRAMES_KEY (Reza adds it himself). Requests: ~1 per hex per run, well under Pro's 50,000/day.
 on:
+  repository_dispatch:
+    types: [acars]
   schedule:
-    - cron: '23 * * * *'
+    - cron: '23 */3 * * *'
   workflow_dispatch:
     inputs:
       backfill:
@@ -19,13 +23,16 @@ concurrency:
 jobs:
   archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: acars   # only the script: keeps each run short (Actions minutes)
       - name: Archive new messages
         env:
           AIRFRAMES_KEY: ${{ secrets.AIRFRAMES_KEY }}
           BACKFILL: ${{ inputs.backfill }}
+          HEXES: ${{ github.event.client_payload.hexes }}
           LEGS: ${{ github.workspace }}/legs.csv
         run: |
           test -n "$AIRFRAMES_KEY" || { echo "::error::repo secret AIRFRAMES_KEY not set"; exit 1; }
