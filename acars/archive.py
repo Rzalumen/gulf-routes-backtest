@@ -54,7 +54,7 @@ def callsign(tx):
 def get(url, headers=None, tries=4):
     for i in range(tries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=headers or {}), timeout=60) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=dict({'User-Agent': 'gulf-alerts-acars/1.0 (Airframes Pro API client)'}, **(headers or {}))), timeout=60) as r:
                 STATS['http']['200'] = STATS['http'].get('200', 0) + 1
                 return json.load(r)
         except urllib.error.HTTPError as e:
