@@ -59,6 +59,10 @@ def get(url, headers=None, tries=4):
                 return json.load(r)
         except urllib.error.HTTPError as e:
             STATS['http'][str(e.code)] = STATS['http'].get(str(e.code), 0) + 1
+            if 'why' not in STATS:
+                try: STATS['why'] = re.sub(r'\s+', ' ', e.read().decode('utf-8', 'replace'))[:200]
+                except Exception: STATS['why'] = '?'
+                STATS['key_len'] = len(os.environ.get('AIRFRAMES_KEY', '')); STATS['key_bearer'] = os.environ.get('AIRFRAMES_KEY', '').lower().startswith('bearer')
             if e.code == 429 and i < tries - 1:
                 time.sleep(int(e.headers.get('Retry-After') or 15) + 1); continue
             print('HTTP', e.code, url.split('?')[0]); return None
