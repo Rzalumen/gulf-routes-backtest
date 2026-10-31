@@ -66,7 +66,7 @@ def get(url, headers=None, tries=4):
 def messages(hexid, key, timeframe, max_pages):
     out = []
     for p in range(max_pages):
-        j = get('%s?icao=%s&timeframe=%s&offset=%d' % (API, hexid, timeframe, p * 100), {'Authorization': 'Bearer ' + key})
+        j = get('%s?icao=%s&timeframe=%s&exclude_labels=_d,Q0&offset=%d' % (API, hexid, timeframe, p * 100), {'Authorization': 'Bearer ' + key})
         m = j if isinstance(j, list) else (j or {}).get('messages') or (j or {}).get('data') or []
         out += m
         if len(m) < 100: break
@@ -134,18 +134,22 @@ def latest(d, now):
             rows += [m for m in map(json.loads, open(p)) if str(m.get('timestamp') or '') >= cut]
     rows.sort(key=lambda m: str(m.get('timestamp')), reverse=True)
     per = {}
+    def slim(m):   # what the bot's accuracy gate needs, kept small (CacheService holds 100 KB)
+        return {'timestamp': m.get('timestamp'), 'label': m.get('label') or '', 'text': (m.get('text') or '')[:240],
+                'airframe': {'tail': (m.get('airframe') or {}).get('tail') or m.get('tail') or ''}}
     for m in rows:
         h = m.get('_hex') or ''
         x = per.setdefault(h, {'hex': h, 'country': country(h), 'tail': (m.get('airframe') or {}).get('tail') or m.get('tail') or '',
-                               'type': (m.get('airframe') or {}).get('icaoType') or '', 'cs': '', 'n24': 0, 'last': m.get('timestamp'), 'dest': None, 'msgs': []})
+                               'type': (m.get('airframe') or {}).get('icaoType') or '', 'cs': '', 'n24': 0, 'last': m.get('timestamp'),
+                               'dest': None, 'dmsg': None, 'msgs': []})
         x['n24'] += 1
         x['cs'] = x['cs'] or callsign(m.get('text'))
         if not x['dest']:
             p = parse(m.get('text'))
-            if p: x['dest'] = dict(p, t=m.get('timestamp'))
-        if len(x['msgs']) < 5: x['msgs'].append([m.get('timestamp'), m.get('label') or '', (m.get('text') or '')[:300]])
+            if p: x['dest'] = dict(p, t=m.get('timestamp')); x['dmsg'] = slim(m)
+        if len(x['msgs']) < 3: x['msgs'].append(slim(m))
     out = {'t': now.isoformat(timespec='seconds'), 'planes': sorted(per.values(), key=lambda x: str(x['last']), reverse=True),
-           'recent': [[m.get('timestamp'), m.get('_hex'), (m.get('airframe') or {}).get('tail') or '', callsign(m.get('text')), m.get('label') or '', (m.get('text') or '')[:300]] for m in rows[:60]]}
+           'recent': [[m.get('timestamp'), m.get('_hex'), (m.get('airframe') or {}).get('tail') or '', callsign(m.get('text')), m.get('label') or '', (m.get('text') or '')[:240]] for m in rows[:40]]}
     json.dump(out, open(os.path.join(d, 'latest.json'), 'w'), separators=(',', ':'))
     print('latest planes', len(per), 'messages 24h', len(rows))
 
@@ -166,7 +170,7 @@ def selftest():
         f.write(json.dumps({'id': 1, '_hex': 'AE07EC', 'timestamp': now.isoformat(), 'label': 'H1', 'text': '#MDINI/ID50104A,RCH5040,JBBGDR30D294/MR0,0/AFEGUN,ETAR/TD211650', 'airframe': {'tail': '96-0002', 'icaoType': 'C17'}}) + '\n')
     latest(t, now)
     L = json.load(open(os.path.join(t, 'latest.json')))
-    assert L['planes'][0]['dest']['to'] == 'ETAR' and L['planes'][0]['cs'] == 'RCH5040' and L['planes'][0]['country'] == 'US' and len(L['recent']) == 1
+    assert L['planes'][0]['dest']['to'] == 'ETAR' and L['planes'][0]['dmsg']['airframe']['tail'] == '96-0002' and L['planes'][0]['cs'] == 'RCH5040' and L['planes'][0]['country'] == 'US' and len(L['recent']) == 1
     print('selftest ok')
 
 if __name__ == '__main__':
