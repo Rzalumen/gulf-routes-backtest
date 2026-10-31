@@ -161,6 +161,22 @@ def latest(d, now):
         if os.path.exists(p):
             rows += [m for m in map(json.loads, open(p)) if str(m.get('timestamp') or '') >= cut]
     rows.sort(key=lambda m: str(m.get('timestamp')), reverse=True)
+    seen = {}   # hex → message times over the last 7 days ("heard again after N h silent", 31 Oct 2026)
+    for k in range(8):
+        p7 = os.path.join(d, 'msgs', (now - datetime.timedelta(days=k)).date().isoformat() + '.jsonl')
+        if os.path.exists(p7):
+            for ln in open(p7):
+                try: m7 = json.loads(ln)
+                except ValueError: continue
+                if m7.get('_hex') and m7.get('timestamp'): seen.setdefault(m7['_hex'], []).append(str(m7['timestamp']))
+    def gap(h):   # newest resume in the last 24 h after >= 6 h with no message: {'at', 'silent_h'}
+        ts = sorted(set(seen.get(h, [])))
+        for i in range(len(ts) - 1, 0, -1):
+            if ts[i] < cut: break
+            a, b = datetime.datetime.fromisoformat(ts[i - 1].replace('Z', '+00:00')), datetime.datetime.fromisoformat(ts[i].replace('Z', '+00:00'))
+            hh = (b - a).total_seconds() / 3600
+            if hh >= 6: return {'at': ts[i], 'silent_h': round(hh, 1)}
+        return None
     per = {}
     budget = [30000]   # decoded text in latest.json, total chars: the bot caches this file in CacheService (100 KB cap per value)
     def dec(m):
@@ -174,9 +190,12 @@ def latest(d, now):
         h = m.get('_hex') or ''
         x = per.setdefault(h, {'hex': h, 'country': country(h), 'tail': (m.get('airframe') or {}).get('tail') or m.get('tail') or '',
                                'type': (m.get('airframe') or {}).get('icaoType') or '', 'cs': '', 'n24': 0, 'last': m.get('timestamp'),
-                               'dest': None, 'dmsg': None, 'msgs': []})
+                               'dest': None, 'dmsg': None, 'msgs': [], 'mission': '', 'gap': gap(h)})
         x['n24'] += 1
         x['cs'] = x['cs'] or callsign(m.get('text'))
+        if not x['mission']:
+            mm = re.search(r'/ID\w+,[A-Z0-9]*,([A-Z0-9]{8,14})/', m.get('text') or '')
+            if mm: x['mission'] = mm.group(1)
         if not x['dest']:
             p = parse(m.get('text'))
             if p: x['dest'] = dict(p, t=m.get('timestamp')); x['dmsg'] = slim(m)
@@ -204,6 +223,11 @@ def selftest():
     latest(t, now)
     L = json.load(open(os.path.join(t, 'latest.json')))
     assert L['planes'][0]['dest']['to'] == 'ETAR' and L['planes'][0]['dmsg']['airframe']['tail'] == '96-0002' and L['planes'][0]['cs'] == 'RCH5040' and L['planes'][0]['country'] == 'US' and len(L['recent']) == 1
+    assert L['planes'][0]['mission'] == 'JBBGDR30D294' and L['planes'][0]['gap'] is None
+    with open(os.path.join(t, 'msgs', now.date().isoformat() + '.jsonl'), 'a') as f:
+        f.write(json.dumps({'id': 2, '_hex': 'AE07EC', 'timestamp': (now - datetime.timedelta(hours=10)).isoformat(), 'label': 'H1', 'text': 'x', 'airframe': {'tail': '96-0002'}}) + '\n')
+    latest(t, now); L = json.load(open(os.path.join(t, 'latest.json')))
+    assert L['planes'][0]['gap']['silent_h'] == 10.0, L['planes'][0]['gap']
     assert decode({'label': 'H1', 'text': '- #MD/AA USADCXA.AT1.33122AA8'}) == '' or LA   # no tool → no decode, no crash
     print('selftest ok')
 
