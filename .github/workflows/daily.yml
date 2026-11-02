@@ -66,10 +66,10 @@ jobs:
                 curl -sfIL "$URL.$s" >/dev/null || break
                 curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
               done
-              [ "$ok" = 1 ] && cat part.* | COV_OUT=coverage-${{ matrix.day }}.json python3 extract_day.py > "$OUT" || rm -f "$OUT"
+              [ "$ok" = 1 ] && cat part.* | COV_OUT=coverage-${{ matrix.day }}.json AIR_OUT=air-${{ matrix.day }}.csv.gz python3 extract_day.py > "$OUT" || rm -f "$OUT"
               rm -f part.*
             elif curl -sfIL "$URL" >/dev/null; then
-              curl -sfL --retry 3 -o part.tar "$URL" && COV_OUT=coverage-${{ matrix.day }}.json python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
+              curl -sfL --retry 3 -o part.tar "$URL" && COV_OUT=coverage-${{ matrix.day }}.json AIR_OUT=air-${{ matrix.day }}.csv.gz python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
               rm -f part.tar
             fi
             [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") events"; break; }
@@ -82,6 +82,7 @@ jobs:
           path: |
             events-${{ matrix.day }}.csv.gz
             coverage-${{ matrix.day }}.json
+            air-${{ matrix.day }}.csv.gz
           retention-days: 7
   commit:
     needs: extract
@@ -96,19 +97,28 @@ jobs:
           merge-multiple: true
       - name: Add the new days to history-2025, rebuild legs and routes, commit (no force push)
         run: |
-          ls new/*.csv.gz >/dev/null 2>&1 || { echo "nothing new"; exit 0; }
+          ls new/events-*.csv.gz >/dev/null 2>&1 || { echo "nothing new"; exit 0; }
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           mkdir out && cd out && git init -q -b history-2025
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" history-2025 && git reset -q --hard FETCH_HEAD
-          cp -n ../new/*.csv.gz events/
+          cp -n ../new/events-*.csv.gz events/
           mkdir -p coverage && cp ../new/coverage-*.json coverage/ 2>/dev/null || true   # civil traffic per region (coverage guard)
           mkdir -p ../work/events
           for f in events/*.csv.gz; do gunzip -c "$f" > "../work/events/$(basename "${f%.gz}")"; done
           cp ../build_routes.py ../airports.json ../work/
           (cd ../work && python3 build_routes.py)
           cp ../work/routes.json ../work/legs.csv . && gzip -9c ../work/legs_all.csv > legs_all.csv.gz
-          git add -A && git commit -qm "Daily history: $(cd ../new && ls | sed 's/events-//;s/.csv.gz//' | tr '\n' ' ')" && git push "$R" HEAD:history-2025
+          git add -A && git commit -qm "Daily history: $(cd ../new && ls events-* | sed 's/events-//;s/.csv.gz//' | tr '\n' ' ')" && git push "$R" HEAD:history-2025
+      - name: Add airborne points to air-history (routine vs unusual, 2 Nov 2026)
+        run: |
+          ls new/air-*.csv.gz >/dev/null 2>&1 || { echo "no airborne files"; exit 0; }
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir air && cd air && git init -q -b air-history
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD || echo "new branch"
+          mkdir -p air && cp -n ../new/air-*.csv.gz air/
+          git add -A && git commit -qm "Airborne history: daily" && git push "$R" HEAD:air-history || echo "unchanged"
       - name: Refresh map/lastland.json on map-service (bot's "Last landed" line, Reza 27 Oct 2026)
         run: |
           [ -f work/legs_all.csv ] || { echo "no new legs"; exit 0; }

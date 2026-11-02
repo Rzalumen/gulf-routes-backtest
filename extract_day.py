@@ -27,6 +27,12 @@ def creg(lat, lon):
     if 20 <= lat <= 72 and -60 <= lon < -12: return 'ATLANTIC'
     if lon < -60: return 'AMERICAS'
     return 'OTHER'
+AIR_OUT = os.environ.get('AIR_OUT')   # airborne track points (2 Nov 2026, Reza: enough history for routine vs unusual):
+# one point per aircraft per 15 min while >= 3,000 ft, Diego Garcia / CENTCOM / Europe / Atlantic only. events stay unchanged.
+afh = gzip.open(AIR_OUT, 'wt') if AIR_OUT else None
+aw = csv.writer(afh) if afh else None
+def abox(lat, lon):
+    return -12 <= lat <= 72 and -60 <= lon <= 80
 cov = collections.defaultdict(lambda: [0, 0, 0])   # region -> [aircraft, of them civil, of them seen by MLAT]
 tf = tarfile.open(fileobj=sys.stdin.buffer, mode='r|')
 for m in tf:
@@ -56,6 +62,7 @@ for m in tf:
     def flush():                                       # last on-the-ground point, then the last point of the stay
         if lastg is not None and lastg is not last: w.writerow(lastg)
         if last is not None: w.writerow(last)
+    ab = None
     for p in j.get('trace') or []:
         if len(p) > 8 and isinstance(p[8], dict) and p[8].get('flight'):
             cs = str(p[8]['flight']).strip() or cs
@@ -63,6 +70,8 @@ for m in tf:
         if not isinstance(a, (int, float)) or not isinstance(p[1], (int, float)):
             continue
         tm = round((base + p[0]) / 60, 1)
+        if aw and a >= AIR and int(tm // 15) != ab and abox(p[1], p[2]):
+            ab = int(tm // 15); aw.writerow([hx, t, reg, cs, tm, round(p[1], 3), round(p[2], 3), int(a)])
         if a <= LOW:
             ap = near(p[1], p[2])
             if not ap:
@@ -80,3 +89,4 @@ for m in tf:
     flush()
 if COV:
     json.dump({k: {'aircraft': v[0], 'civil': v[1], 'mlat': v[2]} for k, v in cov.items()}, open(COV, 'w'))
+if afh: afh.close()
