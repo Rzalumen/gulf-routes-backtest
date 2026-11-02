@@ -127,4 +127,8 @@ jobs:
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" map-service && git reset -q --hard FETCH_HEAD
           python3 ../make_lastland.py ../work/legs_all.csv map/lastland.json
-          git add map/lastland.json && git commit -qm "lastland.json: daily refresh" && git push "$R" HEAD:map-service || echo "unchanged"
+          if ls ../air/air/air-*.csv.gz >/dev/null 2>&1; then   # routine vs unusual (map /pattern endpoint, 2 Nov 2026)
+            python3 ../make_patterns.py ../air/air ../work/events ../work/legs_all.csv map/patterns.json || echo "::warning::patterns.json not rebuilt"
+          fi
+          git add map/lastland.json map/patterns.json 2>/dev/null; git add map/lastland.json
+          git commit -qm "lastland.json + patterns.json: daily refresh" && git push "$R" HEAD:map-service || echo "unchanged"
