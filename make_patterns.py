@@ -5,7 +5,7 @@ historic and backfill data to recognize routine mission vs unusual").
 
 Usage: make_patterns.py <air dir> <events dir> <legs_all.csv[.gz]> <out.json>
 Airborne presence comes from air-history (air/air-YYYY-MM-DD.csv.gz: hex,type,reg,callsign,minute,lat,lon,alt, one
-point per 15 min) — history-2025 events only hold take-offs / landings, so orbits over CENTCOM were missing there.
+point per 15 min) + the bot's own sightings (air/air-bot-YYYY-MM-DD.csv.gz, same columns, sight.yml, 3 Nov 2026) — history-2025 events only hold take-offs / landings, so orbits over CENTCOM were missing there.
 events are used only for "first seen" (back to 1 May 2025).
 Output (compact; days = days since 1970-01-01, asof = newest day in the data):
   a: {hex: [d30, d90, d365, last_day, first_day, c90, [[FROM>TO, legs in 365 d], …top 3]]}   per airframe
@@ -46,7 +46,7 @@ UPTO = os.environ.get('UPTO')                  # backtests: only data from days 
 if UPTO:
     cut = (datetime.date.fromisoformat(UPTO) - datetime.date(1970, 1, 1)).days
     afiles = [f for f in afiles if days_of(f) < cut]; files = [f for f in files if days_of(f) < cut]
-asof = days_of(afiles[-1])
+asof = max(days_of(f) for f in afiles)   # air-bot-* files (the bot's own sightings, 3 Nov 2026) sort after air-2026-*
 seen = collections.defaultdict(set)            # hex -> airborne days
 cseen = collections.defaultdict(set)           # hex -> airborne days inside CENTCOM
 first = {}
@@ -107,7 +107,7 @@ for hx in set(seen):
     A[hx] = [n(s, 30), n(s, 90), n(s, 365), max(s) if s else -1, first.get(hx, -1), len(cseen.get(hx, ())),
              [[k, v] for k, v in legs[hx].most_common(3)]]
 C = {k: [n(v[0], 30), len(v[0]), len(v[1])] for k, v in cells.items()}
-o = {'asof': asof, 'from': days_of(afiles[0]), 'days': len(afiles), 'first_from': days_of(files[0]) if files else asof, 'a': A, 'c': C, 'r': {k: v for k, v in routes.items() if v[1] >= 2},
+o = {'asof': asof, 'from': min(days_of(f) for f in afiles), 'days': len({days_of(f) for f in afiles}), 'first_from': days_of(files[0]) if files else asof, 'a': A, 'c': C, 'r': {k: v for k, v in routes.items() if v[1] >= 2},
      'g': {g: len(v) for g, v in gdays.items()}, 'tg': TG}
 json.dump(o, open(out, 'w'), separators=(',', ':'))
 print('%d airframes, %d cells, %d routes, data %s → %s (%d day files)' % (
