@@ -9,12 +9,13 @@ Every run:
                + (backfill) the same countries' hexes in history-2025 legs.csv from the last 30 days.
   2. For each hex: Airframes /v1/messages?icao=HEX&timeframe=… paged by offset (100 per page).
   3. New messages (by id) are appended to acars/msgs/YYYY-MM-DD.jsonl (by message time). Never rewritten, never deleted.
+     Days older than yesterday are gzipped to YYYY-MM-DD.jsonl.gz (same bytes, checked before the plain file goes; 4 Nov 2026).
   4. Messages that state a destination are appended to acars/destinations.csv.
   5. acars/latest.json = last 24 h digest the bot reads (one file, one Google fetch): per hex newest messages + stated destination,
      plus the newest 60 messages overall for the dashboard ACARS card.
 Usage: AIRFRAMES_KEY=… archive.py <data dir> [--backfill]   |   archive.py --selftest
 """
-import csv, datetime, json, os, re, subprocess, sys, time, urllib.request, urllib.error
+import csv, datetime, glob, gzip, json, os, re, subprocess, sys, time, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
 
 API = 'https://api.airframes.io/v1/messages'
@@ -98,6 +99,35 @@ def messages(hexid, key, timeframe, max_pages):
         if len(m) < 100: break
     return out
 
+def day_lines(d, day):
+    """Every stored line of one day: the gzipped closed part first, then any plain part (today, or late messages)."""
+    p = os.path.join(d, 'msgs', day + '.jsonl')
+    for q, op in ((p + '.gz', gzip.open), (p, open)):
+        if os.path.exists(q):
+            with op(q, 'rt') as f: yield from f
+
+def compact(d, now):
+    """Closed days (older than yesterday) → .jsonl.gz. A plain file next to an existing .gz (late messages) is added as a
+    new gzip member. Nothing is lost: the .gz must read back as old + new bytes before the plain file is removed."""
+    keep = {(now - datetime.timedelta(days=k)).date().isoformat() for k in range(2)}
+    n = 0
+    for p in sorted(glob.glob(os.path.join(d, 'msgs', '*.jsonl'))):
+        if os.path.basename(p)[:10] in keep: continue
+        raw = open(p, 'rb').read(); g = p + '.gz'
+        old = gzip.open(g).read() if os.path.exists(g) else b''
+        try:
+            with gzip.open(g, 'ab', compresslevel=9) as f: f.write(raw)
+            ok = gzip.open(g).read() == old + raw
+        except Exception as e:
+            ok = False; print('gzip error', g, e)
+        if not ok:   # put the .gz back as it was, keep the plain file, never block saving new messages
+            if old:
+                with gzip.open(g, 'wb', compresslevel=9) as f: f.write(old)
+            elif os.path.exists(g): os.remove(g)
+            print('::warning::gzip check failed for', os.path.basename(p), '- plain file kept'); continue
+        os.remove(p); n += 1
+    print('days gzipped', n)
+
 def main(d, backfill):
     key = os.environ['AIRFRAMES_KEY']
     now = datetime.datetime.now(datetime.timezone.utc)
@@ -120,8 +150,7 @@ def main(d, backfill):
     seen = {}   # day file -> set of ids already stored
     def ids(day):
         if day not in seen:
-            p = os.path.join(d, 'msgs', day + '.jsonl')
-            seen[day] = {json.loads(l)['id'] for l in open(p)} if os.path.exists(p) else set()
+            seen[day] = {json.loads(l)['id'] for l in day_lines(d, day)}
         return seen[day]
     dp = os.path.join(d, 'destinations.csv')
     new_dest = not os.path.exists(dp)
@@ -156,6 +185,7 @@ def main(d, backfill):
     dest.close()
     json.dump(known, open(kp, 'w'), indent=0, sort_keys=True)
     latest(d, now)
+    compact(d, now)
     print('new messages', n_new, 'new destinations', n_dest)
 
 def latest(d, now):
@@ -163,18 +193,14 @@ def latest(d, now):
     cut = (now - datetime.timedelta(hours=24)).isoformat()
     rows = []
     for day in {(now - datetime.timedelta(days=1)).date().isoformat(), now.date().isoformat()}:
-        p = os.path.join(d, 'msgs', day + '.jsonl')
-        if os.path.exists(p):
-            rows += [m for m in map(json.loads, open(p)) if str(m.get('timestamp') or '') >= cut]
+        rows += [m for m in map(json.loads, day_lines(d, day)) if str(m.get('timestamp') or '') >= cut]
     rows.sort(key=lambda m: str(m.get('timestamp')), reverse=True)
     seen = {}   # hex → message times over the last 7 days ("heard again after N h silent", 31 Oct 2026)
     for k in range(8):
-        p7 = os.path.join(d, 'msgs', (now - datetime.timedelta(days=k)).date().isoformat() + '.jsonl')
-        if os.path.exists(p7):
-            for ln in open(p7):
-                try: m7 = json.loads(ln)
-                except ValueError: continue
-                if m7.get('_hex') and m7.get('timestamp'): seen.setdefault(m7['_hex'], []).append(str(m7['timestamp']))
+        for ln in day_lines(d, (now - datetime.timedelta(days=k)).date().isoformat()):
+            try: m7 = json.loads(ln)
+            except ValueError: continue
+            if m7.get('_hex') and m7.get('timestamp'): seen.setdefault(m7['_hex'], []).append(str(m7['timestamp']))
     def gap(h):   # newest resume in the last 24 h after >= 6 h with no message: {'at', 'silent_h'}
         ts = sorted(set(seen.get(h, [])))
         for i in range(len(ts) - 1, 0, -1):
@@ -235,6 +261,15 @@ def selftest():
     latest(t, now); L = json.load(open(os.path.join(t, 'latest.json')))
     assert L['planes'][0]['gap']['silent_h'] == 10.0, L['planes'][0]['gap']
     assert decode({'label': 'H1', 'text': '- #MD/AA USADCXA.AT1.33122AA8'}) == '' or LA   # no tool → no decode, no crash
+    # closed days → .gz with the same bytes; a late plain file is appended to the .gz; today stays plain
+    old = (now - datetime.timedelta(days=5)).date().isoformat(); po = os.path.join(t, 'msgs', old + '.jsonl')
+    open(po, 'w').write('{"id":7,"_hex":"AE07EC","timestamp":"%sT01:00:00Z"}\n' % old)
+    compact(t, now)
+    assert not os.path.exists(po) and os.path.exists(po + '.gz') and os.path.exists(os.path.join(t, 'msgs', now.date().isoformat() + '.jsonl'))
+    open(po, 'w').write('{"id":8,"_hex":"AE07EC","timestamp":"%sT02:00:00Z"}\n' % old)
+    assert [json.loads(l)['id'] for l in day_lines(t, old)] == [7, 8]   # gz part + late plain part both read
+    compact(t, now)
+    assert [json.loads(l)['id'] for l in day_lines(t, old)] == [7, 8] and not os.path.exists(po)
     print('selftest ok')
 
 if __name__ == '__main__':

@@ -28,24 +28,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Stream the day archive into the coverage check
         run: |
-          D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=inspect-${{ matrix.day }}.json
-          for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do
-            TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
-            rm -f part.* "$OUT"; size=0
-            if curl -sfIL "$URL.aa" >/dev/null; then
-              ok=1; for s in aa ab ac ad ae af ag ah; do
-                curl -sfIL "$URL.$s" >/dev/null || break
-                curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
-              done
-              size=$(cat part.* | wc -c)
-              [ "$ok" = 1 ] && cat part.* | python3 inspect_day.py ${{ matrix.day }} > "$OUT" || rm -f "$OUT"
-              rm -f part.*
-            elif curl -sfIL "$URL" >/dev/null; then
-              curl -sfL --retry 3 -o part.tar "$URL" && size=$(wc -c < part.tar) && python3 inspect_day.py ${{ matrix.day }} < part.tar > "$OUT" || rm -f "$OUT"
-              rm -f part.tar
-            fi
-            [ -s "$OUT" ] && { python3 -c "import json,sys;d=json.load(open('$OUT'));d['archive']='$TAG';d['archive_bytes']=$size;json.dump(d,open('$OUT','w'))"; echo "$TAG $size bytes"; break; }
-          done
+          OUT=inspect-${{ matrix.day }}.json
+          msg=$(./fetch_day.sh ${{ matrix.day }} "$OUT" python3 inspect_day.py ${{ matrix.day }}) || { echo "$msg"; exit 1; }
+          echo "$msg"; TAG=${msg%% *}; SIZE=$(echo "$msg" | sed -E 's/.* ([0-9]+) bytes$/\1/')
+          python3 -c "import json;d=json.load(open('$OUT'));d['archive']='$TAG';d['archive_bytes']=$SIZE;json.dump(d,open('$OUT','w'))"
           test -s "$OUT"
       - uses: actions/upload-artifact@v4
         with:

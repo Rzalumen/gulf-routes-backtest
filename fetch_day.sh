@@ -2,7 +2,7 @@
 # Stream one adsb.lol globe_history day into a command (4 Nov 2026 review: this block was copy-pasted in daily, air,
 # backtest and inspect.yml). Tries the release tags in order; split archives (.aa .ab …) and single .tar both work.
 # usage: fetch_day.sh YYYY-MM-DD OUT_FILE cmd [args…]   — cmd reads the tar on stdin and writes OUT_FILE's content on stdout.
-# Exit 1 when no tag gave a non-empty OUT_FILE. Prints the tag used.
+# Exit 1 when no tag gave a non-empty OUT_FILE. Prints "TAG → N lines, B bytes" (B = archive size).
 set -u
 DAY=$1 OUT=$2; shift 2
 D=${DAY//-/.}; Y=${D:0:4}
@@ -18,7 +18,7 @@ for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do
   elif curl -sfIL "$URL" >/dev/null; then
     curl -sfL --retry 3 -o part.tar "$URL" && "$@" < part.tar > "$OUT" || rm -f "$OUT"
   fi
-  rm -f part.*
-  [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") lines"; exit 0; }
+  B=$(cat part.* 2>/dev/null | wc -c); rm -f part.*
+  [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") lines, $B bytes"; exit 0; }
 done
 echo "::error::no complete archive for $DAY (adsb.lol may not have published it yet)"; exit 1

@@ -36,26 +36,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Stream the day archive and keep military / VIP aircraft only
         run: |
-          D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=events-${{ matrix.day }}.csv
-          for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do   # staging / MLAT-only as last resort (24 Oct 2026)
-            TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
-            rm -f part.* "$OUT"
-            if curl -sfIL "$URL.aa" >/dev/null; then
-              # download EVERY part (.aa .ab .ac .ad …) completely first; any failed part → this archive is skipped (review 25 Oct 2026)
-              ok=1; for s in aa ab ac ad ae af ag ah; do
-                curl -sfIL "$URL.$s" >/dev/null || break
-                curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
-              done
-              [ "$ok" = 1 ] && cat part.* | python3 extract_day.py > "$OUT" || rm -f "$OUT"
-              rm -f part.*
-            elif curl -sfIL "$URL" >/dev/null; then   # some days are published as one .tar, not split parts (24 Oct 2026)
-              curl -sfL --retry 3 -o part.tar "$URL" && python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
-              rm -f part.tar
-            fi
-            [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") events"; break; }
-          done
-          # no archive (or only broken ones) → fail this day visibly instead of saving an empty file that looks done
-          test -s "$OUT" || { echo "::error::no complete archive for ${{ matrix.day }}"; exit 1; }
+          OUT=events-${{ matrix.day }}.csv
+          ./fetch_day.sh ${{ matrix.day }} "$OUT" python3 extract_day.py
           gzip -9 "$OUT"
       - uses: actions/upload-artifact@v4
         with:

@@ -5,7 +5,8 @@ positions were received (ADS-B / MLAT / other), plus the same for US tankers. Pa
 import sys, tarfile, gzip, json, collections
 AREAS = {'Israel/Levant': (29, 34, 33.5, 37), 'UAE/Oman': (22, 27, 51, 58), 'Qatar/Bahrain': (24, 27, 50, 52),
          'Iraq/Kuwait': (28, 37, 39, 48.5), 'Saudi': (16, 32, 36, 50), 'Red Sea/Egypt': (12, 30, 30, 43.5)}
-TANK = {'K35R', 'K35E', 'B762', 'KC46', 'KC10', 'A332'}
+from types_groups import GROUPS
+TANK = set(GROUPS['TANKER'].split())   # one shared list (4 Nov 2026)
 day = sys.argv[1]
 tot = collections.Counter(); src_all = collections.Counter(); src_tank = collections.Counter(); area_all = collections.Counter()
 area_mil = collections.Counter(); tankers = []
