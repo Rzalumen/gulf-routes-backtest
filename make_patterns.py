@@ -55,11 +55,33 @@ first = {}
 cells = collections.defaultdict(lambda: [set(), set()])   # key -> [days, hexes in 90 d]
 gdays = collections.defaultdict(set)
 htype = {}
-for f in files:                                # first seen only
+for f in files:                                # first seen + flying days from the worldwide take-off / landing records
     d = days_of(f)
+    prev = {}
     with gzip.open(f, 'rt') if f.endswith('.gz') else open(f) as fh:
         for r in csv.reader(fh):
-            if r: first.setdefault(r[0].lower().lstrip('~'), d)
+            if not r:
+                continue
+            hx = r[0].lower().lstrip('~')
+            first.setdefault(hx, d)
+            # The airframe flew that day, anywhere in the world (Reza 4 Nov 2026 00:40 ET: KC-135 59-1464 got "Last flight in our
+            # history 3 Aug" although these records show Tinker sorties on 23 and 26 Oct and a landing on 13 Sep — the US is outside
+            # the air-history box): a take-off marker (>= 3,000 ft), or a descent between two airborne points within 10 min
+            # (a landing). A ground run (GNDTST at the same height) does not count. Day only: no area cell.
+            if asof - d >= 365:
+                continue
+            try:
+                m, alt = float(r[5]), float(r[8])
+            except (ValueError, IndexError):
+                continue
+            if alt >= 3000:
+                seen[hx].add(d)
+            elif alt > 0:
+                pm, pa = prev.get(hx, (None, None))
+                if pm is not None and pa > 0 and 0 <= m - pm <= 10 and pa - alt >= 100:
+                    seen[hx].add(d)
+            prev[hx] = (m, alt)
+
 for f in afiles:
     d = days_of(f)
     if asof - d >= 365:
