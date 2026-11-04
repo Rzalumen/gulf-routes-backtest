@@ -57,24 +57,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Stream the day archive and keep military / VIP aircraft only
         run: |
-          D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=events-${{ matrix.day }}.csv
-          for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do
-            TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
-            rm -f part.* "$OUT"
-            if curl -sfIL "$URL.aa" >/dev/null; then
-              ok=1; for s in aa ab ac ad ae af ag ah; do
-                curl -sfIL "$URL.$s" >/dev/null || break
-                curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
-              done
-              [ "$ok" = 1 ] && cat part.* | COV_OUT=coverage-${{ matrix.day }}.json AIR_OUT=air-${{ matrix.day }}.csv.gz python3 extract_day.py > "$OUT" || rm -f "$OUT"
-              rm -f part.*
-            elif curl -sfIL "$URL" >/dev/null; then
-              curl -sfL --retry 3 -o part.tar "$URL" && COV_OUT=coverage-${{ matrix.day }}.json AIR_OUT=air-${{ matrix.day }}.csv.gz python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
-              rm -f part.tar
-            fi
-            [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") events"; break; }
-          done
-          test -s "$OUT" || { echo "::error::no complete archive for ${{ matrix.day }} (adsb.lol may not have published it yet)"; exit 1; }
+          OUT=events-${{ matrix.day }}.csv
+          COV_OUT=coverage-${{ matrix.day }}.json AIR_OUT=air-${{ matrix.day }}.csv.gz ./fetch_day.sh ${{ matrix.day }} "$OUT" python3 extract_day.py
           gzip -9 "$OUT"
       - uses: actions/upload-artifact@v4
         with:

@@ -15,6 +15,7 @@ Every run:
 Usage: AIRFRAMES_KEY=… archive.py <data dir> [--backfill]   |   archive.py --selftest
 """
 import csv, datetime, json, os, re, subprocess, sys, time, urllib.request, urllib.error
+from concurrent.futures import ThreadPoolExecutor
 
 API = 'https://api.airframes.io/v1/messages'
 STATS = {'http': {}, 'hexes': 0, 'from_bot': 0}   # written into latest.json so the bot side can see why a run found nothing
@@ -128,8 +129,13 @@ def main(d, backfill):
     if new_dest: w.writerow(['msg_time', 'hex', 'tail', 'callsign', 'kind', 'from', 'to', 'eta', 'msg_id'])
     n_new = n_dest = 0
     STATS['libacars'] = bool(LA and os.path.exists(LA))   # visible in latest.json (run logs can't be read from the bot side)
-    for h in sorted(hexes):
-        ms = messages(h, key, 'last-month' if backfill else 'last-day', 30 if backfill else 10)
+    # Fetch in parallel, write in order (4 Nov 2026 review: 693 hexes one by one = ~5 min a run x ~50 runs/day ~ 9,000
+    # Actions minutes/month). Writes stay single-threaded, so the day files and destinations.csv are unchanged.
+    # ponytail: fixed pool of WORKERS; 429s are still handled by get() (Retry-After).
+    tf, pages = ('last-month', 30) if backfill else ('last-day', 10)
+    with ThreadPoolExecutor(int(os.environ.get('WORKERS', '8'))) as ex:
+        got = ex.map(lambda h: (h, messages(h, key, tf, pages)), sorted(hexes))
+    for h, ms in got:
         if ms: known[h] = now.isoformat(timespec='seconds')
         for m in ms:
             ts = str(m.get('timestamp') or m.get('createdAt') or '')

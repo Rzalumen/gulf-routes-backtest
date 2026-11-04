@@ -32,8 +32,10 @@ jobs:
           import os, csv, io, gzip, datetime, re
           by = {}
           for r in csv.reader(io.StringIO(os.environ.get('ROWS', ''))):
-              if len(r) != 8 or not re.fullmatch(r'[0-9a-f]{6}', r[0]):
+              if len(r) != 8 or not re.fullmatch(r'[0-9a-f]{6}', r[0]) or r[0] in ('000000', '000001'):
                   continue
+              if r[1] in ('MLAT', 'ADSB_ICAO', 'MODE_S', 'TISB', 'ADSR'):
+                  r[1] = ''   # a feed source name in the type column (4 Nov 2026 review: air-bot rows), not an aircraft type
               try:
                   m = float(r[4]); float(r[5]); float(r[6])
               except ValueError:
