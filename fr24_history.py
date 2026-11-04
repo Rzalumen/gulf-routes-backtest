@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+"""Flightradar24 flight lists → air-history day-only rows (Reza 3 Nov 2026 23:04 ET "do flightradar").
+Input: a text file of lines "hex:d1d2d3…" where each day is 2 base-36 chars = days since 1970-01-01 minus 20400 (from the
+FR24 /data/aircraft/<reg> pages read in Reza's logged-in Chrome: one row per flight, its data-timestamp = UTC day flown).
+Output: air/air-fr24-YYYY-MM-DD.csv.gz rows hex,type,reg,callsign,minute,lat,lon,alt with empty lat/lon (day-only:
+the airframe's flying day counts in make_patterns.py, no area cell is invented).
+usage: fr24_history.py IN.txt REGS.json OUT_DIR"""
+import sys, os, csv, gzip, json, datetime, collections
+src, regs_path, out = sys.argv[1:4]
+os.makedirs(out, exist_ok=True)
+reg = dict(json.load(open(regs_path)))
+by = collections.defaultdict(set)
+n = 0
+for line in open(src):
+    line = line.strip()
+    if ':' not in line:
+        continue
+    hx, s = line.split(':', 1)
+    for i in range(0, len(s) - 1, 2):
+        d = int(s[i:i + 2], 36) + 20400
+        day = (datetime.date(1970, 1, 1) + datetime.timedelta(d)).isoformat()
+        by[day].add((hx, '', reg.get(hx, ''), '', str(d * 1440 + 720), '', '', ''))
+        n += 1
+for day, rs in sorted(by.items()):
+    with gzip.open(os.path.join(out, 'air-fr24-%s.csv.gz' % day), 'wt') as fh:
+        csv.writer(fh).writerows(sorted(rs))
+print('%d airframe-days on %d days' % (n, len(by)))

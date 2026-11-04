@@ -1,0 +1,40 @@
+name: Flightradar24 flight lists → air-history + patterns rebuild
+# Reza 3 Nov 2026 23:04 ET "do flightradar": FR24 /data/aircraft/<reg> flight lists for every airframe the bot has posted,
+# read in Reza's logged-in Chrome (one flight = one UTC day flown). Sent here by a one-off bot call (repository_dispatch "fr24",
+# client_payload.rows = lines "hex:<2-char base-36 days since day 20400>"). Writes air/air-fr24-*.csv.gz (day-only rows) and
+# rebuilds map/patterns.json.
+on:
+  repository_dispatch:
+    types: [fr24]
+permissions:
+  contents: write
+concurrency:
+  group: data-branches
+  cancel-in-progress: false
+jobs:
+  fr24:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write air-fr24 files to air-history
+        env:
+          ROWS: ${{ github.event.client_payload.rows }}
+        run: |
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          printf '%s\n' "$ROWS" > fr24.txt; wc -l fr24.txt
+          mkdir out && python3 fr24_history.py fr24.txt data/fr24_regs.json out
+          mkdir air && cd air && git init -q -b air-history
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD
+          mkdir -p air && rm -f air/air-fr24-*.csv.gz && cp ../out/*.csv.gz air/
+          git add -A && git commit -qm "Flightradar24 flight lists" && git push "$R" HEAD:air-history || echo "unchanged"
+      - name: Rebuild map/patterns.json on map-service
+        run: |
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir h && cd h && git init -q -b history-2025 && git fetch -q --depth 1 "$R" history-2025 && git reset -q --hard FETCH_HEAD && cd ..
+          mkdir ms && cd ms && git init -q -b map-service
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" map-service && git reset -q --hard FETCH_HEAD
+          python3 ../make_patterns.py ../air/air ../h/events ../h/legs_all.csv.gz map/patterns.json
+          git add map/patterns.json && git commit -qm "patterns.json: + Flightradar24 flight lists" && git push "$R" HEAD:map-service || echo "unchanged"
