@@ -5,7 +5,9 @@ historic and backfill data to recognize routine mission vs unusual").
 
 Usage: make_patterns.py <air dir> <events dir> <legs_all.csv[.gz]> <out.json>
 Airborne presence comes from air-history (air/air-YYYY-MM-DD.csv.gz: hex,type,reg,callsign,minute,lat,lon,alt, one
-point per 15 min) + the bot's own sightings (air/air-bot-YYYY-MM-DD.csv.gz, same columns, sight.yml, 3 Nov 2026) — history-2025 events only hold take-offs / landings, so orbits over CENTCOM were missing there.
+point per 15 min) + the bot's own sightings (air/air-bot-YYYY-MM-DD.csv.gz, same columns, sight.yml, 3 Nov 2026) + the bot's channel
+history and the DG / AA flight log (air/air-chan-*, air/air-log-*, chan_history.py / chan.yml; day-only rows have empty lat/lon) —
+history-2025 events only hold take-offs / landings, so orbits over CENTCOM were missing there.
 events are used only for "first seen" (back to 1 May 2025).
 Output (compact; days = days since 1970-01-01, asof = newest day in the data):
   a: {hex: [d30, d90, d365, last_day, first_day, c90, [[FROM>TO, legs in 365 d], …top 3]]}   per airframe
@@ -67,13 +69,15 @@ for f in afiles:
             if len(r) < 8:
                 continue
             hx = r[0].lower().lstrip('~')
+            # flying day first: day-only rows (lat/lon empty) from the bot's channel history / flight log count for the airframe,
+            # but never invent an area cell (Reza 3 Nov 2026 22:45 ET: use ALL the existing data)
+            first.setdefault(hx, d)
+            seen[hx].add(d)
+            if r[1]: htype[hx] = r[1]
             try:
                 lat, lon = float(r[5]), float(r[6])
             except ValueError:
                 continue
-            first.setdefault(hx, d)
-            seen[hx].add(d)
-            if r[1]: htype[hx] = r[1]
             if asof - d < 90:                  # 2° cells over the whole air-history area (CENTCOM, Europe, Atlantic, DG)
                 g = group(r[1])
                 for k in (g + '|' + cell(lat, lon), 'ALL|' + cell(lat, lon)):   # ALL = coverage check (any military)
