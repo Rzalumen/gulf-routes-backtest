@@ -38,6 +38,8 @@ PLACES = {
     'uae coast': (24.6, 54.6), 'united arab emirates': (24.2, 54.5), 'djibouti': (11.6, 43.1), 'israel': (31.5, 34.9),
     'lebanon': (33.8, 35.8), 'cyprus': (35.0, 33.2), 'jordan': (31.5, 36.5), 'gaza': (31.4, 34.4), 'west bank': (31.9, 35.2),
     'kuwait bay': (29.4, 47.9), 'sinai': (29.5, 33.8), 'diego garcia': (-7.3, 72.4),
+    'aegean sea': (38.5, 25.0), 'israel coast': (32.3, 34.6), 'cyprus coast': (34.8, 33.0), 'central mediterranean': (35.0, 15.0),
+    'djibouti coast': (11.8, 43.3), 'lebanon coast': (33.8, 35.4), 'bahrain coast': (26.1, 50.6), 'kuwait coast': (29.3, 48.1),
 }
 
 def ll_of(place, cities):
