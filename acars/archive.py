@@ -90,13 +90,15 @@ def get(url, headers=None, tries=4):
             print('ERR', e); time.sleep(5)
     return None
 
-def messages(hexid, key, timeframe, max_pages):
+def messages(hexid, key, timeframe, max_pages, have=frozenset()):
+    """Newest first, 100 per page. Stops after a page whose messages are all already stored (`have` = ids of the last
+    2 days): older pages can only hold stored messages too (4 Nov 2026 perf: a chatty C-17 re-downloaded ~1,000 a run)."""
     out = []
     for p in range(max_pages):
         j = get('%s?icao=%s&timeframe=%s&exclude_labels=_d,Q0&offset=%d' % (API, hexid, timeframe, p * 100), {'Authorization': 'Bearer ' + key})
         m = j if isinstance(j, list) else (j or {}).get('messages') or (j or {}).get('data') or []
         out += m
-        if len(m) < 100: break
+        if len(m) < 100 or (have and all(x.get('id') in have for x in m)): break
     return out
 
 def day_lines(d, day):
@@ -137,6 +139,10 @@ def main(d, backfill):
     hexes = {h for h, t in known.items() if now - datetime.datetime.fromisoformat(t) < datetime.timedelta(days=KEEP_DAYS)}
     sent = [h.strip().upper().lstrip('~') for h in os.environ.get('HEXES', '').split(',') if re.fullmatch(r'~?[0-9A-Fa-f]{6}', h.strip())]
     if sent:
+        # aircraft the bot sees flying now: every run. Recently heard but not flying now: once every 3 h (the first run
+        # after 00/03/06… UTC) — each request covers the last 24 h, so nothing is missed (4 Nov 2026 perf: ~330 of 600 hexes)
+        if not (backfill or (now.hour % 3 == 0 and now.minute < 30)):
+            hexes = set()
         hexes |= set(sent)
     else:   # backup cron: no list from the bot
         live = get('https://api.adsb.lol/v2/mil') or {}
@@ -162,8 +168,10 @@ def main(d, backfill):
     # Actions minutes/month). Writes stay single-threaded, so the day files and destinations.csv are unchanged.
     # ponytail: fixed pool of WORKERS; 429s are still handled by get() (Retry-After).
     tf, pages = ('last-month', 30) if backfill else ('last-day', 10)
-    with ThreadPoolExecutor(int(os.environ.get('WORKERS', '8'))) as ex:
-        got = ex.map(lambda h: (h, messages(h, key, tf, pages)), sorted(hexes))
+    days2 = [(now - datetime.timedelta(days=k)).date().isoformat() for k in range(2)]
+    have = frozenset() if backfill else frozenset(i for day in days2 for i in ids(day))   # read-only in the workers
+    with ThreadPoolExecutor(int(os.environ.get('WORKERS', '16'))) as ex:   # 429s still handled by get() (Retry-After)
+        got = ex.map(lambda h: (h, messages(h, key, tf, pages, have)), sorted(hexes))
     for h, ms in got:
         if ms: known[h] = now.isoformat(timespec='seconds')
         for m in ms:
@@ -270,6 +278,19 @@ def selftest():
     assert [json.loads(l)['id'] for l in day_lines(t, old)] == [7, 8]   # gz part + late plain part both read
     compact(t, now)
     assert [json.loads(l)['id'] for l in day_lines(t, old)] == [7, 8] and not os.path.exists(po)
+    # paging stops at a page that is all stored; a page with one new message goes on
+    calls = []
+    def fake(url, headers=None):
+        off = int(url.rsplit('offset=', 1)[1]); calls.append(off)
+        return {'messages': [{'id': off + i} for i in range(100)]}
+    g0 = globals()['get']; globals()['get'] = fake
+    try:
+        assert len(messages('AE0000', 'k', 'last-day', 10, frozenset(range(0, 1000)))) == 100 and calls == [0]
+        calls.clear(); messages('AE0000', 'k', 'last-day', 10, frozenset(range(1, 1000)))
+        assert calls == [0, 100], calls      # page 0 had a new id (0) → page 1 read, all stored → stop
+        calls.clear(); messages('AE0000', 'k', 'last-day', 3); assert calls == [0, 100, 200]   # no stored ids: as before
+    finally:
+        globals()['get'] = g0
     print('selftest ok')
 
 if __name__ == '__main__':
