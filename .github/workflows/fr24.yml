@@ -23,11 +23,13 @@ jobs:
         run: |
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           printf '%s\n' "$ROWS" > fr24.txt; wc -l fr24.txt
-          mkdir out && python3 fr24_history.py fr24.txt data/fr24_regs.json out
           mkdir air && cd air && git init -q -b air-history
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD
-          mkdir -p air && rm -f air/air-fr24-*.csv.gz && cp ../out/*.csv.gz air/
+          mkdir -p air && cd ..
+          # add to the stored air-fr24 days, never replace them (4 Nov 2026: a partial dispatch used to delete every other day)
+          python3 fr24_history.py fr24.txt data/fr24_regs.json air/air
+          cd air
           git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Flightradar24 flight lists" && git push "$R" HEAD:air-history; }   # a failed push fails the run
       - name: Rebuild map/patterns.json on map-service
         run: |
