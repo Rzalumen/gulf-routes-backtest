@@ -54,5 +54,5 @@ jobs:
           git init -q -b inspect
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
-          if git fetch -q --depth 1 "$R" inspect; then git reset -q --soft FETCH_HEAD; fi
-          git add -A && git commit -qm "Coverage check ${{ inputs.days }}" && git push "$R" HEAD:inspect
+          if git fetch -q --depth 1 "$R" inspect; then git reset -q FETCH_HEAD; fi   # index = branch tree: files not in this run are kept
+          git add --ignore-removal . && git commit -qm "Coverage check ${{ inputs.days }}" && git push "$R" HEAD:inspect

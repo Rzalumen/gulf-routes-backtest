@@ -78,7 +78,7 @@ for f in afiles:
             hx = r[0].lower().lstrip('~')
             # flying day first: day-only rows (lat/lon empty) from the bot's channel history / flight log count for the airframe,
             # but never invent an area cell (Reza 3 Nov 2026 22:45 ET: use ALL the existing data)
-            first.setdefault(hx, d)
+            first[hx] = min(first.get(hx, d), d)   # air-bot/-chan/-fr24/-log sort by name, not date
             seen[hx].add(d)
             if r[1]: htype[hx] = r[1]
             try:

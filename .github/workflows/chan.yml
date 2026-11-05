@@ -28,7 +28,7 @@ jobs:
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD
           mkdir -p air && rm -f air/air-chan-*.csv.gz air/air-log-*.csv.gz && cp ../out/*.csv.gz air/
-          git add -A && git commit -qm "Bot channel history + flight log" && git push "$R" HEAD:air-history || echo "unchanged"
+          git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Bot channel history + flight log" && git push "$R" HEAD:air-history; }   # a failed push fails the run
       - name: Rebuild map/patterns.json on map-service
         run: |
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
@@ -37,4 +37,4 @@ jobs:
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" map-service && git reset -q --hard FETCH_HEAD
           python3 ../make_patterns.py ../air/air ../h/events ../h/legs_all.csv.gz map/patterns.json
-          git add map/patterns.json && git commit -qm "patterns.json: + bot channel history" && git push "$R" HEAD:map-service || echo "unchanged"
+          git add map/patterns.json && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "patterns.json: + bot channel history" && git push "$R" HEAD:map-service; }   # a failed push fails the run

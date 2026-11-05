@@ -34,6 +34,8 @@ jobs:
               lst = json.loads(t).get('notamList') or []
               if not lst: break
               n += len(lst); pages.append(t)
+          else:
+              print('::warning::stopped at 1,500 NOTAMs - later pages were not read or relayed')
           print('FAA:', n, 'NOTAMs in', len(pages), 'pages')
           if n and os.environ.get('RELAY_URL'):
               r = urllib.request.urlopen(urllib.request.Request(os.environ['RELAY_URL'], '@@PAGE@@'.join(pages).encode(), {'Content-Type': 'text/plain'}), timeout=60)

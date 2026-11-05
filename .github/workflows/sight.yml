@@ -77,4 +77,4 @@ jobs:
                   csv.writer(fh).writerows(rows)
               print(f, len(old), '+', len(new))
           PY
-          git add -A && git commit -qm "Bot sightings" && git push "$R" HEAD:air-history || echo "unchanged"
+          git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Bot sightings" && git push "$R" HEAD:air-history; }   # a failed push fails the run

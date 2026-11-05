@@ -61,4 +61,5 @@ jobs:
           git fetch -q --depth 1 "$R" acars-data && git reset -q --hard FETCH_HEAD || echo "new branch"
           mkdir -p acars && cd acars
           python3 ../../acars/archive.py . $([ "$BACKFILL" = "true" ] && echo --backfill)
-          cd .. && git add -A && git commit -qm "ACARS archive $(date -u +%FT%H:%MZ)" && git push "$R" HEAD:acars-data || echo "nothing new"
+          cd ..; git add -A
+          { git diff --cached --quiet && echo "nothing new"; } || { git commit -qm "ACARS archive $(date -u +%FT%H:%MZ)" && git push "$R" HEAD:acars-data; }   # a failed push fails the run

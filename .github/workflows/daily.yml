@@ -15,9 +15,6 @@ on:
         default: ''
 permissions:
   contents: write
-concurrency:
-  group: data-branches
-  cancel-in-progress: false
 jobs:
   days:
     runs-on: ubuntu-latest
@@ -36,8 +33,9 @@ jobs:
           python3 - <<'EOF' >> "$GITHUB_OUTPUT"
           import datetime, json, os
           y = datetime.date.today() - datetime.timedelta(1)
-          a = datetime.date.fromisoformat(os.environ['START']) if os.environ.get('START') else y
-          b = datetime.date.fromisoformat(os.environ['END']) if os.environ.get('END') else a
+          # no input: the last 7 days, so a day that failed (archive late, run cancelled, push failed) is retried, not lost
+          a = datetime.date.fromisoformat(os.environ['START']) if os.environ.get('START') else y - datetime.timedelta(6)
+          b = datetime.date.fromisoformat(os.environ['END']) if os.environ.get('END') else (a if os.environ.get('START') else y)
           have = set(open('have.txt').read().split())
           days = [(a + datetime.timedelta(d)).isoformat() for d in range((b - a).days + 1)]
           days = [d for d in days if 'events/events-%s.csv.gz' % d not in have]
@@ -70,6 +68,9 @@ jobs:
           retention-days: 7
   commit:
     needs: extract
+    concurrency:   # job level: other writers wait only for the commit, not the extract (a 2nd pending run is cancelled)
+      group: data-branches
+      cancel-in-progress: false
     if: always() && needs.extract.result != 'skipped'
     runs-on: ubuntu-latest
     steps:
@@ -102,7 +103,7 @@ jobs:
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD || echo "new branch"
           mkdir -p air && cp -n ../new/air-*.csv.gz air/
-          git add -A && git commit -qm "Airborne history: daily" && git push "$R" HEAD:air-history || echo "unchanged"
+          git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Airborne history: daily" && git push "$R" HEAD:air-history; }   # a failed push fails the run
       - name: Refresh map/lastland.json on map-service (bot's "Last landed" line, Reza 27 Oct 2026)
         run: |
           [ -f work/legs_all.csv ] || { echo "no new legs"; exit 0; }
@@ -115,4 +116,4 @@ jobs:
             python3 ../make_patterns.py ../air/air ../work/events ../work/legs_all.csv map/patterns.json || echo "::warning::patterns.json not rebuilt"
           fi
           git add map/lastland.json map/patterns.json 2>/dev/null; git add map/lastland.json
-          git commit -qm "lastland.json + patterns.json: daily refresh" && git push "$R" HEAD:map-service || echo "unchanged"
+          { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "lastland.json + patterns.json: daily refresh" && git push "$R" HEAD:map-service; }   # a failed push fails the run

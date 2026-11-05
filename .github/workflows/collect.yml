@@ -60,6 +60,6 @@ jobs:
           git init -q -b "$BRANCH"
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           R="https://x-access-token:$TOKEN@github.com/${{ github.repository }}.git"
-          if git fetch -q --depth 1 "$R" "$BRANCH"; then git reset -q --soft FETCH_HEAD; fi
-          git add -A && git commit -qm "Day results from runs $RUN_IDS ($(ls events | wc -l) days)"
+          if git fetch -q --depth 1 "$R" "$BRANCH"; then git reset -q FETCH_HEAD; fi   # index = branch tree: files not in this run are kept
+          git add --ignore-removal . && git commit -qm "Day results from runs $RUN_IDS ($(ls events | wc -l) days)"
           git push "$R" "HEAD:$BRANCH"

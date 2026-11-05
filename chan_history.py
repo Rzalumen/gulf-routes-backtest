@@ -92,7 +92,7 @@ def fetch(before):
             return urllib.request.urlopen(req, timeout=30).read().decode('utf-8', 'replace')
         except Exception as e:
             print('fetch', before, e); time.sleep(5 * (k + 1))
-    return ''
+    sys.exit('::error::t.me page before=%s failed 4 times - nothing written (a partial read would replace the full channel history)' % before)
 
 def type_of(text):
     head = text[:300]

@@ -16,9 +16,6 @@ on:
         required: true
 permissions:
   contents: write
-concurrency:
-  group: data-branches
-  cancel-in-progress: false
 jobs:
   days:
     runs-on: ubuntu-latest
@@ -80,6 +77,9 @@ jobs:
           retention-days: 3
   commit:
     needs: extract
+    concurrency:   # job level: other writers wait only for the commit, not the extract (a 2nd pending run is cancelled)
+      group: data-branches
+      cancel-in-progress: false
     if: always() && needs.extract.result != 'skipped'
     runs-on: ubuntu-latest
     steps:
