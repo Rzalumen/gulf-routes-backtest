@@ -110,6 +110,7 @@ def main():
         for c in json.load(open(CITIES)):
             cities.setdefault(str(c[0]).lower(), (float(c[2]), float(c[1])))   # [name, lon, lat, pop, …]
     rows = collections.defaultdict(set)          # day → rows
+    mlines = []                                  # 📋 mission lines (self-check of the mission-ID decoder, 13 Nov 2026)
     unplaced = collections.Counter()
     before, n_posts, n_air, n_pos = 0, 0, 0, 0
     seen_ids = set()
@@ -124,6 +125,9 @@ def main():
                 continue
             text = ''.join(x['text'])
             hexes = list(dict.fromkeys(re.findall(r'\bhex\s+~?([0-9a-f]{6})\b', text, flags=re.I)))
+            for ln in text.split('\n'):
+                if ln.strip().startswith('📋'):
+                    mlines.append((x['id'], x['t'], ' '.join(h.lower() for h in hexes), text.strip().split('\n')[0][:160], ln.strip()))
             if not hexes:
                 continue
             n_air += 1
@@ -154,6 +158,12 @@ def main():
     for day, rs in sorted(rows.items()):
         with gzip.open(os.path.join(OUT, 'air-chan-%s.csv.gz' % day), 'wt') as fh:
             csv.writer(fh).writerows(sorted(rs))
+    # every 📋 line with post id, time, hex(es) and the post's first line → out/mission-lines.csv.gz (name does not match air-*, so
+    # make_patterns.py ignores it; chan.yml's `cp out/*.csv.gz` puts it on air-history). Read-only record for the daily self-check.
+    with gzip.open(os.path.join(OUT, 'mission-lines.csv.gz'), 'wt') as fh:
+        w = csv.writer(fh); w.writerow(['post_id', 'time_utc', 'hexes', 'first_line', 'mission_line'])
+        w.writerows(sorted(mlines))
+    print('mission lines (📋): %d' % len(mlines))
     print('channel: %d posts read, %d aircraft posts, %d rows with a position, %d days' % (n_posts, n_air, n_pos, len(rows)))
     print('places without a precise position (day-only):', unplaced.most_common(40))
     # DG / AA flight log (day-only)
