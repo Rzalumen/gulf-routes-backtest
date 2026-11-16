@@ -129,8 +129,8 @@ def main():
             ml = [ln.strip() for ln in text.split('\n') if ln.strip().startswith('📋')]
             acars = 1 if re.search(r'\bACARS\b', text) else 0
             if ml or acars:
-                cs = (re.search(r'·\s*([A-Z]{2,6}\d{1,4}[A-Z]?)\s*·', text) or [None, ''])[1]
                 first = text.strip().split('\n')[0][:160]
+                cs = (re.search(r'·\s*([A-Z]{2,6}\d{1,4}[A-Z]?)\s*(?:·|$)', first) or re.search(r'·\s*([A-Z]{2,6}\d{1,4}[A-Z]?)\s*·', text) or [None, ''])[1]
                 rg = (re.search(r'([0-9]{2}-[0-9]{4,5}|[0-9]{6}|[A-Z][A-Z0-9]?-[A-Z0-9]{3,5})\s*$', re.sub(r'\s*·?\s*hex\s+\S+\s*$', '', first)) or [None, ''])[1]
                 mlines.append((x['id'], x['t'], ' '.join(h.lower() for h in hexes), cs, rg, acars, first, ' | '.join(ml)))
             if not hexes:
