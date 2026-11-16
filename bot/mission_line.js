@@ -11,7 +11,7 @@ var ACARS_MLINE_MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', '
 
 // /ID<tail>,<callsign>,<MISSION>/ → {tail, cs, id} or null (the identity check against the feed is done by acarsCheck_)
 function acarsMissionId_(tx) {
-  var m = /\/ID([A-Z0-9]+),([A-Z0-9]*),([A-Z0-9]{12})(?![A-Z0-9])/.exec(String(tx || ''));
+  var m = /\/ID([A-Z0-9]+),([A-Z0-9]*),([A-Z0-9]{12})(?=[\/,]|$)/.exec(String(tx || ''));
   return m ? { tail: m[1], cs: m[2], id: m[3] } : null;
 }
 
@@ -20,7 +20,8 @@ function acarsMissionId_(tx) {
 function acarsMissionDate_(id, tMs) {
   var doy = /(\d{3})$/.exec(id); if (!doy) return '';
   doy = +doy[1]; if (doy < 1 || doy > 366) return '';
-  var now = new Date(tMs || Date.now()), best = null;
+  var t0 = new Date(tMs || Date.now()), best = null;
+  var now = new Date(Date.UTC(t0.getUTCFullYear(), t0.getUTCMonth(), t0.getUTCDate()));   // whole days, not time of day
   for (var y = now.getUTCFullYear() - 1; y <= now.getUTCFullYear() + 1; y++) {
     var d = new Date(Date.UTC(y, 0, 1) + (doy - 1) * 864e5);
     if (d.getUTCFullYear() !== y) continue;                    // day 366 in a non-leap year
@@ -42,7 +43,7 @@ function acarsMissionText_(id, tMs, mode) {
     // CENTCOM shuttle (Observed 12-16 Nov: A?YF + last 3 of the RCH 49xx number + YT + day; ETAR / ETAD / OTBH / OJKF legs)
     if (/^A[JMV]YF\d{3}YT\d{3}$/.test(id)) return '📋 CENTCOM shuttle · ' + date;
     if (mode === 2) return '📋 Mission ID on file · ' + date;
-    if (mode === 3) return '📋 Mission ' + id + ' · ' + date;
+    if (mode === 3) return /VIP|POTUS|FILED|DATED/.test(id) ? '📋 Mission ID on file · ' + date : '📋 Mission ' + id + ' · ' + date;
     return '';
   } catch (e) { return ''; }
 }

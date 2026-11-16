@@ -33,6 +33,13 @@ eq(L.acarsMission_('- #MDINI/ID50104A,RCH563,JBZGDU70F317/MR0,0/AFKDOV,ETAR/TD13
 eq(L.acarsMission_('- #MDINI/ID99206A,RCH4155,AJM512171320/MR0,0/AFRJTY,ZGSZ', T), '\n📋 Special airlift mission · high priority · 16 Nov');
 eq(L.acarsMission_('- #MDINI/ID99206A,RCH4155,AJM5121713200/MR0', T), '');               // 13 chars
 eq(L.acarsMission_('no id here', T), ''); eq(L.acarsMission_(null, T), ''); eq(L.acarsMission_(undefined, undefined), '');
+// review 16 Nov: whole-day window, field must end at / , or end of text, mode 3 never prints the banned words
+eq(L.acarsMissionText_('AJM512171275', T, 1), '📋 Special airlift mission · high priority · 2 Oct');
+eq(L.acarsMissionText_('AJM512171274', T, 1), '');
+eq(L.acarsMissionText_('AJM512171322', Date.UTC(2027,0,2,21), 1), '📋 Special airlift mission · high priority · 18 Nov');
+for (const x of ['AJM512171320a/MR0','AJM512171320./','AJM512171320-X/','AJM512171320 X/']) eq(L.acarsMission_('/ID99206A,RCH4155,' + x, T), '', x);
+eq(L.acarsMission_('/ID99206A,RCH4155,AJM512171320', T), '\n📋 Special airlift mission · high priority · 16 Nov');
+for (const x of ['POTUS1234320','VIPA12345320','FILED1234320']) eq(L.acarsMissionText_(x, T, 3), '📋 Mission ID on file · 16 Nov', x);
 // all 64 live IDs: no VIP/POTUS/filed/dated text in any mode; mode 1 only SAAM + shuttle
 const c = {1:0,2:0,3:0}, out = [];
 for (const id of Object.keys(ids)) for (const m of [1,2,3]) {
