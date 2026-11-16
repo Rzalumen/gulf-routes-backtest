@@ -130,7 +130,9 @@ def main():
             acars = 1 if re.search(r'\bACARS\b', text) else 0
             if ml or acars:
                 cs = (re.search(r'·\s*([A-Z]{2,6}\d{1,4}[A-Z]?)\s*·', text) or [None, ''])[1]
-                mlines.append((x['id'], x['t'], ' '.join(h.lower() for h in hexes), cs, acars, text.strip().split('\n')[0][:160], ' | '.join(ml)))
+                first = text.strip().split('\n')[0][:160]
+                rg = (re.search(r'([0-9]{2}-[0-9]{4,5}|[0-9]{6}|[A-Z][A-Z0-9]?-[A-Z0-9]{3,5})\s*$', re.sub(r'\s*·?\s*hex\s+\S+\s*$', '', first)) or [None, ''])[1]
+                mlines.append((x['id'], x['t'], ' '.join(h.lower() for h in hexes), cs, rg, acars, first, ' | '.join(ml)))
             if not hexes:
                 continue
             n_air += 1
@@ -164,9 +166,9 @@ def main():
     # every ACARS post and every 📋 line with post id, time, hex(es), callsign and the post's first line → out/mission-lines.csv.gz (name does not match air-*, so
     # make_patterns.py ignores it; chan.yml's `cp out/*.csv.gz` puts it on air-history). Read-only record for the daily self-check.
     with gzip.open(os.path.join(OUT, 'mission-lines.csv.gz'), 'wt') as fh:
-        w = csv.writer(fh); w.writerow(['post_id', 'time_utc', 'hexes', 'callsign', 'acars_post', 'first_line', 'mission_line'])
+        w = csv.writer(fh); w.writerow(['post_id', 'time_utc', 'hexes', 'callsign', 'reg', 'acars_post', 'first_line', 'mission_line'])
         w.writerows(sorted(mlines))
-    print('mission-lines.csv.gz: %d rows (%d with a 📋 line, %d ACARS posts)' % (len(mlines), sum(1 for r in mlines if r[6]), sum(r[4] for r in mlines)))
+    print('mission-lines.csv.gz: %d rows (%d with a 📋 line, %d ACARS posts)' % (len(mlines), sum(1 for r in mlines if r[7]), sum(r[5] for r in mlines)))
     print('channel: %d posts read, %d aircraft posts, %d rows with a position, %d days' % (n_posts, n_air, n_pos, len(rows)))
     print('places without a precise position (day-only):', unplaced.most_common(40))
     # DG / AA flight log (day-only)
