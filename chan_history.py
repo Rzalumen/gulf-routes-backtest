@@ -125,9 +125,12 @@ def main():
                 continue
             text = ''.join(x['text'])
             hexes = list(dict.fromkeys(re.findall(r'\bhex\s+~?([0-9a-f]{6})\b', text, flags=re.I)))
-            for ln in text.split('\n'):
-                if ln.strip().startswith('📋'):
-                    mlines.append((x['id'], x['t'], ' '.join(h.lower() for h in hexes), text.strip().split('\n')[0][:160], ln.strip()))
+            # every ACARS post (line due or not) and every 📋 line: the self-check needs both to spot a missing or a wrong line (16 Nov)
+            ml = [ln.strip() for ln in text.split('\n') if ln.strip().startswith('📋')]
+            acars = 1 if re.search(r'\bACARS\b', text) else 0
+            if ml or acars:
+                cs = (re.search(r'·\s*([A-Z]{2,6}\d{1,4}[A-Z]?)\s*·', text) or [None, ''])[1]
+                mlines.append((x['id'], x['t'], ' '.join(h.lower() for h in hexes), cs, acars, text.strip().split('\n')[0][:160], ' | '.join(ml)))
             if not hexes:
                 continue
             n_air += 1
@@ -158,12 +161,12 @@ def main():
     for day, rs in sorted(rows.items()):
         with gzip.open(os.path.join(OUT, 'air-chan-%s.csv.gz' % day), 'wt') as fh:
             csv.writer(fh).writerows(sorted(rs))
-    # every 📋 line with post id, time, hex(es) and the post's first line → out/mission-lines.csv.gz (name does not match air-*, so
+    # every ACARS post and every 📋 line with post id, time, hex(es), callsign and the post's first line → out/mission-lines.csv.gz (name does not match air-*, so
     # make_patterns.py ignores it; chan.yml's `cp out/*.csv.gz` puts it on air-history). Read-only record for the daily self-check.
     with gzip.open(os.path.join(OUT, 'mission-lines.csv.gz'), 'wt') as fh:
-        w = csv.writer(fh); w.writerow(['post_id', 'time_utc', 'hexes', 'first_line', 'mission_line'])
+        w = csv.writer(fh); w.writerow(['post_id', 'time_utc', 'hexes', 'callsign', 'acars_post', 'first_line', 'mission_line'])
         w.writerows(sorted(mlines))
-    print('mission lines (📋): %d' % len(mlines))
+    print('mission-lines.csv.gz: %d rows (%d with a 📋 line, %d ACARS posts)' % (len(mlines), sum(1 for r in mlines if r[6]), sum(r[4] for r in mlines)))
     print('channel: %d posts read, %d aircraft posts, %d rows with a position, %d days' % (n_posts, n_air, n_pos, len(rows)))
     print('places without a precise position (day-only):', unplaced.most_common(40))
     # DG / AA flight log (day-only)
