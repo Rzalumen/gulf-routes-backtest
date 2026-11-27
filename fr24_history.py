@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Flightradar24 flight lists → air-history day-only rows (Reza 3 Nov 2026 23:04 ET "do flightradar").
+"""Flightradar24 flight lists → air-history day-only rows (the owner 3 Nov 2026 "do flightradar").
 Input: a text file of lines "hex:d1d2d3…" where each day is 2 base-36 chars = days since 1970-01-01 minus 20400 (from the
-FR24 /data/aircraft/<reg> pages read in Reza's logged-in Chrome: one row per flight, its data-timestamp = UTC day flown).
+FR24 /data/aircraft/<reg> pages read in the owner's logged-in Chrome: one row per flight, its data-timestamp = UTC day flown).
 Output: air/air-fr24-YYYY-MM-DD.csv.gz rows hex,type,reg,callsign,minute,lat,lon,alt with empty lat/lon (day-only:
 the airframe's flying day counts in make_patterns.py, no area cell is invented).
-Existing day files in OUT_DIR are kept: only airframe-days not already stored are added (4 Nov 2026, Reza: add, never replace).
+Existing day files in OUT_DIR are kept: only airframe-days not already stored are added (4 Nov 2026, the owner: add, never replace).
 usage: fr24_history.py IN.txt REGS.json OUT_DIR"""
 import sys, os, csv, gzip, json, datetime, collections
 src, regs_path, out = sys.argv[1:4]

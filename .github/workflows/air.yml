@@ -2,7 +2,7 @@ name: Airborne history backfill (adsb.lol → air-history)
 # Re-reads adsb.lol day archives and keeps AIRBORNE points of military / VIP aircraft (one per 15 min,
 # Diego Garcia / CENTCOM / Europe / Atlantic) in branch air-history: air/air-YYYY-MM-DD.csv.gz.
 # Why (2 Nov 2026): history-2025 keeps only take-offs and landings, so orbiting tankers / ISR / drones over CENTCOM
-# were almost missing and "routine vs unusual" had nothing to compare with. Reza chose: last 120 days + the
+# were almost missing and "routine vs unusual" had nothing to compare with. the owner chose: last 120 days + the
 # Midnight Hammer (Jun 2025) and Feb 2026 episodes (~900 Actions minutes). Days already in air-history are skipped.
 # New days come from daily.yml (AIR_OUT), so this job is only for back-filling.
 on:

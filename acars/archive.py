@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ACARS archive (Airframes Pro) — Reza 28 Oct 2026: "save records, don't toss data out".
+"""ACARS archive (Airframes Pro) — the owner 28 Oct 2026: "save records, don't toss data out".
 30 Oct 2026: worldwide for the bot's own aircraft (US, UK, Israel, Russia, China military + government), started by the bot.
 
 Every run:
@@ -296,3 +296,8 @@ def selftest():
 if __name__ == '__main__':
     if '--selftest' in sys.argv: selftest()
     else: main(sys.argv[1], '--backfill' in sys.argv)
+    # 27 Nov 2026 audit: every Airframes error (expired key, 403, 5xx, timeouts) used to end as "no messages" with a green run. A run with requests but not one HTTP 200 now fails.
+    if '--selftest' not in sys.argv:
+        _h = STATS.get('http', {})
+        if _h and not _h.get('200'): sys.exit('::error::Airframes: no successful request this run (%s) - key expired or service down' % json.dumps(_h))
+

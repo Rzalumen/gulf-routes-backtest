@@ -1,6 +1,6 @@
 name: NOTAM relay (FAA → Gulf Alerts bot)
 # The FAA NOTAM search blocks Google, so the bot can't read it; the Macs used to relay it and stopped (NOTAMs since
-# 25 Oct 14:40 UTC never reached the bot; Reza 27 Oct 2026 08:09 ET). This does the same job from GitHub every 5 minutes:
+# 25 Oct 14:40 UTC never reached the bot; the owner 27 Oct 2026). This does the same job from GitHub every 5 minutes:
 # all watched FIRs (Code.gs FIRS), all pages, POSTed to the bot's web app exactly like the Mac relay (pages joined by @@PAGE@@).
 on:
   schedule:
@@ -39,7 +39,7 @@ jobs:
           print('FAA:', n, 'NOTAMs in', len(pages), 'pages')
           if n and os.environ.get('RELAY_URL'):
               r = urllib.request.urlopen(urllib.request.Request(os.environ['RELAY_URL'], '@@PAGE@@'.join(pages).encode(), {'Content-Type': 'text/plain'}), timeout=60)
-              print('bot:', r.read().decode()[:200])
+              print('bot answered: HTTP', r.status, '-', len(r.read()), 'bytes')   # 27 Nov 2026 audit: the answer text is no longer printed into this public log
           elif not os.environ.get('RELAY_URL'):
               print('::warning::secret NOTAM_RELAY_URL not set — read only')
           EOF

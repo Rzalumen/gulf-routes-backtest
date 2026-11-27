@@ -27,7 +27,7 @@ def creg(lat, lon):
     if 20 <= lat <= 72 and -60 <= lon < -12: return 'ATLANTIC'
     if lon < -60: return 'AMERICAS'
     return 'OTHER'
-AIR_OUT = os.environ.get('AIR_OUT')   # airborne track points (2 Nov 2026, Reza: enough history for routine vs unusual):
+AIR_OUT = os.environ.get('AIR_OUT')   # airborne track points (2 Nov 2026, the owner: enough history for routine vs unusual):
 # one point per aircraft per 15 min while >= 3,000 ft, Diego Garcia / CENTCOM / Europe / Atlantic only. events stay unchanged.
 afh = gzip.open(AIR_OUT, 'wt') if AIR_OUT else None
 aw = csv.writer(afh) if afh else None

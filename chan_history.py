@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The bot's OWN history from its public channel (Reza 3 Nov 2026 22:45 ET: "the bot should look into all the existing data
+"""The bot's OWN history from its public channel (the owner 3 Nov 2026: "the bot should look into all the existing data
 and feeding history"). Every aircraft post in t.me/s/gulfsituation is one sighting: airframe (hex), UTC time, and the place
 the post names. Written as air-history rows (hex,type,reg,callsign,minute,lat,lon,alt) in air/air-chan-YYYY-MM-DD.csv.gz so
 make_patterns.py counts them like the adsb.lol and air-bot files.

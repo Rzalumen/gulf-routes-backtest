@@ -1,7 +1,7 @@
 name: Daily history (adsb.lol → history-2025)
 # Every day: read yesterday's adsb.lol world history, keep military / VIP aircraft (extract_day.py),
 # add the day to the history-2025 branch and rebuild legs + routes. Days already in the branch are skipped.
-# Pattern system step 1 (Reza 27 Oct 2026: "i need a fucking extensive plan to start running this now").
+# Pattern system step 1 (the owner 27 Oct 2026: "i need a fucking extensive plan to start running this now").
 on:
   schedule:
     - cron: '37 4 * * *'     # 04:37 UTC; adsb.lol publishes the previous day's archive overnight
@@ -104,7 +104,7 @@ jobs:
           git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD || echo "new branch"
           mkdir -p air && cp -n ../new/air-*.csv.gz air/
           git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Airborne history: daily" && git push "$R" HEAD:air-history; }   # a failed push fails the run
-      - name: Refresh map/lastland.json on map-service (bot's "Last landed" line, Reza 27 Oct 2026)
+      - name: Refresh map/lastland.json on map-service (bot's "Last landed" line, the owner 27 Oct 2026)
         run: |
           [ -f work/legs_all.csv ] || { echo "no new legs"; exit 0; }
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"

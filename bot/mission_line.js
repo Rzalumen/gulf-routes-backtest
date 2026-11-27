@@ -1,9 +1,9 @@
-// ===== 📋 Mission line (generalised 16 Nov 2026, Reza: "i want 📋 line whenever available for every military, vip, gov,
+// ===== 📋 Mission line (generalised 16 Nov 2026, the owner: "i want 📋 line whenever available for every military, vip, gov,
 // cargo, hidden and etc"; answers: mode 1 now, "prepare to switch to 2 or 3"; place = head posts and updates).
 // Drop-in replacement for acarsMission_(tx, tMs) in aircraft.gs (same name, same return: '' or '\n📋 …').
 // Notes: claude/START-HERE-11nov-mission-line.md, claude/mission-number-decode.md. Skill: gulf-mission-decode.
 // ACARS_MLINE_MODE: 0 off · 1 words only for known layouts (special airlift, CENTCOM shuttle) · 2 also "Mission ID on file"
-// for any other real AMC-style ID · 3 also the raw ID for any other real ID. Wording rules (Reza 11 Nov): plain, short,
+// for any other real AMC-style ID · 3 also the raw ID for any other real ID. Wording rules (the owner 11 Nov): plain, short,
 // no codes in modes 1-2, never VIP / POTUS / who is aboard, never "filed" / "dated".
 var ACARS_MLINE_MODE = 1;
 var ACARS_MLINE_REJECT = { COLLINSAM123: 1, ZZZ123456789: 1, RCAFCYTR1234: 1 };   // test / dummy / Canadian IDs

@@ -1,4 +1,4 @@
-"""Oil and gas sites for HEAT WATCH (Reza 7 Nov 2026: "bot should have an updated coord of all the known oil fields").
+"""Oil and gas sites for HEAT WATCH (the owner 7 Nov 2026: "bot should have an updated coord of all the known oil fields").
 
 Known flares: EOG VIIRS Nightfire MYC25Q4 annual_flare_site_records.csv (Zenodo 10.5281/zenodo.23091822, CC BY-NC 4.0,
 upstream oil / gas flares 2012-2025). Plus OpenStreetMap: offshore platforms, flare stacks, refineries, oil / gas industrial sites.

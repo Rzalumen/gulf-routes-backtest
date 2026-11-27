@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pattern report for one day from the history-2025 branch (events/*.csv.gz + legs_all.csv.gz).
 Labels every US / UK / Israeli military airframe flying that day and compares each group's count with its own
-normal (the previous 56 days). Evidence only, never a forecast. Reza 27 Oct 2026 (gulf-mission-patterns skill).
+normal (the previous 56 days). Evidence only, never a forecast. the owner 27 Oct 2026 (gulf-mission-patterns skill).
 
 usage: python3 patterns.py [YYYY-MM-DD]   (default: the newest day in events/)
 writes patterns-<day>.json and prints the owner text."""

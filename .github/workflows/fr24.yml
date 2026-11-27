@@ -1,6 +1,6 @@
 name: Flightradar24 flight lists → air-history + patterns rebuild
-# Reza 3 Nov 2026 23:04 ET "do flightradar": FR24 /data/aircraft/<reg> flight lists for every airframe the bot has posted,
-# read in Reza's logged-in Chrome (one flight = one UTC day flown). Sent here by a one-off bot call (repository_dispatch "fr24",
+# The owner 3 Nov 2026 "do flightradar": FR24 /data/aircraft/<reg> flight lists for every airframe the bot has posted,
+# read in the owner's logged-in Chrome (one flight = one UTC day flown). Sent here by a one-off bot call (repository_dispatch "fr24",
 # client_payload.rows = lines "hex:<2-char base-36 days since day 20400>"). Writes air/air-fr24-*.csv.gz (day-only rows) and
 # rebuilds map/patterns.json.
 on:

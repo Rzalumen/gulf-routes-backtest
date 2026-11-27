@@ -1,6 +1,6 @@
 name: Bot sightings (Gulf Alerts bot → air-history)
 # The bot's own scans (Flightradar24 + ADS-B Exchange) see more than adsb.lol where community receivers are few:
-# the bot alerts Al Udeid tankers every day, adsb.lol had them on 10-13 of 30 days (Reza 3 Nov 2026: "you can't say it's thin").
+# the bot alerts Al Udeid tankers every day, adsb.lol had them on 10-13 of 30 days (the owner 3 Nov 2026: "you can't say it's thin").
 # The bot sends what it saw every 2 h (repository_dispatch "sight", payload rows = CSV hex,type,reg,callsign,minute,lat,lon,alt,
 # one row per airframe per 2° cell per hour). This adds them to air-history as air/air-bot-YYYY-MM-DD.csv.gz;
 # make_patterns.py counts those files like the adsb.lol air files (same columns).
@@ -51,7 +51,7 @@ jobs:
                   csv.writer(fh).writerows(old + new)
               print(f, len(old), '+', len(new))
           PY
-          # Movement log (Reza 4 Nov 2026 "bot must record everything"): moves/moves-YYYY-MM.csv.gz, one row per event,
+          # Movement log (the owner 4 Nov 2026 "bot must record everything"): moves/moves-YYYY-MM.csv.gz, one row per event,
           # minute,hex,reg,callsign,type,category,event,place,lat,lon,alt,note  (events: atlantic-east / -west / -crossed / -centcom,
           # eucom>centcom, centcom>eucom, landed, alert-posted, update-posted)
           mkdir -p moves

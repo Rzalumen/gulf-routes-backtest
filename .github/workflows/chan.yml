@@ -1,5 +1,5 @@
 name: Bot channel history → air-history + patterns rebuild
-# Reza 3 Nov 2026 22:45 ET: "the bot should look into all the existing data and feeding history".
+# The owner 3 Nov 2026: "the bot should look into all the existing data and feeding history".
 # Reads EVERY aircraft post in t.me/s/gulfsituation (the bot's own sightings since it started: Flightradar24 incl. satellite,
 # ADS-B Exchange, Wingbits) plus data/oct2026_flight_log.csv (DG / AA tracking), writes air/air-chan-*.csv.gz and
 # air/air-log-*.csv.gz to air-history (replacing the previous run's files), then rebuilds map/patterns.json on map-service
@@ -27,6 +27,9 @@ jobs:
           mkdir air && cd air && git init -q -b air-history
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD
+          # 27 Nov 2026 audit: an empty or cut-short read of t.me used to delete the whole channel history with a green run. The old files are replaced only when tonight's read has at least 90 % as many day files.
+          new=$(ls ../out/air-chan-*.csv.gz 2>/dev/null | wc -l); old=$(ls air/air-chan-*.csv.gz 2>/dev/null | wc -l)
+          if [ "$new" -lt $(( old * 9 / 10 )) ]; then echo "::error::channel read gave $new day files, air-history has $old - history NOT replaced"; exit 1; fi
           mkdir -p air && rm -f air/air-chan-*.csv.gz air/air-log-*.csv.gz && cp ../out/*.csv.gz air/
           git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Bot channel history + flight log" && git push "$R" HEAD:air-history; }   # a failed push fails the run
       - name: Rebuild map/patterns.json on map-service

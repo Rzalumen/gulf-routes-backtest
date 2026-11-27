@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """patterns.json for the map service: what is NORMAL, from the adsb.lol history (history-2025 branch).
-Lets the bot say "routine" vs "unusual" with a number behind it (Reza 2 Nov 2026: "the bot should have enough
+Lets the bot say "routine" vs "unusual" with a number behind it (the owner 2 Nov 2026: "the bot should have enough
 historic and backfill data to recognize routine mission vs unusual").
 
 Usage: make_patterns.py <air dir> <events dir> <legs_all.csv[.gz]> <out.json>
@@ -49,7 +49,7 @@ for f in files:                                # first seen + flying days from t
                 continue
             hx = r[0].lower().lstrip('~')
             first.setdefault(hx, d)
-            # The airframe flew that day, anywhere in the world (Reza 4 Nov 2026 00:40 ET: KC-135 59-1464 got "Last flight in our
+            # The airframe flew that day, anywhere in the world (the owner 4 Nov 2026: KC-135 59-1464 got "Last flight in our
             # history 3 Aug" although these records show Tinker sorties on 23 and 26 Oct and a landing on 13 Sep — the US is outside
             # the air-history box): a take-off marker (>= 3,000 ft), or a descent between two airborne points within 10 min
             # (a landing). A ground run (GNDTST at the same height) does not count. Day only: no area cell.
@@ -77,7 +77,7 @@ for f in afiles:
                 continue
             hx = r[0].lower().lstrip('~')
             # flying day first: day-only rows (lat/lon empty) from the bot's channel history / flight log count for the airframe,
-            # but never invent an area cell (Reza 3 Nov 2026 22:45 ET: use ALL the existing data)
+            # but never invent an area cell (the owner 3 Nov 2026: use ALL the existing data)
             first[hx] = min(first.get(hx, d), d)   # air-bot/-chan/-fr24/-log sort by name, not date
             seen[hx].add(d)
             if r[1]: htype[hx] = r[1]

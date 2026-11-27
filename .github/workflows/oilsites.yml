@@ -1,5 +1,5 @@
 name: Oil and gas sites (flares + platforms → map/oilsites.json)
-# HEAT WATCH needs the known oil / gas sites (Reza 7 Nov 2026, after a heat spot 7.5 km from Bukha A was first called a flare).
+# HEAT WATCH needs the known oil / gas sites (the owner 7 Nov 2026, after a heat spot 7.5 km from Bukha A was first called a flare).
 # Weekly: EOG VIIRS Nightfire flare-site catalog (Zenodo) + OpenStreetMap (Overpass) for the Iran + Gulf box → make_oilsites.py →
 # map/oilsites.json on map-service (Cloud Run rebuilds on push; the bot asks GET /oilnear once per heat alert).
 on:
