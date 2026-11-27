@@ -1,0 +1,99 @@
+name: Airborne history backfill (adsb.lol → air-history)
+# Re-reads adsb.lol day archives and keeps AIRBORNE points of military / VIP aircraft (one per 15 min,
+# Diego Garcia / CENTCOM / Europe / Atlantic) in branch air-history: air/air-YYYY-MM-DD.csv.gz.
+# Why (2 Nov 2026): history-2025 keeps only take-offs and landings, so orbiting tankers / ISR / drones over CENTCOM
+# were almost missing and "routine vs unusual" had nothing to compare with. the owner chose: last 120 days + the
+# Midnight Hammer (Jun 2025) and Feb 2026 episodes (~900 Actions minutes). Days already in air-history are skipped.
+# New days come from daily.yml (AIR_OUT), so this job is only for back-filling.
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: First day (YYYY-MM-DD)
+        required: true
+      end:
+        description: Last day (YYYY-MM-DD)
+        required: true
+permissions:
+  contents: write
+jobs:
+  days:
+    runs-on: ubuntu-latest
+    outputs:
+      list: ${{ steps.d.outputs.list }}
+    steps:
+      - id: d
+        env:
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: |
+          git init -q x && cd x
+          git fetch -q --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" air-history \
+            && git ls-tree --name-only FETCH_HEAD air/ > ../have.txt || : > ../have.txt
+          cd ..
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import datetime, json, os
+          a = datetime.date.fromisoformat(os.environ['START']); b = datetime.date.fromisoformat(os.environ['END'])
+          have = set(open('have.txt').read().split())
+          days = [(a + datetime.timedelta(d)).isoformat() for d in range((b - a).days + 1)]
+          print('list=' + json.dumps([d for d in days if 'air/air-%s.csv.gz' % d not in have][:250]))
+          EOF
+  extract:
+    needs: days
+    if: needs.days.outputs.list != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        day: ${{ fromJson(needs.days.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stream the day archive, keep airborne military / VIP points
+        run: |
+          D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=air-${{ matrix.day }}.csv.gz
+          for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do
+            TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
+            rm -f part.* "$OUT"
+            if curl -sfIL "$URL.aa" >/dev/null; then
+              ok=1; for s in aa ab ac ad ae af ag ah; do
+                curl -sfIL "$URL.$s" >/dev/null || break
+                curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
+              done
+              [ "$ok" = 1 ] && cat part.* | AIR_OUT="$OUT" python3 extract_day.py > /dev/null || rm -f "$OUT"
+              rm -f part.*
+            elif curl -sfIL "$URL" >/dev/null; then
+              curl -sfL --retry 3 -o part.tar "$URL" && AIR_OUT="$OUT" python3 extract_day.py < part.tar > /dev/null || rm -f "$OUT"
+              rm -f part.tar
+            fi
+            [ -s "$OUT" ] && [ "$(zcat "$OUT" | wc -l)" -gt 100 ] && { echo "$TAG → $(zcat "$OUT" | wc -l) airborne points"; break; }
+          done
+          test -s "$OUT" || { echo "::error::no complete archive for ${{ matrix.day }}"; exit 1; }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: air-${{ matrix.day }}
+          path: air-${{ matrix.day }}.csv.gz
+          retention-days: 3
+  commit:
+    needs: extract
+    concurrency:   # job level: other writers wait only for the commit, not the extract (a 2nd pending run is cancelled)
+      group: data-branches
+      cancel-in-progress: false
+    if: always() && needs.extract.result != 'skipped'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: air-*
+          path: new
+          merge-multiple: true
+      - name: Add the days to air-history (no force push)
+        run: |
+          ls new/*.csv.gz >/dev/null 2>&1 || { echo "nothing new"; exit 0; }
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir out && cd out && git init -q -b air-history
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD || echo "new branch"
+          mkdir -p air && cp -n ../new/*.csv.gz air/
+          git add -A && git commit -qm "Airborne history: $(ls ../new | wc -l) days" && git push "$R" HEAD:air-history

@@ -1,0 +1,44 @@
+name: Gulf API database (data branches → gulf.db.gz release asset)
+# System Design phase 1 (4 Nov 2026): builds the read-only SQLite database the Gulf API serves (api/build_db.py) from
+# air-history (airborne points, bot sightings, channel / FR24 / log days, movement log), history-2025 (legs) and
+# acars-data (stated destinations), and publishes it as the asset gulf.db.gz of release "api-db" (replaced each run,
+# so the repo does not grow). Reads the data branches only — never writes to them.
+on:
+  schedule:
+    - cron: '41 */3 * * *'   # every 3 h; daily.yml (04:37) and the bot's sight/ACARS runs land in between
+  workflow_dispatch:
+permissions:
+  contents: write            # release asset only
+concurrency:
+  group: api-db
+  cancel-in-progress: false  # queue, never cancel: a run cancelled inside `gh release upload --clobber` (old asset
+                             # already deleted) would leave the release with no gulf.db.gz until the next good run
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-test
+        run: python3 -m pip install -q flask==3.1.0 && python3 api/test_api.py
+      - name: Fetch the data branches (read-only)
+        run: |
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir -p src/air src/hist src/acars/acars
+          git init -q src/git && cd src/git
+          git fetch -q --depth 1 "$R" air-history && git --work-tree=../air checkout -q FETCH_HEAD -- air moves
+          git fetch -q --depth 1 "$R" history-2025 && git show FETCH_HEAD:legs_all.csv.gz > ../hist/legs_all.csv.gz
+          git fetch -q --depth 1 "$R" acars-data && git show FETCH_HEAD:acars/destinations.csv > ../acars/acars/destinations.csv
+          cd ../.. && ls src/air/air | wc -l && ls -la src/hist src/acars/acars
+      - name: Build gulf.db
+        run: |
+          python3 api/build_db.py --air src/air --hist src/hist --acars src/acars --out gulf.db
+          python3 -c "import sqlite3; assert sqlite3.connect('gulf.db').execute('PRAGMA integrity_check').fetchone()[0] == 'ok'"
+          DB_PATH=gulf.db API_KEY=ci python3 api/test_api.py
+          gzip -9 -k gulf.db && ls -la gulf.db gulf.db.gz
+      - name: Publish as release asset gulf.db.gz (tag api-db)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view api-db >/dev/null 2>&1 || gh release create api-db --title "Gulf API database" --notes "Built by api-db.yml; replaced every run. Not a code release." --prerelease
+          gh release upload api-db gulf.db.gz --clobber
