@@ -1,0 +1,799 @@
+serial,code,type,cn,unit,status
+WK001,,Watchkeeper 450,,43rd Battery/47Regt RA,Active
+WK002,,Watchkeeper 450,,32 Rgt Royal Artillery,Active
+WK003,,Watchkeeper 450,,47 Regt RA,Active
+WK004,,Watchkeeper 450,,Thales,Active
+WK007,,Watchkeeper 450,,QinetiQ,Active
+WK008,,Watchkeeper 450,,47 Rgt RA,Active
+WK010,,Watchkeeper 450,,,Active
+WK017,,Watchkeeper 450,,,Active
+WK018,,Watchkeeper 450,,,Active
+WK029,,Watchkeeper 450,,47 Regt RA,Active
+WK030,,Watchkeeper 450,,QinetiQ,Active
+WK032,,Watchkeeper 450,,,Active
+WK035,,Watchkeeper 450,,nb,Active
+WK036,,Watchkeeper 450,,47th Reg Royal Artillery,Active
+WK037,,Watchkeeper 450,,47 Regt RA,Active
+WK518,D,Chipmunk T10,C1/0555,BoBMF,Active
+XX159,,Hawk T1A,312005/005,Valley,Active
+XX177,,Hawk T1,312024/024,Red Arrows,Active
+XX202,,Hawk T1A,312049/049,Red Arrows,Active
+XX219,,Hawk T1A,312055/055,Red Arrows,Active
+XX221,,Hawk T1A,312057/057,Red Arrows,Active
+XX232,,Hawk T1,312068/068,Red Arrows,Active
+XX239,,Hawk T1W,312075/075,Red Arrows,Active
+XX242,,Hawk T1,312078/078,Red Arrows,Active
+XX245,,Hawk T1,312081/081,Red Arrows,Active
+XX255,CB,Hawk T1A,312091/091,Valley,Active
+XX261,,Hawk T1A,312097/097,Red Arrows,Active
+XX278,,Hawk T1A,312103/103,Red Arrows,Active
+XX281,,Hawk T1A,312106/106,Red Arrows,Active
+XX295,,Hawk T1W,312120/124,Red Arrows,Active
+XX310,,Hawk T1W,312135/145,Red Arrows,Active
+XX311,,Hawk T1,312136/147,Red Arrows,Active
+XX319,,Hawk T1A,312144/162,Red Arrows,Active
+XX321,,Hawk T1A,312146/164,Red Arrows,Active
+XX322,,Hawk T1A,312147/165,Red Arrows,Active
+XX323,,Hawk T1A,312148/167,Red Arrows,Active
+ZA137,PO,Sea King HU5,WA898,Somerton,Active
+ZA620,,Lynx simulator,,,Active
+ZA670,,Chinook HC6A,M7032,27sq,Active
+ZA671,,Chinook HC6A,M7007,18(B)sq,Active
+ZA674,,Chinook HC6A,M7004,27sq,Active
+ZA675,,Chinook HC6A,M7009,27sq,Active
+ZA677,,Chinook HC6A,M7012,28sq,Active
+ZA679,,Chinook HC6A,M7014,28sq,Active
+ZA680,,Chinook HC6A,M7024,28sq,Active
+ZA683,,Chinook HC6A,M7031,28sq,Active
+ZA684,,Chinook HC6A,M7011,1310Flt,Active
+ZA704,,Chinook HC6A,M7006,Fleetlands,Active
+ZA705,,Chinook HC6A,M7030,28sq,Active
+ZA708,,Chinook HC6A,M7018,7sq,Active
+ZA710,,Chinook HC6A,M7003,QinetiQ,Active
+ZA711,,Chinook HC6A,M7026,7sq,Active
+ZA712,,Chinook HC6A,M7016,7sq,Active
+ZA720,,Chinook HC6A,M7020,Fleetlands,Active
+ZA947,UK,Dakota III,10200,BoBMF,Active
+ZB118,,Hawk Mk165,1518/ST018,BAE Warton,Active
+ZB124,,Hawk Mk166,OM002,to Oman,Active
+ZB125,,Hawk Mk166,OM003,to Oman,Active
+ZB131,,Hawk Mk167,QA001,11sq,Active
+ZB132,,Hawk Mk167,QA002,11sq,Active
+ZB133,,Hawk Mk167,QA003,11sq,Active
+ZB134,,Hawk Mk167,QA004,11sq,Active
+ZB135,,Hawk Mk167,QA005,11sq,Active
+ZB136,,Hawk Mk167,QA006,11sq,Active
+ZB137,,Hawk Mk167,QA007,11sq,Active
+ZB138,,Hawk Mk167,QA008,11sq,Active
+ZB139,,Hawk Mk167,QA009,11sq,Active
+ZD574,,Chinook HC6A,M7021,18(B)sq,Active
+ZD575,,Chinook HC6A,M7023,28sq,Active
+ZD674,,Chukar D2,,,Active
+ZD675,,Chukar D2,,,Active
+ZD676,,Chukar D2,,,Active
+ZD677,,Chukar D2,,Portland,Active
+ZD678,,Chukar D2,,,Active
+ZD679,,Chukar D2,,,Active
+ZD680,,Chukar D2,,,Active
+ZD681,,Chukar D2,,,Active
+ZD682,,Chukar D2,,,Active
+ZD683,,Chukar D2,,,Active
+ZD684,,Chukar D2,,,Active
+ZD685,,Chukar D2,,,Active
+ZD686,,Chukar D2,,,Active
+ZD687,,Chukar D2,,,Active
+ZD688,,Chukar D2,,,Active
+ZD980,,Chinook HC6A,M7027,18(B)sq,Active
+ZD981,,Chinook HC6A,M7029,28sq,Active
+ZD982,,Chinook HC6A,M7019,18(B)sq,Active
+ZD983,,Chinook HC6A,M7022,28sq,Active
+ZD984,,Chinook HC6A,M7015,18(B)sq,Active
+ZE456,,Chukar D2,,Portland,Active
+ZE489,,Chukar D2,,Portland,Active
+ZE495,VA,Viking TX1,33879-K-117,CGS/644VGS,Active
+ZE496,VB,Viking TX1,33880-K-118,622VGS,Active
+ZE499,VD,Viking TX1,33883-K-121,611VGS,Active
+ZE502,VF,Viking TX1,33886-K-124,Syerston,Active
+ZE521,VK,Viking TX1,33890-K-128,612VGS,Active
+ZE522,VL,Viking TX1,33891-K-129,645VGS,Active
+ZE526,VN,Viking TX1,33895-K-133,Syerston,Active
+ZE527,VP,Viking TX1,33896-K-134,CGS/644VGS,Active
+ZE529,VR,Viking TX1,33898-K-136,612VGS,Active
+ZE532,VU,Viking TX1,33906-K-141,645VGS,Active
+ZE551,VY,Viking TX1,33910-K-145,CGS/644VGS,Active
+ZE553,WA,Viking TX1,33912-K-147,CGS/644VGS,Active
+ZE555,WC,Viking TX1,33914-K-149,626VGS,Active
+ZE557,WE,Viking TX1,33916-K-151,661VGS,Active
+ZE559,WG,Viking TX1,33923-K-158,645VGS,Active
+ZE560,WH,Viking TX1,33924-K-159,615VGS,Active
+ZE563,WL,Viking TX1,33927-K-162,Syerston,Active
+ZE564,WN,Viking TX1,33928-K-163,612VGS,Active
+ZE585,WQ,Viking TX1,33932-K-165,CGS/644VGS,Active
+ZE586,WR,Viking TX1,33933-K-166,622VGS,Active
+ZE590,WT,Viking TX1,33937-K-170,622VGS,Active
+ZE594,WX,Viking TX1,33942-K-175,626VGS,Active
+ZE595,WY,Viking TX1,33943-K-176,CGS/644VGS,Active
+ZE600,WZ,Viking TX1,33944-K-177,644VGS/CGS,Active
+ZE601,XA,Viking TX1,33945-K-178,626VGS,Active
+ZE602,XB,Viking TX1,33946-K-179,615VGS,Active
+ZE605,XE,Viking TX1,33949-K-182,632VGS,Active
+ZE608,XH,Viking TX1,33957-K-190,615VGS,Active
+ZE609,XJ,Viking TX1,33958-K-191,622VGS,Active
+ZE613,XM,Viking TX1,33962-K-195,Syerston,Active
+ZE614,XN,Viking TX1,33969-K-202,611VGS,Active
+ZE625,XP,Viking TX1,33970-K-203,612VGS,Active
+ZE626,XQ,Viking TX1,33971-K-204,661VGS,Active
+ZE628,XS,Viking TX1,33975-K-208,645VGS,Active
+ZE629,XT,Viking TX1,33976-K-209,622VGS,Active
+ZE630,XU,Viking TX1,33977-K-210,632VGS,Active
+ZE632,XW,Viking TX1,33979-K-212,645VGS,Active
+ZE633,XX,Viking TX1,33980-K-213,632VGS,Active
+ZE636,XZ,Viking TX1,33996-K-229,612VGS,Active
+ZE637,YA,Viking TX1,33997-K-230,615VGS,Active
+ZE650,YB,Viking TX1,33998-K-231,CGS/644VGS,Active
+ZE651,YC,Viking TX1,33999-K-232,CGS/644VGS,Active
+ZE653,YE,Viking TX1,34003-K-236,CGS/644VGS,Active
+ZE658,YK,Viking TX1,34011-K-244,632VGS,Active
+ZE678,YN,Viking TX1,34025-K-257,612VGS,Active
+ZE680,YQ,Viking TX1,34027-K-259,CGS/644VGS,Active
+ZE682,YS,Viking TX1,34029-K-261,CGS/644VGS,Active
+ZE683,YT,Viking TX1,34030-K-262,661VGS,Active
+ZE685,YV,Viking TX1,34034-K-266,611VGS,Active
+ZG338,,Chukar D2,,Portland,Active
+ZG342,,Chukar D2,,Portland,Active
+ZG343,,Chukar D2,,Portland,Active
+ZG344,,Chukar D2,,Portland,Active
+ZG348,,Chukar D2,,Portland,Active
+ZG349,,Chukar D2,,Portland,Active
+ZG364,,Chukar D2,,Portland,Active
+ZG365,,Chukar D2,,Portland,Active
+ZG367,,Chukar D2,,Portland,Active
+ZG644,,Chukar D2,,Portland,Active
+ZG650,,Chukar D2,,Portland,Active
+ZG676,,Chukar D2,,Portland,Active
+ZG679,,Chukar D2,,Portland,Active
+ZG680,,Chukar D2,,Portland,Active
+ZG681,,Chukar D2,,Portland,Active
+ZG682,,Chukar D2,,Portland,Active
+ZG683,,Chukar D2,,Portland,Active
+ZG684,,Chukar D2,,Portland,Active
+ZG693,,Chukar D2,,Portland,Active
+ZG698,,Chukar D2,,Portland,Active
+ZG700,,Chukar D2,,Portland,Active
+ZH768,,Chukar D2,,Portland,Active
+ZH770,,Chukar D2,,Portland,Active
+ZH773,,Chukar D2,,Portland,Active
+ZH775,,Chinook HC6A,M4451,27sq,Active
+ZH776,,Chinook HC6A,M4452,18(B)sq,Active
+ZH777,,Chinook HC6A,M4453,27sq,Active
+ZH824,,Merlin HM2,50021/RN04/MCSP23,824NAS,Active
+ZH826,,Merlin HM2,50029/RN06/MCSP01,824NAS,Active
+ZH827,,Merlin HM2,50037/RN07/MCSP20,820NAS,Active
+ZH828,,Merlin HM2,50040/RN08/MCSP15,820NAS,Active
+ZH829,,Merlin HM2,50043/RN09/MCSP04,824NAS,Active
+ZH831,,Merlin HM2,50053/RN11/MCSP02,820NAS,Active
+ZH832,,Merlin HM2,50057/RN12/MCSP08,814NAS,Active
+ZH833,,Merlin HM2,50061/RN13/MCSP13,820NAS,Active
+ZH834,,Merlin HM2,50065/RN14/MCSP07,820NAS,Active
+ZH835,,Merlin HM2,50067/RN15/MCSP28,820NAS,Active
+ZH836,,Merlin HM2,50072/RN16/MCSP18,820NAS,Active
+ZH837,,Merlin HM2,50074/RN17/MCSP11,814NAS,Active
+ZH839,,Merlin HM2,50081/RN19/MCSP25,820NAS,Active
+ZH840,,Merlin HM2,50085/RN20/MCSP19,814NAS,Active
+ZH841,,Merlin HM2,50087/RN21/MCSP21,820NAS,Active
+ZH842,,Merlin HM2,50091/RN22/MCSP10,814NAS,Active
+ZH843,,Merlin HM2,50093/RN23/MCSP03,Culdrose,Active
+ZH845,,Merlin HM2,50105/RN25/MCSP12,814NAS,Active
+ZH846,,Merlin HM2,50109/RN26/MCSP24,820NAS,Active
+ZH847,(2)66,Merlin HM2,50111/RN27/MSCP29,814NAS,Active
+ZH850,,Merlin HM2,50125/RN30/MCSP09,814NAS,Active
+ZH851,,Merlin HM2,50127/RN31/MCSP22,Culdrose,Active
+ZH853,,Merlin HM2,50135/RN33/MCSP06,814NAS,Active
+ZH854,,Merlin HM2,50139/RN34/MCSP26,814NAS,Active
+ZH856,,Merlin HM2,50147/RN36/MCSP16,824NAS,Active
+ZH857,,Merlin HM2,50151/RN37/MCSP17,820NAS,Active
+ZH860,,Merlin HM2,50164/RN40/MCSP27,820NAS,Active
+ZH861,,Merlin HM2,50168/RN41/MCSP30,814NAS,Active
+ZH862,,Merlin HM2,50171/RN42/MCSP05,824NAS,Active
+ZH864,,Merlin HM2,50179/RN44/MCSP14,824NAS,Active
+ZH894,,Chinook HC6A,M4457,18(B)sq,Active
+ZH896,,Chinook HC6A,M4459,7sq,Active
+ZH897,,Chinook HC5,M4476,18(B)sq,Active
+ZH898,,Chinook HC5,M4477,28sq,Active
+ZH899,,Chinook HC5,M4478,27sq,Active
+ZH900,,Chinook HC5,M4479,27sq,Active
+ZH901,,Chinook HC5,M4480,28sq,Active
+ZH902,,Chinook HC5,M4481,18(B)sq,Active
+ZH903,,Chinook HC5,M4482,27sq,Active
+ZH904,,Chinook HC5,M4483,27sq,Active
+ZJ118,B,Merlin HC4,50049/RAF02,845NAS,Active
+ZJ119,C,Merlin HC4,50075/RAF03,845NAS,Active
+ZJ120,D,Merlin HC4,50083/RAF04,845NAS,Active
+ZJ121,E,Merlin HC4,50099/RAF05,845NAS,Active
+ZJ122,F,Merlin HC4,50113/RAF06,Leonardo,Active
+ZJ123,G,Merlin HC4,50129/RAF07,846NAS,Active
+ZJ124,H,Merlin HC4,50133/RAF08,845NAS,Active
+ZJ125,J,Merlin HC4,50137/RAF09,845NAS,Active
+ZJ126,K,Merlin HC4,50141/RAF10,845NAS,Active
+ZJ127,L,Merlin HC4,50149/RAF11,845NAS,Active
+ZJ128,M,Merlin HC4,50153/RAF12,845NAS,Active
+ZJ129,N,Merlin HC4,50167/RAF13,845NAS,Active
+ZJ130,O,Merlin HC4,50169/RAF14,846NAS,Active
+ZJ132,Q,Merlin HC3i,50177/RAF16,846NAS,Active
+ZJ134,S,Merlin HC4,50183/RAF18,846NAS,Active
+ZJ136,U,Merlin HC4,50191/RAF20,845NAS,Active
+ZJ137,W,Merlin HC4,50195/RAF21,845NAS,Active
+ZJ157,,C-130J simulator,,,Active
+ZJ158,,C-130J simulator,,,Active
+ZJ159,,C-130J simulator,,,Active
+ZJ160,,C-130J simulator,,,Active
+ZJ161,,C-130J simulator,,,Active
+ZJ481,,Chukar D2,,Portland,Active
+ZJ571,,C-130J Simulator,,,Active
+ZJ572,,C-130J Simulator,,,Active
+ZJ573,,C-130J Simulator,,,Active
+ZJ574,,C-130J Simulator,,,Active
+ZJ657,,Meteor Mirach 100-5,AC075,792NAS,Active
+ZJ659,,Meteor Mirach 100-5,AC077,792NAS,Active
+ZJ661,,Meteor Mirach 100-5,,792NAS,Active
+ZJ662,,Meteor Mirach 100-5,AD134,792NAS,Active
+ZJ667,,Intora Firebird,,,Active
+ZJ668,,Intora Firebird,,,Active
+ZJ699,,Typhoon IPA1,001/PT001/IPA1,BAE Warton,Active
+ZJ700,,Typhoon IPA5,034/PS002/IPA5,BAE Warton,Active
+ZJ721,,Meteor Mirach 100-5,AD135,792NAS,Active
+ZJ722,,Meteor Mirach 100-5,AD136,792NAS,Active
+ZJ723,,Meteor Mirach 100-5,AD137,729NAS,Active
+ZJ724,,Meteor Mirach 100-5,AC080,729NAS,Active
+ZJ725,,Meteor Mirach 100-5,AD138,,Active
+ZJ726,,Meteor Mirach 100-5,AD139,,Active
+ZJ727,,Meteor Mirach 100-5,AD140,,Active
+ZJ728,,Meteor Mirach 100-5,AE156,,Active
+ZJ729,,Meteor Mirach 100-5,AE157,,Active
+ZJ730,,Meteor Mirach 100-5,AE158,,Active
+ZJ731,,Meteor Mirach 100-5,AE159,,Active
+ZJ732,,Meteor Mirach 100-5,AE160,,Active
+ZJ733,,Meteor Mirach 100-5,AE161,,Active
+ZJ734,,Meteor Mirach 100-5,AE162,,Active
+ZJ736,,Meteor Mirach 100-5,,,Active
+ZJ737,,Meteor Mirach 100-5,,,Active
+ZJ738,,Meteor Mirach 100-5,,,Active
+ZJ739,,Meteor Mirach 100-5,,,Active
+ZJ740,,Meteor Mirach 100-5,,,Active
+ZJ741,,Meteor Mirach 100-5,,,Active
+ZJ742,,Meteor Mirach 100-5,,QinetiQ,Active
+ZJ743,,Meteor Mirach 100-5,,,Active
+ZJ745,,Meteor Mirach 100-5,,,Active
+ZJ746,,Meteor Mirach 100-5,,,Active
+ZJ748,,Meteor Mirach 100-5,,QinetiQ,Active
+ZJ749,,Meteor Mirach 100-5,,QinetiQ,Active
+ZJ750,,Meteor Mirach 100-5,,,Active
+ZJ751,,Meteor Mirach 100-5,,,Active
+ZJ752,,Meteor Mirach 100-5,,,Active
+ZJ753,,Meteor Mirach 100-5,,,Active
+ZJ754,,Meteor Mirach 100-5,,,Active
+ZJ755,,Meteor Mirach 100-5,,,Active
+ZJ756,,Meteor Mirach 100-5,,,Active
+ZJ757,,Meteor Mirach 100-5,,,Active
+ZJ758,,Meteor Mirach 100-5,,,Active
+ZJ759,,Meteor Mirach 100-5,,,Active
+ZJ760,,Meteor Mirach 100-5,,,Active
+ZJ762,,Meteor Mirach 100-5,,,Active
+ZJ763,,Meteor Mirach 100-5,,,Active
+ZJ764,,Meteor Mirach 100-5,,,Active
+ZJ765,,Meteor Mirach 100-5,AG229,,Active
+ZJ766,,Meteor Mirach 100-5,,,Active
+ZJ767,,Meteor Mirach 100-5,,,Active
+ZJ768,,Meteor Mirach 100-5,,,Active
+ZJ769,,Meteor Mirach 100-5,,,Active
+ZJ770,,Meteor Mirach 100-5,,,Active
+ZJ771,,Meteor Mirach 100-5,,,Active
+ZJ772,,Meteor Mirach 100-5,,,Active
+ZJ773,,Meteor Mirach 100-5,,,Active
+ZJ774,,Meteor Mirach 100-5,,,Active
+ZJ775,,Meteor Mirach 100-5,AE169,,Active
+ZJ776,,Meteor Mirach 100-5,AE170,,Active
+ZJ777,,Meteor Mirach 100-5,AG241,,Active
+ZJ778,,Meteor Mirach 100-5,AG242,,Active
+ZJ779,,Meteor Mirach 100-5,AG239,,Active
+ZJ780,,AS365N3,6808,658sq,Active
+ZJ782,,AS365N3,6818,658sq,Active
+ZJ783,,AS365N3,6822,658sq,Active
+ZJ784,,Meteor Mirach 100-5,AG240,,Active
+ZJ785,,AS365N3,6823,658sq,Active
+ZJ786,,AS365N3+,6870,658sq,Active
+ZJ787,,AS365N3,6824,658sq,Active
+ZJ914,(914),Typhoon FGR4,051/BS005,Warton,Active
+ZJ915,F,Typhoon FGR4,053/BS006,1435Flt,Active
+ZJ916,916,Typhoon FGR4,057/BS007,29sq,Active
+ZJ920,920,Typhoon FGR4,067/BS011,1435Flt,Active
+ZJ928,928,Typhoon FGR4,094/BS019,1435Flt,Active
+ZJ937,937,Typhoon FGR4,121/BS028,BAE Warton,Active
+ZJ938,,Typhoon IPA6,131/BS031/IPA6,BAE Warton,Active
+ZJ942,942,Typhoon FGR4,137/BS035,1435Flt,Active
+ZJ946,WS-B,Typhoon FGR4,155/BS039,II(AC)sq,Active
+ZJ947,947,Typhoon FGR4,159/BS040,3(F)sq,Active
+ZJ948,948,Typhoon FGR4,160/BS041,29sq,Active
+ZJ949,949,Typhoon FGR4,175/BS045,3(F)sq,Active
+ZJ950,950,Typhoon FGR4,182/BS047,29sq,Active
+ZJ951,,Hawk Mk100,1236/DT036/ZD001,BAE Warton,Active
+ZJ989,,EADS Eagle O,2109,BAE Warton,Active
+ZJ990,AA,Merlin HC4A,50089/DEN01,846NAS,Active
+ZJ992,AB,Merlin HC4A,50106/DEN03,Leonardo,Active
+ZJ994,AC,Merlin HC4A,50121/DEN05,Leonardo,Active
+ZJ995,AD,Merlin HC4A,50123/DEN06,Leonardo,Active
+ZJ998,AE,Merlin HC4A,50148/DEN09,846NAS,Active
+ZK001,AF,Merlin HC4A,50160/DEN11,846NAS,Active
+ZK009-01,,Buster 1-1000,5041,,Active
+ZK009-02,,Buster 1-1000,5042,,Active
+ZK009-04,,Buster 1-1000,5044,,Active
+ZK010,FN,Hawk T2,1239/RT001,XXV(F)sq,Active
+ZK011,B,Hawk T2,1240/RT002,IVsq,Active
+ZK012,C,Hawk T2,1241/RT003,IVsq,Active
+ZK013,D,Hawk T2,1242/RT004,IVsq,Active
+ZK014,E,Hawk T2,1243/RT005,IVsq,Active
+ZK015,F,Hawk T2,1244/RT006,IVsq,Active
+ZK016,G,Hawk T2,1245/RT007,IVsq,Active
+ZK017,H,Hawk T2,1246/RT008,IVsq,Active
+ZK018,I,Hawk T2,1247/RT009,IVsq,Active
+ZK019,J,Hawk T2,1248/RT010,IVsq,Active
+ZK020,K,Hawk T2,1249/RT011,IVsq,Active
+ZK021,L,Hawk T2,1250/RT012,IVsq,Active
+ZK022,M,Hawk T2,1251/RT013,IVsq,Active
+ZK023,N,Hawk T2,1252/RT014,IVsq,Active
+ZK024,O,Hawk T2,1253/RT015,IVsq,Active
+ZK025,FA,Hawk T2,1254/RT016,XXV(F)sq,Active
+ZK026,FB,Hawk T2,1255/RT017,XXV(F)sq,Active
+ZK027,FC,Hawk T2,1256/RT018,XXV(F)sq,Active
+ZK028,FD,Hawk T2,1257/RT019,XXV(F)sq,Active
+ZK029,FE,Hawk T2,1258/RT020,XXV(F)sq,Active
+ZK030,FF,Hawk T2,1259/RT021,XXV(F)sq,Active
+ZK031,FG,Hawk T2,1260/RT022,XXV(F)sq,Active
+ZK033,FI,Hawk T2,1262/RT024,XXV(F)sq,Active
+ZK034,FJ,Hawk T2,1263/RT025,XXV(F)sq,Active
+ZK035,FK,Hawk T2,1264/RT026,XXV(F)sq,Active
+ZK036,FL,Hawk T2,1265/RT027,XXV(F)sq,Active
+ZK037,FM,Hawk T2,1266/RT028,XXV(F)sq,Active
+ZK102,,Desert Hawk,,,Active
+ZK103,,Scorpio Mk6,,,Active
+ZK104,,Quadrocopter,,,Active
+ZK105-01,,SanEagle,AV47,,Active
+ZK105-04,,SanEagle,AV50,,Active
+ZK105-05,,SanEagle,AV83,,Active
+ZK105-06,,SanEagle,AV136,,Active
+ZK114,,M2370 UAV,,,Active
+ZK201,,Banshee,2400,,Active
+ZK202,,Banshee,2401,,Active
+ZK203,,Banshee,2633,,Active
+ZK204,,Banshee,2398,,Active
+ZK210,,Mantis,,BAE Warton,Active
+ZK300,300,Typhoon FGR4,200/BS052,II(AC)sq,Active
+ZK301,301,Typhoon FGR4,202/BS053,12(B)sq,Active
+ZK302,302,Typhoon FGR4,206/BS054,29sq,Active
+ZK303,AX,Typhoon T3,207/BT017/ISPA5,BAE Warton,Active
+ZK304,304,Typhoon FGR4,212/BS055,29sq,Active
+ZK305,305,Typhoon FGR4,215/BS056,12(B)sq,Active
+ZK306,306,Typhoon FGR4,218/BS057,Coningsby,Active
+ZK307,307,Typhoon FGR4,221/BS058,Lossiemouth,Active
+ZK308,308,Typhoon FGR4,225/BS059,Coningsby,Active
+ZK309,309,Typhoon FGR4,228/BS060,29sq,Active
+ZK310,310,Typhoon FGR4,258/BS063,1(F)sq,Active
+ZK311,311,Typhoon FGR4,260/BS064,3(F)sq,Active
+ZK312,312,Typhoon FGR4,274/BS067,6sq,Active
+ZK313,313,Typhoon FGR4,284/BS070,Lossiemouth,Active
+ZK314,314,Typhoon FGR4,285/BS071,Coningsby,Active
+ZK315,315,Typhoon FGR4,293/BS074,41(TES)sq,Active
+ZK317,317,Typhoon FGR4,307/BS078,29sq,Active
+ZK318,318,Typhoon FGR4,308/BS079,Lossiemouth,Active
+ZK319,319,Typhoon FGR4,311/BS080,IX(B)sq,Active
+ZK320,320,Typhoon FGR4,312/BS081,Lossiemouth,Active
+ZK321,321,Typhoon FGR4,315/BS082,Lossiemouth,Active
+ZK322,322,Typhoon FGR4,319/BS083,1(F)sq,Active
+ZK323,323,Typhoon FGR4,322/BS084,IX(B)sq,Active
+ZK324,324,Typhoon FGR4,324/BS085,6sq,Active
+ZK325,325,Typhoon FGR4,327/BS086,29sq,Active
+ZK326,326,Typhoon FGR4,328/BS087,XI(F)sq,Active
+ZK327,327,Typhoon FGR4,333/BS088,1(F)sq,Active
+ZK328,328,Typhoon FGR4,335/BS089,1(F)sq,Active
+ZK329,329,Typhoon FGR4,342/BS090,IX(B)sq,Active
+ZK330,330,Typhoon FGR4,340/BS091,29sq,Active
+ZK331,331,Typhoon FGR4,343/BS092,12(B)sq,Active
+ZK332,332,Typhoon FGR4,346/BS093,1(F)sq,Active
+ZK333,333,Typhoon FGR4,349/BS094,II(AC)sq,Active
+ZK334,334,Typhoon FGR4,352/BS095,XI(F)sq,Active
+ZK335,335,Typhoon FGR4,356/BS096,XI(F)sq,Active
+ZK336,336,Typhoon FGR4,357/BS097,1(F)sq,Active
+ZK337,337,Typhoon FGR4,359/BS098,Coningsby,Active
+ZK338,338,Typhoon FGR4,364/BS099,II(AC)sq,Active
+ZK339,339,Typhoon FGR4,366/BS100,41(TES)sq,Active
+ZK340,340,Typhoon FGR4,369/BS101,II(AC)sq,Active
+ZK341,341,Typhoon FGR4,375/BS102,II(AC)sq,Active
+ZK342,342,Typhoon FGR4,379/BS103,12(B)sq,Active
+ZK343,343,Typhoon FGR4,380/BS104,XI(F)sq,Active
+ZK344,344,Typhoon FGR4,384/BS105,Coningsby,Active
+ZK345,345,Typhoon FGR4,388/BS106,IX(B)sq,Active
+ZK346,346,Typhoon FGR4,385/BS107,XI(F)sq,Active
+ZK347,347,Typhoon FGR4,390/BS108,XI(F)sq,Active
+ZK348,348,Typhoon FGR4,396/BS109,II(AC)sq,Active
+ZK349,349,Typhoon FGR4,401/BS110,3(F)sq,Active
+ZK350,350,Typhoon FGR4,402/BS111,1(F)sq,Active
+ZK351,351,Typhoon FGR4,405/BS112,II(AC)sq,Active
+ZK352,352,Typhoon FGR4,408/BS113,XI(F)sq,Active
+ZK353,353,Typhoon FGR4,411/BS114,XI(F)sq,Active
+ZK354,354,Typhoon FGR4,413/BS115,1(F)sq,Active
+ZK355,,Typhoon FGR4,417/BS116,BAE Warton,Active
+ZK356,,Typhoon FGR4,423/BS117,BAE Warton,Active
+ZK357,357,Typhoon FGR4,426/BS118,Coningsby,Active
+ZK358,358,Typhoon FGR4,429/BS119,29sq,Active
+ZK359,359,Typhoon FGR4,430/BS120,3(F)sq,Active
+ZK360,360,Typhoon FGR4,434/BS121,Coningsby,Active
+ZK361,361,Typhoon FGR4,438/BS122,29sq,Active
+ZK362,362,Typhoon FGR4,442/BS123,3(F)sq,Active
+ZK363,363,Typhoon FGR4,443/BS124,29sq,Active
+ZK364,364,Typhoon FGR4,449/BS125,3(F)sq,Active
+ZK365,365,Typhoon FGR4,452/BS126,41(TES)sq,Active
+ZK366,366,Typhoon FGR4,457/BS127,1(F)sq,Active
+ZK367,367,Typhoon FGR4,460/BS128,41(TES)sq,Active
+ZK368,368,Typhoon FGR4,465/BS129,Coningsby,Active
+ZK369,369,Typhoon FGR4,469/BS130,IX(B)sq,Active
+ZK370,370,Typhoon FGR4,471/BS131,IX(B)sq,Active
+ZK371,371,Typhoon FGR4,476/BS132,IX(B)sq,Active
+ZK372,372,Typhoon FGR4,480/BS133,Coningsby,Active
+ZK373,373,Typhoon FGR4,.../BS134,1(F)sq,Active
+ZK374,374,Typhoon FGR4,444/BS135,1(F)sq,Active
+ZK375,375,Typhoon FGR4,.../BS136,41(TES)sq,Active
+ZK376,376,Typhoon FGR4,.../BS137,IX(B)sq,Active
+ZK377,377,Typhoon FGR4,.../BS138,II(AC)sq,Active
+ZK378,378,Typhoon FGR4,.../BS139,II(AC)sq,Active
+ZK379,379,Typhoon T3,249/BT024,41(TES)sq,Active
+ZK380,380,Typhoon T3,270/BT025,29sq,Active
+ZK381,381,Typhoon T3,316/BT026,12(B)sq,Active
+ZK382,382,Typhoon T3,372/BT027,41(TES)sq,Active
+ZK383,383,Typhoon T3,393/BT028,29sq,Active
+ZK424,424,Typhoon FGR4,.../BS140,XI(F)sq,Active
+ZK425,425,Typhoon FGR4,.../BS141,29sq,Active
+ZK426,426,Typhoon FGR4,.../BS142,3(F)sq,Active
+ZK427,427,Typhoon FGR4,.../BS143,29sq,Active
+ZK428,428,Typhoon FGR4,.../BS144,Coningsby,Active
+ZK429,429,Typhoon FGR4,.../BS145,3(F)sq,Active
+ZK430,430,Typhoon FGR4,.../BS146,12(B)sq,Active
+ZK431,431,Typhoon FGR4,.../BS147,XI(F)sq,Active
+ZK432,432,Typhoon FGR4,.../BS148,1(F)sq,Active
+ZK433,433,Typhoon FGR4,.../BS149,29sq,Active
+ZK434,434,Typhoon FGR4,.../BS150,II(AC)sq,Active
+ZK435,435,Typhoon FGR4,.../BS151,3(F)sq,Active
+ZK436,436,Typhoon FGR4,.../BS152,3(F)sq,Active
+ZK437,437,Typhoon FGR4,.../BS153,II(AC)sq,Active
+ZK438,438,Typhoon FGR4,.../BS154,12(B)sq,Active
+ZK439,439,Typhoon FGR4,.../BS155,3(F)sq,Active
+ZK550,,Chinook HC6,M7701,7sq,Active
+ZK551,,Chinook HC6,M7702,7sq,Active
+ZK552,,Chinook HC6,M7703,7sq,Active
+ZK553,,Chinook HC6,M7704,28sq,Active
+ZK554,,Chinook HC6,M7705,Fleetlands,Active
+ZK555,,Chinook HC6,M7706,7sq,Active
+ZK556,,Chinook HC6,M7707,7sq,Active
+ZK557,,Chinook HC6,M7708,Fleetlands,Active
+ZK558,,Chinook HC6,M7709,Fleetlands,Active
+ZK559,,Chinook HC6,M7710,7sq,Active
+ZK560,,Chinook HC6,M7711,7sq,Active
+ZK561,,Chinook HC6,M7712,7sq,Active
+ZK562,,Chinook HC6,M7713,7sq,Active
+ZK563,,Chinook HC6,M7714,7sq,Active
+ZM135,001,F-35B,BK-01,17sq,Active
+ZM136,002,F-35B,BK-02,17sq,Active
+ZM137,003,F-35B,BK-03,NAS Jacksonville,Active
+ZM138,004,F-35B,BK-04,17sq,Active
+ZM139,005,F-35B,BK-05,Marham Wing,Active
+ZM140,006,F-35B,BK-06,Marham Wing,Active
+ZM141,007,F-35B,BK-07,Marham Wing,Active
+ZM142,008,F-35B,BK-08,NAS Jacksonville,Active
+ZM143,009,F-35B,BK-09,Marham Wing,Active
+ZM144,010,F-35B,BK-10,Marham Wing,Active
+ZM145,011,F-35B,BK-11,Marham Wing,Active
+ZM146,012,F-35B,BK-12,NAS Jacksonville,Active
+ZM147,013,F-35B,BK-13,Marham Wing,Active
+ZM148,014,F-35B,BK-14,Marham Wing,Active
+ZM149,015,F-35B,BK-15,Marham Wing,Active
+ZM150,016,F-35B,BK-16,Marham Wing,Active
+ZM151,017,F-35B,BK-17,Marham Wing,Active
+ZM153,019,F-35B,BK-19,Marham Wing,Active
+ZM154,020,F-35B,BK-20,Marham Wing,Active
+ZM155,021,F-35B,BK-21,Marham Wing,Active
+ZM156,022,F-35B,BK-22,Marham Wing,Active
+ZM157,023,F-35B,BK-23,Marham Wing,Active
+ZM158,024,F-35B,BK-24,Marham Wing,Active
+ZM159,025,F-35B,BK-25,Marham Wing,Active
+ZM160,026,F-35B,BK-26,Marham Wing,Active
+ZM161,027,F-35B,BK-27,Marham Wing,Active
+ZM162,028,F-35B,BK-28,Marham Wing,Active
+ZM163,029,F-35B,BK-29,Marham Wing,Active
+ZM164,030,F-35B,BK-30,Marham Wing,Active
+ZM165,031,F-35B,BK-31,17sq,Active
+ZM166,032,F-35B,BK-32,Marham Wing,Active
+ZM167,033,F-35B,BK-33,Marham Wing,Active
+ZM168,034,F-35B,BK-34,NAS Jacksonville,Active
+ZM169,035,F-35B,BK-35,NAS Jacksonville,Active
+ZM170,036,F-35B,BK-36,17sq,Active
+ZM171,037,F-35B,BK-37,Marham Wing,Active
+ZM172,038,F-35B,BK-38,Marham Wing,Active
+ZM173,039,F-35B,BK-39,Marham Wing,Active
+ZM174,040,F-35B,BK-40,Marham Wing,Active
+ZM175,041,F-35B,BK-41,Marham Wing,Active
+ZM176,042,F-35B,BK-42,17sq,Active
+ZM177,043,F-35B,BK-43,Marham Wing,Active
+ZM178,044,F-35B,BK-44,Marham Wing,Active
+ZM179,045,F-35B,BK-45,Marham Wing,Active
+ZM180,046,F-35B,BK-46,Marham Wing,Active
+ZM181,047,F-35B,BK-47,Marham Wing,Active
+ZM182,048,F-35B,BK-48,Marham Wing,Active
+ZM300,00,Prefect T1,11099,3FTS,Active
+ZM301,01,Prefect T1,11100,3FTS,Active
+ZM302,02,Prefect T1,11111,3FTS,Active
+ZM303,03,Prefect T1,11112,3FTS,Active
+ZM304,04,Prefect T1,11113,3FTS,Active
+ZM305,05,Prefect T1,11117,3FTS,Active
+ZM306,06,Prefect T1,11118,3FTS,Active
+ZM307,07,Prefect T1,11122,3FTS,Active
+ZM308,08,Prefect T1,11123,3FTS,Active
+ZM309,09,Prefect T1,11127,3FTS,Active
+ZM310,10,Prefect T1,11128,3FTS,Active
+ZM311,11,Prefect T1,11129,3FTS,Active
+ZM312,12,Prefect T1,11130,3FTS,Active
+ZM313,13,Prefect T1,11131,3FTS,Active
+ZM314,14,Prefect T1,11132,3FTS,Active
+ZM315,15,Prefect T1,11137,3FTS,Active
+ZM316,16,Prefect T1,11138,3FTS,Active
+ZM317,17,Prefect T1,11142,3FTS,Active
+ZM318,18,Prefect T1,11143,3FTS,Active
+ZM319,19,Prefect T1,11144,3FTS,Active
+ZM320,20,Prefect T1,11145,3FTS,Active
+ZM321,21,Prefect T1,11146,3FTS,Active
+ZM322,22,Prefect T1,11147,3FTS,Active
+ZM323,323,Texan T1,PM-110,72sq,Active
+ZM324,324,Texan T1,PM-111,72sq,Active
+ZM325,325,Texan T1,PM-115,72sq,Active
+ZM326,326,Texan T1,PM-116,72sq,Active
+ZM327,327,Texan T1,PM-125,72sq,Active
+ZM328,328,Texan T1,PM-126,72sq,Active
+ZM329,329,Texan T1,PM-127,72sq,Active
+ZM330,330,Texan T1,PM-128,72sq,Active
+ZM331,331,Texan T1,PM-129,72sq,Active
+ZM332,332,Texan T1,PM-130,72sq,Active
+ZM333,,Phenom T1,50000375,45sq,Active
+ZM334,,Phenom T1,50000377,45sq,Active
+ZM335,,Phenom T1,50000380,45sq,Active
+ZM336,,Phenom T1,50000384,45sq,Active
+ZM337,,Phenom T1,50000386,45sq,Active
+ZM340,340,Texan T1,PM-137,72sq,Active
+ZM341,341,Texan T1,PM-138,72sq,Active
+ZM342,342,Texan T1,PM-139,72sq,Active
+ZM343,343,Texan T1,PM-144,72sq,Active
+ZM400,,Atlas C1,015,24/30/70sq,Active
+ZM401,,Atlas C1,016,24/30/70sq,Active
+ZM402,,Atlas C1,017,24/30/70sq,Active
+ZM403,,Atlas C1,020,24/30/70sq,Active
+ZM404,,Atlas C1,021,24/30/70sq,Active
+ZM405,,Atlas C1,024,24/30/70sq,Active
+ZM406,,Atlas C1,025,Airbus Military,Active
+ZM407,,Atlas C1,026,24/30/70sq,Active
+ZM408,,Atlas C1,027,24/30/70sq,Active
+ZM409,,Atlas C1,034,24/30/70sq,Active
+ZM410,,Atlas C1,038,24/30/70sq,Active
+ZM411,,Atlas C1,039,Airbus Military,Active
+ZM412,,Atlas C1,042,Airbus Military,Active
+ZM413,,Atlas C1,045,24/30/70sq,Active
+ZM414,,Atlas C1,047,24/30/70sq,Active
+ZM415,,Atlas C1,052,24/30/70sq,Active
+ZM416,,Atlas C1,058,24/30/70sq,Active
+ZM417,,Atlas C1,060,24/30/70sq,Active
+ZM418,,Atlas C1,072,1312Flt,Active
+ZM419,,Atlas C1,077,24/30/70sq,Active
+ZM420,,Atlas C1,056,24/30/70sq,Active
+ZM421,,Atlas C1,129,24/30/70sq,Active
+ZM496,96,Jupiter HT1,20309,1FTS,Active
+ZM497,97,Jupiter HT1,20310,202sq,Active
+ZM498,98,Jupiter HT1,20312,202sq,Active
+ZM499,99,Jupiter HT1,20313,202sq,Active
+ZM500,00,Jupiter HT1,20111,1FTS,Active
+ZM501,01,Jupiter HT1,20123,1FTS,Active
+ZM502,02,Jupiter HT1,20133,1FTS,Active
+ZM504,04,Juno HT1,2001,1FTS,Active
+ZM505,05,Juno HT1,2002,1FTS,Active
+ZM506,06,Juno HT1,2003,1FTS,Active
+ZM507,07,Juno HT1,2004,1FTS,Active
+ZM508,08,Juno HT1,2005,1FTS,Active
+ZM509,09,Juno HT1,2007,1FTS,Active
+ZM510,10,Juno HT1,2009,1FTS,Active
+ZM511,11,Juno HT1,2010,1FTS,Active
+ZM512,12,Juno HT1,2011,1FTS,Active
+ZM513,13,Juno HT1,2012,1FTS,Active
+ZM514,14,Juno HT1,2014,1FTS,Active
+ZM515,15,Juno HT1,2015,1FTS,Active
+ZM516,16,Juno HT1,2016,1FTS,Active
+ZM517,17,Juno HT1,2018,1FTS,Active
+ZM518,18,Juno HT1,2021,1FTS,Active
+ZM519,19,Juno HT1,2023,1FTS,Active
+ZM520,20,Juno HT1,2024,1FTS,Active
+ZM521,21,Juno HT1,2025,1FTS,Active
+ZM522,22,Juno HT1,2026,1FTS,Active
+ZM523,23,Juno HT1,2027,1FTS,Active
+ZM524,24,Juno HT1,2028,1FTS,Active
+ZM525,25,Juno HT1,2031,1FTS,Active
+ZM526,26,Juno HT1,2032,1FTS,Active
+ZM527,27,Juno HT1,2033,1FTS,Active
+ZM528,28,Juno HT1,2034,1FTS,Active
+ZM529,29,Juno HT1,2038,1FTS,Active
+ZM530,30,Juno HT1,2040,1FTS,Active
+ZM531,31,Juno HT1,2042,1FTS,Active
+ZM532,32,Juno HT1,2045,1FTS,Active
+ZM700,,AH-64E,UD001,653/673sq,Active
+ZM701,,AH-64E,UD002,3Regt,Active
+ZM702,,AH-64E,UD003,664sq,Active
+ZM703,,AH-64E,UD004,653/673sq,Active
+ZM704,,AH-64E,UD005,4Regt,Active
+ZM705,,AH-64E,UD006,3Regt,Active
+ZM706,,AH-64E,UD007,3Regt,Active
+ZM707,,AH-64E,UD008,653/673sq,Active
+ZM708,,AH-64E,UD009,3Regt,Active
+ZM709,,AH-64E,UD010,664sq,Active
+ZM710,,AH-64E,UD011,3Regt,Active
+ZM711,,AH-64E,UD012,662sq,Active
+ZM712,,AH-64E,UD013,3Regt,Active
+ZM713,,AH-64E,UD014,653/673sq,Active
+ZM714,,AH-64E,UD015,4Regt,Active
+ZM715,,AH-64E,UD016,653/673sq,Active
+ZM716,,AH-64E,UD017,664sq,Active
+ZM717,,AH-64E,UD018,3Regt,Active
+ZM718,,AH-64E,UD019,653/673sq,Active
+ZM719,,AH-64E,UD020,662sq,Active
+ZM720,,AH-64E,UD021,653/673sq,Active
+ZM721,,AH-64E,UD022,664sq,Active
+ZM722,,AH-64E,UD023,664sq,Active
+ZM723,,AH-64E,UD024,653/673sq,Active
+ZM724,,AH-64E,UD025,653/673sq,Active
+ZM725,,AH-64E,UD026,3Regt,Active
+ZM726,,AH-64E,UD027,653/673sq,Active
+ZM727,,AH-64E,UD028,653/673sq,Active
+ZM728,,AH-64E,UD029,653/673sq,Active
+ZM729,,AH-64E,UD030,3Regt,Active
+ZM730,,AH-64E,UD031,4Regt,Active
+ZM731,,AH-64E,UD032,653/673sq,Active
+ZM732,,AH-64E,UD033,Wattisham,Active
+ZM733,,AH-64E,UD034,Wattisham,Active
+ZM734,,AH-64E,UD035,3Regt,Active
+ZM735,,AH-64E,UD036,4Regt,Active
+ZM736,,AH-64E,UD037,4Regt,Active
+ZM737,,AH-64E,UD038,653/673sq,Active
+ZM738,,AH-64E,UD039,653/673sq,Active
+ZM739,,AH-64E,UD040,653/673sq,Active
+ZM740,,AH-64E,UD041,3Regt,Active
+ZM741,,AH-64E,UD042,4Regt,Active
+ZM742,,AH-64E,UD043,3Regt,Active
+ZM743,,AH-64E,UD044,3Regt,Active
+ZM744,,AH-64E,UD045,3Regt,Active
+ZM745,,AH-64E,UD046,653/673sq,Active
+ZM746,,AH-64E,UD047,653/673sq,Active
+ZM747,,AH-64E,UD048,653/673sq,Active
+ZM748,,AH-64E,UD049,653/673sq,Active
+ZP526,,Schiebel Peregrine,526,700Xsq,Active
+ZP527,,Schiebel Peregrine,527,700Xsq,Active
+ZP801,01,Poseidon MRA1,64175/7532,42/120/201sq,Active
+ZP802,02,Poseidon MRA1,64176/7642,42/120/201sq,Active
+ZP803,03,Poseidon MRA1,65752/8065,42/120/201sq,Active
+ZP804,04,Poseidon MRA1,65753/8103,42/120/201sq,Active
+ZP805,05,Poseidon MRA1,65754/8257,42/120/201sq,Active
+ZP806,06,Poseidon MRA1,66106/8680,42/120/201sq,Active
+ZP807,07,Poseidon MRA1,66107/8719,42/120/201sq,Active
+ZP808,08,Poseidon MRA1,66108/8757,42/120/201sq,Active
+ZP809,09,Poseidon MRA1,66109/8872,42/120/201sq,Active
+ZZ145,,Jupiter HC2,21317,667sq,Active
+ZZ146,,Jupiter HC2,21328,667sq,Active
+ZZ147,,Jupiter HC2,21355,667sq,Active
+ZZ148,,Jupiter HC2,21367,84sq,Active
+ZZ149,,Jupiter HC2,21377,84sq,Active
+ZZ150,,Jupiter HC2,21390,84sq,Active
+ZZ171,,C-17A,50078/F077/UK1,24/99sq,Active
+ZZ172,,C-17A,50079/F078/UK2,24/99sq,Active
+ZZ173,,C-17A,50081/F080/UK3,24/99sq,Active
+ZZ174,,C-17A,50082/F081/UK4,24/99sq,Active
+ZZ175,,C-17A,50186/F185/UK5,24/99sq,Active
+ZZ176,,C-17A,50191/F190/UK6,24/99sq,Active
+ZZ177,,C-17A,50228/F227/UK7,24/99sq,Active
+ZZ178,,C-17A,50246/F245/UK8,24/99sq,Active
+ZZ190,,Hunter F58,41H-697433,Leeming,Active
+ZZ191,,Hunter F58,41H-697425,Leeming,Active
+ZZ250,,Taranis,,BAE Warton,Active
+ZZ251,,Herti,,,Active
+ZZ252,,Herti,,,Active
+ZZ253,,Herti,,,Active
+ZZ254,,Herti,,,Active
+ZZ330,,Voyager KC2,1046,10/101sq,Active
+ZZ331,,Voyager KC2,1248,10/101sq,Active
+ZZ332,,Voyager KC3,1275,10/101sq,Active
+ZZ333,,Voyager KC3,1312,10/101sq,Active
+ZZ334,,Voyager KC3,1033,10/101sq,Active
+ZZ335,,Voyager KC3,1334,10/101sq,Active
+ZZ336,,Voyager KC3,1363,10/101sq,Active
+ZZ337,,Voyager KC3,1390,10/101sq,Active
+ZZ338,,Voyager KC3,1419,10/101sq,Active
+ZZ339,G-VYGJ,A330-243,1439,AirTanker Ltd,Active
+ZZ340,G-VYGK,A330-243,1498,AirTanker Ltd,Active
+ZZ341,G-VYGL,A330-243,1555,AirTanker Ltd,Active
+ZZ342,G-VYGM,A330-243,1601,AirTanker Ltd,Active
+ZZ343,,Voyager KC2,1610,10/101sq,Active
+ZZ375,,Wildcat HMA2,494,825NAS,Active
+ZZ376,,Wildcat HMA2,495,815NAS,Active
+ZZ377,,Wildcat HMA2,496,815NAS,Active
+ZZ378,,Wildcat HMA2,497,815NAS,Active
+ZZ379,,Wildcat HMA2,498,Leonardo,Active
+ZZ380,,Wildcat HMA2,499,Leonardo,Active
+ZZ381,,Wildcat HMA2,500,815NAS,Active
+ZZ382,,Wildcat AH1,501,1Regt,Active
+ZZ383,,Wildcat AH1,502,1Regt,Active
+ZZ384,,Wildcat AH1,503,1Regt,Active
+ZZ385,,Wildcat AH1,504,847NAS,Active
+ZZ386,,Wildcat AH1,505,847NAS,Active
+ZZ387,,Wildcat AH1,506,847NAS,Active
+ZZ388,,Wildcat AH1,486,1Regt,Active
+ZZ389,,Wildcat AH1,487,1Regt,Active
+ZZ390,,Wildcat AH1,488,1Regt,Active
+ZZ391,,Wildcat AH1,489,1Regt,Active
+ZZ392,,Wildcat AH1,490,1Regt,Active
+ZZ393,,Wildcat AH1,491,1Regt,Active
+ZZ394,,Wildcat AH1,492,847NAS,Active
+ZZ395,,Wildcat AH1,493,847NAS,Active
+ZZ396,,Wildcat HMA2,481,815NAS,Active
+ZZ397,,Wildcat HMA2,482,815NAS,Active
+ZZ398,,Wildcat AH1,471,1Regt,Active
+ZZ399,,Wildcat AH1,472,1Regt,Active
+ZZ403,,Wildcat AH1,473,1Regt,Active
+ZZ404,,Wildcat AH1,474,1Regt,Active
+ZZ405,,Wildcat AH1,475,1Regt,Active
+ZZ406,,Wildcat AH1,476,847NAS,Active
+ZZ407,,Wildcat AH1,477,1Regt,Active
+ZZ408,,Wildcat AH1,478,1Regt,Active
+ZZ409,,Wildcat AH1,479,1Regt,Active
+ZZ410,,Wildcat AH1,480,1Regt,Active
+ZZ413,,Wildcat HMA2,483,825NAS,Active
+ZZ414,,Wildcat HMA2,484,815NAS,Active
+ZZ415,,Wildcat HMA2,485,815NAS,Active
+ZZ416,,Shadow R1+,FM-14,14sq,Active
+ZZ418,,Shadow R1+,FM-17,14sq,Active
+ZZ419,,Shadow R1+,FM-18,14sq,Active
+ZZ420,,BTT-3 Banshee,,QinetiQ,Active
+ZZ500,(570),Avenger T1,FL-597,750NAS,Active
+ZZ501,(571),Avenger T1,FL-618,750NAS,Active
+ZZ502,(572),Avenger T1,FL-629,750NAS,Active
+ZZ503,(573),Avenger T1,FL-633,750NAS,Active
+ZZ504,,Shadow R1+,FM-48,14sq,Active
+ZZ507,,Shadow R1+,FM-55,14sq,Active
+ZZ510,,Wildcat AH1,514,1Regt,Active
+ZZ511,,Wildcat AH1,515,1Regt,Active
+ZZ512,,Wildcat AH1,516,1Regt,Active
+ZZ513,,Wildcat HMA2,517,825NAS,Active
+ZZ514,,Wildcat HMA2,519,825NAS,Active
+ZZ515,,Wildcat HMA2,520,825NAS,Active
+ZZ516,,Wildcat HMA2,521,825NAS,Active
+ZZ517,,Wildcat HMA2,522,825NAS,Active
+ZZ518,,Wildcat HMA2,523,825NAS,Active
+ZZ519,,Wildcat HMA2,525,815NAS,Active
+ZZ520,,Wildcat AH1,527,1Regt,Active
+ZZ521,,Wildcat AH1,528,1Regt,Active
+ZZ522,,Wildcat HMA2,529,815NAS,Active
+ZZ523,,Wildcat AH1,530,1Regt,Active
+ZZ524,,Wildcat AH1,531,847NAS,Active
+ZZ525,,Wildcat AH1,532,847NAS,Active
+ZZ526,,Wildcat AH1,533,1Regt,Active
+ZZ527,,Wildcat AH1,534,1Regt,Active
+ZZ528,,Wildcat HMA2,535,825NAS,Active
+ZZ529,,Wildcat HMA2,536,815NAS,Active
+ZZ530,,Wildcat HMA2,545,815NAS,Active
+ZZ531,,Wildcat HMA2,538,825NAS,Active
+ZZ532,,Wildcat HMA2,539,825NAS,Active
+ZZ533,,Wildcat HMA2,541,825NAS,Active
+ZZ534,,Wildcat HMA2,543,825NAS,Active
+ZZ535,,Wildcat HMA2,537,825NAS,Active
+ZZ664,,RC-135W,18773/725,51sq,Active
+ZZ665,,RC-135W,18778/730,51sq,Active
+ZZ666,,RC-135W,18770/722,51sq,Active

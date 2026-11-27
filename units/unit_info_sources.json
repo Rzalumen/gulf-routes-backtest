@@ -1,0 +1,5078 @@
+{
+"100th FS": {
+"base": "Dannelly Field",
+"full": "100th Fighter Squadron",
+"parent": "187th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.187fw.ang.af.mil/News/Article/3649273/the-187th-fighter-wing-showcases-f-35a-lightning-ii-heritage-tail-flash/",
+"st": "AL",
+"svc": "USAF"
+},
+"101st RQS": {
+"base": "FS Gabreski ANGB",
+"full": "101st Rescue Squadron",
+"parent": "106th Rescue Wing",
+"role": "HH-60W combat rescue",
+"src": "https://www.106rqw.ang.af.mil/About-Us/Units",
+"st": "NY",
+"svc": "USAF"
+},
+"102nd RQS": {
+"base": "FS Gabreski ANGB",
+"full": "102nd Rescue Squadron",
+"parent": "106th Rescue Wing",
+"role": "HC-130J rescue tanker",
+"src": "https://www.106rqw.ang.af.mil/About-Us/Units",
+"st": "NY",
+"svc": "USAF"
+},
+"106th ARS": {
+"base": "Sumpter Smith JNGB",
+"full": "106th Air Refueling Squadron",
+"parent": "117th Air Refueling Wing",
+"role": "KC-135R tanker",
+"src": "https://www.117arw.ang.af.mil/News/Article/439243/106th-air-refueling-squadron-celebrates-90-years-of-service/ ; https://www.dvidshub.net/image/9080454/106ars-change-command",
+"st": "AL",
+"svc": "USAF"
+},
+"107th FS": {
+"base": "Selfridge ANGB",
+"full": "107th Fighter Squadron",
+"parent": "127th Wing",
+"role": "A-10C attack",
+"src": "https://www.127wg.ang.af.mil/Media/Articles/Article/4497579/mission-next-takes-shape-at-selfridge-air-national-guard-base/",
+"st": "MI",
+"svc": "USAF"
+},
+"108th ARS": {
+"base": "Scott AFB",
+"full": "108th Air Refueling Squadron",
+"parent": "126th Air Refueling Wing",
+"role": "KC-135R tanker",
+"src": "https://www.126arw.ang.af.mil/News/Article-Display/Article/450233/pumping-gas-in-the-sky/",
+"st": "IL",
+"svc": "USAF"
+},
+"109th AS": {
+"base": "St Paul ANGB",
+"full": "109th Airlift Squadron",
+"parent": "133rd Airlift Wing",
+"role": "C-130H airlift",
+"src": "https://www.133aw.ang.af.mil/News/Article-Display/Article/451261/109th-airlift-squadron-change-of-command/",
+"st": "MN",
+"svc": "USAF"
+},
+"110th BS": {
+"base": "Whiteman AFB",
+"full": "110th Bomb Squadron",
+"parent": "131st Bomb Wing",
+"role": "B-2 bomber",
+"src": "https://www.ang.af.mil/News/Tag/118752/110th-bomb-squadron/",
+"st": "MO",
+"svc": "USAF"
+},
+"111th ATKS": {
+"base": "Ellington Field JRB",
+"full": "111th Attack Squadron",
+"parent": "147th Attack Wing",
+"role": "MQ-9 attack",
+"src": "https://dvidshub.net/image/8827405/attack-squadron-awarded-rpa-squadron-year",
+"st": "TX",
+"svc": "USAF"
+},
+"112th FS": {
+"base": "Toledo Express",
+"full": "112th Fighter Squadron",
+"parent": "180th Fighter Wing",
+"role": "F-16C fighter",
+"src": "https://www.180fw.ang.af.mil/Units/Operations/",
+"st": "OH",
+"svc": "USAF"
+},
+"115th AS": {
+"base": "Channel Islands ANGS",
+"full": "115th Airlift Squadron",
+"parent": "146th Airlift Wing",
+"role": "C-130J airlift/MAFFS",
+"src": "https://www.146aw.ang.af.mil/News/Photos/igphoto/2003451575/",
+"st": "CA",
+"svc": "USAF"
+},
+"117th ARS": {
+"base": "Forbes Field ANGB",
+"full": "117th Air Refueling Squadron",
+"parent": "190th Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.190arw.ang.af.mil/About-Us/Fact-Sheets/Display/Article/437764/190th-air-refueling-wing",
+"st": "KS",
+"svc": "USAF"
+},
+"118th AS": {
+"base": "Bradley ANGB",
+"full": "118th Airlift Squadron",
+"parent": "103rd Airlift Wing",
+"role": "C-130H airlift",
+"src": "https://ct.ng.mil/News/Image-Gallery/igphoto/2003354507/",
+"st": "CT",
+"svc": "USAF"
+},
+"119th FS": {
+"base": "Atlantic City ANGB",
+"full": "119th Fighter Squadron",
+"parent": "177th Fighter Wing",
+"role": "F-16C fighter",
+"src": "https://www.177fw.ang.af.mil/F-16-Pilot-Hiring/",
+"st": "NJ",
+"svc": "USAF"
+},
+"11th BS": {
+"base": "Barksdale AFB",
+"full": "11th Bomb Squadron",
+"parent": "2nd Bomb Wing",
+"role": "B-52H training (FTU)",
+"src": "https://www.barksdale.af.mil/Units/2OG",
+"st": "LA",
+"svc": "USAF"
+},
+"11th RS": {
+"base": "Creech AFB",
+"full": "11th Attack Squadron (ex-11th RS)",
+"parent": "25th Attack Wing",
+"role": "MQ-9 attack",
+"src": "https://www.creech.af.mil/News/Article-Display/Article/4360899/11th-atks-officially-becomes-part-of-25th-atkw/",
+"st": "NV",
+"svc": "USAF"
+},
+"120th FS": {
+"base": "Buckley SFB",
+"full": "120th Fighter Squadron",
+"parent": "140th Wing",
+"role": "F-16 fighter",
+"src": "https://www.140wg.ang.af.mil/About-Us/Fact-Sheets/Display/Article/444237/140th-wing-colorado-air-national-guard/",
+"st": "CO",
+"svc": "USAF"
+},
+"121st FS": {
+"base": "JB Andrews",
+"full": "121st Fighter Squadron",
+"parent": "113th Wing",
+"role": "F-16C NCR air defense",
+"src": "https://www.113wg.ang.af.mil/Portals/12/Fact%20sheet%20-%20113%20WG.pdf",
+"st": "MD",
+"svc": "USAF"
+},
+"122nd FS": {
+"base": "NAS JRB New Orleans",
+"full": "122nd Fighter Squadron",
+"parent": "159th Fighter Wing",
+"role": "F-15C fighter",
+"src": "https://www.nationalguard.mil/News/Article-View/Article/3215011/louisianas-159th-fighter-wing-conducts-deployment-exercise/",
+"st": "LA",
+"svc": "USAF"
+},
+"123rd FS": {
+"base": "Portland ANGB",
+"full": "123rd Fighter Squadron",
+"parent": "142nd Wing",
+"role": "F-15EX/F-15C fighter",
+"src": "https://www.dvidshub.net/news/499761/f-15ex-eagle-ii-reaches-one-year-milestone-oregon",
+"st": "OR",
+"svc": "USAF"
+},
+"125th FS": {
+"base": "Tulsa ANGB",
+"full": "125th Fighter Squadron",
+"parent": "138th Fighter Wing",
+"role": "F-16 fighter",
+"src": "https://ok.ng.mil/News/Article/3081618/oklahoma-guard-f-16s-receive-fifth-generation-radars/",
+"st": "OK",
+"svc": "USAF"
+},
+"126th ARS": {
+"base": "Gen Mitchell ANGB",
+"full": "126th Air Refueling Squadron",
+"parent": "128th Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.spangdahlem.af.mil/News/Article/296478/126th-ars-supports-nato-awacs-operations/",
+"st": "WI",
+"svc": "USAF"
+},
+"129th RQS": {
+"base": "Moffett ANGB",
+"full": "129th Rescue Squadron",
+"parent": "129th Rescue Wing",
+"role": "HH-60G/W combat rescue",
+"src": "https://www.129rqw.ang.af.mil/About-Us/",
+"st": "CA",
+"svc": "USAF"
+},
+"12th SOS": {
+"base": "Cannon AFB",
+"full": "12th Special Operations Squadron",
+"parent": "27th Special Operations Wing",
+"role": "MQ-9 launch & recovery",
+"src": "https://www.cannon.af.mil/News/Article-Display/Article/599771/cannon-activates-12th-sos/",
+"st": "NM",
+"svc": "USAF"
+},
+"130th RQS": {
+"base": "Moffett ANGB",
+"full": "130th Rescue Squadron",
+"parent": "129th Rescue Wing",
+"role": "HC-130J rescue tanker",
+"src": "https://www.129rqw.ang.af.mil/About-Us/",
+"st": "CA",
+"svc": "USAF"
+},
+"132nd ARS": {
+"base": "Bangor ANGB",
+"full": "132nd Air Refueling Squadron",
+"parent": "101st Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.101arw.ang.af.mil/",
+"st": "ME",
+"svc": "USAF"
+},
+"133rd ARS NH ANG": {
+"base": "Pease ANGB",
+"full": "133rd Air Refueling Squadron",
+"parent": "157th Air Refueling Wing",
+"role": "KC-46A tanker",
+"src": "https://www.157arw.ang.af.mil/Units/157th-Operations-Group/133rd-Air-Refueling-Squadron",
+"st": "NH",
+"svc": "USAF"
+},
+"134th FS": {
+"base": "S Burlington ANGB",
+"full": "134th Fighter Squadron",
+"parent": "158th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.dvidshub.net/image/8266926/vtang-f-35s-soar-during-training-weekend",
+"st": "VT",
+"svc": "USAF"
+},
+"137th AS": {
+"base": "Stewart ANGB",
+"full": "137th Airlift Squadron",
+"parent": "105th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.105aw.ang.af.mil/About-Us/Fact-Sheets/Display/Article/448334/105th-airlift-wing/",
+"st": "NY",
+"svc": "USAF"
+},
+"137th AS NY ANG": {
+"base": "Stewart ANGB",
+"full": "137th Airlift Squadron",
+"parent": "105th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.105aw.ang.af.mil/About-Us/Fact-Sheets/Display/Article/448334/105th-airlift-wing/",
+"st": "NY",
+"svc": "USAF"
+},
+"138th ATKS": {
+"base": "Hancock Field ANGB",
+"full": "138th Attack Squadron",
+"parent": "174th Attack Wing",
+"role": "MQ-9 attack",
+"src": "https://www.nationalguard.mil/News/Article-View/Article/2458584/syracuse-based-airmen-hit-60000-hours-of-mq-9-flight-time/",
+"st": "NY",
+"svc": "USAF"
+},
+"13th BS": {
+"base": "Whiteman AFB",
+"full": "13th Bomb Squadron",
+"parent": "509th Operations Group",
+"role": "B-2 bomber",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432201/13-bomb-squadron-afgsc",
+"st": "MO",
+"svc": "USAF"
+},
+"13th FS": {
+"base": "Misawa AB",
+"full": "13th Fighter Squadron",
+"parent": "35th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.misawa.af.mil/News/Article-Display/Article/4514165/lightning-in-the-skies-f-35as-soar-over-misawa/",
+"st": "Japan",
+"svc": "USAF"
+},
+"141st ARS": {
+"base": "JB McGuire-Dix-Lkhst",
+"full": "141st Air Refueling Squadron",
+"parent": "108th Wing",
+"role": "KC-46A tanker (assoc.)",
+"src": "https://www.nationalguard.mil/News/Article-View/Article/3703993/new-jersey-national-guard-activates-air-refueling-squadron",
+"st": "NJ",
+"svc": "USAF"
+},
+"142nd AS": {
+"base": "New Castle ANGB",
+"full": "142nd Airlift Squadron",
+"parent": "166th Airlift Wing",
+"role": "C-130H airlift",
+"src": "https://www.166aw.ang.af.mil/News/Article-Display/Article/448170/delaware-air-guard-c-130-aircraft-reaches-10000-hour-flying-milestone ; https://www.166aw.ang.af.mil/About-Us/Fact-Sheets/Display/Article/1092159/delaware-air-national-guard-fact-sheet/",
+"st": "DE",
+"svc": "USAF"
+},
+"144th AS": {
+"base": "JB Elmendorf-Rich",
+"full": "144th Airlift Squadron",
+"parent": "176th Wing",
+"role": "C-17A airlift",
+"src": "https://www.176wg.ang.af.mil/Units/176OG/144AS/",
+"st": "AK",
+"svc": "USAF"
+},
+"149th FS": {
+"base": "JB Langley-Eustis",
+"full": "149th Fighter Squadron",
+"parent": "192nd Wing",
+"role": "F-22 fighter / T-38 adair",
+"src": "https://www.192wg.ang.af.mil/About-Us/Fact-Sheets/Display/Article/1472280/192nd-operations-group/",
+"st": "VA",
+"svc": "USAF"
+},
+"14th FS": {
+"base": "Misawa AB",
+"full": "14th Fighter Squadron",
+"parent": "35th Fighter Wing",
+"role": "F-16 fighter",
+"src": "https://www.misawa.af.mil/News/Article-Display/Article/4441937/35th-fw-airpower-strengthens-indo-pacific-deterrence/",
+"st": "Japan",
+"svc": "USAF"
+},
+"150th SOS": {
+"base": "JB McGuire-Dix-Lkhst",
+"full": "150th Special Operations Squadron",
+"parent": "108th Wing",
+"role": "C-32 special ops airlift",
+"src": "https://www.108thwing.ang.af.mil/About-Us/Fact-Sheets/Display/Article/864202/108th-wing-fact-sheet/",
+"st": "NJ",
+"svc": "USAF"
+},
+"150th SOS NJ ANG": {
+"base": "JB McGuire-Dix-Lkhst",
+"full": "150th Special Operations Squadron",
+"parent": "108th Wing",
+"role": "C-32 special ops airlift",
+"src": "https://www.108thwing.ang.af.mil/About-Us/Fact-Sheets/Display/Article/864202/108th-wing-fact-sheet/",
+"st": "NJ",
+"svc": "USAF"
+},
+"151st ARS": {
+"base": "McGhee Tyson ANGB",
+"full": "151st Air Refueling Squadron",
+"parent": "134th Air Refueling Wing",
+"role": "KC-135R tanker",
+"src": "https://www.134arw.ang.af.mil/Units/134th-Operations-Group/",
+"st": "TN",
+"svc": "USAF"
+},
+"153rd ARS": {
+"base": "Key Field ANGB",
+"full": "153rd Air Refueling Squadron",
+"parent": "186th Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.186arw.ang.af.mil/About-Us/Units/",
+"st": "MS",
+"svc": "USAF"
+},
+"154th TRS": {
+"base": "Little Rock AFB",
+"full": "154th Training Squadron",
+"parent": "189th Airlift Wing",
+"role": "C-130H aircrew training",
+"src": "https://www.189aw.ang.af.mil/About-Us/",
+"st": "AR",
+"svc": "USAF"
+},
+"154th TS": {
+"base": "Little Rock AFB",
+"full": "154th Training Squadron",
+"parent": "189th Airlift Wing",
+"role": "C-130H aircrew training",
+"src": "https://www.189aw.ang.af.mil/About-Us/",
+"st": "AR",
+"svc": "USAF"
+},
+"155th AS": {
+"base": "Memphis ANGB",
+"full": "155th Airlift Squadron",
+"parent": "164th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.164aw.ang.af.mil/Units/ ; https://www.dvidshub.net/image/8956252/155th-airlift-squadron-change-command",
+"st": "TN",
+"svc": "USAF"
+},
+"155th AS TN ANG": {
+"base": "Memphis ANGB",
+"full": "155th Airlift Squadron",
+"parent": "164th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.164aw.ang.af.mil/Units/ ; https://www.dvidshub.net/image/8956252/155th-airlift-squadron-change-command",
+"st": "TN",
+"svc": "USAF"
+},
+"156th AS": {
+"base": "Charlotte ANGB",
+"full": "156th Airlift Squadron",
+"parent": "145th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.145aw.ang.af.mil/News/Article/2381164/the-conclusion-of-conversion/",
+"st": "NC",
+"svc": "USAF"
+},
+"157th FS": {
+"base": "McEntire JNGB",
+"full": "157th Fighter Squadron",
+"parent": "169th Fighter Wing",
+"role": "F-16 fighter",
+"src": "https://www.ang.af.mil/Media/Photos/igphoto/2003142662/mediaid/6667374/",
+"st": "SC",
+"svc": "USAF"
+},
+"158th AS": {
+"base": "Savannah ANGB",
+"full": "158th Airlift Squadron",
+"parent": "165th Airlift Wing",
+"role": "C-130J airlift",
+"src": "https://www.dvidshub.net/image/8209921/165th-airlift-wing-welcomes-1st-c-130j-super-hercules-savannah",
+"st": "GA",
+"svc": "USAF"
+},
+"159th FS": {
+"base": "Jacksonville ANGB",
+"full": "159th Fighter Squadron",
+"parent": "125th Fighter Wing",
+"role": "F-35A fighter (ex-F-15C)",
+"src": "https://www.nellis.af.mil/News/Photos/igphoto/2003933654/",
+"st": "FL",
+"svc": "USAF"
+},
+"15th RS": {
+"base": "Creech AFB",
+"full": "15th Attack Squadron (ex-15th RS)",
+"parent": "732nd Operations Group",
+"role": "MQ-9 attack",
+"src": "https://www.creech.af.mil/About-Us/",
+"st": "NV",
+"svc": "USAF"
+},
+"15th SOS": {
+"base": "Hurlburt Field",
+"full": "15th Special Operations Squadron",
+"parent": "1st Special Operations Wing",
+"role": "MC-130J special ops",
+"src": "https://www.hurlburt.af.mil/About-Us/Fact-Sheets/Fact-Sheets/Article/204537/15th-special-operations-squadron/",
+"st": "FL",
+"svc": "USAF"
+},
+"163rd ATKW": {
+"base": "March ARB",
+"full": "163rd Attack Wing",
+"parent": "California ANG",
+"role": "MQ-9 attack",
+"src": "https://www.163atkw.ang.af.mil/About-Us/Fact-Sheets/Display/Article/452904/163d-attack-wing/",
+"st": "CA",
+"svc": "USAF"
+},
+"163rd FS": {
+"base": "Fort Wayne ANGB",
+"full": "163rd Fighter Squadron",
+"parent": "122nd Fighter Wing",
+"role": "F-16 fighter (ex-A-10)",
+"src": "https://www.dvidshub.net/image/8881319/final-f-16-arrives-122nd-fighter-wing",
+"st": "IN",
+"svc": "USAF"
+},
+"165th AS": {
+"base": "Kentucky ANGB",
+"full": "165th Airlift Squadron",
+"parent": "123rd Airlift Wing",
+"role": "C-130J airlift",
+"src": "https://www.nationalguard.mil/News/Article-View/Article/2834862/c-130j-aircraft-prepped-for-debut-at-kentucky-air-guard/",
+"st": "KY",
+"svc": "USAF"
+},
+"166th ARS": {
+"base": "Rickenbacker ANGB",
+"full": "166th Air Refueling Squadron",
+"parent": "121st Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.121arw.ang.af.mil/About-Us/History/",
+"st": "OH",
+"svc": "USAF"
+},
+"167th AS": {
+"base": "Shepherd Field ANGB",
+"full": "167th Airlift Squadron",
+"parent": "167th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.167aw.ang.af.mil/News/Article-Display/Article/866344/167th-aw-is-flying-through-the-c-17-conversion",
+"st": "WV",
+"svc": "USAF"
+},
+"167th AS WV ANG": {
+"base": "Shepherd Field ANGB",
+"full": "167th Airlift Squadron",
+"parent": "167th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.167aw.ang.af.mil/News/Article-Display/Article/866344/167th-aw-is-flying-through-the-c-17-conversion",
+"st": "WV",
+"svc": "USAF"
+},
+"168th ARS": {
+"base": "Eielson AFB",
+"full": "168th Air Refueling Squadron",
+"parent": "168th Wing",
+"role": "KC-135 tanker",
+"src": "https://www.168wg.ang.af.mil/News/Article/4520842/168th-wing-receives-four-new-kc-135-stratotankers-expanding-strategic-global-re/",
+"st": "AK",
+"svc": "USAF"
+},
+"169th AS": {
+"base": "Peoria ANGB",
+"full": "169th Airlift Squadron",
+"parent": "182nd Airlift Wing",
+"role": "C-130H airlift",
+"src": "https://www.182aw.ang.af.mil/About-Us/History/",
+"st": "IL",
+"svc": "USAF"
+},
+"16th SOS": {
+"base": "Cannon AFB",
+"full": "16th Special Operations Squadron",
+"parent": "27th Special Operations Wing",
+"role": "AC-130J gunship",
+"src": "https://www.cannon.af.mil/News/Article/3010549/16th-special-operations-squadron-receives-its-first-ac-130j-ghostrider-gunship",
+"st": "NM",
+"svc": "USAF"
+},
+"16th WPS": {
+"base": "Nellis AFB",
+"full": "16th Weapons Squadron",
+"parent": "USAF Weapons School",
+"role": "F-16 weapons instructor",
+"src": "https://www.nellis.af.mil/Nellis-News/Article-Display/Article/2387049/jtacs-integrate-with-16th-weapons-squadron-in-close-air-support-exercise/",
+"st": "NV",
+"svc": "USAF"
+},
+"171st ARS": {
+"base": "Selfridge ANGB",
+"full": "171st Air Refueling Squadron",
+"parent": "127th Wing",
+"role": "KC-135 tanker",
+"src": "https://www.127wg.ang.af.mil/News/Article-Display/Article/865848/selfridges-171st-air-refueling-squadron-shares-wwii-heritage/",
+"st": "MI",
+"svc": "USAF"
+},
+"171st ARW": {
+"base": "Pittsburgh IAP",
+"full": "171st Air Refueling Wing",
+"parent": "Air National Guard (AMC-gained)",
+"role": "KC-135 tanker",
+"src": "https://www.171arw.ang.af.mil/News/Article-Display/Article/3842740/171st-air-refueling-wing-marks-45-years-with-kc-135-stratotanker/",
+"st": "PA",
+"svc": "USAF"
+},
+"172nd ATKS": {
+"base": "Battle Creek ANGB",
+"full": "172nd Attack Squadron",
+"parent": "110th Wing",
+"role": "MQ-9 attack/ISR",
+"src": "https://www.110wg.ang.af.mil/News/Article-Display/Article/3488764/forging-history-with-hot-engines/",
+"st": "MI",
+"svc": "USAF"
+},
+"173rd ARS": {
+"base": "Lincoln ANGB",
+"full": "173rd Air Refueling Squadron",
+"parent": "155th Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.155arw.ang.af.mil/Units",
+"st": "NE",
+"svc": "USAF"
+},
+"174th ARS": {
+"base": "Sioux City ANGB",
+"full": "174th Air Refueling Squadron",
+"parent": "185th Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.185arw.ang.af.mil/About-Us/Units/185th-Operations-Group/",
+"st": "IA",
+"svc": "USAF"
+},
+"174th ATQS": {
+"base": "Hancock Field ANGB",
+"full": "174th Attack Squadron",
+"parent": "174th Attack Wing",
+"role": "MQ-9 attack/ISR",
+"src": "https://www.174attackwing.ang.af.mil/Media/Article-Display/Article/4431186/174th-attack-wing-advances-national-airspace-security-with-mq-9-flight/",
+"st": "NY",
+"svc": "USAF"
+},
+"175th FS": {
+"base": "Joe Foss Field",
+"full": "175th Fighter Squadron",
+"parent": "114th Fighter Wing",
+"role": "F-16 fighter",
+"src": "https://www.114fw.ang.af.mil/News/Article/2998146/world-war-ii-ace-joe-foss-celebrated-with-blue-75th-anniversary-f-16/",
+"st": "SD",
+"svc": "USAF"
+},
+"176th FS": {
+"base": "Truax Field ANGB",
+"full": "176th Fighter Squadron",
+"parent": "115th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.nationalguard.mil/News/Article-View/Article/3686598/wisconsin-airmen-complete-first-f-35-training-deployment/",
+"st": "WI",
+"svc": "USAF"
+},
+"178th ATKS": {
+"base": "Fargo ANGB",
+"full": "178th Attack Squadron",
+"parent": "119th Wing",
+"role": "MQ-9 attack/ISR",
+"src": "https://www.119wg.ang.af.mil/About-Us/Fact-Sheets/Display/Article/442543/our-flying-mission/",
+"st": "ND",
+"svc": "USAF"
+},
+"179th FS": {
+"base": "Duluth ANGB",
+"full": "179th Fighter Squadron",
+"parent": "148th Fighter Wing",
+"role": "F-16 fighter",
+"src": "https://www.148fw.ang.af.mil/The-Wing/",
+"st": "MN",
+"svc": "USAF"
+},
+"17th WPS": {
+"base": "Nellis AFB",
+"full": "17th Weapons Squadron",
+"parent": "USAF Weapons School",
+"role": "F-15E weapons instructor",
+"src": "https://www.dvidshub.net/image/9404223/17th-wps-golden-hour",
+"st": "NV",
+"svc": "USAF"
+},
+"180th AS": {
+"base": "Rosecrans ANGB",
+"full": "180th Airlift Squadron",
+"parent": "139th Airlift Wing",
+"role": "C-130H airlift",
+"src": "https://www.139aw.ang.af.mil/About-Us/Fact-Sheets/Display/Article/452077/180th-airlift-squadron-history/",
+"st": "MO",
+"svc": "USAF"
+},
+"181st AS": {
+"base": "NAS JRB Fort Worth",
+"full": "181st Airlift Squadron",
+"parent": "136th Airlift Wing",
+"role": "C-130J airlift",
+"src": "https://www.136aw.ang.af.mil/News/Article-Display/Article/2832169/new-super-hercules-arrives-in-fort-worth/",
+"st": "TX",
+"svc": "USAF"
+},
+"182nd FS": {
+"base": "JBSA-Kelly Field",
+"full": "182nd Fighter Squadron",
+"parent": "149th Fighter Wing",
+"role": "F-16 training",
+"src": "https://www.jbsa.mil/News/News/Article/2693345/182nd-fighter-squadron-instructors-train-f-16-pilots",
+"st": "TX",
+"svc": "USAF"
+},
+"183rd AS": {
+"base": "Jackson ANGB",
+"full": "183rd Airlift Squadron",
+"parent": "172nd Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.172aw.ang.af.mil/News/Article/3283709/rolling-with-the-punches-and-waves-183rd-airlift-squadron-completes-annual-trai/",
+"st": "MS",
+"svc": "USAF"
+},
+"183rd AS MS ANG": {
+"base": "Jackson ANGB",
+"full": "183rd Airlift Squadron",
+"parent": "172nd Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.172aw.ang.af.mil/News/Article/3283709/rolling-with-the-punches-and-waves-183rd-airlift-squadron-completes-annual-trai/",
+"st": "MS",
+"svc": "USAF"
+},
+"186th AS": {
+"base": "Great Falls ANGB",
+"full": "186th Airlift Squadron",
+"parent": "120th Airlift Wing",
+"role": "C-130H airlift",
+"src": "https://www.120thairliftwing.ang.af.mil/About-Us/",
+"st": "MT",
+"svc": "USAF"
+},
+"187th AS": {
+"base": "Cheyenne ANGB",
+"full": "187th Airlift Squadron",
+"parent": "153rd Airlift Wing",
+"role": "C-130H airlift",
+"src": "https://www.dvidshub.net/news/567912/first-crew-wyoming-air-guard-cadre-prepares-bring-c-130j-home",
+"st": "WY",
+"svc": "USAF"
+},
+"18th ACCS": {
+"base": "Robins AFB",
+"full": "18th Airborne Command and Control Squadron",
+"parent": "319th Reconnaissance Wing",
+"role": "E-11A BACN",
+"src": "https://www.grandforks.af.mil/News/Display/Article/4227063/472nd-electronic-combat-squadron-activates-18th-airborne-command-and-control-sq/",
+"st": "GA",
+"svc": "USAF"
+},
+"18th FIS": {
+"base": "Eielson AFB",
+"full": "18th Fighter Interceptor Squadron",
+"parent": "354th Fighter Wing",
+"role": "F-16 air defense",
+"src": "https://www.eielson.af.mil/News/Display/Article/3728567/18th-agrs-redesignates-to-18th-fis/",
+"st": "AK",
+"svc": "USAF"
+},
+"190th FS": {
+"base": "Gowen Field ANGB",
+"full": "190th Fighter Squadron",
+"parent": "124th Fighter Wing",
+"role": "A-10C attack",
+"src": "https://www.ang.af.mil/Media/Article-Display/Article/3156106/idaho-air-guards-190th-fighter-squadron-wins-hawgsmoke-2022/",
+"st": "ID",
+"svc": "USAF"
+},
+"192nd AS": {
+"base": "Reno",
+"full": "192nd Airlift Squadron",
+"parent": "152nd Airlift Wing",
+"role": "C-130 airlift",
+"src": "https://www.152aw.ang.af.mil/News-Media/152AW-News-Articles/Article/4470489/nevada-air-national-guard-c-130-pilot-integrates-with-a-10s-during-joint-traini/",
+"st": "NV",
+"svc": "USAF"
+},
+"193rd SOS": {
+"base": "Harrisburg ANGB",
+"full": "193rd Special Operations Squadron",
+"parent": "193rd Special Operations Wing",
+"role": "MC-130J special ops",
+"src": "https://www.193sow.ang.af.mil/MC-130J",
+"st": "PA",
+"svc": "USAF"
+},
+"195th FS": {
+"base": "Morris ANGB",
+"full": "195th Fighter Squadron",
+"parent": "162nd Wing",
+"role": "F-16 training",
+"src": "https://www.162wing.ang.af.mil/About-Us/Fact-Sheets/Display/Article/444440/162nd-wing/",
+"st": "AZ",
+"svc": "USAF"
+},
+"199th FS": {
+"base": "JB Pearl Hbr-Hickam",
+"full": "199th Fighter Squadron",
+"parent": "154th Wing",
+"role": "F-22 fighter",
+"src": "https://www.154wg.ang.af.mil/Units",
+"st": "HI",
+"svc": "USAF"
+},
+"199th FS HI ANG": {
+"base": "JB Pearl Hbr-Hickam",
+"full": "199th Fighter Squadron",
+"parent": "154th Wing",
+"role": "F-22 fighter",
+"src": "https://www.154wg.ang.af.mil/Units",
+"st": "HI",
+"svc": "USAF"
+},
+"19th AW": {
+"base": "Little Rock AFB",
+"full": "19th Airlift Wing",
+"parent": "Air Mobility Command",
+"role": "C-130J airlift",
+"src": "https://www.littlerock.af.mil/News/Article-Display/Article/2200786/19th-aw-amc-receive-final-c-130j",
+"st": "AR",
+"svc": "USAF"
+},
+"1st ACCS": {
+"base": "Offutt AFB",
+"full": "1st Airborne Command Control Squadron",
+"parent": "595th Command and Control Group",
+"role": "E-4B airborne command post",
+"src": "https://www.offutt.af.mil/News/Article/972024/e-4bs-realign-under-eighth-air-force-595th-cacg-stands-up",
+"st": "NE",
+"svc": "USAF"
+},
+"1st FW": {
+"base": "JB Langley-Eustis",
+"full": "1st Fighter Wing",
+"parent": "",
+"role": "F-22 fighter",
+"src": "https://www.jble.af.mil/About-Us/Fact-Sheets/show/Article/257731/1st-fighter-wing/",
+"st": "VA",
+"svc": "USAF"
+},
+"1st HS": {
+"base": "JB Andrews",
+"full": "1st Helicopter Squadron",
+"parent": "811th Operations Group",
+"role": "UH-1N VIP helicopter",
+"src": "https://www.jba.af.mil/Units/1st-Helicopter-Squadron/",
+"st": "MD",
+"svc": "USAF"
+},
+"1st RS": {
+"base": "Beale AFB",
+"full": "1st Reconnaissance Squadron",
+"parent": "9th Reconnaissance Wing",
+"role": "U-2S/RQ-4 training",
+"src": "https://www.beale.af.mil/Information/Fact-Sheets/Display/Article/279940/1st-reconnaissance-squadron",
+"st": "CA",
+"svc": "USAF"
+},
+"1st SOS": {
+"base": "Kadena AB",
+"full": "1st Special Operations Squadron",
+"parent": "353rd Special Operations Wing",
+"role": "MC-130J special ops",
+"src": "https://www.353sow.af.mil/About-Us/Units",
+"st": "Japan",
+"svc": "USAF"
+},
+"1st SOW": {
+"base": "Hurlburt Field",
+"full": "1st Special Operations Wing",
+"parent": "Air Force Special Operations Command",
+"role": "AC/MC-130J, U-28A, MQ-9",
+"src": "https://www.hurlburt.af.mil/About-Us/Fact-Sheets/Fact-Sheets/Article/204524/1st-special-operations-wing/",
+"st": "FL",
+"svc": "USAF"
+},
+"201st AS": {
+"base": "JB Andrews",
+"full": "201st Airlift Squadron",
+"parent": "113th Wing",
+"role": "C-40C VIP airlift",
+"src": "https://www.113wg.ang.af.mil/Portals/12/Fact%20sheet%20-%20113%20WG.pdf",
+"st": "MD",
+"svc": "USAF"
+},
+"203rd ARS": {
+"base": "JB Pearl Hbr-Hickam",
+"full": "203rd Air Refueling Squadron",
+"parent": "154th Wing",
+"role": "KC-135R tanker",
+"src": "https://www.154wg.ang.af.mil/Units",
+"st": "HI",
+"svc": "USAF"
+},
+"20th BS": {
+"base": "Barksdale AFB",
+"full": "20th Bomb Squadron",
+"parent": "2nd Bomb Wing",
+"role": "B-52H bomber",
+"src": "https://www.barksdale.af.mil/Units/Fact-Sheets/Article/320180/2nd-bomb-wing/",
+"st": "LA",
+"svc": "USAF"
+},
+"20th SOS": {
+"base": "Cannon AFB",
+"full": "20th Special Operations Squadron",
+"parent": "27th Special Operations Group",
+"role": "CV-22 special ops",
+"src": "https://www.cannon.af.mil/Test-Page/Article/206992/20th-special-operations-squadron",
+"st": "NM",
+"svc": "USAF"
+},
+"210th RQS": {
+"base": "JB Elmendorf-Rich",
+"full": "210th Rescue Squadron",
+"parent": "176th Wing",
+"role": "HH-60G rescue",
+"src": "https://www.ang.af.mil/Media/Article-Display/Article/4062606/alaska-air-guard-rescues-8-people-in-4-missions/",
+"st": "AK",
+"svc": "USAF"
+},
+"211th RQS": {
+"base": "JB Elmendorf-Rich",
+"full": "211th Rescue Squadron",
+"parent": "176th Wing",
+"role": "HC-130J rescue",
+"src": "https://www.176wg.ang.af.mil/Units/176OG/211RQS/",
+"st": "AK",
+"svc": "USAF"
+},
+"214th AG": {
+"base": "Fort Huachuca",
+"full": "214th Attack Group",
+"parent": "162nd Wing",
+"role": "MQ-9 attack/ISR",
+"src": "https://www.162wing.ang.af.mil/About-Us/Fact-Sheets/Display/Article/444440/162nd-wing/",
+"st": "AZ",
+"svc": "USAF"
+},
+"21st AS": {
+"base": "Travis AFB",
+"full": "21st Airlift Squadron",
+"parent": "60th Air Mobility Wing",
+"role": "C-17 airlift",
+"src": "https://www.travis.af.mil/Units/Fact-Sheets/Article/150636/21st-airlift-squadron/",
+"st": "CA",
+"svc": "USAF"
+},
+"21st SOS": {
+"base": "Yokota AB",
+"full": "21st Special Operations Squadron",
+"parent": "353rd Special Operations Wing",
+"role": "CV-22B special ops",
+"src": "https://www.yokota.af.mil/News/Yokota-News/Article-Display/Article/3945917/21-sos-soamxs-commit-to-proficiency-with-cv-22-precautionary-landing-practice",
+"st": "Japan",
+"svc": "USAF"
+},
+"22nd ARW": {
+"base": "McConnell AFB",
+"full": "22nd Air Refueling Wing",
+"parent": "18th Air Force",
+"role": "KC-46A tanker",
+"src": "https://www.mcconnell.af.mil/News/Article-Display/Article/4457423/kc-46-delivery-a-milestone-flight-and-a-final-farewell/",
+"st": "KS",
+"svc": "USAF"
+},
+"22nd AS": {
+"base": "Travis AFB",
+"full": "22nd Airlift Squadron",
+"parent": "60th Air Mobility Wing",
+"role": "C-5 airlift",
+"src": "https://www.travis.af.mil/Units/Fact-Sheets/Article/150642/22nd-airlift-squadron",
+"st": "CA",
+"svc": "USAF"
+},
+"23rd BS": {
+"base": "Minot AFB",
+"full": "23rd Bomb Squadron",
+"parent": "",
+"role": "B-52H bomber",
+"src": "https://www.minot.af.mil/News/Article-Display/Article/3435453/bomber-task-force-23-3-take-off/",
+"st": "ND",
+"svc": "USAF"
+},
+"23rd FG": {
+"base": "Moody AFB",
+"full": "23rd Fighter Group",
+"parent": "23rd Wing",
+"role": "A-10C attack",
+"src": "https://www.moody.af.mil/About-Us/Units/23rd-Wing/23d-Fighter-Group/",
+"st": "GA",
+"svc": "USAF"
+},
+"23rd FTS": {
+"base": "Fort Novosel",
+"full": "23rd Flying Training Squadron",
+"parent": "",
+"role": "TH-1H helicopter training",
+"src": "https://www.aetc.af.mil/About-Us/Fact-Sheets/Display/Article/562073/23rd-flying-training-squadron",
+"st": "AL",
+"svc": "USAF"
+},
+"24th HS": {
+"base": "Maxwell AFB",
+"full": "24th Helicopter Squadron",
+"parent": "",
+"role": "MH-139A helicopter",
+"src": "https://www.maxwell.af.mil/News/Display/Article/3998569/maxwell-afb-activates-24th-helicopter-squadron/",
+"st": "AL",
+"svc": "USAF"
+},
+"25th FTS": {
+"base": "Vance AFB",
+"full": "25th Flying Training Squadron",
+"parent": "71st Flying Training Wing",
+"role": "T-38C pilot training",
+"src": "https://www.vance.af.mil/News/Article-Display/Article/4330356/pilot-training-continues-after-sunset/",
+"st": "OK",
+"svc": "USAF"
+},
+"27th FS": {
+"base": "JB Langley-Eustis",
+"full": "27th Fighter Squadron",
+"parent": "1st Fighter Wing",
+"role": "F-22 fighter",
+"src": "https://www.jble.af.mil/About-Us/Fact-Sheets/show/Article/257733/27th-fighter-squadron/",
+"st": "VA",
+"svc": "USAF"
+},
+"27th SOW": {
+"base": "Cannon AFB",
+"full": "27th Special Operations Wing",
+"parent": "Air Force Special Operations Command",
+"role": "AC/MC-130J CV-22 U-28A MQ-9",
+"src": "https://www.cannon.af.mil/Portals/85/27%20SOW%202022%20FACT%20SHEET%20%288_5%20x%2011%20in%29%20%282%29.pdf",
+"st": "NM",
+"svc": "USAF"
+},
+"28th BS": {
+"base": "Dyess AFB",
+"full": "28th Bomb Squadron",
+"parent": "7th Operations Group",
+"role": "B-1B training",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/433634/28-bomb-squadron-acc",
+"st": "TX",
+"svc": "USAF"
+},
+"28th BW": {
+"base": "Ellsworth AFB",
+"full": "28th Bomb Wing",
+"parent": "Eighth Air Force",
+"role": "B-1B bomber",
+"src": "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/1085840/28th-bomb-wing/",
+"st": "SD",
+"svc": "USAF"
+},
+"29th ATKS": {
+"base": "Holloman AFB",
+"full": "29th Attack Squadron",
+"parent": "49th Operations Group",
+"role": "MQ-9 training",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432967/29-attack-squadron-acc",
+"st": "NM",
+"svc": "USAF"
+},
+"2nd BW": {
+"base": "Barksdale AFB",
+"full": "2nd Bomb Wing",
+"parent": "Eighth Air Force",
+"role": "B-52H bomber",
+"src": "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/1085832/2nd-bomb-wing/",
+"st": "LA",
+"svc": "USAF"
+},
+"301st RQS": {
+"base": "Patrick SFB",
+"full": "301st Rescue Squadron",
+"parent": "920th Operations Group",
+"role": "HH-60 combat rescue",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432127/301-rescue-squadron-afrc",
+"st": "FL",
+"svc": "USAF"
+},
+"305th AMW": {
+"base": "JB McGuire-Dix-Lkhst",
+"full": "305th Air Mobility Wing",
+"parent": "Air Mobility Command",
+"role": "C-17 airlift / KC-46 tanker",
+"src": "https://www.jbmdl.jb.mil/About-Us/Fact-Sheets/Article/243350/305th-air-mobility-wing/",
+"st": "NJ",
+"svc": "USAF"
+},
+"305th RQS": {
+"base": "Davis-Monthan AFB",
+"full": "305th Rescue Squadron",
+"parent": "943rd Rescue Group",
+"role": "HH-60G combat rescue",
+"src": "https://www.920rqw.afrc.af.mil/Units/943d-Rescue-Group/305th-Rescue-Squadron/",
+"st": "AZ",
+"svc": "USAF"
+},
+"308th FS": {
+"base": "Luke AFB",
+"full": "308th Fighter Squadron",
+"parent": "56th Operations Group",
+"role": "F-35A training",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432342/308-fighter-squadron-aetc",
+"st": "AZ",
+"svc": "USAF"
+},
+"310th FS": {
+"base": "Luke AFB",
+"full": "310th Fighter Squadron",
+"parent": "56th Fighter Wing",
+"role": "F-35A training",
+"src": "https://www.luke.af.mil/News/Article-Display/Article/3417609/fifth-f-35-squadron-activates-at-luke-afb/",
+"st": "AZ",
+"svc": "USAF"
+},
+"311th FS": {
+"base": "Holloman AFB",
+"full": "311th Fighter Squadron",
+"parent": "54th Fighter Group",
+"role": "F-16 training",
+"src": "https://www.holloman.af.mil/News/Display/Article/4369187/311th-aircraft-maintenance-unit-works-on-f-16-fighting-falcons-day-and-night/",
+"st": "NM",
+"svc": "USAF"
+},
+"314th ARS": {
+"base": "Beale AFB",
+"full": "314th Air Refueling Squadron",
+"parent": "940th Operations Group",
+"role": "KC-135 tanker",
+"src": "https://www.afrc.af.mil/News/Article-Display/Article/854471/kc-135-tanker-mission-returns-to-beale/",
+"st": "CA",
+"svc": "USAF"
+},
+"314th AW": {
+"base": "Little Rock AFB",
+"full": "314th Airlift Wing",
+"parent": "19th Air Force (AETC)",
+"role": "C-130J training",
+"src": "https://www.littlerock.af.mil/TEAM-LITTLE-ROCK/Fact-Sheets/Display/Article/356299/314th-airlift-wing/",
+"st": "AR",
+"svc": "USAF"
+},
+"314th FS": {
+"base": "Holloman AFB",
+"full": "314th Fighter Squadron",
+"parent": "54th Fighter Group",
+"role": "F-16 training",
+"src": "https://www.holloman.af.mil/News/Tag/68741/314th-fighter-squadron/",
+"st": "NM",
+"svc": "USAF"
+},
+"317th AW": {
+"base": "Dyess AFB",
+"full": "317th Airlift Wing",
+"parent": "",
+"role": "C-130J airlift",
+"src": "https://www.dyess.af.mil/Fact-Sheets/Display/Article/3824756/317th-airlift-wing/",
+"st": "TX",
+"svc": "USAF"
+},
+"318th SOS": {
+"base": "Cannon AFB",
+"full": "318th Special Operations Squadron",
+"parent": "27th Special Operations Group",
+"role": "U-28A SOF ISR",
+"src": "https://www.cannon.af.mil/Portals/85/documents/318 SOS Fact Sheet.pdf",
+"st": "NM",
+"svc": "USAF"
+},
+"319th OG Det.1": {
+"base": "Andersen AFB",
+"full": "319th Operations Group Detachment 1",
+"parent": "319th Operations Group",
+"role": "RQ-4 Global Hawk ISR",
+"src": "https://www.7af.pacaf.af.mil/News/Article-Display/Article/1994489/global-hawk-redeploys-from-yokota-air-base-to-andersen-air-force-base/",
+"st": "Guam",
+"svc": "USAF"
+},
+"319th SOS": {
+"base": "Hurlburt Field",
+"full": "319th Special Operations Squadron",
+"parent": "492nd Special Operations Wing",
+"role": "U-28A SOF ISR",
+"src": "https://www.492sow.af.mil/About-Us/Fact-Sheets/Display/Article/3816133/319th-special-operations-squadron",
+"st": "FL",
+"svc": "USAF"
+},
+"328th ARS": {
+"base": "Niagara Falls ARS",
+"full": "328th Air Refueling Squadron",
+"parent": "914th Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.niagara.afrc.af.mil/Media/News/Tag/218269/328-ars/",
+"st": "NY",
+"svc": "USAF"
+},
+"333rd FS": {
+"base": "Seymour Johnson AFB",
+"full": "333rd Fighter Squadron",
+"parent": "4th Operations Group",
+"role": "F-15E training",
+"src": "https://www.seymourjohnson.af.mil/About-Us/Fact-Sheets/4th-Operations-Group/",
+"st": "NC",
+"svc": "USAF"
+},
+"334th FS": {
+"base": "Seymour Johnson AFB",
+"full": "334th Fighter Squadron",
+"parent": "4th Operations Group",
+"role": "F-15E training",
+"src": "https://www.seymourjohnson.af.mil/About-Us/Fact-Sheets/4th-Operations-Group/",
+"st": "NC",
+"svc": "USAF"
+},
+"335th FS": {
+"base": "Seymour Johnson AFB",
+"full": "335th Fighter Squadron",
+"parent": "4th Operations Group",
+"role": "F-15E strike fighter",
+"src": "https://www.seymourjohnson.af.mil/About-Us/Fact-Sheets/4th-Operations-Group/",
+"st": "NC",
+"svc": "USAF"
+},
+"336th ARS": {
+"base": "March ARB",
+"full": "336th Air Refueling Squadron",
+"parent": "452nd Air Mobility Wing",
+"role": "KC-135 tanker",
+"src": "https://dvidshub.net/image/7284378/336th-air-refueling-squadron",
+"st": "CA",
+"svc": "USAF"
+},
+"336th FS": {
+"base": "Seymour Johnson AFB",
+"full": "336th Fighter Squadron",
+"parent": "4th Operations Group",
+"role": "F-15E strike fighter",
+"src": "https://www.seymourjohnson.af.mil/About-Us/Fact-Sheets/4th-Operations-Group/",
+"st": "NC",
+"svc": "USAF"
+},
+"337th AS": {
+"base": "Westover ARB",
+"full": "337th Airlift Squadron",
+"parent": "439th Airlift Wing",
+"role": "C-5M airlift",
+"src": "https://www.westover.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/164940/439th-airlift-wing-fact-sheet",
+"st": "MA",
+"svc": "USAF"
+},
+"337th TES": {
+"base": "Dyess AFB",
+"full": "337th Test and Evaluation Squadron",
+"parent": "53rd Test and Evaluation Group",
+"role": "B-1B operational test",
+"src": "https://www.dyess.af.mil/News/Article/3405588/53rd-wing-completes-operational-testing-of-b-1b-sustainment-block-18-software/",
+"st": "TX",
+"svc": "USAF"
+},
+"33rd RQS": {
+"base": "Kadena AB",
+"full": "33rd Rescue Squadron",
+"parent": "18th Wing",
+"role": "HH-60W combat rescue",
+"src": "https://www.kadena.af.mil/News/Display/Article/3658642/hh-60ws-move-to-kadena/",
+"st": "Japan",
+"svc": "USAF"
+},
+"344th ARS": {
+"base": "McConnell AFB",
+"full": "344th Air Refueling Squadron",
+"parent": "22nd Air Refueling Wing",
+"role": "KC-46 tanker",
+"src": "https://www.mcconnell.af.mil/News/Article-Display/Article/2830987/mcconnells-344th-ars-delivers-kc-46-to-japan/",
+"st": "KS",
+"svc": "USAF"
+},
+"34th BS": {
+"base": "Ellsworth AFB",
+"full": "34th Bomb Squadron",
+"parent": "28th Bomb Wing",
+"role": "B-1B bomber",
+"src": "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/1085840/28th-bomb-wing/",
+"st": "SD",
+"svc": "USAF"
+},
+"34th FS": {
+"base": "Hill AFB",
+"full": "34th Fighter Squadron",
+"parent": "388th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.388fw.acc.af.mil/About-Us/Fact-Sheets/Display/Article/1464092/388th-fighter-wing/",
+"st": "UT",
+"svc": "USAF"
+},
+"34th WPS": {
+"base": "Nellis AFB",
+"full": "34th Weapons Squadron",
+"parent": "",
+"role": "HH-60W weapons instructor",
+"src": "https://www.nellis.af.mil/Nellis-News/Article-Display/Article/3799487/34th-wps-takes-off-for-wsint/",
+"st": "NV",
+"svc": "USAF"
+},
+"351st ARS": {
+"base": "RAF Mildenhall",
+"full": "351st Air Refueling Squadron",
+"parent": "100th Air Refueling Wing",
+"role": "KC-135 tanker",
+"src": "https://www.mildenhall.af.mil/News/Article/2814482/351st-ars-rc-135-refuel-mission",
+"st": "UK",
+"svc": "USAF"
+},
+"355th FS": {
+"base": "Eielson AFB",
+"full": "355th Fighter Squadron",
+"parent": "354th Operations Group",
+"role": "F-35A fighter",
+"src": "https://www.eielson.af.mil/About-Us/Units/354th-Operations-Group",
+"st": "AK",
+"svc": "USAF"
+},
+"356th FS": {
+"base": "Eielson AFB",
+"full": "356th Fighter Squadron",
+"parent": "354th Operations Group",
+"role": "F-35A fighter",
+"src": "https://www.eielson.af.mil/About-Us/Units/354th-Operations-Group",
+"st": "AK",
+"svc": "USAF"
+},
+"35th FS": {
+"base": "Kunsan AB",
+"full": "35th Fighter Squadron",
+"parent": "8th Fighter Wing",
+"role": "F-16C/D fighter",
+"src": "https://www.kunsan.af.mil/About-Us/Fact-Sheets/Article/412732/35th-fighter-squadron/",
+"st": "South Korea",
+"svc": "USAF"
+},
+"36th AS": {
+"base": "Yokota AB",
+"full": "36th Airlift Squadron",
+"parent": "374th Airlift Wing",
+"role": "C-130J airlift",
+"src": "https://www.yokota.af.mil/News/Yokota-News/Article-Display/Article/3153201/36th-as-trains-for-cargo-drops",
+"st": "Japan",
+"svc": "USAF"
+},
+"36th FS": {
+"base": "Osan AB",
+"full": "36th Fighter Squadron",
+"parent": "51st Fighter Wing",
+"role": "F-16C/D fighter",
+"src": "https://www.osan.af.mil/About-Us/Fact-Sheets/Display/Article/404677/36th-fighter-squadron/",
+"st": "South Korea",
+"svc": "USAF"
+},
+"36th RQS": {
+"base": "Fairchild AFB",
+"full": "36th Rescue Squadron",
+"parent": "",
+"role": "UH-1N SERE support/SAR",
+"src": "https://www.fairchild.af.mil/News/Features/Display/Article/2355040/so-that-others-may-live-36th-rqs/",
+"st": "WA",
+"svc": "USAF"
+},
+"37th AS": {
+"base": "Ramstein AB",
+"full": "37th Airlift Squadron",
+"parent": "86th Airlift Wing",
+"role": "C-130J airlift",
+"src": "https://www.ramstein.af.mil/News/Article-Display/Article/3044784/37-as-celebrates-80-years/",
+"st": "Germany",
+"svc": "USAF"
+},
+"37th BS": {
+"base": "Ellsworth AFB",
+"full": "37th Bomb Squadron",
+"parent": "28th Bomb Wing",
+"role": "B-1B bomber",
+"src": "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/1085840/28th-bomb-wing/",
+"st": "SD",
+"svc": "USAF"
+},
+"37th FTS": {
+"base": "Columbus AFB",
+"full": "37th Flying Training Squadron",
+"parent": "14th Flying Training Wing",
+"role": "T-6A pilot training",
+"src": "https://www.columbus.af.mil/News/Article/1350347/37th-fts-teaches-aviation-basics-to-new-pilots/",
+"st": "MS",
+"svc": "USAF"
+},
+"37th HS": {
+"base": "F.E. Warren AFB",
+"full": "37th Helicopter Squadron",
+"parent": "90th Missile Wing",
+"role": "UH-1N/MH-139 ICBM support",
+"src": "https://www.warren.af.mil/News/Article/4463649/modernizing-airborne-support-at-the-90-mw/",
+"st": "WY",
+"svc": "USAF"
+},
+"388th FW": {
+"base": "Hill AFB",
+"full": "388th Fighter Wing",
+"parent": "Fifteenth Air Force (ACC)",
+"role": "F-35A fighter",
+"src": "https://www.388fw.acc.af.mil/About-Us/Fact-Sheets/Display/Article/1464092/388th-fighter-wing/",
+"st": "UT",
+"svc": "USAF"
+},
+"389th FS": {
+"base": "Mountain Home AFB",
+"full": "389th Fighter Squadron",
+"parent": "366th Fighter Wing",
+"role": "F-15E strike fighter",
+"src": "https://www.mountainhome.af.mil/Units/",
+"st": "ID",
+"svc": "USAF"
+},
+"391st FS": {
+"base": "Mountain Home AFB",
+"full": "391st Fighter Squadron",
+"parent": "366th Fighter Wing",
+"role": "F-15E strike fighter",
+"src": "https://www.mountainhome.af.mil/Units/",
+"st": "ID",
+"svc": "USAF"
+},
+"393rd BS": {
+"base": "Whiteman AFB",
+"full": "393rd Bomb Squadron",
+"parent": "509th Bomb Wing",
+"role": "B-2 bomber",
+"src": "https://www.afgsc.af.mil/News/Article-Display/Article/1498567/whitemans-esteemed-b-2-spirit-pilots-merged-into-single-squadron",
+"st": "MO",
+"svc": "USAF"
+},
+"39th AS": {
+"base": "Dyess AFB",
+"full": "39th Airlift Squadron",
+"parent": "317th Airlift Wing",
+"role": "C-130J airlift",
+"src": "https://www.dyess.af.mil/Fact-Sheets/Display/Article/3824756/317th-airlift-wing/",
+"st": "TX",
+"svc": "USAF"
+},
+"39th RQS": {
+"base": "Patrick SFB",
+"full": "39th Rescue Squadron",
+"parent": "920th Rescue Wing",
+"role": "HC-130J combat rescue",
+"src": "https://www.920rqw.afrc.af.mil/Units/920th-Operations-Group/39th-Rescue-Squadron",
+"st": "FL",
+"svc": "USAF"
+},
+"3rd AS": {
+"base": "Dover AFB",
+"full": "3rd Airlift Squadron",
+"parent": "436th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.dover.af.mil/Units/3rd-Airlift-Squadron/",
+"st": "DE",
+"svc": "USAF"
+},
+"3rd SOS": {
+"base": "Cannon AFB",
+"full": "3rd Special Operations Squadron",
+"parent": "",
+"role": "MQ-9 SOF strike/ISR",
+"src": "https://www.cannon.af.mil/News/Article/1595587/red-flag-18-3-new-milestone-for-afsoc-mq-9s/",
+"st": "NM",
+"svc": "USAF"
+},
+"3rd Wing": {
+"base": "JB Elmendorf-Rich",
+"full": "3rd Wing",
+"parent": "",
+"role": "F-22/C-17/E-3 wing",
+"src": "https://www.jber.jb.mil/Units/3wg.aspx",
+"st": "AK",
+"svc": "USAF"
+},
+"40th AS": {
+"base": "Dyess AFB",
+"full": "40th Airlift Squadron",
+"parent": "317th Airlift Wing",
+"role": "C-130J airlift",
+"src": "https://www.dyess.af.mil/Fact-Sheets/Display/Article/3824756/317th-airlift-wing/",
+"st": "TX",
+"svc": "USAF"
+},
+"40th FLTS": {
+"base": "Eglin AFB",
+"full": "40th Flight Test Squadron",
+"parent": "",
+"role": "Fighter flight test",
+"src": "https://www.acc.af.mil/News/Tag/69569/40th-flight-test-squadron/",
+"st": "FL",
+"svc": "USAF"
+},
+"40th HS": {
+"base": "Malmstrom AFB",
+"full": "40th Helicopter Squadron",
+"parent": "",
+"role": "MH-139A ICBM support",
+"src": "https://www.airuniversity.af.edu/News/MAJCOM/Display/Article/4379009/mh-139-grey-wolf-helicopters-complete-first-operational-icbm-convoy-security-mi",
+"st": "MT",
+"svc": "USAF"
+},
+"411th FLTS": {
+"base": "Edwards AFB",
+"full": "411th Flight Test Squadron",
+"parent": "412th Operations Group",
+"role": "F-22 flight test",
+"src": "https://www.edwards.af.mil/Portals/50/260320_Capabilities_Guide_.pdf",
+"st": "CA",
+"svc": "USAF"
+},
+"412th TW": {
+"base": "Edwards AFB",
+"full": "412th Test Wing",
+"parent": "Air Force Test Center",
+"role": "Flight test",
+"src": "https://www.edwards.af.mil/About/Fact-Sheets/Display/Article/393902/412th-test-wing/",
+"st": "CA",
+"svc": "USAF"
+},
+"415th SOS": {
+"base": "Kirtland AFB",
+"full": "415th Special Operations Squadron",
+"parent": "58th Operations Group",
+"role": "MC/HC-130J training",
+"src": "https://www.aetc.af.mil/About-Us/Fact-Sheets/Display/Article/562078/415th-special-operations-squadron",
+"st": "NM",
+"svc": "USAF"
+},
+"416th FLTS": {
+"base": "Edwards AFB",
+"full": "416th Flight Test Squadron",
+"parent": "412th Operations Group",
+"role": "F-16/T-7A/T-38 flight test",
+"src": "https://www.edwards.af.mil/Portals/50/260320_Capabilities_Guide_.pdf",
+"st": "CA",
+"svc": "USAF"
+},
+"417th FLTS": {
+"base": "Eglin AFB",
+"full": "417th Flight Test Squadron",
+"parent": "96th Operations Group",
+"role": "Flight test (OA-1K etc.)",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432798/417-flight-test-squadron-afmc",
+"st": "FL",
+"svc": "USAF"
+},
+"418th FLTS": {
+"base": "Edwards AFB",
+"full": "418th Flight Test Squadron",
+"parent": "412th Operations Group",
+"role": "Airlift/tanker flight test",
+"src": "https://www.edwards.af.mil/Portals/50/260320_Capabilities_Guide_.pdf",
+"st": "CA",
+"svc": "USAF"
+},
+"419th FLTS": {
+"base": "Edwards AFB",
+"full": "419th Flight Test Squadron",
+"parent": "412th Operations Group",
+"role": "Bomber flight test",
+"src": "https://www.edwards.af.mil/Units/",
+"st": "CA",
+"svc": "USAF"
+},
+"41st AS": {
+"base": "Little Rock AFB",
+"full": "41st Airlift Squadron",
+"parent": "19th Airlift Wing",
+"role": "C-130J tactical airlift",
+"src": "https://www.littlerock.af.mil/News/Tag/70161/arctic-anvil/",
+"st": "AR",
+"svc": "USAF"
+},
+"41st As": {
+"base": "Little Rock AFB",
+"full": "41st Airlift Squadron",
+"parent": "19th Airlift Wing",
+"role": "C-130J tactical airlift",
+"src": "https://www.littlerock.af.mil/News/Tag/70161/arctic-anvil/",
+"st": "AR",
+"svc": "USAF"
+},
+"41st FTS": {
+"base": "Columbus AFB",
+"full": "41st Flying Training Squadron",
+"parent": "14th Operations Group",
+"role": "T-6 pilot training",
+"src": "https://www.columbus.af.mil/About-Us/Units/14th-Operations-Group/41st-Flying-Training-Squadron",
+"st": "MS",
+"svc": "USAF"
+},
+"41st RQS": {
+"base": "Moody AFB",
+"full": "41st Rescue Squadron",
+"parent": "347th Rescue Group",
+"role": "HH-60W combat rescue",
+"src": "https://www.moody.af.mil/News/Photos/igphoto/2003316185/",
+"st": "GA",
+"svc": "USAF"
+},
+"421st FS": {
+"base": "Hill AFB",
+"full": "421st Fighter Squadron",
+"parent": "388th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.hill.af.mil/News/Article-Display/Article/1712492/421st-fs-and-amu-receive-first-f-35a/",
+"st": "UT",
+"svc": "USAF"
+},
+"422nd TES": {
+"base": "Nellis AFB",
+"full": "422nd Test and Evaluation Squadron",
+"parent": "53rd Test and Evaluation Group",
+"role": "Fighter operational test",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/433591/422-test-and-evaluation-squadron/",
+"st": "NV",
+"svc": "USAF"
+},
+"42nd ATKS": {
+"base": "Creech AFB",
+"full": "42nd Attack Squadron",
+"parent": "25th Attack Wing",
+"role": "MQ-9 attack/ISR",
+"src": "https://www.dvidshub.net/image/9587568/strategic-resurgence-42nd-attack-squadron-rises-dormancy-fortifying-mq-9-enterprise",
+"st": "NV",
+"svc": "USAF"
+},
+"432nd Wing": {
+"base": "Creech AFB",
+"full": "432nd Wing",
+"parent": "",
+"role": "MQ-9 RPA ISR/attack",
+"src": "https://www.creech.af.mil/About-Us/Fact-Sheets/Display/Article/449128/creech-air-force-base",
+"st": "NV",
+"svc": "USAF"
+},
+"432nd wing": {
+"base": "Creech AFB",
+"full": "432nd Wing",
+"parent": "",
+"role": "MQ-9 RPA ISR/attack",
+"src": "https://www.creech.af.mil/About-Us/Fact-Sheets/Display/Article/449128/creech-air-force-base",
+"st": "NV",
+"svc": "USAF"
+},
+"433rd WPS": {
+"base": "Nellis AFB",
+"full": "433rd Weapons Squadron",
+"parent": "USAF Weapons School",
+"role": "F-15/F-22 Weapons School",
+"src": "https://www.dafhistory.af.mil/Sandbox/Fact-Sheets/Display/Article/433343/433-weapons-squadron-acc/",
+"st": "NV",
+"svc": "USAF"
+},
+"434h FTS": {
+"base": "Laughlin AFB",
+"full": "434th Flying Training Squadron",
+"parent": "47th Flying Training Wing",
+"role": "T-6A pilot training",
+"src": "https://www.laughlin.af.mil/About-Us/Fact-Sheets/Display/Article/354523/434th-flying-training-squadron",
+"st": "TX",
+"svc": "USAF"
+},
+"434th ARW": {
+"base": "Grissom ARB",
+"full": "434th Air Refueling Wing",
+"parent": "Fourth Air Force",
+"role": "KC-135R tanker",
+"src": "https://www.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/4445397/434th-air-refueling-wing/",
+"st": "IN",
+"svc": "USAF"
+},
+"434th FTS": {
+"base": "Laughlin AFB",
+"full": "434th Flying Training Squadron",
+"parent": "47th Flying Training Wing",
+"role": "T-6A pilot training",
+"src": "https://www.laughlin.af.mil/About-Us/Fact-Sheets/Display/Article/354523/434th-flying-training-squadron",
+"st": "TX",
+"svc": "USAF"
+},
+"435th FTS": {
+"base": "JBSA-Randolph",
+"full": "435th Fighter Training Squadron",
+"parent": "12th Flying Training Wing",
+"role": "T-38 fighter fundamentals",
+"src": "https://www.jbsa.mil/News/News/Article/464859/iff-mission-arrives-at-randolph",
+"st": "TX",
+"svc": "USAF"
+},
+"436th AW": {
+"base": "Dover AFB",
+"full": "436th Airlift Wing",
+"parent": "18th Air Force",
+"role": "C-5M/C-17 airlift",
+"src": "https://www.dover.af.mil/About-Us/Fact-Sheets/Display/Article/228970/436th-airlift-wing/",
+"st": "DE",
+"svc": "USAF"
+},
+"437th AW": {
+"base": "JB Charleston",
+"full": "437th Airlift Wing",
+"parent": "Air Mobility Command",
+"role": "C-17 airlift",
+"src": "https://www.jbcharleston.jb.mil/About-Us/Fact-Sheets/Article/233008/437th-airlift-wing",
+"st": "SC",
+"svc": "USAF"
+},
+"43rd ECS": {
+"base": "Davis-Monthan AFB",
+"full": "43rd Electronic Combat Squadron",
+"parent": "55th Electronic Combat Group",
+"role": "EA-37B Compass Call EW",
+"src": "https://www.dm.af.mil/Media/Article-View/Article/3703343/43rd-ecs-transitions-to-ea-37b/",
+"st": "AZ",
+"svc": "USAF"
+},
+"455th FTS": {
+"base": "NAS Pensacola",
+"full": "455th Flying Training Squadron",
+"parent": "479th Flying Training Group",
+"role": "T-6A CSO training",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432889/455-flying-training-squadron-aetc/",
+"st": "FL",
+"svc": "USAF"
+},
+"457th FS": {
+"base": "NAS JRB Fort Worth",
+"full": "457th Fighter Squadron",
+"parent": "301st Operations Group",
+"role": "F-16C fighter",
+"src": "https://www.301fw.afrc.af.mil/Units",
+"st": "TX",
+"svc": "USAF"
+},
+"458th AS": {
+"base": "Scott AFB",
+"full": "458th Airlift Squadron",
+"parent": "",
+"role": "C-21 airlift",
+"src": "https://www.scott.af.mil/News/Tag/102226/458th-airlift-squadron/",
+"st": "IL",
+"svc": "USAF"
+},
+"459th FTS": {
+"base": "Sheppard AFB",
+"full": "459th Flying Training Squadron",
+"parent": "80th Flying Training Wing",
+"role": "T-6 pilot training (ENJJPT)",
+"src": "https://www.sheppard.af.mil/News/Article-Display/Article/368889/80th-ftw-welcomes-459th-fts/",
+"st": "TX",
+"svc": "USAF"
+},
+"45th RS": {
+"base": "Offutt AFB",
+"full": "45th Reconnaissance Squadron",
+"parent": "55th Wing",
+"role": "RC/WC/OC-135 recon",
+"src": "https://www.offutt.af.mil/News/Article-Display/Article/3818237/45th-reconnaissance-squadron-celebrates-30-years-of-service-at-offutt/",
+"st": "NE",
+"svc": "USAF"
+},
+"461st FLTS": {
+"base": "Edwards AFB",
+"full": "461st Flight Test Squadron",
+"parent": "412th Operations Group",
+"role": "F-35 flight test",
+"src": "https://www.edwards.af.mil/News/Article/3128633/461st-flight-test-squadron-receives-brand-new-f-35a/",
+"st": "CA",
+"svc": "USAF"
+},
+"465th ARS": {
+"base": "Tinker AFB",
+"full": "465th Air Refueling Squadron",
+"parent": "507th Operations Group",
+"role": "KC-135R tanker",
+"src": "https://www.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/4475875/507th-air-refueling-wing/",
+"st": "OK",
+"svc": "USAF"
+},
+"469th FTS": {
+"base": "Sheppard AFB",
+"full": "469th Flying Training Squadron",
+"parent": "80th Operations Group",
+"role": "T-38 pilot training",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432261/469-flying-training-squadron-aetc",
+"st": "TX",
+"svc": "USAF"
+},
+"47th FS": {
+"base": "Davis-Monthan AFB",
+"full": "47th Fighter Squadron",
+"parent": "924th Fighter Group",
+"role": "A-10C training (FTU)",
+"src": "https://www.dm.af.mil/About-DM/Fact-Sheets/Article/672188/47th-fighter-squadron",
+"st": "AZ",
+"svc": "USAF"
+},
+"480th FS": {
+"base": "Spangdahlem AB",
+"full": "480th Fighter Squadron",
+"parent": "52nd Operations Group",
+"role": "F-16 fighter",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/432527/480-fighter-squadron-usafe",
+"st": "Germany",
+"svc": "USAF"
+},
+"493rd FS": {
+"base": "RAF Lakenheath",
+"full": "493rd Fighter Squadron",
+"parent": "48th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.lakenheath.af.mil/News/Article-Display/Article/3004447/48th-fighter-wing-welcomes-new-flagships/",
+"st": "UK",
+"svc": "USAF"
+},
+"494th FS": {
+"base": "RAF Lakenheath",
+"full": "494th Fighter Squadron",
+"parent": "48th Fighter Wing",
+"role": "F-15E strike fighter",
+"src": "https://www.lakenheath.af.mil/News/Tag/1539/?Page=4",
+"st": "UK",
+"svc": "USAF"
+},
+"495th FS": {
+"base": "RAF Lakenheath",
+"full": "495th Fighter Squadron",
+"parent": "48th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.lakenheath.af.mil/News/Article-Display/Article/3004447/48th-fighter-wing-welcomes-new-flagships/",
+"st": "UK",
+"svc": "USAF"
+},
+"49th FTS": {
+"base": "Columbus AFB",
+"full": "49th Fighter Training Squadron",
+"parent": "14th Flying Training Wing",
+"role": "T-38 fighter fundamentals",
+"src": "https://www.columbus.af.mil/News/Article/1680721/49th-fts-cultivates-pilots-into-fighter-wingmen/",
+"st": "MS",
+"svc": "USAF"
+},
+"49th TES": {
+"base": "Barksdale AFB",
+"full": "49th Test and Evaluation Squadron",
+"parent": "53rd Wing",
+"role": "B-52 operational test",
+"src": "https://www.barksdale.af.mil/News/Article/2967665/53rd-wings-49th-test-and-evaluation-squadron-receives-air-force-accolades-for-i",
+"st": "LA",
+"svc": "USAF"
+},
+"4th FS": {
+"base": "Hill AFB",
+"full": "4th Fighter Squadron",
+"parent": "388th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.acc.af.mil/News/Article-Display/Article/1330132/hills-4th-fsamu-receives-first-f-35a/",
+"st": "UT",
+"svc": "USAF"
+},
+"4th SOS": {
+"base": "Hurlburt Field",
+"full": "4th Special Operations Squadron",
+"parent": "1st Special Operations Wing",
+"role": "AC-130J gunship",
+"src": "https://www.hurlburt.af.mil/News/Article-Display/Article/3584243/4th-sos-performs-first-farrp-between-an-ac-130j-and-an-mc-130j-in-exercise-agil",
+"st": "FL",
+"svc": "USAF"
+},
+"50th ARS": {
+"base": "MacDill AFB",
+"full": "50th Air Refueling Squadron",
+"parent": "6th Operations Group",
+"role": "KC-135R tanker",
+"src": "https://www.macdill.af.mil/About-Us/Fact-Sheets/Article/231794/6th-operations-group/",
+"st": "FL",
+"svc": "USAF"
+},
+"50th FTS": {
+"base": "Columbus AFB",
+"full": "50th Flying Training Squadron",
+"parent": "14th Flying Training Wing",
+"role": "T-38 pilot training",
+"src": "https://www.columbus.af.mil/News/Article/3974288/strikin-snakes-host-pilot-reunion/",
+"st": "MS",
+"svc": "USAF"
+},
+"510th FS": {
+"base": "Aviano AB",
+"full": "510th Fighter Squadron",
+"parent": "31st Fighter Wing",
+"role": "F-16 fighter",
+"src": "https://www.aviano.af.mil/About-Us/Fact-Sheets/Display/Article/280335/31st-fighter-wing/",
+"st": "Italy",
+"svc": "USAF"
+},
+"512th RQS": {
+"base": "Kirtland AFB",
+"full": "512th Rescue Squadron",
+"parent": "58th Special Operations Wing",
+"role": "HH-60W rescue training",
+"src": "https://www.kirtland.af.mil/Portals/52/58%20SOW%20Heritage%20Booklet%20Jul%202026.pdf",
+"st": "NM",
+"svc": "USAF"
+},
+"517th AS": {
+"base": "JB Elmendorf-Rich",
+"full": "517th Airlift Squadron",
+"parent": "3rd Wing",
+"role": "C-17/C-12 airlift",
+"src": "https://www.jber.jb.mil/Units/3wg.aspx",
+"st": "AK",
+"svc": "USAF"
+},
+"524th SOS": {
+"base": "Duke Field",
+"full": "524th Special Operations Squadron",
+"parent": "492nd Special Operations Wing",
+"role": "C-146A SOF airlift",
+"src": "https://www.492sow.af.mil/About-Us/Units/524-SOS/",
+"st": "FL",
+"svc": "USAF"
+},
+"525th FS": {
+"base": "JB Elmendorf-Rich",
+"full": "525th Fighter Squadron",
+"parent": "3rd Wing",
+"role": "F-22 fighter",
+"src": "https://www.jber.jb.mil/Units/3wg.aspx",
+"st": "AK",
+"svc": "USAF"
+},
+"535th AS": {
+"base": "JB Pearl Hbr-Hickam",
+"full": "535th Airlift Squadron",
+"parent": "15th Wing",
+"role": "C-17 airlift",
+"src": "https://www.15wing.af.mil/About-Us/Fact-Sheets/Display/Article/376282/535th-airlift-squadron-fact-sheet",
+"st": "HI",
+"svc": "USAF"
+},
+"53rd WRS": {
+"base": "Keesler AFB",
+"full": "53rd Weather Reconnaissance Squadron",
+"parent": "403rd Wing",
+"role": "WC-130J hurricane recon",
+"src": "https://www.403wg.afrc.af.mil/About/Fact-Sheets/Display/Article/192529",
+"st": "MS",
+"svc": "USAF"
+},
+"54th ARS": {
+"base": "Altus AFB",
+"full": "54th Air Refueling Squadron",
+"parent": "97th Operations Group",
+"role": "KC-135R aircrew training",
+"src": "https://www.altus.af.mil/Units/97th-Operations-Group/",
+"st": "OK",
+"svc": "USAF"
+},
+"54th FG": {
+"base": "Holloman AFB",
+"full": "54th Fighter Group",
+"parent": "",
+"role": "F-16 pilot training",
+"src": "https://www.holloman.af.mil/News/Display/Article/4337654/nighttime-flight-training/",
+"st": "NM",
+"svc": "USAF"
+},
+"54th HS": {
+"base": "Minot AFB",
+"full": "54th Helicopter Squadron",
+"parent": "582nd Helicopter Group",
+"role": "UH-1N missile-field security",
+"src": "https://www.minot.af.mil/News/Article-Display/Article/3626910/eye-in-the-sky-54th-helicopter-squadron-secures-team-minots-missile-fields-from",
+"st": "ND",
+"svc": "USAF"
+},
+"552nd ACW": {
+"base": "Tinker AFB",
+"full": "552nd Air Control Wing",
+"parent": "Eighth Air Force",
+"role": "E-3 AWACS",
+"src": "https://www.tinker.af.mil/About-Tinker/Fact-Sheets/Display/Article/2461278/552nd-air-control-wing",
+"st": "OK",
+"svc": "USAF"
+},
+"555th FS": {
+"base": "Aviano AB",
+"full": "555th Fighter Squadron",
+"parent": "31st Fighter Wing",
+"role": "F-16 fighter",
+"src": "https://www.aviano.af.mil/About-Us/Fact-Sheets/Display/Article/280335/31st-fighter-wing/",
+"st": "Italy",
+"svc": "USAF"
+},
+"556th TES": {
+"base": "Creech AFB",
+"full": "556th Test and Evaluation Squadron",
+"parent": "53rd Wing",
+"role": "MQ-9 operational test",
+"src": "https://www.creech.af.mil/News/Article-Display/Article/2546007/556th-tes-successfully-launch-land-first-creech-afb-atlc-test/",
+"st": "NV",
+"svc": "USAF"
+},
+"557th FTS": {
+"base": "USAF Academy",
+"full": "557th Flying Training Squadron",
+"parent": "306th Flying Training Group",
+"role": "T-53/T-41 cadet flying",
+"src": "https://www.aetc.af.mil/Units/19th-Air-Force/12FTW/306th-Flying-Training-Group/",
+"st": "CO",
+"svc": "USAF"
+},
+"559th FTS": {
+"base": "JBSA-Randolph",
+"full": "559th Flying Training Squadron",
+"parent": "12th Flying Training Wing",
+"role": "T-6A instructor training",
+"src": "https://www.jbsa.mil/News/News/Article/3908862/559th-flying-training-squadron-molds-instructor-pilots-secures-future-of-traini/",
+"st": "TX",
+"svc": "USAF"
+},
+"55th ECG": {
+"base": "Davis-Monthan AFB",
+"full": "55th Electronic Combat Group",
+"parent": "55th Wing",
+"role": "EC-130H/EA-37B EW",
+"src": "https://www.dm.af.mil/Media/Article-View/Article/3703343/43rd-ecs-transitions-to-ea-37b/",
+"st": "AZ",
+"svc": "USAF"
+},
+"55th FS": {
+"base": "Shaw AFB",
+"full": "55th Fighter Squadron",
+"parent": "20th Operations Group",
+"role": "F-16CJ SEAD fighter",
+"src": "https://www.shaw.af.mil/About-Us/Fact-Sheets/Display/Article/212640/55th-fighter-squadron/",
+"st": "SC",
+"svc": "USAF"
+},
+"55th RQS": {
+"base": "Davis-Monthan AFB",
+"full": "55th Rescue Squadron",
+"parent": "563rd Rescue Group",
+"role": "HH-60W combat rescue",
+"src": "https://www.dm.af.mil/Media/Article-View/Article/3404658/hh-60w-brings-rescue-to-new-heights/",
+"st": "AZ",
+"svc": "USAF"
+},
+"56th ARS": {
+"base": "Altus AFB",
+"full": "56th Air Refueling Squadron",
+"parent": "97th OG",
+"role": "KC-46 training",
+"src": "https://www.altus.af.mil/News/Tag/72008/56th-air-refueling-squadron/",
+"st": "OK",
+"svc": "USAF"
+},
+"56th FW": {
+"base": "Luke AFB",
+"full": "56th Fighter Wing",
+"parent": "AETC",
+"role": "F-35A/F-16 training",
+"src": "https://www.luke.af.mil/Portals/58/2021 Luke Fact Sheet.pdf",
+"st": "AZ",
+"svc": "USAF"
+},
+"56th RQS": {
+"base": "Aviano AB",
+"full": "56th Rescue Squadron",
+"parent": "31st FW",
+"role": "HH-60W combat rescue",
+"src": "https://www.aviano.af.mil/News/Display/Article/4430576/56-rqs-trains-over-northern-italy/",
+"st": "Italy",
+"svc": "USAF"
+},
+"57th Wing": {
+"base": "Nellis AFB",
+"full": "57th Wing",
+"parent": "",
+"role": "Advanced training/aggressors",
+"src": "https://www.nellis.af.mil/About/Fact-Sheets/Display/Article/284155/57th-wing/",
+"st": "NV",
+"svc": "USAF"
+},
+"586th FLTS": {
+"base": "Holloman AFB",
+"full": "586th Flight Test Squadron",
+"parent": "704th Test Group",
+"role": "T-38C/C-12 flight test",
+"src": "https://www.holloman.af.mil/About/Fact-Sheets/Display/Article/317275/586th-flight-test-squadron/",
+"st": "NM",
+"svc": "USAF"
+},
+"58th AS": {
+"base": "Altus AFB",
+"full": "58th Airlift Squadron",
+"parent": "97th AMW",
+"role": "C-17 training",
+"src": "https://www.altus.af.mil/About-Us/Fact-Sheets/Display/Article/352072/58th-airlift-squadron/",
+"st": "OK",
+"svc": "USAF"
+},
+"58th FS": {
+"base": "Eglin AFB",
+"full": "58th Fighter Squadron",
+"parent": "33rd FW",
+"role": "F-35A training",
+"src": "https://www.33fw.af.mil/About-Us/Fact-Sheets/Article/885702/33rd-fighter-wing/",
+"st": "FL",
+"svc": "USAF"
+},
+"58th OG Det.2": {
+"base": "Kirtland AFB",
+"full": "58th Operations Group Detachment 2",
+"parent": "58th OG",
+"role": "UH-1N/MH-139 training",
+"src": "https://www.kirtland.af.mil/News/Article-Display/Article/3416621/58th-operations-group-detachment-two-assumption-of-command/",
+"st": "NM",
+"svc": "USAF"
+},
+"5th BW": {
+"base": "Minot AFB",
+"full": "5th Bomb Wing",
+"parent": "Eighth Air Force",
+"role": "B-52H bomber",
+"src": "https://www.minot.af.mil/About-Us/Fact-Sheets/Display/Article/264218/5th-bomb-wing-minot-air-force-base/",
+"st": "ND",
+"svc": "USAF"
+},
+"5th HS": {
+"base": "JB Andrews",
+"full": "5th Helicopter Squadron",
+"parent": "316th OG",
+"role": "HH-60W helicopter",
+"src": "https://www.afrc.af.mil/News/Article/4585816/a-first-in-60-years-jb-andrews-stands-up-new-helicopter-squadron/",
+"st": "MD",
+"svc": "USAF"
+},
+"5th RS": {
+"base": "Osan AB",
+"full": "5th Reconnaissance Squadron",
+"parent": "9th OG",
+"role": "U-2S reconnaissance",
+"src": "https://www.beale.af.mil/Information/Display/Article/279938/5th-reconnaissance-squadron",
+"st": "South Korea",
+"svc": "USAF"
+},
+"60th AMW": {
+"base": "Travis AFB",
+"full": "60th Air Mobility Wing",
+"parent": "Air Mobility Command",
+"role": "Airlift & air refueling",
+"src": "https://www.travis.af.mil/Units/Fact-Sheets/Article/855903/60th-air-mobility-wing",
+"st": "CA",
+"svc": "USAF"
+},
+"60th FS": {
+"base": "Eglin AFB",
+"full": "60th Fighter Squadron",
+"parent": "33rd FW",
+"role": "F-35A training",
+"src": "https://www.33fw.af.mil/About-Us/Fact-Sheets/Article/885702/33rd-fighter-wing/",
+"st": "FL",
+"svc": "USAF"
+},
+"61st AS": {
+"base": "Little Rock AFB",
+"full": "61st Airlift Squadron",
+"parent": "19th AW",
+"role": "C-130J airlift",
+"src": "https://www.littlerock.af.mil/News/Article-Display/Article/3708198/black-knights-return-to-herk-nation",
+"st": "AR",
+"svc": "USAF"
+},
+"61st FS": {
+"base": "Luke AFB",
+"full": "61st Fighter Squadron",
+"parent": "56th FW",
+"role": "F-35A training",
+"src": "https://www.luke.af.mil/News/Article-Display/Article/640889/top-dogs-drive-f-35-program-forward/",
+"st": "AZ",
+"svc": "USAF"
+},
+"62nd AS": {
+"base": "Little Rock AFB",
+"full": "62nd Airlift Squadron",
+"parent": "",
+"role": "C-130J training",
+"src": "https://dvidshub.net/image/7526127/62nd-airlift-squadron-flies-over-arkansas",
+"st": "AR",
+"svc": "USAF"
+},
+"62nd AW": {
+"base": "JB Lewis-McChord",
+"full": "62nd Airlift Wing",
+"parent": "Air Mobility Command",
+"role": "C-17 airlift",
+"src": "https://www.mcchord.af.mil/About-Us/Fact-Sheets/Display/Article/247277/62nd-airlift-wing/",
+"st": "WA",
+"svc": "USAF"
+},
+"62nd FS": {
+"base": "Luke AFB",
+"full": "62nd Fighter Squadron",
+"parent": "56th FW",
+"role": "F-35A training",
+"src": "https://www.luke.af.mil/News/Tag/76852/62nd-fighter-squadron/",
+"st": "AZ",
+"svc": "USAF"
+},
+"63rd ARS": {
+"base": "MacDill AFB",
+"full": "63rd Air Refueling Squadron",
+"parent": "927th ARW",
+"role": "KC-135 tanker",
+"src": "https://www.afrc.af.mil/Units/927ARW/",
+"st": "FL",
+"svc": "USAF"
+},
+"63rd FS": {
+"base": "Luke AFB",
+"full": "63rd Fighter Squadron",
+"parent": "56th OG",
+"role": "F-35A training",
+"src": "https://www.luke.af.mil/Portals/58/63%20Fighter%20Squadron%20as%20of%2020220225.pdf",
+"st": "AZ",
+"svc": "USAF"
+},
+"645th ASG": {
+"base": "Wright-Patterson AFB",
+"full": "645th Aeronautical Systems Group (Big Safari)",
+"parent": "AFLCMC (AFMC)",
+"role": "Special-mission acft mods",
+"src": "https://www.dafhistory.af.mil/About-Us/Fact-Sheets/Display/Article/1140033/645-aeronautical-systems-group-afmc",
+"st": "OH",
+"svc": "USAF"
+},
+"64th AGRS": {
+"base": "Nellis AFB",
+"full": "64th Aggressor Squadron",
+"parent": "57th Wing",
+"role": "F-16 aggressor",
+"src": "https://www.nellis.af.mil/About/Fact-Sheets/Display/Article/284155/57th-wing/",
+"st": "NV",
+"svc": "USAF"
+},
+"65th AGRS": {
+"base": "Nellis AFB",
+"full": "65th Aggressor Squadron",
+"parent": "57th Wing",
+"role": "F-35A aggressor",
+"src": "https://www.nellis.af.mil/About/Fact-Sheets/Display/Article/4528229/65th-aggressor-squadron/",
+"st": "NV",
+"svc": "USAF"
+},
+"65th AS": {
+"base": "JB Pearl Hbr-Hickam",
+"full": "65th Airlift Squadron",
+"parent": "15th Wing",
+"role": "C-37A special air mission",
+"src": "https://www.15wing.af.mil/News/Article-Display/Article/4024888/c-37a-stands-operationally-ready",
+"st": "HI",
+"svc": "USAF"
+},
+"66th WPS": {
+"base": "Nellis AFB",
+"full": "66th Weapons Squadron",
+"parent": "USAF Weapons School",
+"role": "A-10/JTAC weapons school",
+"src": "https://www.nellis.af.mil/About/Fact-Sheets/Display/Article/284155/57th-wing/",
+"st": "NV",
+"svc": "USAF"
+},
+"67th FS": {
+"base": "Kadena AB",
+"full": "67th Fighter Squadron",
+"parent": "18th Wing",
+"role": "F-15EX fighter (converting)",
+"src": "https://www.kadena.af.mil/News/Display/Article/4530945/f-15ex-returns-to-kadena-advances-transition-to-next-generation-airpower/",
+"st": "Japan",
+"svc": "USAF"
+},
+"67th SOS": {
+"base": "RAF Mildenhall",
+"full": "67th Special Operations Squadron",
+"parent": "352nd SOW",
+"role": "MC-130J special ops",
+"src": "https://www.352sow.af.mil/ABOUT-US/FACT-SHEETS/Display/Article/581700/352d-special-operations-wing",
+"st": "UK",
+"svc": "USAF"
+},
+"68th AS": {
+"base": "JBSA-Lackland",
+"full": "68th Airlift Squadron",
+"parent": "433rd AW",
+"role": "C-5M airlift",
+"src": "https://www.jbsa.mil/News/News/Tag/118940/68th-airlift-squadron",
+"st": "TX",
+"svc": "USAF"
+},
+"69th BS": {
+"base": "Minot AFB",
+"full": "69th Bomb Squadron",
+"parent": "5th BW",
+"role": "B-52H bomber",
+"src": "https://www.minot.af.mil/About-Us/Fact-Sheets/Display/Article/264218/5th-bomb-wing-minot-air-force-base/",
+"st": "ND",
+"svc": "USAF"
+},
+"6th ARW": {
+"base": "MacDill AFB",
+"full": "6th Air Refueling Wing",
+"parent": "21st Air Force (AMC)",
+"role": "KC-135 tanker",
+"src": "https://www.macdill.af.mil/About-Us/Fact-Sheets/Article/231802/6th-air-refueling-wing/",
+"st": "FL",
+"svc": "USAF"
+},
+"6th AS": {
+"base": "JB McGuire-Dix-Lkhst",
+"full": "6th Airlift Squadron",
+"parent": "305th AMW",
+"role": "C-17 airlift",
+"src": "https://www.jbmdl.jb.mil/News/Article/4149819/global-reach-relentless-impact-6th-airlift-squadron-leads-the-force-in-strategi/",
+"st": "NJ",
+"svc": "USAF"
+},
+"6th SOS": {
+"base": "Cannon AFB",
+"full": "6th Special Operations Squadron",
+"parent": "492nd SOW",
+"role": "MC-130J special ops",
+"src": "https://www.cannon.af.mil/News/Article/3848723/6th-sos-realigns-6th-soamxs-activated/",
+"st": "NM",
+"svc": "USAF"
+},
+"6th WPS": {
+"base": "Nellis AFB",
+"full": "6th Weapons Squadron",
+"parent": "USAF Weapons School",
+"role": "F-35A weapons school",
+"src": "https://www.nellis.af.mil/News/Article/1225098/weapons-school-re-activates-historic-6th-wps",
+"st": "NV",
+"svc": "USAF"
+},
+"6thWPS": {
+"base": "Nellis AFB",
+"full": "6th Weapons Squadron",
+"parent": "USAF Weapons School",
+"role": "F-35A weapons school",
+"src": "https://www.nellis.af.mil/News/Article/1225098/weapons-school-re-activates-historic-6th-wps",
+"st": "NV",
+"svc": "USAF"
+},
+"700th AS": {
+"base": "Dobbins ARB",
+"full": "700th Airlift Squadron",
+"parent": "94th AW",
+"role": "C-130H3 airlift",
+"src": "https://www.dvidshub.net/image/6464345/700th-airlift-squadron-conducts-airdrops-dobbins",
+"st": "GA",
+"svc": "USAF"
+},
+"71st FS": {
+"base": "JB Langley-Eustis",
+"full": "71st Fighter Training Squadron",
+"parent": "1st FW",
+"role": "T-38 adversary air",
+"src": "https://www.jble.af.mil/About-Us/Fact-Sheets/show/Article/843103/71st-fighter-training-squadron/",
+"st": "VA",
+"svc": "USAF"
+},
+"71st RQS": {
+"base": "Moody AFB",
+"full": "71st Rescue Squadron",
+"parent": "347th RQG",
+"role": "HC-130J rescue",
+"src": "https://www.moody.af.mil/News/Article-Display/Article/3157019/71-rqs-71-rgs-receive-new-hc-130j/",
+"st": "GA",
+"svc": "USAF"
+},
+"71st SOS": {
+"base": "Kirtland AFB",
+"full": "71st Special Operations Squadron",
+"parent": "58th OG",
+"role": "CV-22 training",
+"src": "https://www.aetc.af.mil/About-Us/Fact-Sheets/Display/Article/562074/71st-special-operations-squadron/",
+"st": "NM",
+"svc": "USAF"
+},
+"729th AS": {
+"base": "March ARB",
+"full": "729th Airlift Squadron",
+"parent": "452nd AMW",
+"role": "C-17 airlift",
+"src": "https://www.dvidshub.net/image/8004655/729th-airlift-squadron-night-operations",
+"st": "CA",
+"svc": "USAF"
+},
+"72nd ARS": {
+"base": "Grissom ARB",
+"full": "72nd Air Refueling Squadron",
+"parent": "434th OG",
+"role": "KC-135 tanker",
+"src": "https://www.grissom.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/174556",
+"st": "IN",
+"svc": "USAF"
+},
+"731st AS": {
+"base": "Peterson SFB",
+"full": "731st Airlift Squadron",
+"parent": "302nd AW",
+"role": "C-130H airlift",
+"src": "https://www.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/4444067/302nd-airlift-wing/",
+"st": "CO",
+"svc": "USAF"
+},
+"73rd AS": {
+"base": "Scott AFB",
+"full": "73rd Airlift Squadron",
+"parent": "932nd OG",
+"role": "C-40C VIP airlift",
+"src": "https://www.932aw.afrc.af.mil/About-Us/Units",
+"st": "IL",
+"svc": "USAF"
+},
+"73rd SOS": {
+"base": "Hurlburt Field",
+"full": "73rd Special Operations Squadron",
+"parent": "1st SOG",
+"role": "AC-130J gunship",
+"src": "https://www.hurlburt.af.mil/About-Us/Fact-Sheets/Fact-Sheets/Article/2498333/73d-special-operations-squadron/",
+"st": "FL",
+"svc": "USAF"
+},
+"74th ARS": {
+"base": "Grissom ARB",
+"full": "74th Air Refueling Squadron",
+"parent": "434th OG",
+"role": "KC-135 tanker",
+"src": "https://www.grissom.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/174556",
+"st": "IN",
+"svc": "USAF"
+},
+"74th FS": {
+"base": "Moody AFB",
+"full": "74th Fighter Squadron",
+"parent": "23rd FG",
+"role": "A-10C attack",
+"src": "https://www.moody.af.mil/About-Us/Units/23d-Wing/23d-Fighter-Group/",
+"st": "GA",
+"svc": "USAF"
+},
+"756th ARS": {
+"base": "JB Andrews",
+"full": "756th Air Refueling Squadron",
+"parent": "459th ARW",
+"role": "KC-135R tanker",
+"src": "https://www.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/4477083/459-air-refueling-wing/",
+"st": "MD",
+"svc": "USAF"
+},
+"757th AS": {
+"base": "Youngstown ARS",
+"full": "757th Airlift Squadron",
+"parent": "910th AW",
+"role": "C-130H/J airlift",
+"src": "https://www.youngstown.afrc.af.mil/News/Tag/68397",
+"st": "OH",
+"svc": "USAF"
+},
+"758th AS": {
+"base": "Pittsburgh ARS",
+"full": "758th Airlift Squadron",
+"parent": "911th OG",
+"role": "C-17 airlift",
+"src": "https://www.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/4404947/911th-airlift-wing/",
+"st": "PA",
+"svc": "USAF"
+},
+"75th FS": {
+"base": "Moody AFB",
+"full": "75th Fighter Squadron",
+"parent": "23rd FG",
+"role": "A-10C attack",
+"src": "https://www.moody.af.mil/About-Us/Units/23d-Wing/23d-Fighter-Group/",
+"st": "GA",
+"svc": "USAF"
+},
+"76th AS": {
+"base": "Ramstein AB",
+"full": "76th Airlift Squadron",
+"parent": "86th AW",
+"role": "C-21/C-37 DV airlift",
+"src": "https://www.ramstein.af.mil/News/Features/Display/Article/2688601/76-as-takes-you-here-there-anywhere/",
+"st": "Germany",
+"svc": "USAF"
+},
+"76th FS": {
+"base": "Moody AFB",
+"full": "76th Fighter Squadron",
+"parent": "476th FG",
+"role": "A-10C attack",
+"src": "https://www.moody.af.mil/About-Us/Units/23d-Wing/23d-Fighter-Group/",
+"st": "GA",
+"svc": "USAF"
+},
+"77th ARS": {
+"base": "Seymour Johnson AFB",
+"full": "77th Air Refueling Squadron",
+"parent": "916th OG",
+"role": "KC-46 tanker",
+"src": "https://www.seymourjohnson.af.mil/About-Us/Fact-Sheets/916th-Air-Refueling-Wing/",
+"st": "NC",
+"svc": "USAF"
+},
+"77th FS": {
+"base": "Shaw AFB",
+"full": "77th Fighter Squadron",
+"parent": "20th OG",
+"role": "F-16C SEAD fighter",
+"src": "https://www.shaw.af.mil/About-Us/Fact-Sheets/Display/Article/212637/20th-operations-group/",
+"st": "SC",
+"svc": "USAF"
+},
+"79th FS": {
+"base": "Shaw AFB",
+"full": "79th Fighter Squadron",
+"parent": "20th OG",
+"role": "F-16C SEAD fighter",
+"src": "https://www.shaw.af.mil/About-Us/Fact-Sheets/Display/Article/212637/20th-operations-group/",
+"st": "SC",
+"svc": "USAF"
+},
+"79th RQS": {
+"base": "Davis-Monthan AFB",
+"full": "79th Rescue Squadron",
+"parent": "563rd RQG",
+"role": "HC-130J rescue",
+"src": "https://www.dm.af.mil/Media/News/Tag/130655/79th-rqs/",
+"st": "AZ",
+"svc": "USAF"
+},
+"7th BW": {
+"base": "Dyess AFB",
+"full": "7th Bomb Wing",
+"parent": "Eighth Air Force",
+"role": "B-1B bomber",
+"src": "https://www.8af.af.mil/About-Us/Fact-Sheets/Display/Article/1085836/7th-bomb-wing",
+"st": "TX",
+"svc": "USAF"
+},
+"7th FTS": {
+"base": "JB Langley-Eustis",
+"full": "7th Fighter Training Squadron",
+"parent": "1st FW",
+"role": "T-38 adversary air",
+"src": "https://www.jble.af.mil/News/Article-Display/Article/2846839/7th-fts-reactivates-at-jble",
+"st": "VA",
+"svc": "USAF"
+},
+"7th SOS": {
+"base": "RAF Mildenhall",
+"full": "7th Special Operations Squadron",
+"parent": "352nd SOW",
+"role": "CV-22B special ops",
+"src": "https://www.352sow.af.mil/ABOUT-US/FACT-SHEETS/Display/Article/581700/352d-special-operations-wing",
+"st": "UK",
+"svc": "USAF"
+},
+"80th FS": {
+"base": "Kunsan AB",
+"full": "80th Fighter Squadron",
+"parent": "8th FW",
+"role": "F-16 fighter",
+"src": "https://www.kunsan.af.mil/About-Us/Fact-Sheets/Article/412725/80th-fighter-squadron/",
+"st": "South Korea",
+"svc": "USAF"
+},
+"80th FTW": {
+"base": "Sheppard AFB",
+"full": "80th Flying Training Wing (ENJJPT)",
+"parent": "",
+"role": "T-6A/T-38C NATO pilot trng",
+"src": "https://www.sheppard.af.mil/Library/Fact-Sheets/Display/Article/367540/80th-flying-training-wing/",
+"st": "TX",
+"svc": "USAF"
+},
+"815th AS": {
+"base": "Keesler AFB",
+"full": "815th Airlift Squadron",
+"parent": "403rd Wing",
+"role": "C-130J airlift",
+"src": "https://www.403wg.afrc.af.mil/About/Fact-Sheets/Display/Article/192528/815th-airlift-squadron-flying-jennies",
+"st": "MS",
+"svc": "USAF"
+},
+"82nd ATRS": {
+"base": "Tyndall AFB",
+"full": "82nd Aerial Targets Squadron",
+"parent": "53rd Wing",
+"role": "QF-16/E-9A aerial targets",
+"src": "https://www.tyndall.af.mil/News/Article-Display/Article/1382141/82nd-atrs-clears-the-way/",
+"st": "FL",
+"svc": "USAF"
+},
+"82nd ATRS Det.1": {
+"base": "Holloman AFB",
+"full": "82nd Aerial Targets Squadron Det. 1",
+"parent": "82nd ATRS",
+"role": "QF-16 aerial targets",
+"src": "https://www.holloman.af.mil/About/Fact-Sheets/Display/Article/317298/detachment-1-82nd-aerial-targets-squadron/",
+"st": "NM",
+"svc": "USAF"
+},
+"82nd ATS": {
+"base": "Tyndall AFB",
+"full": "82nd Aerial Targets Squadron",
+"parent": "53rd Weapons Evaluation Group",
+"role": "QF-16 aerial targets",
+"src": "https://www.tyndall.af.mil/News/Features/Display/Article/2768224/qf-16-drones-provide-live-fire-joint-training/",
+"st": "FL",
+"svc": "USAF"
+},
+"85th FTS": {
+"base": "Laughlin AFB",
+"full": "85th Flying Training Squadron",
+"parent": "47th Operations Group",
+"role": "T-6A pilot training",
+"src": "https://www.laughlin.af.mil/About-Us/Fact-Sheets/Display/Article/354522/85th-flying-training-squadron",
+"st": "TX",
+"svc": "USAF"
+},
+"85th TES": {
+"base": "Eglin AFB",
+"full": "85th Test and Evaluation Squadron",
+"parent": "53rd Wing",
+"role": "F-15EX/fighter op test",
+"src": "https://www.53rdwing.af.mil/News/Photos/igphoto/2003470197/",
+"st": "FL",
+"svc": "USAF"
+},
+"87th FTS": {
+"base": "Laughlin AFB",
+"full": "87th Flying Training Squadron",
+"parent": "47th Operations Group",
+"role": "T-38C pilot training",
+"src": "https://www.laughlin.af.mil/News/News/Display/Article/4382515/red-bulls-begin-flight-operations-after-relocation/",
+"st": "TX",
+"svc": "USAF"
+},
+"88th FTS": {
+"base": "Sheppard AFB",
+"full": "88th Fighter Training Squadron",
+"parent": "80th Operations Group",
+"role": "T-38C fighter fundamentals",
+"src": "https://www.sheppard.af.mil/Library/Fact-Sheets/Display/Article/367543/80th-operations-group/",
+"st": "TX",
+"svc": "USAF"
+},
+"88th TES": {
+"base": "Nellis AFB",
+"full": "88th Test and Evaluation Squadron",
+"parent": "53rd Test and Evaluation Group",
+"role": "HH-60W rescue op test",
+"src": "https://www.acc.af.mil/News/Article-Display/Article/2983880/88th-test-and-evaluation-squadron-welcomes-new-hh-60ws-kicks-off-iote/",
+"st": "NV",
+"svc": "USAF"
+},
+"89th AS": {
+"base": "Wright-Patterson AFB",
+"full": "89th Airlift Squadron",
+"parent": "445th Airlift Wing",
+"role": "C-17 airlift",
+"src": "https://www.445aw.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/179851/445th-airlift-wing",
+"st": "OH",
+"svc": "USAF"
+},
+"89th ATKS": {
+"base": "Ellsworth AFB",
+"full": "89th Attack Squadron",
+"parent": "",
+"role": "MQ-9 attack",
+"src": "https://www.ellsworth.af.mil/News/Article-Display/Article/3765232/89th-attack-squadron-showcases-the-mq-9-at-ellsworth/",
+"st": "SD",
+"svc": "USAF"
+},
+"89th FTS": {
+"base": "Sheppard AFB",
+"full": "89th Flying Training Squadron",
+"parent": "80th Operations Group",
+"role": "T-6A pilot training",
+"src": "https://www.sheppard.af.mil/Library/Fact-Sheets/Display/Article/367543/80th-operations-group/",
+"st": "TX",
+"svc": "USAF"
+},
+"8th FS": {
+"base": "Holloman AFB",
+"full": "8th Fighter Squadron",
+"parent": "54th Fighter Group",
+"role": "F-16 training",
+"src": "https://www.holloman.af.mil/About/Units",
+"st": "NM",
+"svc": "USAF"
+},
+"8th FTS": {
+"base": "Vance AFB",
+"full": "8th Flying Training Squadron",
+"parent": "71st Operations Group",
+"role": "T-6A pilot training",
+"src": "https://www.dvidshub.net/image/7562968/8th-fts-t-6",
+"st": "OK",
+"svc": "USAF"
+},
+"8th SOS": {
+"base": "Hurlburt Field",
+"full": "8th Special Operations Squadron",
+"parent": "1st Special Operations Wing",
+"role": "CV-22 special ops",
+"src": "https://www.hurlburt.af.mil/AboutUs/FactSheets/FactSheets/tabid/140/Article/204532/8th-special-operations-squadron.aspx",
+"st": "FL",
+"svc": "USAF"
+},
+"906th ARS": {
+"base": "Scott AFB",
+"full": "906th Air Refueling Squadron",
+"parent": "375th Air Mobility Wing",
+"role": "KC-135 tanker",
+"src": "https://www.scott.af.mil/News/Article/2648908/906th-ars-takes-teamwork-to-a-new-level/",
+"st": "IL",
+"svc": "USAF"
+},
+"909th ARS": {
+"base": "Kadena AB",
+"full": "909th Air Refueling Squadron",
+"parent": "18th Operations Group",
+"role": "KC-135 tanker",
+"src": "https://www.kadena.af.mil/Units/18th-Operations-Group/",
+"st": "Japan",
+"svc": "USAF"
+},
+"90th FS": {
+"base": "JB Elmendorf-Rich",
+"full": "90th Fighter Squadron",
+"parent": "3rd Operations Group",
+"role": "F-22 fighter",
+"src": "https://www.jber.jb.mil/Units/3wg.aspx",
+"st": "AK",
+"svc": "USAF"
+},
+"90th FTS": {
+"base": "Sheppard AFB",
+"full": "90th Flying Training Squadron",
+"parent": "80th Operations Group",
+"role": "T-38C pilot training",
+"src": "https://www.sheppard.af.mil/Library/Fact-Sheets/Display/Article/367543/80th-operations-group/",
+"st": "TX",
+"svc": "USAF"
+},
+"91st ARS": {
+"base": "MacDill AFB",
+"full": "91st Air Refueling Squadron",
+"parent": "6th Operations Group",
+"role": "KC-135R tanker",
+"src": "https://www.macdill.af.mil/About-Us/Fact-Sheets/Article/231794/6th-operations-group/",
+"st": "FL",
+"svc": "USAF"
+},
+"92nd ARW": {
+"base": "Fairchild AFB",
+"full": "92nd Air Refueling Wing",
+"parent": "Air Mobility Command",
+"role": "KC-135 tanker",
+"src": "https://www.fairchild.af.mil/Information/Fact-Sheets/Display/Article/238995/team-fairchild/",
+"st": "WA",
+"svc": "USAF"
+},
+"93rd BS": {
+"base": "Barksdale AFB",
+"full": "93rd Bomb Squadron",
+"parent": "307th Bomb Wing",
+"role": "B-52H training (FTU)",
+"src": "https://www.307bw.afrc.af.mil/Home/Fact-Sheets/Display/Article/182796/",
+"st": "LA",
+"svc": "USAF"
+},
+"93rd FS": {
+"base": "Homestead ARB",
+"full": "93rd Fighter Squadron",
+"parent": "482nd Fighter Wing",
+"role": "F-16C fighter",
+"src": "https://www.homestead.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/700487/482d-fighter-wing",
+"st": "FL",
+"svc": "USAF"
+},
+"94th FS": {
+"base": "JB Langley-Eustis",
+"full": "94th Fighter Squadron",
+"parent": "1st Operations Group",
+"role": "F-22 fighter",
+"src": "https://www.jble.af.mil/News/Article-Display/Article/2453830/the-94th-fs-returns-to-jble-following-rapid-deployment/",
+"st": "VA",
+"svc": "USAF"
+},
+"94th FTS": {
+"base": "USAF Academy",
+"full": "94th Flying Training Squadron",
+"parent": "306th Flying Training Group",
+"role": "Glider training",
+"src": "https://www.aetc.af.mil/Units/12FTW/306th-Flying-Training-Group/",
+"st": "CO",
+"svc": "USAF"
+},
+"95th FS": {
+"base": "Tyndall AFB",
+"full": "95th Fighter Squadron",
+"parent": "325th Fighter Wing",
+"role": "F-35A fighter",
+"src": "https://www.tyndall.af.mil/News/Article-Display/Article/4557959/tyndall-bids-farewell-to-95th-fgs-reactivates-historic-325th-amxs/",
+"st": "FL",
+"svc": "USAF"
+},
+"960th AACS": {
+"base": "Tinker AFB",
+"full": "960th Airborne Air Control Squadron",
+"parent": "552nd Operations Group",
+"role": "E-3 AWACS",
+"src": "https://www.552acw.acc.af.mil/About-Us/Fact-Sheets/Display/Article/430830/552nd-operations-group",
+"st": "OK",
+"svc": "USAF"
+},
+"961st AACS": {
+"base": "Kadena AB",
+"full": "961st Airborne Air Control Squadron",
+"parent": "18th Operations Group",
+"role": "E-3 AWACS",
+"src": "https://www.kadena.af.mil/Units/18th-Operations-Group/",
+"st": "Japan",
+"svc": "USAF"
+},
+"962nd AACS": {
+"base": "JB Elmendorf-Rich",
+"full": "962nd Airborne Air Control Squadron",
+"parent": "3rd Operations Group",
+"role": "E-3 AWACS",
+"src": "https://www.jber.jb.mil/Units/3wg.aspx",
+"st": "AK",
+"svc": "USAF"
+},
+"963rd AACS": {
+"base": "Tinker AFB",
+"full": "963rd Airborne Air Control Squadron",
+"parent": "552nd Operations Group",
+"role": "E-3 AWACS",
+"src": "https://www.552acw.acc.af.mil/About-Us/Fact-Sheets/Display/Article/430830/552nd-operations-group",
+"st": "OK",
+"svc": "USAF"
+},
+"964th AACS": {
+"base": "Tinker AFB",
+"full": "964th Airborne Air Control Squadron",
+"parent": "552nd Operations Group",
+"role": "E-3 AWACS",
+"src": "https://www.552acw.acc.af.mil/About-Us/Fact-Sheets/Display/Article/430830/552nd-operations-group",
+"st": "OK",
+"svc": "USAF"
+},
+"96th AS": {
+"base": "Minneapolis ARS",
+"full": "96th Airlift Squadron",
+"parent": "934th Airlift Wing",
+"role": "C-130H3 airlift",
+"src": "https://www.afrc.af.mil/About-Us/Fact-Sheets/Display/Article/4445308/934th-airlift-wing/",
+"st": "MN",
+"svc": "USAF"
+},
+"96th BS": {
+"base": "Barksdale AFB",
+"full": "96th Bomb Squadron",
+"parent": "2nd Bomb Wing",
+"role": "B-52H bomber",
+"src": "https://www.barksdale.af.mil/Units/2OG",
+"st": "LA",
+"svc": "USAF"
+},
+"97th AMW": {
+"base": "Altus AFB",
+"full": "97th Air Mobility Wing",
+"parent": "Air Education and Training Command",
+"role": "C-17/KC-135/KC-46 training",
+"src": "https://www.altus.af.mil/About-Us/Fact-Sheets/Display/Article/352087/altus-air-force-base/",
+"st": "OK",
+"svc": "USAF"
+},
+"97th ARS": {
+"base": "Fairchild AFB",
+"full": "97th Air Refueling Squadron",
+"parent": "92nd Operations Group",
+"role": "KC-135 tanker",
+"src": "https://www.fairchild.af.mil/Information/Fact-Sheets/Display/Article/2416367/97th-air-refueling-squadron/",
+"st": "WA",
+"svc": "USAF"
+},
+"98th FTS": {
+"base": "USAF Academy",
+"full": "98th Flying Training Squadron",
+"parent": "306th Flying Training Group",
+"role": "UV-18B parachute training",
+"src": "https://www.aetc.af.mil/Units/12FTW/306th-Flying-Training-Group/",
+"st": "CO",
+"svc": "USAF"
+},
+"99th AS": {
+"base": "JB Andrews",
+"full": "99th Airlift Squadron",
+"parent": "89th Airlift Wing",
+"role": "C-37A/B VIP airlift",
+"src": "https://www.amc.af.mil/About-Us/Fact-Sheets/Display/Article/2143952/c-37ab",
+"st": "MD",
+"svc": "USAF"
+},
+"99th FTS": {
+"base": "JBSA-Randolph",
+"full": "99th Flying Training Squadron",
+"parent": "12th Flying Training Wing",
+"role": "Instructor pilot training",
+"src": "https://www.jbsa.mil/News/News/Article/4209822/99th-flying-training-squadron-welcomes-new-commander/",
+"st": "TX",
+"svc": "USAF"
+},
+"99th RS": {
+"base": "Beale AFB",
+"full": "99th Reconnaissance Squadron",
+"parent": "9th Operations Group",
+"role": "U-2 reconnaissance",
+"src": "https://www.beale.af.mil/Information/Display/Article/279939/99th-reconnaissance-squadron",
+"st": "CA",
+"svc": "USAF"
+},
+"9th AS": {
+"base": "Dover AFB",
+"full": "9th Airlift Squadron",
+"parent": "",
+"role": "C-5M airlift",
+"src": "https://www.amc.af.mil/News/Article-Display/Article/2971106/9th-as-436th-aps-support-us-navy-salvage-and-diving-efforts/",
+"st": "DE",
+"svc": "USAF"
+},
+"9th ATKS": {
+"base": "Holloman AFB",
+"full": "9th Attack Squadron",
+"parent": "49th Operations Group",
+"role": "MQ-9 training",
+"src": "https://www.holloman.af.mil/About/Units",
+"st": "NM",
+"svc": "USAF"
+},
+"9th BS": {
+"base": "Dyess AFB",
+"full": "9th Bomb Squadron",
+"parent": "7th Operations Group",
+"role": "B-1B bomber",
+"src": "https://www.dyess.af.mil/Fact-Sheets/Display/Article/1675041/7th-operations-group/",
+"st": "TX",
+"svc": "USAF"
+},
+"9th RW": {
+"base": "Beale AFB",
+"full": "9th Reconnaissance Wing",
+"parent": "16th Air Force",
+"role": "U-2 reconnaissance",
+"src": "https://www.beale.af.mil/Information/Fact-Sheets/Display/Article/279932/9th-reconnaissance-wing/",
+"st": "CA",
+"svc": "USAF"
+},
+"9th SOS": {
+"base": "Cannon AFB",
+"full": "9th Special Operations Squadron",
+"parent": "27th Special Operations Wing",
+"role": "MC-130J special ops",
+"src": "https://www.dvidshub.net/news/480046/cannon-afbs-9th-sos-awarded-2023-best-usaf-air-refueling-crew",
+"st": "NM",
+"svc": "USAF"
+},
+"Blue Angels": {
+"base": "NAS Pensacola",
+"full": "Navy Flight Demonstration Squadron",
+"parent": "",
+"role": "F/A-18E/F, C-130J demo team",
+"src": "https://www.blueangels.navy.mil/",
+"st": "FL",
+"svc": "USN"
+},
+"CPRW-10": {
+"base": "NAS Whidbey Island",
+"full": "Patrol and Reconnaissance Wing 10",
+"parent": "Naval Air Force Pacific",
+"role": "P-8A type wing",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Patrol-And-Reconnaissance-Wing-10",
+"st": "WA",
+"svc": "USN"
+},
+"CVW-17": {
+"base": "NAS Lemoore",
+"full": "Carrier Air Wing 17",
+"parent": "Naval Air Force Pacific",
+"role": "Carrier air wing",
+"src": "https://www.airpac.navy.mil/Organization/Carrier-Air-Wing-CVW-17/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"CVW-2": {
+"base": "NAS Lemoore",
+"full": "Carrier Air Wing 2",
+"parent": "Naval Air Force Pacific",
+"role": "Carrier air wing (F-35C etc)",
+"src": "https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/3605231/carrier-air-wing-two-holds-change-of-command/",
+"st": "CA",
+"svc": "USN"
+},
+"CVW-5": {
+"base": "NAF Atsugi",
+"full": "Carrier Air Wing 5",
+"parent": "Naval Air Force Pacific",
+"role": "Carrier air wing",
+"src": "https://cnrj.cnic.navy.mil/Installations/NAF-Atsugi/About/Tenant-Commands/CVW-5/",
+"st": "Japan",
+"svc": "USN"
+},
+"CVW-7": {
+"base": "NAS Oceana",
+"full": "Carrier Air Wing 7",
+"parent": "Naval Air Force Atlantic",
+"role": "Carrier air wing",
+"src": "https://www.airlant.usff.navy.mil/Organization/Carrier-Air-Wings/Carrier-Air-Wing-CVW-7/Welcome-Aboard/",
+"st": "VA",
+"svc": "USN"
+},
+"CVW-8": {
+"base": "NAS Oceana",
+"full": "Carrier Air Wing 8",
+"parent": "Naval Air Force Atlantic",
+"role": "Carrier air wing",
+"src": "https://www.airlant.usff.navy.mil/Organization/Carrier-Air-Wings/Carrier-Air-Wing-CVW-8/Welcome-Aboard/",
+"st": "VA",
+"svc": "USN"
+},
+"EAWP": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Wing Pacific",
+"parent": "Naval Air Force Pacific",
+"role": "EA-18G type wing",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Electronic-Attack-Wing",
+"st": "WA",
+"svc": "USN"
+},
+"HM-15": {
+"base": "NS Norfolk",
+"full": "Helicopter Mine Countermeasures Sqn 15",
+"parent": "",
+"role": "MH-53E mine countermeasures",
+"src": "https://www.airlant.usff.navy.mil/Press-Room/News-Stories/Article/3882289/hm-15-holds-change-of-command-ceremony-welcomes-new-commanding-officer/",
+"st": "VA",
+"svc": "USN"
+},
+"HMH-361": {
+"base": "MCAS Miramar",
+"full": "Marine Heavy Helicopter Squadron 361",
+"parent": "MAG-16, 3rd MAW",
+"role": "CH-53 heavy lift",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMH-461": {
+"base": "MCAS New River",
+"full": "Marine Heavy Helicopter Squadron 461",
+"parent": "MAG-29, 2nd MAW",
+"role": "CH-53K heavy lift",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-29/HMH-461/",
+"st": "NC",
+"svc": "USMC"
+},
+"HMH-462": {
+"base": "MCAS Miramar",
+"full": "Marine Heavy Helicopter Squadron 462",
+"parent": "MAG-16, 3rd MAW",
+"role": "CH-53 heavy lift",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMH-464": {
+"base": "MCAS New River",
+"full": "Marine Heavy Helicopter Squadron 464",
+"parent": "MAG-29, 2nd MAW",
+"role": "CH-53 heavy lift",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-29/HMH-464/",
+"st": "NC",
+"svc": "USMC"
+},
+"HMH-465": {
+"base": "MCAS Miramar",
+"full": "Marine Heavy Helicopter Squadron 465",
+"parent": "MAG-16, 3rd MAW",
+"role": "CH-53 heavy lift",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMH-466": {
+"base": "MCAS Miramar",
+"full": "Marine Heavy Helicopter Squadron 466",
+"parent": "MAG-16, 3rd MAW",
+"role": "CH-53 heavy lift",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMHT-302": {
+"base": "MCAS New River",
+"full": "Marine Heavy Helicopter Training Squadron 302",
+"parent": "MAG-29, 2nd MAW",
+"role": "CH-53 training (FRS)",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-29/HMHT-302/",
+"st": "NC",
+"svc": "USMC"
+},
+"HMLA-167": {
+"base": "MCAS New River",
+"full": "Marine Light Attack Helicopter Squadron 167",
+"parent": "MAG-29, 2nd MAW",
+"role": "AH-1Z/UH-1Y attack helo",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-29/",
+"st": "NC",
+"svc": "USMC"
+},
+"HMLA-169": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Light Attack Helicopter Squadron 169",
+"parent": "MAG-39, 3rd MAW",
+"role": "AH-1Z/UH-1Y attack helo",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-39/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMLA-267": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Light Attack Helicopter Squadron 267",
+"parent": "MAG-39, 3rd MAW",
+"role": "AH-1Z/UH-1Y attack helo",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-39/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMLA-269": {
+"base": "MCAS New River",
+"full": "Marine Light Attack Helicopter Squadron 269",
+"parent": "MAG-29, 2nd MAW",
+"role": "AH-1Z/UH-1Y attack helo",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-29/",
+"st": "NC",
+"svc": "USMC"
+},
+"HMLA-367": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Light Attack Helicopter Squadron 367",
+"parent": "MAG-39, 3rd MAW",
+"role": "AH-1Z/UH-1Y attack helo",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-39/HMLA-367/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMLA-369": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Light Attack Helicopter Squadron 369",
+"parent": "MAG-39, 3rd MAW",
+"role": "AH-1Z/UH-1Y attack helo",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-39/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMLA-775": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Light Attack Helicopter Squadron 775",
+"parent": "MAG-41, 4th MAW",
+"role": "AH-1Z/UH-1Y attack helo",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-41/Marine-Light-Attack-Helicopter-Squadron-775/",
+"st": "CA",
+"svc": "USMC"
+},
+"HMLAT-303": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Light Attack Helicopter Training Squadron 303",
+"parent": "MAG-39, 3rd MAW",
+"role": "AH-1Z/UH-1Y training (FRS)",
+"src": "https://www.3rdmaw.marines.mil/3rdMAW-Home/Site-Map/",
+"st": "CA",
+"svc": "USMC"
+},
+"HSC-11": {
+"base": "NS Norfolk",
+"full": "Helicopter Sea Combat Squadron 11",
+"parent": "CVW-1",
+"role": "MH-60S sea combat helo",
+"src": "https://www.dvidshub.net/image/9075283/hsc-11-homecoming",
+"st": "VA",
+"svc": "USN"
+},
+"HSC-12": {
+"base": "NAF Atsugi",
+"full": "Helicopter Sea Combat Squadron 12",
+"parent": "CVW-5",
+"role": "MH-60S sea combat",
+"src": "https://www.pacom.mil/Media/News/News-Articles/Article/3970606/carrier-air-wing-5-returns-to-japan-after-deployment/",
+"st": "Japan",
+"svc": "USN"
+},
+"HSC-14": {
+"base": "NAS North Island",
+"full": "Helicopter Sea Combat Squadron 14",
+"parent": "CVW-9",
+"role": "MH-60S sea combat",
+"src": "https://www.cpf.navy.mil/Newsroom/News/Article/4003431/carrier-air-wing-cvw-9-returns-from-deployment-in-time-for-the-holidays/",
+"st": "CA",
+"svc": "USN"
+},
+"HSC-2": {
+"base": "NS Norfolk",
+"full": "Helicopter Sea Combat Squadron 2",
+"parent": "",
+"role": "MH-60S helicopter",
+"src": "https://www.airlant.usff.navy.mil/hsc2",
+"st": "VA",
+"svc": "USN"
+},
+"HSC-21": {
+"base": "NAS North Island",
+"full": "Helicopter Sea Combat Squadron 21",
+"parent": "Helicopter Sea Combat Wing Pacific",
+"role": "MH-60S / MQ-8C expeditionary",
+"src": "https://www.airpac.navy.mil/Organization/Helicopter-Sea-Combat-Squadron-HSC-21/About-Us/History",
+"st": "CA",
+"svc": "USN"
+},
+"HSC-23": {
+"base": "NAS North Island",
+"full": "Helicopter Sea Combat Squadron 23",
+"parent": "Helicopter Sea Combat Wing Pacific",
+"role": "MH-60S expeditionary",
+"src": "https://www.navy.mil/Press-Office/News-Stories/display-news/Article/2258912/collins-saddles-up-as-the-next-commanding-officer-of-helicopter-sea-combat-squa/",
+"st": "CA",
+"svc": "USN"
+},
+"HSC-25": {
+"base": "Andersen AFB",
+"full": "Helicopter Sea Combat Squadron 25",
+"parent": "Helicopter Sea Combat Wing Pacific",
+"role": "MH-60S expeditionary",
+"src": "https://www.airpac.navy.mil/Organization/Helicopter-Sea-Combat-Squadron-HSC-25/About-Us/History/",
+"st": "Guam",
+"svc": "USN"
+},
+"HSC-26": {
+"base": "NS Norfolk",
+"full": "Helicopter Sea Combat Squadron 26",
+"parent": "",
+"role": "MH-60S sea combat",
+"src": "https://www.airlant.usff.navy.mil/Press-Room/News-Stories/Article/4115393/hsc-26-conducts-change-of-command-ceremony/",
+"st": "VA",
+"svc": "USN"
+},
+"HSC-28": {
+"base": "NS Norfolk",
+"full": "Helicopter Sea Combat Squadron 28",
+"parent": "",
+"role": "MH-60S expeditionary",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMHELSEACOMBATWINGLANT/Helicopter-Sea-Combat-Squadron-HSC-28/Command-History/",
+"st": "VA",
+"svc": "USN"
+},
+"HSC-3": {
+"base": "NAS North Island",
+"full": "Helicopter Sea Combat Squadron 3",
+"parent": "Helicopter Sea Combat Wing Pacific",
+"role": "MH-60S/MQ-8C FRS training",
+"src": "https://dvidshub.net/news/478159/helicopter-sea-combat-squadron-hsc-3-welcomes-new-co",
+"st": "CA",
+"svc": "USN"
+},
+"HSC-5": {
+"base": "NS Norfolk",
+"full": "Helicopter Sea Combat Squadron 5",
+"parent": "CVW-7",
+"role": "MH-60S sea combat",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMHELSEACOMBATWINGLANT/Helicopter-Sea-Combat-Squadron-HSC-5/Command-History/",
+"st": "VA",
+"svc": "USN"
+},
+"HSC-6": {
+"base": "San Diego",
+"full": "Helicopter Sea Combat Squadron 6",
+"parent": "CVW-17",
+"role": "MH-60S sea combat",
+"src": "https://www.dvidshub.net/news/printable/553259",
+"st": "CA",
+"svc": "USN"
+},
+"HSC-7": {
+"base": "NS Norfolk",
+"full": "Helicopter Sea Combat Squadron 7",
+"parent": "CVW-3",
+"role": "MH-60S sea combat",
+"src": "https://www.airlant.usff.navy.mil/hsc7",
+"st": "VA",
+"svc": "USN"
+},
+"HSC-9": {
+"base": "NS Norfolk",
+"full": "Helicopter Sea Combat Squadron 9",
+"parent": "CVW-8",
+"role": "MH-60S sea combat",
+"src": "https://www.airlant.usff.navy.mil/hsc9",
+"st": "VA",
+"svc": "USN"
+},
+"HSM-37": {
+"base": "MCB Hawaii",
+"full": "Helicopter Maritime Strike Squadron 37",
+"parent": "",
+"role": "MH-60R maritime strike",
+"src": "https://www.airpac.navy.mil/Organization/Helicopter-Maritime-Strike-Squadron-HSM-37/About-Us",
+"st": "HI",
+"svc": "USN"
+},
+"HSM-40": {
+"base": "NS Mayport",
+"full": "Helicopter Maritime Strike Squadron 40",
+"parent": "",
+"role": "MH-60R FRS training",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMHELMARSTRIKEWINGLANT/Helicopter-Maritime-Strike-HSM-40-FRS/Command-History",
+"st": "FL",
+"svc": "USN"
+},
+"HSM-41": {
+"base": "NAS North Island",
+"full": "Helicopter Maritime Strike Squadron 41",
+"parent": "",
+"role": "MH-60R helicopter",
+"src": "https://www.airpac.navy.mil/Organization/Helicopter-Maritime-Strike-Squadron-HSM-41/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"HSM-46": {
+"base": "NAS Jacksonville",
+"full": "Helicopter Maritime Strike Squadron 46",
+"parent": "CVW-7",
+"role": "MH-60R maritime strike",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/Helicopter-Maritime-Strike-Wing/",
+"st": "FL",
+"svc": "USN"
+},
+"HSM-48": {
+"base": "NS Mayport",
+"full": "Helicopter Maritime Strike Squadron 48",
+"parent": "Helicopter Maritime Strike Wing Atlantic",
+"role": "MH-60R expeditionary",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMHELMARSTRIKEWINGLANT/Helicopter-Maritime-Strike-HSM-48-EXP/Command-History/",
+"st": "FL",
+"svc": "USN"
+},
+"HSM-50": {
+"base": "NS Mayport",
+"full": "Helicopter Maritime Strike Squadron 50",
+"parent": "Helicopter Maritime Strike Wing Atlantic",
+"role": "MH-60R expeditionary",
+"src": "https://www.navy.mil/Press-Office/News-Stories/Article/2795925/us-navy-establishes-new-helicopter-squadron/",
+"st": "FL",
+"svc": "USN"
+},
+"HSM-51": {
+"base": "NAF Atsugi",
+"full": "Helicopter Maritime Strike Squadron 51",
+"parent": "",
+"role": "MH-60R maritime strike",
+"src": "https://www.airpac.navy.mil/Organization/Helicopter-Maritime-Strike-Squadron-HSM-51/About-Us",
+"st": "Japan",
+"svc": "USN"
+},
+"HSM-70": {
+"base": "NAS Jacksonville",
+"full": "Helicopter Maritime Strike Squadron 70",
+"parent": "CVW-8",
+"role": "MH-60R maritime strike",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/Helicopter-Maritime-Strike-Wing/",
+"st": "FL",
+"svc": "USN"
+},
+"HSM-71": {
+"base": "NAS North Island",
+"full": "Helicopter Maritime Strike Squadron 71",
+"parent": "CVW-9",
+"role": "MH-60R maritime strike",
+"src": "https://www.airpac.navy.mil/Organization/Helicopter-Maritime-Strike-Squadron-HSM-71/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"HSM-72": {
+"base": "NAS Jacksonville",
+"full": "Helicopter Maritime Strike Squadron 72",
+"parent": "CVW-1",
+"role": "MH-60R maritime strike",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/Helicopter-Maritime-Strike-Wing/",
+"st": "FL",
+"svc": "USN"
+},
+"HSM-73": {
+"base": "NAS North Island",
+"full": "Helicopter Maritime Strike Squadron 73",
+"parent": "CVW-17",
+"role": "MH-60R maritime strike helo",
+"src": "https://www.dvidshub.net/video/989126/hsm-73-returns-san-diego",
+"st": "CA",
+"svc": "USN"
+},
+"HSM-74": {
+"base": "NAS Jacksonville",
+"full": "Helicopter Maritime Strike Squadron 74",
+"parent": "",
+"role": "MH-60R maritime strike",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/Helicopter-Maritime-Strike-Wing/",
+"st": "FL",
+"svc": "USN"
+},
+"HSM-77": {
+"base": "NAF Atsugi",
+"full": "Helicopter Maritime Strike Squadron 77",
+"parent": "CVW-5",
+"role": "MH-60R maritime strike helo",
+"src": "https://www.airpac.navy.mil/Organization/Helicopter-Maritime-Strike-Squadron-HSM-77/",
+"st": "Japan",
+"svc": "USN"
+},
+"HSM-79": {
+"base": "NS Rota",
+"full": "Helicopter Maritime Strike Squadron 79",
+"parent": "",
+"role": "MH-60R maritime strike",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMHELMARSTRIKEWINGLANT/Helicopter-Maritime-Strike-HSM-79/Welcome-Aboard/",
+"st": "Spain",
+"svc": "USN"
+},
+"HSMWL": {
+"base": "NS Mayport",
+"full": "Helicopter Maritime Strike Wing Atlantic",
+"parent": "Naval Air Force Atlantic",
+"role": "MH-60R type wing",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMHELMARSTRIKEWINGLANT/Contact-Us/Welcome-Aboard",
+"st": "FL",
+"svc": "USN"
+},
+"HT-18": {
+"base": "NAS Whiting Field",
+"full": "Helicopter Training Squadron 18",
+"parent": "Training Air Wing 5",
+"role": "TH-73A helo training",
+"src": "https://www.dvidshub.net/tags/image/training-air-wing-five",
+"st": "FL",
+"svc": "USN"
+},
+"HT-28": {
+"base": "NAS Whiting Field",
+"full": "Helicopter Training Squadron 28",
+"parent": "Training Air Wing 5",
+"role": "TH-73A helo training",
+"src": "https://www.dvidshub.net/tags/image/training-air-wing-five",
+"st": "FL",
+"svc": "USN"
+},
+"HT-8": {
+"base": "NAS Whiting Field",
+"full": "Helicopter Training Squadron 8",
+"parent": "Training Air Wing 5",
+"role": "TH-73A helo training",
+"src": "https://cnrse.cnic.navy.mil/News/News-Detail/Article/3168214/first-student-naval-aviators-begin-training-in-new-helicopter-system/",
+"st": "FL",
+"svc": "USN"
+},
+"HX-21": {
+"base": "NAS Patuxent River",
+"full": "Air Test and Evaluation Squadron 21",
+"parent": "Naval Test Wing Atlantic",
+"role": "Rotary/tiltrotor test",
+"src": "https://www.navair.navy.mil/news/Navys-rotary-test-squadron-changes-command/Mon-02242025-1608",
+"st": "MD",
+"svc": "USN"
+},
+"SCW-1": {
+"base": "Tinker AFB",
+"full": "Strategic Communications Wing 1",
+"parent": "Naval Air Force Pacific",
+"role": "E-6B Mercury wing",
+"src": "https://www.dvidshub.net/image/9482199/rear-adm-brophy-visits-strategic-communications-wing-1",
+"st": "OK",
+"svc": "USN"
+},
+"TW-1": {
+"base": "NAS Meridian",
+"full": "Training Air Wing 1",
+"parent": "Chief of Naval Air Training",
+"role": "T-45C strike training",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Meridian/About/Tenant-Commands/TW-1/",
+"st": "MS",
+"svc": "USN"
+},
+"TW-2": {
+"base": "NAS Kingsville",
+"full": "Training Air Wing 2",
+"parent": "Chief of Naval Air Training",
+"role": "T-45C strike training",
+"src": "https://www.cnatra.navy.mil/tw2/",
+"st": "TX",
+"svc": "USN"
+},
+"TW-4": {
+"base": "NAS Corpus Christi",
+"full": "Training Air Wing 4",
+"parent": "Chief of Naval Air Training",
+"role": "T-6B/T-54A training",
+"src": "https://dvidshub.net/news/468889/new-aircraft-arrives-nas-corpus-christi-replace-aging-t-44c-pegasus",
+"st": "TX",
+"svc": "USN"
+},
+"TW-5": {
+"base": "NAS Whiting Field",
+"full": "Training Air Wing 5",
+"parent": "Chief of Naval Air Training",
+"role": "T-6B & TH-73A training",
+"src": "https://www.cnatra.navy.mil/tw5/",
+"st": "FL",
+"svc": "USN"
+},
+"TW-6": {
+"base": "NAS Pensacola",
+"full": "Training Air Wing 6",
+"parent": "Chief of Naval Air Training",
+"role": "NFO training T-6A/T-45C",
+"src": "https://www.cnatra.navy.mil/tw6/",
+"st": "FL",
+"svc": "USN"
+},
+"Thunderbirds": {
+"base": "Nellis AFB",
+"full": "USAF Air Demonstration Squadron (Thunderbirds)",
+"parent": "57th Wing",
+"role": "F-16 air demonstration",
+"src": "https://www.nellis.af.mil/About/Fact-Sheets/Display/Article/284155/57th-wing/",
+"st": "NV",
+"svc": "USAF"
+},
+"USAF TPS": {
+"base": "Edwards AFB",
+"full": "USAF Test Pilot School",
+"parent": "412th Test Wing",
+"role": "Test pilot training",
+"src": "https://www.aftc.af.mil/News/Article/3931193/a-29-super-tucano-joins-air-force-test-pilot-school-fleet/",
+"st": "CA",
+"svc": "USAF"
+},
+"USAFTPS": {
+"base": "Edwards AFB",
+"full": "USAF Test Pilot School",
+"parent": "412th Test Wing",
+"role": "Test pilot training",
+"src": "https://www.aftc.af.mil/News/Article/3931193/a-29-super-tucano-joins-air-force-test-pilot-school-fleet/",
+"st": "CA",
+"svc": "USAF"
+},
+"UX-24": {
+"base": "NAS Patuxent River",
+"full": "Unmanned Test and Evaluation Squadron 24",
+"parent": "Naval Test Wing Atlantic",
+"role": "UAS test (MQ-25, MQ-9A)",
+"src": "https://www.navair.navy.mil/nawcad/ux24",
+"st": "MD",
+"svc": "USN"
+},
+"VAQ-129": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 129",
+"parent": "",
+"role": "EA-18G Growler",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Electronic-Attack-Wing",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-130": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 130",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://cnrnw.cnic.navy.mil/News/News-Detail/Article/3840273/electronic-attack-squadron-vaq-130-returns-from-deployment/",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-131": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 131",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Electronic-Attack-Wing",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-132": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 132",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://www.cpf.navy.mil/Photo-Gallery/igphoto/2003783385/",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-133": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 133",
+"parent": "CVW-9",
+"role": "EA-18G electronic attack",
+"src": "https://dvidshub.net/image/8804146/vaq-133-returns-whidbey-island",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-134": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 134",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://www.usafe.af.mil/News/Photos/igphoto/2002966807/",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-135": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 135",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://www.airpac.navy.mil/News/Article/4286665/vaq-135-conducts-joint-training-supporting-usaf-exercises/",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-136": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 136",
+"parent": "CVW-2",
+"role": "EA-18G electronic attack",
+"src": "https://www.airpac.navy.mil/Organization/Electronic-Attack-Squadron-VAQ-136/About-Us",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-137": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 137",
+"parent": "CVW-11",
+"role": "EA-18G electronic attack",
+"src": "https://www.navy.mil/Resources/Photo-Gallery/igphoto/2003994947/",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-138": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 138",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://www.airpac.navy.mil/Organization/Electronic-Attack-Squadron-VAQ-138/About-Us",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-139": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 139",
+"parent": "CVW-17",
+"role": "EA-18G electronic attack",
+"src": "https://www.surfpac.navy.mil/Media/News/Article/4588093/vaq-139-returns-to-whidbey-island-after-8-month-mission-dec-5-2025/",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-140": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 140",
+"parent": "CVW-7",
+"role": "EA-18G electronic attack",
+"src": "https://www.airpac.navy.mil/Organization/Electronic-Attack-Squadron-VAQ-140/About-Us",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-141": {
+"base": "MCAS Iwakuni",
+"full": "Electronic Attack Squadron 141",
+"parent": "CVW-5",
+"role": "EA-18G electronic attack",
+"src": "https://www.dvidshub.net/image/9351142/us-navy-field-carrier-landing-practice-mcas-iwakuni",
+"st": "Japan",
+"svc": "USN"
+},
+"VAQ-142": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 142",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://www.dvidshub.net/image/9680106/vaq-142-homecoming",
+"st": "WA",
+"svc": "USN"
+},
+"VAQ-144": {
+"base": "NAS Whidbey Island",
+"full": "Electronic Attack Squadron 144",
+"parent": "",
+"role": "EA-18G electronic attack",
+"src": "https://www.airpac.navy.mil/Organization/Electronic-Attack-Squadron-VAQ-144/About-Us/",
+"st": "WA",
+"svc": "USN"
+},
+"VAW-113": {
+"base": "NBVC Point Mugu",
+"full": "Airborne Command & Control Sqn 113",
+"parent": "CVW-2",
+"role": "E-2D airborne early warning",
+"src": "https://www.airpac.navy.mil/Organization/Airborne-Command-Control-Squadron-VAW-113/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VAW-115": {
+"base": "NBVC Point Mugu",
+"full": "Airborne Command & Control Sqn 115",
+"parent": "CVW-11",
+"role": "E-2D airborne early warning",
+"src": "https://www.airpac.navy.mil/Organization/Airborne-Command-Control-Squadron-VAW-115/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VAW-116": {
+"base": "NBVC Point Mugu",
+"full": "Airborne Command & Control Sqn 116",
+"parent": "",
+"role": "E-2 airborne early warning",
+"src": "https://cnrsw.cnic.navy.mil/Installations/NAVBASE-Ventura-County/About/Tenant-Commands/",
+"st": "CA",
+"svc": "USN"
+},
+"VAW-117": {
+"base": "NBVC Point Mugu",
+"full": "Airborne Command & Control Sqn 117",
+"parent": "CVW-9",
+"role": "E-2D airborne early warning",
+"src": "https://www.cpf.navy.mil/Newsroom/News/Article/4003431/carrier-air-wing-cvw-9-returns-from-deployment-in-time-for-the-holidays/",
+"st": "CA",
+"svc": "USN"
+},
+"VAW-120": {
+"base": "NS Norfolk",
+"full": "Airborne Command & Control Sqn 120",
+"parent": "Airborne C2 & Logistics Wing",
+"role": "E-2/C-2A FRS training",
+"src": "https://www.airlant.usff.navy.mil/vaw120",
+"st": "VA",
+"svc": "USN"
+},
+"VAW-121": {
+"base": "NS Norfolk",
+"full": "Airborne Command & Control Sqn 121",
+"parent": "CVW-17",
+"role": "E-2D airborne early warning",
+"src": "https://www.dvidshub.net/news/printable/553259",
+"st": "VA",
+"svc": "USN"
+},
+"VAW-123": {
+"base": "NS Norfolk",
+"full": "Airborne Command & Control Sqn 123",
+"parent": "",
+"role": "E-2D airborne early warning",
+"src": "https://www.airlant.usff.navy.mil/Press-Room/News-Stories/Article/3955484/vaw-123-sends-their-last-e-2c-hawkeye-to-the-boneyard/",
+"st": "VA",
+"svc": "USN"
+},
+"VAW-124": {
+"base": "NS Norfolk",
+"full": "Airborne Command & Control Sqn 124",
+"parent": "CVW-8",
+"role": "E-2D airborne early warning",
+"src": "https://www.airlant.usff.navy.mil/Organization/Carrier-Air-Wings/Carrier-Air-Wing-CVW-8/Welcome-Aboard/",
+"st": "VA",
+"svc": "USN"
+},
+"VAW-125": {
+"base": "MCAS Iwakuni",
+"full": "Airborne Command & Control Sqn 125",
+"parent": "CVW-5",
+"role": "E-2D airborne early warning",
+"src": "https://www.dvidshub.net/image/9338153/vaw-125-e2d-hawkeyes-takeoff-freedom-edge-25",
+"st": "Japan",
+"svc": "USN"
+},
+"VAW-126": {
+"base": "NS Norfolk",
+"full": "Airborne Command & Control Sqn 126",
+"parent": "CVW-1",
+"role": "E-2D airborne early warning",
+"src": "https://www.dvidshub.net/image/9073229/vaw-126-returns-home-deployment",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-102": {
+"base": "MCAS Iwakuni",
+"full": "Strike Fighter Squadron 102",
+"parent": "CVW-5",
+"role": "F/A-18F strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-102/About-Us/History/",
+"st": "Japan",
+"svc": "USN"
+},
+"VFA-103": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 103",
+"parent": "CVW-7",
+"role": "F/A-18F strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa103",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-105": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 105",
+"parent": "CVW-3",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa105",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-106": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 106",
+"parent": "Strike Fighter Wing Atlantic",
+"role": "F/A-18E/F FRS training",
+"src": "https://www.airlant.usff.navy.mil/vfa106",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-11": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 11",
+"parent": "CVW-1",
+"role": "F/A-18F strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa11",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-115": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 115",
+"parent": "",
+"role": "F-35C strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-115/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-122": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 122",
+"parent": "Strike Fighter Wing Pacific",
+"role": "F/A-18E/F FRS training",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-122/About-Us/History/",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-125": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 125",
+"parent": "",
+"role": "F-35C FRS training",
+"src": "https://www.cpf.navy.mil/Newsroom/News/Article/2735908/first-pacific-based-f-35c-fighters-arrive-at-nas-lemoore",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-131": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 131",
+"parent": "",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa131",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-136": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 136",
+"parent": "CVW-1",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-136/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-137": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 137",
+"parent": "CVW-17",
+"role": "F/A-18E strike fighter",
+"src": "https://www.dvidshub.net/image/9426360/cvw-17-fly-off",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-14": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 14",
+"parent": "CVW-9",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-14/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-143": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 143",
+"parent": "CVW-7",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa143",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-146": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 146",
+"parent": "CVW-17",
+"role": "F/A-18E strike fighter",
+"src": "https://www.dvidshub.net/image/9426363/cvw-17-fly-off",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-147": {
+"base": "MCAS Iwakuni",
+"full": "Strike Fighter Squadron 147",
+"parent": "CVW-5",
+"role": "F-35C strike fighter",
+"src": "https://www.dvidshub.net/image/9024563/strike-fighter-squadron-vfa-147-holds-change-command-iwakuni",
+"st": "Japan",
+"svc": "USN"
+},
+"VFA-151": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 151",
+"parent": "CVW-9",
+"role": "F/A-18E strike fighter",
+"src": "https://www.cpf.navy.mil/Newsroom/News/Article/4007560/strike-fighter-squadron-vfa-151-returns-from-fifth-fleet-combat-deployment",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-192": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 192",
+"parent": "",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-192/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-195": {
+"base": "MCAS Iwakuni",
+"full": "Strike Fighter Squadron 195",
+"parent": "CVW-5",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-195",
+"st": "Japan",
+"svc": "USN"
+},
+"VFA-2": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 2",
+"parent": "CVW-2",
+"role": "F/A-18F strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-2/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-211": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 211",
+"parent": "CVW-11",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa211",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-213": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 213",
+"parent": "CVW-8",
+"role": "F/A-18F strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa213",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-22": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 22",
+"parent": "CVW-17",
+"role": "F/A-18F strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-22/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-27": {
+"base": "MCAS Iwakuni",
+"full": "Strike Fighter Squadron 27",
+"parent": "CVW-5",
+"role": "F/A-18E strike fighter",
+"src": "https://www.pacom.mil/Media/News/News-Articles/Article/3970606/carrier-air-wing-5-returns-to-japan-after-deployment/",
+"st": "Japan",
+"svc": "USN"
+},
+"VFA-31": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 31",
+"parent": "CVW-8",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa31",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-32": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 32",
+"parent": "CVW-3",
+"role": "F/A-18F strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa32",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-34": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 34",
+"parent": "CVW-11",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa34",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-37": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 37",
+"parent": "CVW-8",
+"role": "F/A-18E/F strike fighter",
+"src": "https://www.airlant.usff.navy.mil/Organization/Carrier-Air-Wings/Carrier-Air-Wing-CVW-8/Welcome-Aboard/",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-41": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 41",
+"parent": "CVW-9",
+"role": "F/A-18F strike fighter",
+"src": "https://www.cpf.navy.mil/Newsroom/News/Article/4003410/strike-fighter-squadron-vfa-41-returns-from-deployment-in-time-for-the-holidays/",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-81": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 81",
+"parent": "CVW-1",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa81",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-83": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 83",
+"parent": "CVW-3",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa83",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-86": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 86",
+"parent": "",
+"role": "F-35C strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-86/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-87": {
+"base": "NAS Oceana",
+"full": "Strike Fighter Squadron 87",
+"parent": "CVW-8",
+"role": "F/A-18E strike fighter",
+"src": "https://www.airlant.usff.navy.mil/vfa87",
+"st": "VA",
+"svc": "USN"
+},
+"VFA-94": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 94",
+"parent": "CVW-17",
+"role": "F/A-18E strike fighter",
+"src": "https://www.dvidshub.net/news/printable/553259",
+"st": "CA",
+"svc": "USN"
+},
+"VFA-97": {
+"base": "NAS Lemoore",
+"full": "Strike Fighter Squadron 97",
+"parent": "CVW-2",
+"role": "F-35C strike fighter",
+"src": "https://www.airpac.navy.mil/Organization/Strike-Fighter-Squadron-VFA-97/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VFC-111": {
+"base": "NAS Key West",
+"full": "Fighter Squadron Composite 111",
+"parent": "",
+"role": "F-5N adversary",
+"src": "https://dvidshub.net/image/7827531/fighter-squadron-composite-vfc-111-key-west-florida",
+"st": "FL",
+"svc": "USN"
+},
+"VFC-13": {
+"base": "NAS Fallon",
+"full": "Fighter Squadron Composite 13",
+"parent": "Tactical Support Wing",
+"role": "F-16 adversary",
+"src": "https://dvidshub.net/news/480165/tsw-welcomes-another-f-16-its-fleet",
+"st": "NV",
+"svc": "USN"
+},
+"VFC-204": {
+"base": "NAS JRB New Orleans",
+"full": "Fighter Squadron Composite 204",
+"parent": "Tactical Support Wing",
+"role": "F-5 adversary",
+"src": "https://www.dvidshub.net/image/7912606/river-rattlers-fighter-squadron-composite-vfc-204-conduct-flight-operations",
+"st": "LA",
+"svc": "USN"
+},
+"VMFA-112": {
+"base": "NAS JRB Fort Worth",
+"full": "Marine Fighter Attack Squadron 112",
+"parent": "MAG-41, 4th MAW",
+"role": "F/A-18 fighter",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-41/Marine-Fighter-Attack-Squadron-112/",
+"st": "TX",
+"svc": "USMC"
+},
+"VMFA-115": {
+"base": "MCAS Beaufort",
+"full": "Marine Fighter Attack Squadron 115",
+"parent": "MAG-31, 2nd MAW",
+"role": "F-35C fighter",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-31/VMFA-115/",
+"st": "SC",
+"svc": "USMC"
+},
+"VMFA-121": {
+"base": "MCAS Iwakuni",
+"full": "Marine Fighter Attack Squadron 121",
+"parent": "MAG-12, 1st MAW",
+"role": "F-35B fighter",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-12/VMFA-121/",
+"st": "Japan",
+"svc": "USMC"
+},
+"VMFA-122": {
+"base": "MCAS Yuma",
+"full": "Marine Fighter Attack Squadron 122",
+"parent": "MAG-13, 3rd MAW",
+"role": "F-35B fighter",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-13/VMFA-122/",
+"st": "AZ",
+"svc": "USMC"
+},
+"VMFA-211": {
+"base": "MCAS Yuma",
+"full": "Marine Fighter Attack Squadron 211",
+"parent": "MAG-13, 3rd MAW",
+"role": "F-35B fighter",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-13/VMFA-211/",
+"st": "AZ",
+"svc": "USMC"
+},
+"VMFA-214": {
+"base": "MCAS Yuma",
+"full": "Marine Fighter Attack Squadron 214",
+"parent": "MAG-13, 3rd MAW",
+"role": "F-35B fighter",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-13/VMFA-214/",
+"st": "AZ",
+"svc": "USMC"
+},
+"VMFA-224": {
+"base": "MCAS Beaufort",
+"full": "Marine Fighter Attack Squadron 224",
+"parent": "MAG-31, 2nd MAW",
+"role": "F-35B fighter",
+"src": "https://www.iimef.marines.mil/News/Article/4229485/vmfa-224-redesignates-as-marine-corps-newest-f-35b-squadron/",
+"st": "SC",
+"svc": "USMC"
+},
+"VMFA-225": {
+"base": "MCAS Yuma",
+"full": "Marine Fighter Attack Squadron 225",
+"parent": "MAG-13, 3rd MAW",
+"role": "F-35B fighter",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-13/VMFA-225/",
+"st": "AZ",
+"svc": "USMC"
+},
+"VMFA-231": {
+"base": "MCAS Cherry Point",
+"full": "Marine Fighter Attack Squadron 231",
+"parent": "MAG-14, 2nd MAW",
+"role": "F-35B fighter",
+"src": "https://www.dvidshub.net/image/9736427/vmfa-231-conducts-first-flight-with-f-35b-lightning-ii",
+"st": "NC",
+"svc": "USMC"
+},
+"VMFA-232": {
+"base": "MCAS Miramar",
+"full": "Marine Fighter Attack Squadron 232",
+"parent": "MAG-11, 3rd MAW",
+"role": "F/A-18 fighter",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-11/VMFA-232/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMFA-251": {
+"base": "MCAS Cherry Point",
+"full": "Marine Fighter Attack Squadron 251",
+"parent": "MAG-14, 2nd MAW",
+"role": "F-35C fighter",
+"src": "https://www.mcieast.marines.mil/News/Article/Article/3989876/vmfa-251-reactivates-as-marine-corps-first-east-coast-based-f-35c-lightning-ii/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMFA-314": {
+"base": "MCAS Miramar",
+"full": "Marine Fighter Attack Squadron 314",
+"parent": "MAG-11, 3rd MAW",
+"role": "F-35C fighter",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-11/VMFA-314/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMFA-323": {
+"base": "MCAS Miramar",
+"full": "Marine Fighter Attack Squadron 323",
+"parent": "MAG-11, 3rd MAW",
+"role": "F/A-18C fighter",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-11/VMFA-323/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMFA-533": {
+"base": "MCAS Beaufort",
+"full": "Marine Fighter Attack Squadron 533",
+"parent": "MAG-31, 2nd MAW",
+"role": "F-35B fighter",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-31/VMFA-533",
+"st": "SC",
+"svc": "USMC"
+},
+"VMFA-542": {
+"base": "MCAS Cherry Point",
+"full": "Marine Fighter Attack Squadron 542",
+"parent": "MAG-14, 2nd MAW",
+"role": "F-35B fighter",
+"src": "https://www.mcieast.marines.mil/News/Article/Article/3682316/vmfa-542-becomes-first-f-35b-operational-squadron-on-east-coast-to-achieve-init",
+"st": "NC",
+"svc": "USMC"
+},
+"VMFAT-501": {
+"base": "MCAS Beaufort",
+"full": "Marine Fighter Attack Training Squadron 501",
+"parent": "MAG-31, 2nd MAW",
+"role": "F-35B training (FRS)",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-31/VMFAT-501",
+"st": "SC",
+"svc": "USMC"
+},
+"VMFAT-502": {
+"base": "MCAS Miramar",
+"full": "Marine Fighter Attack Training Squadron 502",
+"parent": "MAG-11, 3rd MAW",
+"role": "F-35B training (FRS)",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-11/VMFAT-502",
+"st": "CA",
+"svc": "USMC"
+},
+"VMFT-401": {
+"base": "MCAS Yuma",
+"full": "Marine Fighter Training Squadron 401",
+"parent": "MAG-41, 4th MAW",
+"role": "F-5N adversary",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-41/Marine-Fighter-Training-Squadron-401/",
+"st": "AZ",
+"svc": "USMC"
+},
+"VMFT-402": {
+"base": "MCAS Beaufort",
+"full": "Marine Fighter Training Squadron 402",
+"parent": "MAG-41, 4th MAW",
+"role": "F-5N adversary",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-41/Marine-Fighter-Training-Squadron-402/",
+"st": "SC",
+"svc": "USMC"
+},
+"VMGR-152": {
+"base": "MCAS Iwakuni",
+"full": "Marine Aerial Refueler Transport Squadron 152",
+"parent": "MAG-12, 1st MAW",
+"role": "KC-130J tanker/transport",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-12/VMGR-152/",
+"st": "Japan",
+"svc": "USMC"
+},
+"VMGR-153": {
+"base": "MCB Hawaii Kaneohe",
+"full": "Marine Aerial Refueler Transport Squadron 153",
+"parent": "MAG-24, 1st MAW",
+"role": "KC-130 tanker/transport",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-24/VMGR-153/",
+"st": "HI",
+"svc": "USMC"
+},
+"VMGR-234": {
+"base": "NAS JRB Fort Worth",
+"full": "Marine Aerial Refueler Transport Squadron 234",
+"parent": "MAG-41, 4th MAW",
+"role": "KC-130J tanker/transport",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-41/Marine-Aerial-Refueler-Transport-Squadron-234/",
+"st": "TX",
+"svc": "USMC"
+},
+"VMGR-252": {
+"base": "MCAS Cherry Point",
+"full": "Marine Aerial Refueler Transport Squadron 252",
+"parent": "MAG-14, 2nd MAW",
+"role": "KC-130 tanker/transport",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-14/VMGR-252/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMGR-352": {
+"base": "MCAS Miramar",
+"full": "Marine Aerial Refueler Transport Squadron 352",
+"parent": "MAG-11, 3rd MAW",
+"role": "KC-130J tanker/transport",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-11/VMGR-352/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMGR-452": {
+"base": "Stewart ANGB",
+"full": "Marine Aerial Refueler Transport Squadron 452",
+"parent": "MAG-49, 4th MAW",
+"role": "KC-130J/T tanker/transport",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-49/Marine-Aerial-Refueler-Transport-Squadron-452/",
+"st": "NY",
+"svc": "USMC"
+},
+"VMM-161": {
+"base": "MCAS Miramar",
+"full": "Marine Medium Tiltrotor Squadron 161",
+"parent": "MAG-16, 3rd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-162": {
+"base": "MCAS New River",
+"full": "Marine Medium Tiltrotor Squadron 162",
+"parent": "MAG-26, 2nd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-26/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMM-163": {
+"base": "MCAS Miramar",
+"full": "Marine Medium Tiltrotor Squadron 163",
+"parent": "MAG-16, 3rd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-164": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Medium Tiltrotor Squadron 164",
+"parent": "MAG-39, 3rd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.3rdmaw.marines.mil/3rdMAW-Home/Site-Map/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-165": {
+"base": "MCAS Miramar",
+"full": "Marine Medium Tiltrotor Squadron 165",
+"parent": "MAG-16, 3rd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-166": {
+"base": "MCAS Miramar",
+"full": "Marine Medium Tiltrotor Squadron 166",
+"parent": "MAG-16, 3rd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-261": {
+"base": "MCAS New River",
+"full": "Marine Medium Tiltrotor Squadron 261",
+"parent": "MAG-26, 2nd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-26/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMM-262": {
+"base": "MCAS Futenma",
+"full": "Marine Medium Tiltrotor Squadron 262",
+"parent": "MAG-36, 1st MAW",
+"role": "MV-22B assault support",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-36/VMM-262/",
+"st": "Japan",
+"svc": "USMC"
+},
+"VMM-263": {
+"base": "MCAS New River",
+"full": "Marine Medium Tiltrotor Squadron 263",
+"parent": "MAG-26, 2nd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-26/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMM-265": {
+"base": "MCAS Futenma",
+"full": "Marine Medium Tiltrotor Squadron 265",
+"parent": "MAG-36, 1st MAW",
+"role": "MV-22B assault support",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-36/VMM-265-REIN/",
+"st": "Japan",
+"svc": "USMC"
+},
+"VMM-266": {
+"base": "MCAS New River",
+"full": "Marine Medium Tiltrotor Squadron 266",
+"parent": "MAG-26, 2nd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-26/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMM-268": {
+"base": "MCB Hawaii Kaneohe",
+"full": "Marine Medium Tiltrotor Squadron 268",
+"parent": "MAG-24, 1st MAW",
+"role": "MV-22B assault support",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-24/VMM-268/",
+"st": "HI",
+"svc": "USMC"
+},
+"VMM-362": {
+"base": "MCAS Miramar",
+"full": "Marine Medium Tiltrotor Squadron 362",
+"parent": "MAG-16, 3rd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-16/VMM-362/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-363": {
+"base": "MCB Hawaii Kaneohe",
+"full": "Marine Medium Tiltrotor Squadron 363",
+"parent": "MAG-24, 1st MAW",
+"role": "MV-22B assault support",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-24/VMM-363/",
+"st": "HI",
+"svc": "USMC"
+},
+"VMM-364": {
+"base": "MCAS Camp Pendleton",
+"full": "Marine Medium Tiltrotor Squadron 364",
+"parent": "MAG-39, 3rd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-39/VMM-364/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-365": {
+"base": "MCAS New River",
+"full": "Marine Medium Tiltrotor Squadron 365",
+"parent": "MAG-26, 2nd MAW",
+"role": "MV-22B assault support",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-26/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMM-764": {
+"base": "MCAS Miramar",
+"full": "Marine Medium Tiltrotor Squadron 764",
+"parent": "MAG-41, 4th MAW",
+"role": "MV-22B assault support",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-41/Marine-Medium-Tiltrotor-Squadron-764/",
+"st": "CA",
+"svc": "USMC"
+},
+"VMM-774": {
+"base": "MCAS New River",
+"full": "Marine Medium Tiltrotor Squadron 774",
+"parent": "MAG-49, 4th MAW",
+"role": "MV-22B assault support",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-49/Marine-Medium-Tiltrotor-Squadron-774/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMMT-204": {
+"base": "MCAS New River",
+"full": "Marine Medium Tiltrotor Training Squadron 204",
+"parent": "MAG-26, 2nd MAW",
+"role": "MV-22B training (FRS)",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-26/",
+"st": "NC",
+"svc": "USMC"
+},
+"VMR-1": {
+"base": "NAS JRB Fort Worth",
+"full": "Marine Transport Squadron 1",
+"parent": "MAG-41, 4th MAW",
+"role": "C-40A transport",
+"src": "https://www.marforres.marines.mil/Units/4th-Marine-Aircraft-Wing/Marine-Aircraft-Group-41/Marine-Transport-Squadron-1/",
+"st": "TX",
+"svc": "USMC"
+},
+"VMU-1": {
+"base": "MCAS Yuma",
+"full": "Marine Unmanned Aerial Vehicle Squadron 1",
+"parent": "MAG-13, 3rd MAW",
+"role": "MQ-9A Reaper UAS",
+"src": "https://www.3rdmaw.marines.mil/Units/MAG-13/VMU-1/",
+"st": "AZ",
+"svc": "USMC"
+},
+"VMU-3": {
+"base": "MCB Hawaii Kaneohe",
+"full": "Marine Unmanned Aerial Vehicle Squadron 3",
+"parent": "MAG-24, 1st MAW",
+"role": "MQ-9A Reaper UAS",
+"src": "https://www.1stmaw.marines.mil/Subordinate-Units/Marine-Aircraft-Group-24/VMU-3/",
+"st": "HI",
+"svc": "USMC"
+},
+"VMUT-2": {
+"base": "MCAS Cherry Point",
+"full": "Marine Unmanned Aerial Vehicle Training Squadron 2",
+"parent": "MAG-14, 2nd MAW",
+"role": "MQ-9A training (FRS)",
+"src": "https://www.2ndmaw.marines.mil/Units/MAG-14/VMUT-2/",
+"st": "NC",
+"svc": "USMC"
+},
+"VP-1": {
+"base": "NAS Whidbey Island",
+"full": "Patrol Squadron 1",
+"parent": "Patrol and Reconnaissance Wing 10",
+"role": "P-8A maritime patrol",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Patrol-And-Reconnaissance-Wing-10",
+"st": "WA",
+"svc": "USN"
+},
+"VP-10": {
+"base": "NAS Jacksonville",
+"full": "Patrol Squadron 10",
+"parent": "Patrol and Reconnaissance Wing 11",
+"role": "P-8A maritime patrol",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMPATRECONGRU/COMPATRECONWING-11/Patrol-Squadron-VP-10/Command-History/",
+"st": "FL",
+"svc": "USN"
+},
+"VP-16": {
+"base": "NAS Jacksonville",
+"full": "Patrol Squadron 16",
+"parent": "Patrol and Reconnaissance Wing 11",
+"role": "P-8A maritime patrol",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMPATRECONGRU/COMPATRECONWING-11/Patrol-Squadron-VP-16/",
+"st": "FL",
+"svc": "USN"
+},
+"VP-26": {
+"base": "NAS Jacksonville",
+"full": "Patrol Squadron 26",
+"parent": "Patrol and Reconnaissance Wing 11",
+"role": "P-8A maritime patrol",
+"src": "https://www.c6f.navy.mil/Press-Room/News/Article/3943008/patrol-squadron-26-departs-on-deployment/",
+"st": "FL",
+"svc": "USN"
+},
+"VP-30": {
+"base": "NAS Jacksonville",
+"full": "Patrol Squadron 30",
+"parent": "",
+"role": "P-8A FRS training",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/",
+"st": "FL",
+"svc": "USN"
+},
+"VP-4": {
+"base": "NAS Whidbey Island",
+"full": "Patrol Squadron 4",
+"parent": "Patrol and Reconnaissance Wing 10",
+"role": "P-8A maritime patrol",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Patrol-And-Reconnaissance-Wing-10",
+"st": "WA",
+"svc": "USN"
+},
+"VP-40": {
+"base": "NAS Whidbey Island",
+"full": "Patrol Squadron 40",
+"parent": "Patrol and Reconnaissance Wing 10",
+"role": "P-8A maritime patrol",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Patrol-And-Reconnaissance-Wing-10",
+"st": "WA",
+"svc": "USN"
+},
+"VP-45": {
+"base": "NAS Jacksonville",
+"full": "Patrol Squadron 45",
+"parent": "Patrol and Reconnaissance Wing 11",
+"role": "P-8A maritime patrol",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMPATRECONGRU/COMPATRECONWING-11/Patrol-Squadron-VP-45/Command-History",
+"st": "FL",
+"svc": "USN"
+},
+"VP-46": {
+"base": "NAS Whidbey Island",
+"full": "Patrol Squadron 46",
+"parent": "Patrol and Reconnaissance Wing 10",
+"role": "P-8A maritime patrol",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Patrol-And-Reconnaissance-Wing-10",
+"st": "WA",
+"svc": "USN"
+},
+"VP-47": {
+"base": "NAS Whidbey Island",
+"full": "Patrol Squadron 47",
+"parent": "Patrol and Reconnaissance Wing 10",
+"role": "P-8A maritime patrol",
+"src": "https://www.airpac.navy.mil/Organization/Patrol-Squadron-VP-47/About-Us",
+"st": "WA",
+"svc": "USN"
+},
+"VP-5": {
+"base": "NAS Jacksonville",
+"full": "Patrol Squadron 5",
+"parent": "Patrol and Reconnaissance Wing 11",
+"role": "P-8A maritime patrol",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMPATRECONGRU/COMPATRECONWING-11/Patrol-Squadron-VP-5/Command-History/",
+"st": "FL",
+"svc": "USN"
+},
+"VP-69": {
+"base": "NAS Whidbey Island",
+"full": "Patrol Squadron 69",
+"parent": "Patrol and Reconnaissance Wing 10",
+"role": "P-8A maritime patrol",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Patrol-And-Reconnaissance-Wing-10",
+"st": "WA",
+"svc": "USN"
+},
+"VP-8": {
+"base": "NAS Jacksonville",
+"full": "Patrol Squadron 8",
+"parent": "Patrol and Reconnaissance Wing 11",
+"role": "P-8A maritime patrol",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMPATRECONGRU/COMPATRECONWING-11/Patrol-Squadron-VP-8/",
+"st": "FL",
+"svc": "USN"
+},
+"VP-9": {
+"base": "NAS Whidbey Island",
+"full": "Patrol Squadron 9",
+"parent": "Patrol and Reconnaissance Wing 10",
+"role": "P-8A maritime patrol",
+"src": "https://cnrnw.cnic.navy.mil/Installations/NAS-Whidbey-Island/About/Aviation-Commands/Patrol-And-Reconnaissance-Wing-10",
+"st": "WA",
+"svc": "USN"
+},
+"VPU-2": {
+"base": "NAS Jacksonville",
+"full": "Special Projects Patrol Squadron 2",
+"parent": "Patrol and Reconnaissance Wing 11",
+"role": "P-8A special projects",
+"src": "https://www.airlant.usff.navy.mil/Organization/COMPATRECONGRU/COMPATRECONWING-11/Special-Projects-Patrol-Squadron-VPU-2/Command-History/",
+"st": "FL",
+"svc": "USN"
+},
+"VQ-3": {
+"base": "Tinker AFB",
+"full": "Fleet Air Reconnaissance Squadron 3",
+"parent": "",
+"role": "E-6B Mercury",
+"src": "https://www.airpac.navy.mil/Organization/Fleet-Air-Reconnaissance-Squadron-VQ-3/About-Us",
+"st": "OK",
+"svc": "USN"
+},
+"VQ-4": {
+"base": "Tinker AFB",
+"full": "Fleet Air Reconnaissance Squadron 4",
+"parent": "",
+"role": "E-6B Mercury",
+"src": "https://www.airpac.navy.mil/Organization/Fleet-Air-Reconnaissance-Squadron-VQ-4/About-Us",
+"st": "OK",
+"svc": "USN"
+},
+"VQ-7": {
+"base": "Tinker AFB",
+"full": "Fleet Air Reconnaissance Squadron 7",
+"parent": "Strategic Communications Wing 1",
+"role": "E-6B Mercury training",
+"src": "https://www.dvidshub.net/image/9482199/rear-adm-brophy-visits-strategic-communications-wing-1",
+"st": "OK",
+"svc": "USN"
+},
+"VR-1": {
+"base": "JB Andrews",
+"full": "Fleet Logistics Support Squadron 1",
+"parent": "",
+"role": "C-37B/C-20D VIP transport",
+"src": "https://www.jba.af.mil/About/Fact-Sheets/Display/Article/962522/naval-air-facility-washington/",
+"st": "MD",
+"svc": "USN"
+},
+"VR-51": {
+"base": "MCB Hawaii",
+"full": "Fleet Logistics Support Squadron 51",
+"parent": "",
+"role": "C-40A logistics",
+"src": "https://dvidshub.net/image/8288952/welcome-home-windjammers-vr-51-returns-eucom-africom-deployment",
+"st": "HI",
+"svc": "USN"
+},
+"VR-53": {
+"base": "JB Andrews",
+"full": "Fleet Logistics Support Squadron 53",
+"parent": "",
+"role": "C-130T logistics",
+"src": "https://www.jba.af.mil/About/Fact-Sheets/Display/Article/962522/naval-air-facility-washington/",
+"st": "MD",
+"svc": "USN"
+},
+"VR-55": {
+"base": "NBVC Point Mugu",
+"full": "Fleet Logistics Support Squadron 55",
+"parent": "",
+"role": "C-130T logistics",
+"src": "https://dvidshub.net/news/445049/navys-minutemen-holds-change-command",
+"st": "CA",
+"svc": "USN"
+},
+"VR-56": {
+"base": "NAS Oceana",
+"full": "Fleet Logistics Support Squadron 56",
+"parent": "",
+"role": "C-40A logistics",
+"src": "https://www.dvidshub.net/image/6515209/cnr-visits-vr-56-vfc-12",
+"st": "VA",
+"svc": "USN"
+},
+"VR-57": {
+"base": "NAS North Island",
+"full": "Fleet Logistics Support Squadron 57",
+"parent": "",
+"role": "C-40A logistics",
+"src": "https://www.navy.mil/Resources/Photo-Gallery/igphoto/2002402696",
+"st": "CA",
+"svc": "USN"
+},
+"VR-58": {
+"base": "NAS Jacksonville",
+"full": "Fleet Logistics Support Squadron 58",
+"parent": "",
+"role": "C-40A logistics",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/Reserve-Squadrons",
+"st": "FL",
+"svc": "USN"
+},
+"VR-59": {
+"base": "NAS JRB Fort Worth",
+"full": "Fleet Logistics Support Squadron 59",
+"parent": "",
+"role": "C-40A logistics",
+"src": "https://www.navyreserve.navy.mil/News/Article/3407776/the-global-reach-of-vr-59-a-look-at-their-impact-across-the-world/",
+"st": "TX",
+"svc": "USN"
+},
+"VR-61": {
+"base": "NAS Whidbey Island",
+"full": "Fleet Logistics Support Squadron 61",
+"parent": "",
+"role": "C-40A logistics",
+"src": "https://www.navair.navy.mil/node/21821",
+"st": "WA",
+"svc": "USN"
+},
+"VR-62": {
+"base": "NAS Jacksonville",
+"full": "Fleet Logistics Support Squadron 62",
+"parent": "",
+"role": "C-130T logistics",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/Reserve-Squadrons",
+"st": "FL",
+"svc": "USN"
+},
+"VR-64": {
+"base": "JB McGuire-Dix-Lkhst",
+"full": "Fleet Logistics Support Squadron 64",
+"parent": "",
+"role": "KC-130T logistics",
+"src": "https://www.jbmdl.jb.mil/News/Article-Display/Article/826634/vr-64-condors-hail-new-commander-say-farewell-to-old/",
+"st": "NJ",
+"svc": "USN"
+},
+"VRC-40": {
+"base": "NS Norfolk",
+"full": "Fleet Logistics Support Squadron 40",
+"parent": "",
+"role": "C-2A carrier logistics",
+"src": "https://www.airlant.usff.navy.mil/vaw120",
+"st": "VA",
+"svc": "USN"
+},
+"VRM-30": {
+"base": "NAS North Island",
+"full": "Fleet Logistics Multi-Mission Sqn 30",
+"parent": "",
+"role": "CMV-22B carrier logistics",
+"src": "https://www.airpac.navy.mil/Organization/Fleet-Logistics-Multi-Mission-Squadron-VRM-30/About-Us",
+"st": "CA",
+"svc": "USN"
+},
+"VRM-40": {
+"base": "NS Norfolk",
+"full": "Fleet Logistics Multi-Mission Sqn 40",
+"parent": "Fleet Logistics Multi-Mission Wing",
+"role": "CMV-22B carrier logistics",
+"src": "https://www.navy.mil/Press-Office/News-Stories/Article/3765765/vrm-40-welcomes-new-leadership-during-may-change-of-command-ceremony/",
+"st": "VA",
+"svc": "USN"
+},
+"VRM-50": {
+"base": "NAS North Island",
+"full": "Fleet Logistics Multi-Mission Sqn 50",
+"parent": "",
+"role": "CMV-22B training (FRS)",
+"src": "https://www.dvidshub.net/image/9767535/japan-maritime-self-defense-force-tour-vrm-50",
+"st": "CA",
+"svc": "USN"
+},
+"VT-10": {
+"base": "NAS Pensacola",
+"full": "Training Squadron 10",
+"parent": "Training Air Wing 6",
+"role": "NFO training T-6A/T-45C",
+"src": "https://www.cnatra.navy.mil/tw6/",
+"st": "FL",
+"svc": "USN"
+},
+"VT-2": {
+"base": "NAS Whiting Field",
+"full": "Training Squadron 2",
+"parent": "Training Air Wing 5",
+"role": "T-6B primary training",
+"src": "https://www.cnatra.navy.mil/tw5/vt2/history.asp",
+"st": "FL",
+"svc": "USN"
+},
+"VT-21": {
+"base": "NAS Kingsville",
+"full": "Training Squadron 21",
+"parent": "Training Air Wing 2",
+"role": "T-45C strike training",
+"src": "https://www.cnatra.navy.mil/tw2/vt21/",
+"st": "TX",
+"svc": "USN"
+},
+"VT-22": {
+"base": "NAS Kingsville",
+"full": "Training Squadron 22",
+"parent": "Training Air Wing 2",
+"role": "T-45C strike training",
+"src": "https://www.cnatra.navy.mil/tw2/",
+"st": "TX",
+"svc": "USN"
+},
+"VT-27": {
+"base": "NAS Corpus Christi",
+"full": "Training Squadron 27",
+"parent": "Training Air Wing 4",
+"role": "T-6B primary training",
+"src": "https://www.cnatra.navy.mil/tw4/vt27/",
+"st": "TX",
+"svc": "USN"
+},
+"VT-28": {
+"base": "NAS Corpus Christi",
+"full": "Training Squadron 28",
+"parent": "Training Air Wing 4",
+"role": "T-6B primary training",
+"src": "https://www.cnatra.navy.mil/tw4/vt28/",
+"st": "TX",
+"svc": "USN"
+},
+"VT-31": {
+"base": "NAS Corpus Christi",
+"full": "Training Squadron 31",
+"parent": "Training Air Wing 4",
+"role": "T-54A multi-engine training",
+"src": "https://dvidshub.net/news/468889/new-aircraft-arrives-nas-corpus-christi-replace-aging-t-44c-pegasus",
+"st": "TX",
+"svc": "USN"
+},
+"VT-35": {
+"base": "NAS Corpus Christi",
+"full": "Training Squadron 35",
+"parent": "Training Air Wing 4",
+"role": "T-54A multi-engine training",
+"src": "https://dvidshub.net/news/468889/new-aircraft-arrives-nas-corpus-christi-replace-aging-t-44c-pegasus",
+"st": "TX",
+"svc": "USN"
+},
+"VT-4": {
+"base": "NAS Pensacola",
+"full": "Training Squadron 4",
+"parent": "Training Air Wing 6",
+"role": "NFO training T-6A/T-45C",
+"src": "https://www.cnatra.navy.mil/tw6/",
+"st": "FL",
+"svc": "USN"
+},
+"VT-6": {
+"base": "NAS Whiting Field",
+"full": "Training Squadron 6",
+"parent": "Training Air Wing 5",
+"role": "T-6B primary training",
+"src": "https://www.cnatra.navy.mil/tw5/vt6/",
+"st": "FL",
+"svc": "USN"
+},
+"VT-7": {
+"base": "NAS Meridian",
+"full": "Training Squadron 7",
+"parent": "Training Air Wing 1",
+"role": "T-45C strike training",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Meridian/About/Tenant-Commands/TW-1/",
+"st": "MS",
+"svc": "USN"
+},
+"VT-86": {
+"base": "NAS Pensacola",
+"full": "Training Squadron 86",
+"parent": "Training Air Wing 6",
+"role": "NFO training T-6A/T-45C",
+"src": "https://www.cnatra.navy.mil/tw6/",
+"st": "FL",
+"svc": "USN"
+},
+"VT-9": {
+"base": "NAS Meridian",
+"full": "Training Squadron 9",
+"parent": "Training Air Wing 1",
+"role": "T-45C strike training",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Meridian/About/Tenant-Commands/TW-1/",
+"st": "MS",
+"svc": "USN"
+},
+"VUP-11": {
+"base": "NAS Whidbey Island",
+"full": "Unmanned Patrol Squadron 11",
+"parent": "",
+"role": "MQ-4C Triton ISR",
+"src": "https://www.airpac.navy.mil/Organization/Unmanned-Patrol-Squadron-VUP-11/About-Us",
+"st": "WA",
+"svc": "USN"
+},
+"VUP-19": {
+"base": "NAS Jacksonville",
+"full": "Unmanned Patrol Squadron 19",
+"parent": "",
+"role": "MQ-4C Triton ISR",
+"src": "https://cnrse.cnic.navy.mil/Installations/NAS-Jacksonville/About/Tenant-Commands/Squadrons/",
+"st": "FL",
+"svc": "USN"
+},
+"VUQ-10": {
+"base": "NAS Patuxent River",
+"full": "Unmanned Carrier-Launched Multi-Role Sqn 10",
+"parent": "",
+"role": "MQ-25 FRS training",
+"src": "https://www.airpac.navy.mil/Organization/Unmanned-Carrier-Launched-Multi-Role-Squadron-10/About-Us",
+"st": "MD",
+"svc": "USN"
+},
+"VX-1": {
+"base": "NAS Patuxent River",
+"full": "Air Test and Evaluation Squadron 1",
+"parent": "",
+"role": "Multi-type op test & eval",
+"src": "https://www.dvidshub.net/image/9453755/air-test-and-evaluation-squadron-one-tests-minotaur-mission-system",
+"st": "MD",
+"svc": "USN"
+},
+"VX-20": {
+"base": "NAS Patuxent River",
+"full": "Air Test and Evaluation Squadron 20",
+"parent": "Naval Test Wing Atlantic",
+"role": "Multi-engine/E-2/P-8 test",
+"src": "https://www.navair.navy.mil/news/Navy-Force-test-squadron-changes-command/Thu-10032024-1600",
+"st": "MD",
+"svc": "USN"
+},
+"VX-23": {
+"base": "NAS Patuxent River",
+"full": "Air Test and Evaluation Squadron 23",
+"parent": "Naval Test Wing Atlantic",
+"role": "F/A-18/F-35 flight test",
+"src": "https://www.navair.navy.mil/nawcad/vx23",
+"st": "MD",
+"svc": "USN"
+},
+"VX-30": {
+"base": "NBVC Point Mugu",
+"full": "Air Test and Evaluation Squadron 30",
+"parent": "Naval Test Wing Pacific",
+"role": "C-130T range support",
+"src": "https://www.navair.navy.mil/news/Bloodhounds-Welcome-Carmody-He-Assumes-Command-VX-30/Fri-05022025-1041",
+"st": "CA",
+"svc": "USN"
+},
+"VX-31": {
+"base": "NAWS China Lake",
+"full": "Air Test and Evaluation Squadron 31",
+"parent": "Naval Test Wing Pacific",
+"role": "F/A-18/EA-18G weapons test",
+"src": "https://www.navair.navy.mil/news/Dust-Devils-Turn-Page-VX-31-Welcomes-New-Commanding-Officer/Mon-03102025-1426",
+"st": "CA",
+"svc": "USN"
+},
+"VX-9": {
+"base": "NAWS China Lake",
+"full": "Air Test and Evaluation Squadron 9",
+"parent": "COMOPTEVFOR",
+"role": "Tactical aircraft op test",
+"src": "https://cnrsw.cnic.navy.mil/Installations/NAWS-China-Lake/About/Tenant-Commands/VX-9",
+"st": "CA",
+"svc": "USN"
+},
+"VXS-1": {
+"base": "NAS Patuxent River",
+"full": "Scientific Development Squadron 1",
+"parent": "",
+"role": "NP-3/RC-12 science flights",
+"src": "https://ndw.cnic.navy.mil/Installations/NAS-Patuxent-River/Operations-and-Management/Tenant-Commands/Scientific-Development-Squadron-VXS-1/",
+"st": "MD",
+"svc": "USN"
+}
+}

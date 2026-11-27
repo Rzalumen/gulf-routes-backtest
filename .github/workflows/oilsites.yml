@@ -1,0 +1,35 @@
+name: Oil and gas sites (flares + platforms → map/oilsites.json)
+# HEAT WATCH needs the known oil / gas sites (the owner 7 Nov 2026, after a heat spot 7.5 km from Bukha A was first called a flare).
+# Weekly: EOG VIIRS Nightfire flare-site catalog (Zenodo) + OpenStreetMap (Overpass) for the Iran + Gulf box → make_oilsites.py →
+# map/oilsites.json on map-service (Cloud Run rebuilds on push; the bot asks GET /oilnear once per heat alert).
+on:
+  schedule:
+    - cron: '17 5 * * 0'     # Sundays 05:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: data-branches
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the flare catalog and OSM sites
+        run: |
+          curl -fsSL --retry 3 -o flares.csv 'https://zenodo.org/records/23091822/files/annual_flare_site_records.csv?download=1'
+          Q='[out:json][timeout:240];(nwr["man_made"="offshore_platform"](12,34,40,63.5);nwr["man_made"="flare"](12,34,40,63.5);nwr["industrial"="refinery"](12,34,40,63.5);nwr["industrial"="oil"](12,34,40,63.5);nwr["industrial"="gas"](12,34,40,63.5);nwr["man_made"="petroleum_well"]["name"](12,34,40,63.5););out center tags;'
+          curl -fsSL --retry 3 --data-urlencode "data=$Q" -o osm.json https://overpass-api.de/api/interpreter \
+            || curl -fsSL --retry 3 --data-urlencode "data=$Q" -o osm.json https://overpass.kumi.systems/api/interpreter
+          ls -la flares.csv osm.json
+      - name: Build and push map/oilsites.json
+        run: |
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir ms && cd ms && git init -q -b map-service
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" map-service && git reset -q --hard FETCH_HEAD
+          python3 ../make_oilsites.py ../flares.csv ../osm.json map/oilsites.json
+          git add map/oilsites.json
+          { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "oilsites.json: weekly refresh" && git push "$R" HEAD:map-service; }

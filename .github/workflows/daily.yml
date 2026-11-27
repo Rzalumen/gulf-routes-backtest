@@ -1,0 +1,119 @@
+name: Daily history (adsb.lol → history-2025)
+# Every day: read yesterday's adsb.lol world history, keep military / VIP aircraft (extract_day.py),
+# add the day to the history-2025 branch and rebuild legs + routes. Days already in the branch are skipped.
+# Pattern system step 1 (the owner 27 Oct 2026: "i need a fucking extensive plan to start running this now").
+on:
+  schedule:
+    - cron: '37 4 * * *'     # 04:37 UTC; adsb.lol publishes the previous day's archive overnight
+  workflow_dispatch:
+    inputs:
+      start:
+        description: First day (YYYY-MM-DD, empty = yesterday)
+        default: ''
+      end:
+        description: Last day (YYYY-MM-DD, empty = same as first)
+        default: ''
+permissions:
+  contents: write
+jobs:
+  days:
+    runs-on: ubuntu-latest
+    outputs:
+      list: ${{ steps.d.outputs.list }}
+    steps:
+      - id: d
+        env:
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+        run: |
+          git init -q x && cd x
+          git fetch -q --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" history-2025
+          git ls-tree --name-only FETCH_HEAD events/ > ../have.txt
+          cd ..
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import datetime, json, os
+          y = datetime.date.today() - datetime.timedelta(1)
+          # no input: the last 7 days, so a day that failed (archive late, run cancelled, push failed) is retried, not lost
+          a = datetime.date.fromisoformat(os.environ['START']) if os.environ.get('START') else y - datetime.timedelta(6)
+          b = datetime.date.fromisoformat(os.environ['END']) if os.environ.get('END') else (a if os.environ.get('START') else y)
+          have = set(open('have.txt').read().split())
+          days = [(a + datetime.timedelta(d)).isoformat() for d in range((b - a).days + 1)]
+          days = [d for d in days if 'events/events-%s.csv.gz' % d not in have]
+          print('list=' + json.dumps(days))
+          EOF
+  extract:
+    needs: days
+    if: needs.days.outputs.list != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        day: ${{ fromJson(needs.days.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stream the day archive and keep military / VIP aircraft only
+        run: |
+          OUT=events-${{ matrix.day }}.csv
+          COV_OUT=coverage-${{ matrix.day }}.json AIR_OUT=air-${{ matrix.day }}.csv.gz ./fetch_day.sh ${{ matrix.day }} "$OUT" python3 extract_day.py
+          gzip -9 "$OUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: events-${{ matrix.day }}
+          path: |
+            events-${{ matrix.day }}.csv.gz
+            coverage-${{ matrix.day }}.json
+            air-${{ matrix.day }}.csv.gz
+          retention-days: 7
+  commit:
+    needs: extract
+    concurrency:   # job level: other writers wait only for the commit, not the extract (a 2nd pending run is cancelled)
+      group: data-branches
+      cancel-in-progress: false
+    if: always() && needs.extract.result != 'skipped'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: events-*
+          path: new
+          merge-multiple: true
+      - name: Add the new days to history-2025, rebuild legs and routes, commit (no force push)
+        run: |
+          ls new/events-*.csv.gz >/dev/null 2>&1 || { echo "nothing new"; exit 0; }
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir out && cd out && git init -q -b history-2025
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" history-2025 && git reset -q --hard FETCH_HEAD
+          cp -n ../new/events-*.csv.gz events/
+          mkdir -p coverage && cp ../new/coverage-*.json coverage/ 2>/dev/null || true   # civil traffic per region (coverage guard)
+          mkdir -p ../work/events
+          for f in events/*.csv.gz; do gunzip -c "$f" > "../work/events/$(basename "${f%.gz}")"; done
+          cp ../build_routes.py ../airports.json ../work/
+          (cd ../work && python3 build_routes.py)
+          cp ../work/routes.json ../work/legs.csv . && gzip -9c ../work/legs_all.csv > legs_all.csv.gz
+          git add -A && git commit -qm "Daily history: $(cd ../new && ls events-* | sed 's/events-//;s/.csv.gz//' | tr '\n' ' ')" && git push "$R" HEAD:history-2025
+      - name: Add airborne points to air-history (routine vs unusual, 2 Nov 2026)
+        run: |
+          ls new/air-*.csv.gz >/dev/null 2>&1 || { echo "no airborne files"; exit 0; }
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir air && cd air && git init -q -b air-history
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD || echo "new branch"
+          mkdir -p air && cp -n ../new/air-*.csv.gz air/
+          git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Airborne history: daily" && git push "$R" HEAD:air-history; }   # a failed push fails the run
+      - name: Refresh map/lastland.json on map-service (bot's "Last landed" line, the owner 27 Oct 2026)
+        run: |
+          [ -f work/legs_all.csv ] || { echo "no new legs"; exit 0; }
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir ms && cd ms && git init -q -b map-service
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" map-service && git reset -q --hard FETCH_HEAD
+          python3 ../make_lastland.py ../work/legs_all.csv map/lastland.json
+          if ls ../air/air/air-*.csv.gz >/dev/null 2>&1; then   # routine vs unusual (map /pattern endpoint, 2 Nov 2026)
+            python3 ../make_patterns.py ../air/air ../work/events ../work/legs_all.csv map/patterns.json || echo "::warning::patterns.json not rebuilt"
+          fi
+          git add map/lastland.json map/patterns.json 2>/dev/null; git add map/lastland.json
+          { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "lastland.json + patterns.json: daily refresh" && git push "$R" HEAD:map-service; }   # a failed push fails the run

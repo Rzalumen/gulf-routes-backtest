@@ -1,0 +1,698 @@
+serial,code,type,cn,unit,status
+010,,F-16B-05-CF Netz,6W-6,140sq,Active
+012,,Bell 212 Anafa,?,124sq,Active
+020,,F-16D-30-CF Barak,4K-1,FTC/Manat,Active
+022,,F-16D-30-CF Barak,4K-7,109sq,Active
+023,,F-16D-30-CF Barak,4K-3,109sq,Active
+024,,Bell 212 Anafa,?,123sq,Active
+027,,F-16D-30-CF Barak,4K-4,109sq,Active
+030,,S-65C-3 Yassqur 2000,65-393,118sq,Active
+034,,Bell 212 Anafa,32207,124sq,Active
+034,,F-16D-30-CF Barak,4K-5,109sq,Active
+036,,F-16D-30-CF Barak,4K-6,109sq,Active
+036,,S-65C-3 Yassur 2025,65-396,118sq,Active
+038,,S-65C-3 Yassqur 2025,65-397,22 MU,Active
+039,,F-16D-30-CF Barak,4K-10,109sq,Active
+040,,Bell 212 Anafa,?,123sq,Active
+040,,S-65C-3 Yassur 2025,65-398,118sq,Active
+041,,F-16D-30-CF Barak,4K-8,109sq,Active
+042,,Bell 212 Anafa,?,123sq,Active
+043,,Bell 212 Anafa,?,123sq,Active
+044,,Bell 212 Anafa,?,123sq,Active
+044,,S-65C-3 Yassur 2025,65-400,118sq,Active
+045,,F-16D-30-CF Barak,4K-9,109sq,Active
+046,,F-16D-30-CF Barak,4K-11,109sq,Active
+046,,S-65C-3 Yassur 2025,65-401,118sq,Active
+048,,Bell 212 Anafa,?,123sq,Active
+048,,S-65C-3 Yassur 2025,65-402,118sq,Active
+049,,Bell 212 Anafa,?,FTS,Active
+050,,F-16D-30-CF Barak,4K-12,109sq,Active
+052,,Bell 212 Anafa,?,123sq,Active
+052,,S-65C-3 Yassur 2025,65-404,118sq,Active
+055,,F-16D-30-CF Barak,4K-15,109sq,Active
+056,,S-65C-3 Yassur 2025,65-406,118sq,Active
+057,,F-16D-30-CF Barak,4K-13,109sq,Active
+060,,Bell 212 Anafa,32250?,123sq,Active
+061,,F-16D-30-CF Barak,4K-14,109sq,Active
+062,,S-65C-3 Yassur 2025,65-408,118sq,Active
+063,,F-16D-30-CF Barak,4K-17,109sq,Active
+063,,S-65C-3 Yassur 2025,65-409,118sq,Active
+064,,Bell 212 Anafa,?,123sq,Active
+065,,S-65Oe Yassur 2025,65-223,118sq,Active
+069,,F-16D-30-CF Barak,4K-18,109sq,Active
+072,,F-16D-30-CF Barak,4K-16,109sq,Active
+075,,F-16D-30-CF Barak,4K-22,109sq,Active
+077,,Bell 212 Anafa,32261?,,Active
+078,,Bell 212 Anafa,32262?,123sq,Active
+079,,F-16D-30-CF Barak,4K-21,109sq,Active
+083,,F-16D-30-CF Barak,4K-24,109sq,Active
+088,,F-16D-30-CF Barak,4K-23,109sq,Active
+1001,4X-USN,Hermes 900 Kochav,,166sq,Active
+1007,,Searcher,?,Haifa AB,Active
+101,,F-16C-40-CF Barak,CJ-19,101sq,Active
+102,,A-4N AyitM,14383,102sq/FTS,Active
+102,4X-FBA,C-130H,382-4430,131sq,Active
+102,,Heron TP Eitan,?,210sq,Active
+102,,M346I,7045/D0001/019,102sq,Active
+103,,M346I,7046/D0002,102sq,Active
+104,,M346I,7047/D0003/0021?,102sq,Active
+108,,M346I,7048/D0004,102sq,Active
+109,,F-15B-7-MC Baz,22/B004,106sq,Active
+110,,M346I,7050/D0005,102sq,Active
+111,,F-15B-8-MC Baz,29/B006,133sq,Active
+111,,M346I,7051/D0006,102sq,Active
+113,,AH-64D Saraf,,113sq,Active
+113,,F-15B-9-MC Baz,39/B008,133sq,Active
+113,,M346I,7052/D0007,102sq,Active
+114,,M346I,7055/D0008,102sq,Active
+115,,M346I,7056/D0009,102sq,Active
+117,,M346I,7057/D0010/0029?,102sq,Active
+120,,M346I,7058/D0011,102sq,Active
+121,,Heron TP Eitan,?,210sq,Active
+121,,M346I,7059/D0012,102sq,Active
+122,,F-15B-7-MC Baz,,22 MU,Active
+122,,Heron TP Eitan,?,210sq,Active
+122,,M346I,7060/D0013,102sq,Active
+125,,M346I,7061/D0014,102sq,Active
+127,,M346I,7062/D0015,102sq,Active
+128,,M346I,7063/D0016,102sq,Active
+130,,M346I,7068/D0017,102sq,Active
+131,,M346I,7069/D0018,102sq,Active
+133,,M346I,7070/D0019,102sq,Active
+136,,M346I,7071/D0020,102sq,Active
+138,,M346I,7072/D0021,102sq,Active
+140,4X-JYT,KC-707,17625/99,120sq,Active
+141,,M346I,7073/D0022,102sq,Active
+144,,M346I,7074/D0023,102sq,Active
+145,,M346I,7075/D0024,102sq,Active
+149,,M346I,7076/D0025,102sq,Active
+152,,M346I,7077/D0026,102sq,Active
+154,,M346I,7078/D0027,102sq,Active
+159,,M346I,7079/D0028,102sq,Active
+160,,M346I,7080/D0029,102sq,Active
+164,,M346I,7081/D0030,102sq,Active
+2003,,IAI Firebird XL-5,?,"nn, Haifa",Active
+2006,,Heron TP Eitan,?,210sq,Active
+200,,Heron Shoval,?,200sq,Active
+201,,F-15I-56-MC Ra'am,1276/I001,FTC/MANAT,Active
+201,,F-16I Sufa,YD-77,201sq,Active
+2057,,Spitfire LF.IXc,CBAF-171351,Hatzerim AB,Active
+205,,F-15I-56-MC Ra'am,1278/I002,69sq,Active
+208,4X-FBP,C-130H,382-4533,131sq,Active
+209,,F-15I-56-MC Ra'am,1286/I003,69sq,Active
+210,,Heron TP Eitan,?,210sq,Active
+212,,F-15I-56-MC Ra'am,1288/I004,69sq,Active
+213,,Hermes 450 Zik,,161sq,Active
+215,,F-15I-56-MC Ra'am,1290/I005,69sq,Active
+216,,Heron TP Eitan,?,210sq,Active
+217,,F-15I-56-MC Ra'am,1292/I006,69sq,Active
+217,,Heron Shoval,?,200sq,Active
+217,,Heron TP Eitan,?,210sq,Active
+218,,Heron TP Eitan,?,210sq,Active
+220,,F-15I-56-MC Ra'am,1294/I007,69sq,Active
+220,,Heron TP Eitan,?,210sq,Active
+222,,Heron TP Eitan,?,210sq,Active
+223,,F-15I-56-MC Ra'am,1296/I008,69sq,Active
+226,,Scout UAV,..,,Active
+227,,F-15I-56-MC Ra'am,1298/I009,69sq,Active
+227,,Heron Shoval,?,200sq,Active
+232,,F-15I-57-MC Ra'am,1300/I010,69sq,Active
+234,,F-15I-57-MC Ra'am,1302/I011,69sq,Active
+234,,F-16A-10-CF Netz,6V-29,ex 115sq,Active
+235,,F-15I-57-MC Ra'am,1304/I012,69sq,Active
+238,,F-15I-57-MC Ra'am,1306/I013,69sq,Active
+241,,F-15I-57-MC Ra'am,1308/I014,69sq,Active
+244,,F-15I-57-MC Ra'am,1310/I015,69sq,Active
+246,4X-JYS,B707 Phalcon,20230/819,120sq,Active
+246,,F-15I-57-MC Ra'am,1313/I016,69sq,Active
+248,4X-JYU,KC-707,20429/846,120sq,Active
+250,,F-15I-57-MC Ra'am,1315/I017,69sq,Active
+250,4X-JYY,RC-707,20428/845,120sq,Active
+252,,F-15I-57-MC Ra'am,1317/I018,69sq,Active
+252,,Heron Shoval,?,200sq,Active
+253,,F-16I Sufa,YD-4,253sq,Active
+255,,F-15I-57-MC Ra'am,1319/I019,69sq,Active
+255,,Heron Shoval,?,200sq,Active
+259,,F-15I-57-MC Ra'am,1321/I020,69sq,Active
+260,4X-JYN,KC-707,20716/880,120sq,Active
+261,,F-15I-57-MC Ra'am,1323/I021,69sq,Active
+263,,F-15I-57-MC Ra'am,1325/I022,69sq,Active
+264,4X-JYH,KC-707,20721/875,120sq,Active
+267,,F-15I-57-MC Ra'am,1329/I023,69sq,Active
+267,,Heron Shoval,?,200sq,Active
+268,,Heron Shoval,?,200sq,Active
+269,,F-15I-57-MC Ra'am,1333/I024,69sq,Active
+270,,Heron TP Eitan,?,210sq,Active
+271,,F-15I-57-MC Ra'am,1337/I025,69sq,Active
+272,,KC-707,21096/900,120sq,Active
+273,,Heron Shoval,?,200sq,Active
+275,,KC-707,21334/923,120sq,Active
+277,,Scout UAV,.,,Active
+280,,F-15D-35-MC Baz,884/ID008,133sq,Active
+290,,Heron Shoval,?,200sq,Active
+290,4X-980,VC-707,21956/941,120sq,Active
+291,,Heron Shoval,?,200sq,Active
+295,,KC-707,20919/888,120sq,Active
+301,,AW119M,15001,FTS,Active
+301,,F-16C-30-CF Barak,4J-1,FTC/Manat,Active
+301,,KC-46A,68377/1350,46sq,Active
+302,,AW119M,15002,FTS,Active
+303,,AW119M,15003,FTS,Active
+304,,AW119M,15004,FTS,Active
+304,,Raytheon A36 Chofit,E-3589,100sq,Active
+305,,AW119M,15005,FTS,Active
+309,,A-4N AyitM,14500,102sq/FTS,Active
+309,,F-16C-30-CF Barak,4J-5,115sq,Active
+309,,Raytheon A36 Chofit,E-3591,100sq,Active
+311,,Raytheon A36 Chofit,?,100sq,Active
+312,,KC-46A,68378/1361,46sq,Active
+313,,Raytheon A36 Chofit,E-3595,100sq,Active
+318,,AW119M,150..,FTS,Active
+320,,Raytheon A36 Chofit,E-3399,100sq,Active
+324,,Raytheon A36 Chofit,E-3597,100sq,Active
+326,,Hermes 450 Zik,,161sq,Active
+328,,Raytheon A36 Chofit,E-3600,100sq,Active
+329,,F-16C-30-CF Barak,4J-51,110sq,Active
+330,,Raytheon A36 Chofit,E-3525,100sq,Active
+333,,Raytheon A36 Chofit,E-3629,100sq,Active
+335,,Raytheon A36 Chofit,E-3603,100sq,Active
+336,,A-4N AyitM,14378,102sq/FTS,Active
+338,,Raytheon A36 Chofit,E-3605,100sq,Active
+340,,Raytheon A36 Chofit,E-3606,100sq,Active
+344,,F-16C-30-CF Barak,4J-18,115sq,Active
+346,,Raytheon A36 Chofit,E-3608,100sq,Active
+350,,F-16C-30-CF Barak,4J-22,115sq,Active
+355,,F-16C-30-CF Barak,4J-24,115sq,Active
+355,,Raytheon A36 Chofit,E-3609,100sq,Active
+359,,F-16C-30-CF Barak,4J-49,110sq,Active
+363,,Raytheon A36 Chofit,E-3613,100sq,Active
+367,,F-16C-30-CF Barak,4J-28,115sq,Active
+369,,Raytheon A36 Chofit,E-3610,100sq,Active
+371,,F-16C-30-CF Barak,4J-30,110sq,Active
+373,,F-16C-30-CF Barak,4J-31,115sq,Active
+374,,F-16C-30-CF Barak,4J-32,?,Active
+376,,F-16C-30-CF Barak,4J-48,110sq,Active
+377,,F-16C-30-CF Barak,4J-33,110sq,Active
+378,,F-16C-30-CF Barak,4J-34,110sq,Active
+381,,F-16C-30-CF Barak,4J-35,110sq,Active
+383,,F-16C-30-CF Barak,4J-46,115sq,Active
+384,,F-16C-30-CF Barak,4J-36,110sq,Active
+385,,F-16C-30-CF Barak,4J-47,110sq,Active
+389,,A-4N AyitM,14446,102sq/FTS,Active
+389,,Raytheon A36 Chofit,?,100sq,Active
+392,,F-16C-30-CF Barak,4J-43,110sq,Active
+393,,F-16C-30-CF Barak,4J-41,110sq,Active
+394,,F-16C-30-CF Barak,4J-42,110sq,Active
+397,,F-16C-30-CF Barak,4J-44,110sq,Active
+398,,A-4N AyitM,14455,102sq/FTS,Active
+400,,T-6A,PT-450,FTS,Active
+401,,F-16I Sufa,YD-1,FTC/Manat,Active
+403,,F-16I Sufa,YD-2,119sq,Active
+403,,Hermes 450 Zik,,161sq,Active
+404,,F-15B-16-MC Baz,258/IB001,133sq,Active
+404,,F-16I Sufa,YD-3,253sq,Active
+405,,Hermes 450 Zik,,161sq,Active
+407,,F-16I Sufa,YD-5,253sq,Active
+408,,F-15B-16-MC Baz,269/IB002,133sq,Active
+408,,F-16I Sufa,YD-6,253sq,Active
+410,,F-16I Sufa,YD-7,253sq,Active
+411,,A-4N AyitM,14452,102sq/FTS,Active
+411,,F-16I Sufa,YD-8,253sq,Active
+413,,F-16I Sufa,YD-9,253sq,Active
+413,,IAI Scout,?,"nn, Haifa",Active
+414,,T-6A,PT-451,FTS,Active
+415,,F-16I Sufa,YD-10,253sq,Active
+417,,F-16I Sufa,YD-11,253sq,Active
+420,4X-FBQ,KC-130H,382-4653,131sq,Active
+421,,F-16I Sufa,YD-12,253sq,Active
+422,,F-16I Sufa,YD-13,253sq,Active
+422,,Hermes 450 Zik,,161sq,Active
+425,,F-16I Sufa,YD-14,119sq,Active
+427,,F-16I Sufa,YD-15,253sq,Active
+427,4X-FBS,KC-130H,382-4662,131sq,Active
+428,4X-FBX,C-130H,382-4692,131sq,Active
+430,,F-16I Sufa,YD-16,253sq,Active
+432,,F-16I Sufa,YD-17,253sq,Active
+434,,F-16I Sufa,YD-18,253sq,Active
+435,4X-FBT,C-130H,382-4668,131sq,Active
+436,4X-FBW,KC-130H,382-4686,131sq,Active
+437,,F-16I Sufa,YD-19,119sq,Active
+439,,Hermes 450 Zik,,161sq,Active
+440,,F-16I Sufa,YD-20,253sq,Active
+444,,F-16I Sufa,YD-22,253sq,Active
+445,,F-16I Sufa,YD-23,253sq,Active
+446,,SH-60F Shalach,70-1683,193sq,Active
+447,,F-16I Sufa,YD-24,119sq,Active
+448,,F-16I Sufa,YD-25,119sq,Active
+449,,Hermes 450 Zik,,161sq,Active
+450,,F-15D-27-MC Baz,644/ID001,133sq,Active
+451,,F-16I Sufa,YD-26,119sq,Active
+452,,G550 Nachshon Oron,5552,122sq,Active
+455,,F-16I Sufa,YD-27,119sq,Active
+456,,F-16I Sufa,YD-28,253sq,Active
+456,,T-6A,PT-452,FTS,Active
+457,,F-16I Sufa,YD-29,119sq,Active
+459,,F-16I Sufa,YD-30,119sq,Active
+462,,F-16I Sufa,YD-31,253sq,Active
+463,,F-16I Sufa,YD-32,119sq,Active
+466,,F-16I Sufa,YD-33,253sq,Active
+468,,F-16I Sufa,YD-34,253sq,Active
+469,,F-16I Sufa,YD-35,119sq,Active
+470,,F-16I Sufa,YD-36,253sq,Active
+470,,T-6A,PT-453,FTS,Active
+471,,F-16I Sufa,YD-37,119sq,Active
+473,,T-6A,PI-1,FTS,Active
+475,,T-6A,PI-2,FTS,Active
+476,,F-16I Sufa,YD-38,253sq,Active
+477,,F-16I Sufa,YD-39,119sq,Active
+478,,F-16I Sufa,YD-40,253sq,Active
+478,,T-6A,PI-3,FTS,Active
+481,,T-6A,PI-4,FTS,Active
+482,,F-16I Sufa,YD-42,253sq,Active
+483,,T-6A,PI-5,FTS,Active
+484,,T-6A,PI-6,FTS,Active
+486,,F-16I Sufa,YD-43,119sq,Active
+488,,F-16I Sufa,YD-44,253sq,Active
+488,,T-6A,PI-7,FTS,Active
+490,,T-6A,PI-9,FTS,Active
+491,,F-16I Sufa,YD-46,119sq,Active
+491,,T-6A,PI-10,FTS,Active
+492,,T-6A,PI-11,FTS,Active
+493,,T-6A,PI-12,FTS,Active
+494,,F-16I Sufa,YD-48,119sq,Active
+494,,T-6A,PI-13,FTS,Active
+495,,T-6A,PI-14,FTS,Active
+496,,T-6A,PI-15,FTS,Active
+497,,F-16I Sufa,YD-49,119sq,Active
+497,,T-6A,PI-16,FTS,Active
+498,,F-16I Sufa,YD-63,119sq/Manat loan,Active
+498,,T-6A,PI-17,FTS,Active
+499,,F-16I Sufa,YD-50,119sq,Active
+501,4X-FEA,Beech B200 Zufit 1,BB-1385,100sq,Active
+502,,F-16C-40-CF Barak,CJ-1,101sq,Active
+503,,F-16C-40-CF Barak,CJ-2,101sq,Active
+503,,S-70A-55 Yanshuf 3,70-2693,123sq,Active
+504,4X-FEB,Beech B200 Zufit 1,BB-1386,100sq,Active
+505,,F-15C-35-MC Baz,877/IC010,106sq,Active
+506,,F-16C-40-CF Barak,CJ-3,101sq,Active
+507,4X-FEC,Beech B200 Zufit 1,BB-1387,100sq,Active
+510,4X-FED,Beech B200 Zufit 1,BB-1388,100sq,Active
+511,,F-16C-40-CF Barak,CJ-5,101sq,Active
+511,,S-70A-55 Yanshuf 3,?,123sq,Active
+512,,F-16C-40-CF Barak,CJ-6,101sq,Active
+514,,F-16C-40-CF Barak,CJ-7,101sq,Active
+515,,S-70A-55 Yanshuf 3,?,123sq,Active
+516,,F-16C-40-CF Barak,CJ-8,101sq,Active
+517,,S-70A-55 Yanshuf 3,?,123sq,Active
+519,,F-15C-35-MC Baz,879/IC011,133sq,Active
+519,,F-16C-40-CF Barak,CJ-9,101sq,Active
+520,,F-16C-40-CF Barak,CJ-10,101sq,Active
+522,,F-16C-40-CF Barak,CJ-11,101sq,Active
+522,4X-FBY,KC-130H,382-4660,131sq,Active
+522,,S-70A-55 Yanshuf 3,?,123sq,Active
+523,,F-16C-40-CF Barak,CJ-12,101sq,Active
+525,,F-15C-36-MC Baz,888/IC012,106sq,Active
+525,,F-16C-40-CF Barak,CJ-13,101sq,Active
+527,,F-16C-40-CF Barak,CJ-14,101sq,Active
+528,,F-16C-40-CF Barak,CJ-15,101sq,Active
+528,,S-70A-55 Yanshuf 3,?,123sq,Active
+530,,F-15C-36-MC Baz,889/IC013,106sq,Active
+530,,F-16C-40-CF Barak,CJ-16,101sq,Active
+531,,F-16C-40-CF Barak,CJ-17,101sq,Active
+533,,S-70A-55 Yanshuf 3,70-2723,124sq,Active
+534,,F-16C-40-CF Barak,CJ-18,101sq,Active
+536,,F-16C-40-CF Barak,CJ-20,101sq,Active
+536,,S-70A-55 Yanshuf 3,?,123sq,Active
+537,,G550 Nachshon Eitam,5037,122sq,Active
+538,,F-16C-40-CF Barak,CJ-21,101sq,Active
+539,,F-16C-40-CF Barak,CJ-22,101sq,Active
+539,,S-70A-55 Yanshuf 3,?,123sq,Active
+541,,F-15C-36-MC Baz,891/IC014,106sq,Active
+542,,F-16C-40-CF Barak,CJ-23,101sq,Active
+542,,S-70A-55 Yanshuf 3,?,123sq,Active
+543,,F-16C-40-CF Barak,CJ-24,101sq,Active
+544,,TA-4H AyitM,14083,102sq/FTS,Active
+545,4X-FBZ,KC-130H,382-4664,131sq,Active
+546,,F-16C-40-CF Barak,CJ-25,101sq,Active
+547,,F-16C-40-CF Barak,CJ-26,101sq,Active
+547,,S-70A-55 Yanshuf 3,?,124sq,Active
+550,,S-70A-55 Yanshuf 3,?,124sq,Active
+551,,F-16C-40-CF Barak,CJ-27,101sq,Active
+552,,F-15C-36-MC Baz,893/IC015,106sq,Active
+553,,S-70A-55 Yanshuf 3,?,123sq,Active
+554,,F-16C-40-CF Barak,CJ-28,101sq,Active
+555,,S-70A-55 Yanshuf 3,?,123sq,Active
+557,,F-16C-40-CF Barak,CJ-29,101sq,Active
+558,,F-16C-40-CF Barak,CJ-30,101sq,Active
+559,,S-70A-55 Yanshuf 3,70-2739,123sq,Active
+560,,F-15C-36-MC Baz,896/IC016,106sq,Active
+562,,S-70A-55 Yanshuf 3,?,123sq,Active
+565,,S-70A-55 Yanshuf 3,?,123sq,Active
+567,,S-70A-55 Yanshuf 3,70-2744,124sq,Active
+569,,G550 Nachshon Eitam,5069,122sq,Active
+571,,S-70A-55 Yanshuf 3,?,124sq,Active
+575,,F-15C-36-MC Baz,898/IC017,106sq,Active
+575,,S-70A-55 Yanshuf 3,?,124sq,Active
+580,,S-70A-55 Yanshuf 3,?,124sq,Active
+582,,S-70A-55 Yanshuf 3,70-2765,123sq,Active
+583,,F-15C-36-MC Baz,901/IC018,106sq,Active
+585,,S-70A-55 Yanshuf 3,?,123sq,Active
+587,,S-70A-55 Yanshuf 3,?,123sq,Active
+601,,F-16D-40-CF Barak,CK-01,FTC/MANAT,Active
+601,,Hermes 900 Kochav,,166sq,Active
+602,,Tzukit,D099/02,FTS,Active
+603,,F-16D-40-CF Barak,CK-02,105sq,Active
+603,,Hermes 900 Kochav,,166sq,Active
+610,,F-16D-40-CF Barak,CK-04,105sq,Active
+612,,A-4F,?,102sq,Active
+612,,F-16D-40-CF Barak,CK-05,109sq,Active
+614,,Hermes 450 Zik,,161sq,Active
+615,,F-16D-40-CF Barak,CK-06,105sq,Active
+619,,F-16D-40-CF Barak,CK-07,105sq,Active
+622,,Beech B200T Zufit 2,BT-39/BB-1684,100sq,Active
+624,,F-16D-40-CF Barak,CK-09,105sq,Active
+625,,Beech B200T Zufit 2,BT-40/BB-1717,100sq,Active
+627,,Tzukit,D149/27,FTS,Active
+628,,F-16D-40-CF Barak,CK-10,105sq,Active
+629,,Beech B200T Zufit 2,BT-41/BB-1721,100sq,Active
+630,,F-16D-40-CF Barak,CK-11,105sq,Active
+633,,Beech B200T Zufit 2,BT-42/BB-1724,100sq,Active
+633,,F-16D-40-CF Barak,CK-12,105sq,Active
+636,,Beech B200T Zufit 2,BT-43/BB-1727,100sq,Active
+637,,F-16D-40-CF Barak,CK-13,105sq,Active
+638,,F-16D-40-CF Barak,CK-14,105sq,Active
+642,,F-16D-40-CF Barak,CK-15,105sq,Active
+647,,F-16D-40-CF Barak,CK-16,105sq,Active
+647,,Hermes 450 Zik,,161sq,Active
+648,,F-16D-40-CF Barak,CK-17,105sq,Active
+651,,F-16D-40-CF Barak,CK-18,105sq,Active
+652,,F-16D-40-CF Barak,CK-19,105sq,Active
+654,,F-15A-17-MC Baz,279/IA001,133sq,Active
+656,,F-16D-40-CF Barak,CK-20,105sq,Active
+657,,Hermes 450 Zik,,161sq,Active
+658,,F-15A-17-MC Baz,285/IA002,133sq,Active
+661,,C-130J-30,382-5723,103sq,Active
+661,,F-15A-17-MC Baz,290/IA003,133sq,Active
+661,,Hermes 450 Zik,,161sq,Active
+662,,C-130J-30,382-5742,103sq,Active
+663,,C-130J-30,382-5781,103sq,Active
+663,,F-15A-17-MC Baz,294/IA004,133sq,Active
+664,,F-16D-40-CF Barak,CK-22,105sq,Active
+665,,C-130J-30,382-5754,103sq,Active
+666,,F-16D-40-CF Barak,CK-23,105sq,Active
+666,,Tzukit,D075/66,FTS,Active
+667,,C-130J-30,382-5794,103sq,Active
+667,,F-15A-17-MC Baz,299/IA005,133sq,Active
+667,,F-16D-40-CF Barak,CK-24,105sq,Active
+668,,C-130J-30,382-5799,103sq,Active
+669,,C-130J-30,382-5845,103sq,Active
+669,,F-15A-17-MC Baz,304/IA006,133sq,Active
+672,,Tzukit,D158/72,Hatzerim AB,Active
+673,,F-15A-17-MC Baz,311/IA008,133sq,Active
+673,,F-16D-40-CF Barak,CK-25,105sq,Active
+676,,F-16D-40-CF Barak,CK-26,105sq,Active
+676,,G-V Nachshon Shavit,676,122sq,Active
+678,,F-15A-17-MC Baz,319/IA010,133sq,Active
+678,,F-16D-40-CF Barak,CK-27,105sq,Active
+679,,G-V Nachshon Shavit,679,122sq,Active
+681,,F-15A-18-MC Baz,323/IA011,133sq,Active
+682,,F-16D-40-CF Barak,CK-28,105sq,Active
+684,,F-16D-40-CF Barak,CK-29,105sq,Active
+684,,G-V Nachshon Shavit,684,122sq,Active
+686,,F-15A-18-MC Baz,331/IA013,133sq,Active
+687,,F-16D-40-CF Barak,CK-30,105sq,Active
+689,,F-15A-18-MC Baz,336/IA014,133sq,Active
+692,,F-15A-18-MC Baz,346/IA016,133sq,Active
+693,,F-15A-18-MC Baz,341/IA015,133sq,Active
+695,,F-15A-18-MC Baz,352/IA017,133sq,Active
+696,,F-15A-18-MC Baz,358/IA018,133sq,Active
+698,,F-15A-18-MC Baz,364/IA019,133sq,Active
+701,,F-15D-50-MC Baz,1205/ID012,106sq,Active
+701,,TA-4J AyitM,14297,102sq/FTS,Active
+701,,UH-60A Yanshuf 3,70-0017,123sq,Active
+702,,TA-4J AyitM,14298,102sq/FTS,Active
+703,,Beech B200CT Zufit 3,BN-5,135sq,Active
+703,,TA-4J AyitM,14408,102sq/FTS,Active
+704,,TA-4J AyitM,14303,102sq/FTS,Active
+705,,TA-4J AyitM,14307,102sq/FTS,Active
+705,,UH-60A Yanshuf 3,70-0021,123sq,Active
+706,,F-15D-50-MC Baz,1195/ID010,106sq,Active
+707,,IAI Searcher,?,FTC/Manat,Active
+707,,UH-60A Yanshuf 3,70-0032,123sq,Active
+708,,TA-4J AyitM,14308,102sq/FTS,Active
+709,,Beech B200CT Zufit 3,BN-6,135sq,Active
+710,,UH-60A Yanshuf 3,70-0054,123sq,Active
+711,,Beech B200CT Zufit 3,BN-7,135sq,Active
+712,,TA-4J AyitM,14409,102sq/FTS,Active
+714,,Beech B200CT Zufit 3,BN-8,135sq,Active
+714,,F-15D-50-MC Baz,1206/ID013,5601sq/MANAT,Active
+715,,F-15D-50-MC Baz,1200/ID011,106sq,Active
+716,,AH-64D Saraf,DIN001?,113sq,Active
+719,,AH-64D Saraf,IS001,113sq,Active
+719,,Beech B200CT Zufit 3,BN-9,135sq,Active
+721,,Beech B200T Zufit 4,BT-44,135sq,Active
+721,,UH-60A Yanshuf 3,70-0060,123sq,Active
+723,,TA-4J AyitM,14410,102sq/FTS,Active
+724,,UH-60A Yanshuf 3,70-0063,123sq,Active
+726,,AH-64D Saraf,DIN003,113sq,Active
+728,,Hermes 450 Zik,,161sq,Active
+729,,UH-60A Yanshuf 3,70-0064,123sq,Active
+730,,Beech B200T Zufit 4,BT-45,100sq,Active
+730,,TA-4J AyitM,14476,102sq/FTS,Active
+731,,Hermes 450 Zik,,161sq,Active
+733,,AH-64D Saraf,DIN004,113sq,Active
+733,,F-15D-50-MC Baz,1190/ID009,106sq,Active
+735,,Beech B200T Zufit 4,BT-46,100sq,Active
+735,,UH-60A Yanshuf 3,70-0066,123sq,Active
+736,,AH-64D Saraf,DIN005,113sq,Active
+738,,UH-60A Yanshuf 3,70-0088,123sq,Active
+739,,AH-64D Saraf,DIN006,113sq,Active
+740,,Hermes 450 Zik,,161sq,Active
+741,,UH-60A Yanshuf 3,70-0058,123sq,Active
+743,,AH-64D Saraf,DIN007,113sq,Active
+744,,AH-64D Saraf,DIR004?,113sq,Active
+744,,F-16A,?,144sq,Active
+745,,Hermes 450 Zik,,161sq,Active
+746,,AH-64D Saraf,DIN008?,113sq,Active
+749,,AH-64D Saraf,DIR001,113sq,Active
+751,,Hermes 450 Zik,,161sq,Active
+752,,AH-64D Saraf,DIR002?,113sq,Active
+754,,AH-64D Saraf,DIR003,113sq,Active
+754,,Hermes 450 Zik,,161sq,Active
+758,,AH-64D Saraf,DIR005,113sq,Active
+763,,Hermes 450 Zik,,161sq,Active
+765,,AH-64D Saraf,DIR006?,113sq,Active
+769,,Hermes 450 Zik,,161sq,Active
+771,,AH-64D Saraf,DIR007?,113sq,Active
+777,,AH-64D Saraf,DIR008?,113sq,Active
+778,,Hermes 450 Zik,,161sq,Active
+779,,AH-64D Saraf,DIR009?,113sq,Active
+780,,Hermes 450 Zik,,161sq,Active
+781,,Hermes 450 Zik,,161sq,Active
+784,,AH-64D Saraf,,113sq,Active
+787,,AH-64D Saraf,,113sq,Active
+789,,AH-64D Saraf,,113sq,Active
+791,,Hermes 450 Zik,,161sq,Active
+799,,Hermes 450 Zik,,161sq,Active
+801,,AH-64A Peten,PV606,190sq,Active
+802,,F-15C-27-MC Baz,653/IC001,133sq,Active
+803,,F-16I Sufa,YD-52,107sq,Active
+804,,AH-64A Peten,PV607,190sq,Active
+806,,AH-64A Peten,PV608,190sq,Active
+808,,F-16I Sufa,YD-53,201sq,Active
+808,,S-70A-50 Yanshuf 3,70-2424,124sq,Active
+809,,AH-64A Peten,PV609,190sq,Active
+810,,F-15C-27-MC Baz,661/IC002,106sq,Active
+811,,F-16I Sufa,YD-54,107sq,Active
+812,,AH-64A Peten,PV610,190sq,Active
+812,,F-15C-27-MC Baz,666/IC003,106sq,Active
+812,,S-70A-50 Yanshuf 3,?,124sq,Active
+813,,F-16I Sufa,YD-55,201sq,Active
+814,,S-70A-50 Yanshuf 3,?,124sq,Active
+815,,A-4E,?,143sq,Active
+815,,AH-64A Peten,PV612,190sq,Active
+816,,F-16I Sufa,YD-56,201sq,Active
+816,,S-70A-50 Yanshuf 3,?,124sq,Active
+818,,F-15C-28-MC Baz,677/IC004,106sq,Active
+819,,AH-64A Peten,PV625,190sq,Active
+820,,AH-64A Peten,PV619,190sq,Active
+820,,S-70A-50 Yanshuf 3,?,124sq,Active
+822,,AH-64A Peten,PV624,to AH-64D 12-00003?,Active
+822,,S-70A-50 Yanshuf 3,?,124sq,Active
+823,,F-16I Sufa,YD-57,107sq,Active
+825,,S-70A-50 Yanshuf 3,?,124sq,Active
+826,,F-16I Sufa,YD-58,107sq,Active
+827,,F-16I Sufa,YD-59,107sq,Active
+827,,S-70A-50 Yanshuf 3,70-2445,124sq,Active
+828,,AH-64A Peten,PV631,190sq,Active
+828,,F-15C-28-MC Baz,699/IC006,106sq,Active
+828,,Hermes 450 Zik,,161sq,Active
+830,,AH-64A Peten,PV636,190sq,Active
+830,,S-70A-50 Yanshuf 3,?,124sq,Active
+832,,AH-64A Peten,PV637,190sq,Active
+832,,F-15C-29-MC Baz,705/IC007,106sq,Active
+832,,S-70A-50 Yanshuf 3,70-2448,124sq,Active
+833,,F-16I Sufa,YD-60,107sq,Active
+834,,AH-64A Peten,PV642,190sq,Active
+834,,S-70A-50 Yanshuf 3,70-2449,124sq,Active
+836,,F-16I Sufa,YD-61,201sq,Active
+837,,AH-64A Peten,PV643,190sq,Active
+837,,S-70A-50 Yanshuf 3,70-2451,"124sq,former serial 937",Active
+839,,F-16I Sufa,YD-62,119sq,Active
+840,,AH-64A Peten,PV648,190sq,Active
+840,,F-15C-29-MC Baz,709/IC008,106sq,Active
+840,,S-70A-50 Yanshuf 3,?,124sq,Active
+842,,Beech B200T Zufit 5,BB-1806,Flight School,Active
+844,,Beech B200T Zufit 5,BB-1809,135sq,Active
+844,,F-16I Sufa,YD-64,201sq,Active
+845,,AH-64A Peten,PV649,190sq,Active
+845,,S-70A-50 Yanshuf 3,?,124sq,Active
+846,,F-16I Sufa,YD-65,201sq,Active
+848,,Beech B200T Zufit 5,BB-1811,135sq,Active
+848,,F-15C-29-MC Baz,713/IC009,133sq,Active
+848,,F-16I Sufa,YD-66,107sq,Active
+849,,F-16I Sufa,YD-67,201sq,Active
+851,,F-16I Sufa,YD-68,201sq,Active
+852,,F-16I Sufa,YD-69,107sq,Active
+854,,F-16I Sufa,YD-70,201sq,Active
+855,,F-16I Sufa,YD-71,107sq,Active
+856,,Beech B200T Zufit 5,BB-1804,135sq,Active
+856,,S-70A-50 Yanshuf 3,?,124sq,Active
+857,,F-16I Sufa,YD-72,201sq,Active
+857,,Hermes 450 Zik,,161sq,Active
+858,,F-16I Sufa,YD-73,107sq,Active
+859,,Beech B200T Zufit 5,BB-1819,135sq,Active
+860,,F-16I Sufa,YD-74,201sq,Active
+862,,F-16I Sufa,YD-75,107sq,Active
+863,,F-16I Sufa,YD-76,107sq,Active
+865,,F-16I Sufa,YD-78,107sq,Active
+869,,F-16I Sufa,YD-80,201sq,Active
+871,,F-16I Sufa,YD-81/4371,201sq,Active
+872,,F-16I Sufa,YD-82,201sq,Active
+873,,F-16I Sufa,YD-83,107sq,Active
+874,,F-16I Sufa,YD-84,107sq,Active
+875,,F-16I Sufa,YD-85,201sq,Active
+876,,F-16I Sufa,YD-86,201sq,Active
+877,,F-16I Sufa,YD-87,107sq,Active
+878,,F-16I Sufa,YD-88,201sq,Active
+879,,F-16I Sufa,YD-89,107sq,Active
+880,,F-16I Sufa,YD-90,201sq,Active
+881,,F-16I Sufa,YD-91,107sq,Active
+882,,F-16I Sufa,YD-92,201sq,Active
+884,,F-16I Sufa,YD-93,201sq,Active
+886,,F-16I Sufa,YD-94,107sq,Active
+887,,F-16I Sufa,YD-95,107sq,Active
+890,,F-16I Sufa,YD-96,201sq,Active
+891,,F-16I Sufa,YD-97,107sq,Active
+892,,F-16I Sufa,YD-98,201sq,Active
+893,,F-16I Sufa,YD-99,107sq,Active
+894,,F-16I Sufa,YD-100,107sq,Active
+896,,F-16I Sufa,YD-101,107sq,Active
+898,,F-16I Sufa,YD-102,107sq,Active
+900,4X-DGA,Grob G120A-I,85008,FTS,Active
+901,,F-35I Adir,AS-1,140sq,Active
+902,,AH-64A Peten,PV130,to AH-64D,Active
+902,,CH-53A Yassur 2025,65-123,118sq,Active
+902,,F-35I Adir,AS-2,116sq,Active
+902,4X-UEB,Hermes 900 Kochav,,166sq,Active
+903,,Hermes 900 Kochav,,166sq,Active
+904,,F-35I Adir,AS-3,117sq,Active
+905,,AH-64A Peten,PV079,190sq,Active
+905,,F-35I Adir,AS-4,116sq,Active
+905,,Hermes 900 Kochav,,166sq,Active
+906,,CH-53A Yassur 2025,65-151,118sq,Active
+907,,F-35I Adir,AS-5,116sq,Active
+908,,F-35I Adir,AS-6,140sq,Active
+909,,F-35I Adir,AS-7,117sq,Active
+909,,Hermes 900 Kochav,,166sq,Active
+910,,AH-64A Peten,PV112,190sq,Active
+911,,F-35I Adir,AS-8,140sq,Active
+912,,CH-53A Yassur 2025,65-121,118sq,Active
+912,4X-DGB,Grob G120A-I,85009,FTS,Active
+913,,F-35I Adir,AS-9,140sq,Active
+914,,CH-53A Yassur 2025,65-127,118sq,Active
+916,,F-35I Adir,AS-10,140sq,Active
+917,,CH-53A Yassur 2025,65-135,118sq,Active
+917,,F-35I Adir,AS-11,140sq,Active
+918,,F-35I Adir,AS-12,140sq,Active
+918,4X-DGC,Grob G120A-I,85010,FTS,Active
+919,,F-35I Adir,AS-13,140sq,Active
+921,,AH-64A Peten,PV126,190sq,Active
+921,,CH-53A Yassur 2025,65-129,118sq,Active
+921,,F-35I Adir,AS-14,140sq,Active
+922,4X-DGD,Grob G120A-I,85011,FTS,Active
+924,,AH-64A Peten,PV129,190sq,Active
+924,,F-35I Adir,AS-15,FTC/MANAT,Active
+925,,F-35I Adir,AS-16,140sq,Active
+926,,F-35I Adir,AS-17,140sq,Active
+927,,F-35I Adir,AS-18,140sq,Active
+927,,Hermes 900 Kochav,,166sq,Active
+928,,F-35I Adir,AS-19,116sq,Active
+929,,CH-53A Yassur 2025,65-137,118sq,Active
+930,,F-35I Adir,AS-20,116sq,Active
+930,4X-DGE,Grob G120A-I,85012,FTS,Active
+932,,F-35I Adir,AS-21,116sq,Active
+933,,F-35I Adir,AS-22,116sq,Active
+933,4X-DGF,Grob G120A-I,85013,FTS,Active
+934,,Hermes 900 Kochav,,166sq,Active
+935,,AH-64A Peten,PV130,190sq,Active
+935,,F-35I Adir,AS-23,140sq,Active
+936,4X-DGG,Grob G120A-I,85014,FTS,Active
+937,,F-35I Adir,AS-24,140sq,Active
+938,,AH-64A Peten,PV151,190sq,Active
+939,,F-35I Adir,AS-25,116sq,Active
+941,,AH-64A Peten,PV152,190sq,Active
+941,,F-35I Adir,AS-26,116sq,Active
+941,4X-DGH,Grob G120A-I,85015,FTS,Active
+941,,Hermes 900 Kochav,,147sq,Active
+943,,F-35I Adir,AS-27,116sq,Active
+944,,F-35I Adir,AS-28,116sq,Active
+945,,F-35I Adir,AS-29,116sq,Active
+946,,F-35I Adir,AS-30,116sq,Active
+947,,F-35I Adir,AS-31,116sq,Active
+949,,F-35I Adir,AS-32,116sq,Active
+951,,F-35I Adir,AS-33,116sq,Active
+955,,F-35I Adir,AS-34,140sq,Active
+956,,AH-64A Peten,,190sq,Active
+956,,F-35I Adir,AS-35,140sq,Active
+957,,F-15D-28-MC Baz,669/ID003,133sq,Active
+957,,F-35I Adir,AS-36,140sq,Active
+958,,F-35I Adir,AS-37,140sq,Active
+958,4X-DGI,Grob G120A-I,85016,FTS,Active
+959,,F-35I Adir,AS-38,140sq,Active
+960,,F-35I Adir,AS-39,140sq,Active
+961,,AH-64A Peten,PV243,190sq,Active
+962,4X-USZ,Hermes 900 Kochav,,166sq,Active
+963,,AH-64A Peten,PV268,190sq,Active
+963,,F-35I Adir,AS-40,116sq,Active
+963,,Hermes 900 Kochav,,166sq,Active
+964,,Hermes 900 Kochav,,166sq,Active
+966,,AH-64A Peten,PV272,190sq,Active
+966,,F-35I Adir,AS-41,116sq,Active
+967,,AH-64A Peten,PV273,190sq,Active
+967,,F-35I Adir,AS-42,116sq,Active
+968,,F-35I Adir,AS-43,140sq,Active
+968,,Hermes 900 Kochav,,166sq,Active
+969,,F-35I Adir,AS-44,140sq,Active
+969,4X-DGJ,Grob G120A-I,85017,FTS,Active
+970,,F-15D-28-MC Baz,686/ID005,106sq,Active
+970,4X-DGK,Grob G120A-I,85018,FTS,Active
+972,4X-DGL,Grob G120A-I,85019,FTS,Active
+974,,Hermes 900 Kochav,,147sq,Active
+977,,CH-53A Yassur 2025,65-126,118sq,Active
+977,,F-35I Adir,AS-45,140sq,Active
+978,,F-35I Adir,AS-46,140sq,Active
+979,,CH-53A Yassur 2025,65-140,118sq,Active
+979,,F-15D-28-MC Baz,690/ID006,106sq,Active
+979,,F-35I Adir,AS-47,140sq,Active
+979,4X-DGM,Grob G120A-I,85020,FTS,Active
+980,,F-15D-27-MC,0641/D027,106sq,Active
+982,,F-15D-25-MC,0583/D019,133sq,Active
+983,,F-35I Adir,AS-48,140sq,Active
+984,,F-15D-21-MC,0463/D003,133sq,Active
+986,,F-15D-31-MC,0785/D038,133sq,Active
+98?,,F-15D-23-MC Baz,0523/D012,,Active
+990,4X-DGN,Grob G120A-I,85021,FTS,Active
+992,4X-DGO,Grob G120A-I,85022,FTS,Active
+994,4X-DGP,Grob G120A-I,85023,FTS,Active
+999,4X-DGQ,Grob G120A-I,85024,FTS,Active

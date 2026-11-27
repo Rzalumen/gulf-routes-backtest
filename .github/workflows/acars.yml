@@ -1,0 +1,65 @@
+name: ACARS archive (Airframes → acars-data)
+# Started by the Gulf Alerts bot (repository_dispatch "acars", payload hexes = its in-scope aircraft worldwide:
+# US, UK, Israel, Russia, China military + government). Every Airframes message is added to the acars-data branch and
+# acars/latest.json (last 24 h digest) is what the bot reads back. Nothing is ever deleted (the owner 28 Oct 2026).
+# Google quota: none here — all Airframes requests run on GitHub. Backup cron every 3 h (GitHub's cron is unreliable).
+# Needs repo secret AIRFRAMES_KEY (the owner adds it himself). Requests: ~1 per hex per run, well under Pro's 50,000/day.
+on:
+  repository_dispatch:
+    types: [acars]
+  schedule:
+    - cron: '23 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: Pull the last month for every known hex (first run)
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: acars-data
+  cancel-in-progress: false
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: acars   # only the script: keeps each run short (Actions minutes)
+      - name: Cache libacars
+        id: la
+        uses: actions/cache@v4
+        with:
+          path: ~/libacars
+          key: libacars-v2.2.1-${{ runner.os }}
+      - name: Build libacars v2.2.1 (CPDLC / ADS-C decoder, MIT, github.com/szpajder/libacars)
+        if: steps.la.outputs.cache-hit != 'true'
+        continue-on-error: true   # no decoder = archive still runs, messages just stay undecoded
+        run: |
+          curl -fsSL -o /tmp/la.tar.gz https://github.com/szpajder/libacars/archive/refs/tags/v2.2.1.tar.gz
+          tar xzf /tmp/la.tar.gz -C /tmp && cd /tmp/libacars-2.2.1 && mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$HOME/libacars -DCMAKE_INSTALL_LIBDIR=lib .. > /dev/null
+          make -j4 > /dev/null && make install > /dev/null
+          ls -la $HOME/libacars/bin
+      - name: Archive new messages
+        env:
+          AIRFRAMES_KEY: ${{ secrets.AIRFRAMES_KEY }}
+          BACKFILL: ${{ inputs.backfill }}
+          HEXES: ${{ github.event.client_payload.hexes }}
+          LEGS: ${{ github.workspace }}/legs.csv
+        run: |
+          test -n "$AIRFRAMES_KEY" || { echo "::error::repo secret AIRFRAMES_KEY not set"; exit 1; }
+          export LD_LIBRARY_PATH=$HOME/libacars/lib LIBACARS_DECODE=$HOME/libacars/bin/decode_acars_apps
+          if [ -x "$LIBACARS_DECODE" ]; then "$LIBACARS_DECODE" d H1 '- #MD/AA USADCXA.AT1.33122AA89048DD714E0CE41067549F3A4CF2A7742840BF3C' | head -20 || true; else echo "::warning::libacars not available - no CPDLC decoding this run"; fi
+          python3 acars/archive.py --selftest
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if [ "$BACKFILL" = "true" ]; then git fetch -q --depth 1 "$R" history-2025 && git show FETCH_HEAD:legs.csv > legs.csv; fi
+          mkdir out && cd out && git init -q -b acars-data
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" acars-data && git reset -q --hard FETCH_HEAD || echo "new branch"
+          mkdir -p acars && cd acars
+          python3 ../../acars/archive.py . $([ "$BACKFILL" = "true" ] && echo --backfill)
+          cd ..; git add -A
+          { git diff --cached --quiet && echo "nothing new"; } || { git commit -qm "ACARS archive $(date -u +%FT%H:%MZ)" && git push "$R" HEAD:acars-data; }   # a failed push fails the run
