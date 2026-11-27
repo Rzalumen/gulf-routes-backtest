@@ -1,0 +1,65 @@
+name: Collect day results from backtest runs into a branch
+# Copies the per-day events-*.csv.gz artifacts of one or more backtest runs (even cancelled ones) into a git branch,
+# rebuilds legs/routes over all of them, and commits everything there. Lets the files be fetched with plain git.
+on:
+  workflow_dispatch:
+    inputs:
+      run_ids:
+        description: Backtest run ids, space-separated
+        required: true
+      branch:
+        description: Branch to commit to
+        default: history-2025
+permissions:
+  contents: write
+  actions: read
+concurrency:   # collect / publish never run at the same time (last push used to win and lose days) — review 25 Oct 2026
+  group: data-branches
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download day artifacts from each run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_IDS: ${{ inputs.run_ids }}
+          BRANCH: ${{ inputs.branch }}
+        run: |
+          case "$BRANCH" in main|map-service|"") echo "::error::refusing to write to branch '$BRANCH'"; exit 1;; esac
+          mkdir -p events
+          for id in $RUN_IDS; do
+            gh run download "$id" --repo "${{ github.repository }}" --pattern 'events-*' --dir "dl-$id" || echo "run $id: nothing downloaded"
+          done
+          find dl-* -name 'events-*.csv.gz' -exec cp -n {} events/ \; 2>/dev/null || true
+          ls events | wc -l
+      - name: Add days already in the branch, rebuild routes
+        env:
+          BRANCH: ${{ inputs.branch }}
+        run: |
+          set +e; git ls-remote --exit-code origin "$BRANCH" >/dev/null; rc=$?; set -e
+          if [ $rc = 0 ]; then   # existing branch: its days MUST come in, or stop (a failure used to wipe them)
+            git fetch --depth 1 origin "$BRANCH"
+            git archive FETCH_HEAD events | tar -x --skip-old-files
+          elif [ $rc != 2 ]; then echo "::error::could not check branch $BRANCH (rc $rc)"; exit 1; fi
+          ls events/*.csv.gz | wc -l
+          mkdir -p work/events
+          for f in events/*.csv.gz; do gunzip -c "$f" > "work/events/$(basename "${f%.gz}")"; done
+          cp build_routes.py airports.json work/
+          (cd work && python3 build_routes.py)
+          mkdir -p out && cp -r events out/ && cp work/routes.json work/legs.csv work/legs_all.csv out/
+          gzip -9 out/legs_all.csv
+      - name: Commit to the branch (on top of its history — no force push)
+        env:
+          BRANCH: ${{ inputs.branch }}
+          RUN_IDS: ${{ inputs.run_ids }}
+          TOKEN: ${{ github.token }}
+        run: |
+          cd out
+          git init -q -b "$BRANCH"
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          R="https://x-access-token:$TOKEN@github.com/${{ github.repository }}.git"
+          if git fetch -q --depth 1 "$R" "$BRANCH"; then git reset -q FETCH_HEAD; fi   # index = branch tree: files not in this run are kept
+          git add --ignore-removal . && git commit -qm "Day results from runs $RUN_IDS ($(ls events | wc -l) days)"
+          git push "$R" "HEAD:$BRANCH"

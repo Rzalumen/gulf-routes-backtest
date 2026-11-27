@@ -1,0 +1,80 @@
+name: Bot sightings (Gulf Alerts bot → air-history)
+# The bot's own scans (Flightradar24 + ADS-B Exchange) see more than adsb.lol where community receivers are few:
+# the bot alerts Al Udeid tankers every day, adsb.lol had them on 10-13 of 30 days (the owner 3 Nov 2026: "you can't say it's thin").
+# The bot sends what it saw every 2 h (repository_dispatch "sight", payload rows = CSV hex,type,reg,callsign,minute,lat,lon,alt,
+# one row per airframe per 2° cell per hour). This adds them to air-history as air/air-bot-YYYY-MM-DD.csv.gz;
+# make_patterns.py counts those files like the adsb.lol air files (same columns).
+# 4 Nov 2026: the same dispatch also carries client_payload.moves (the bot movement log) -> moves/ on air-history.
+on:
+  repository_dispatch:
+    types: [sight]
+permissions:
+  contents: write
+concurrency:
+  group: data-branches
+  cancel-in-progress: false
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Add the rows to air-history
+        env:
+          ROWS: ${{ github.event.client_payload.rows }}
+          MOVES: ${{ github.event.client_payload.moves }}
+        run: |
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir air && cd air && git init -q -b air-history
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD
+          mkdir -p air
+          python3 - <<'PY'
+          import os, csv, io, gzip, datetime, re
+          by = {}
+          for r in csv.reader(io.StringIO(os.environ.get('ROWS', ''))):
+              if len(r) != 8 or not re.fullmatch(r'[0-9a-f]{6}', r[0]) or r[0] in ('000000', '000001'):
+                  continue
+              if r[1] in ('MLAT', 'ADSB_ICAO', 'MODE_S', 'TISB', 'ADSR'):
+                  r[1] = ''   # a feed source name in the type column (4 Nov 2026 review: air-bot rows), not an aircraft type
+              try:
+                  m = float(r[4]); float(r[5]); float(r[6])
+              except ValueError:
+                  continue
+              d = (datetime.datetime(1970, 1, 1) + datetime.timedelta(minutes=m)).date().isoformat()
+              by.setdefault(d, []).append(r)
+          for d, rs in sorted(by.items()):
+              f = 'air/air-bot-%s.csv.gz' % d
+              old = list(csv.reader(gzip.open(f, 'rt'))) if os.path.exists(f) else []
+              seen = {tuple(x) for x in old}
+              new = [r for r in rs if tuple(r) not in seen]
+              with gzip.open(f, 'wt') as fh:
+                  csv.writer(fh).writerows(old + new)
+              print(f, len(old), '+', len(new))
+          PY
+          # Movement log (the owner 4 Nov 2026 "bot must record everything"): moves/moves-YYYY-MM.csv.gz, one row per event,
+          # minute,hex,reg,callsign,type,category,event,place,lat,lon,alt,note  (events: atlantic-east / -west / -crossed / -centcom,
+          # eucom>centcom, centcom>eucom, landed, alert-posted, update-posted)
+          mkdir -p moves
+          python3 - <<'PY'
+          import os, csv, io, gzip, datetime, re
+          by = {}
+          for r in csv.reader(io.StringIO(os.environ.get('MOVES', ''))):
+              if len(r) != 12 or not re.fullmatch(r'[0-9a-f]{6}', r[1]):
+                  continue
+              try:
+                  m = float(r[0])
+              except ValueError:
+                  continue
+              d = (datetime.datetime(1970, 1, 1) + datetime.timedelta(minutes=m)).strftime('%Y-%m')
+              by.setdefault(d, []).append(r)
+          for d, rs in sorted(by.items()):
+              f = 'moves/moves-%s.csv.gz' % d
+              old = list(csv.reader(gzip.open(f, 'rt'))) if os.path.exists(f) else []
+              seen = {tuple(x) for x in old}
+              new = [r for r in rs if tuple(r) not in seen]
+              rows = sorted(old + new, key=lambda x: float(x[0]))
+              with gzip.open(f, 'wt') as fh:
+                  csv.writer(fh).writerows(rows)
+              print(f, len(old), '+', len(new))
+          PY
+          git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Bot sightings" && git push "$R" HEAD:air-history; }   # a failed push fails the run

@@ -1,0 +1,45 @@
+name: NOTAM relay (FAA → Gulf Alerts bot)
+# The FAA NOTAM search blocks Google, so the bot can't read it; the Macs used to relay it and stopped (NOTAMs since
+# 25 Oct 14:40 UTC never reached the bot; the owner 27 Oct 2026). This does the same job from GitHub every 5 minutes:
+# all watched FIRs (Code.gs FIRS), all pages, POSTed to the bot's web app exactly like the Mac relay (pages joined by @@PAGE@@).
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+concurrency:
+  group: notam-relay
+  cancel-in-progress: true
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Read the FAA NOTAM search and send it to the bot
+        env:
+          RELAY_URL: ${{ secrets.NOTAM_RELAY_URL }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, urllib.request, urllib.parse
+          firs = 'OIIX,LLLL,ORBB,OKAC,OBBB,OTDF,OMAE,OOMM,OEJD,OJAC,OSTT,OLBB,OYSC'
+          ua = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
+                'Content-Type': 'application/x-www-form-urlencoded', 'Referer': 'https://notams.aim.faa.gov/notamSearch/nsapp.html'}
+          pages, n = [], 0
+          for off in range(0, 1500, 30):
+              body = urllib.parse.urlencode({'searchType': 0, 'designatorsForLocation': firs, 'notamsOnly': 'false', 'offset': off, 'notamsPerPage': 30}).encode()
+              try:
+                  t = urllib.request.urlopen(urllib.request.Request('https://notams.aim.faa.gov/notamSearch/search', body, ua), timeout=30).read().decode()
+              except Exception as e:
+                  print('::error::FAA refused: ' + repr(e)[:300] + ' ' + (e.read().decode('utf-8', 'ignore')[:200] if hasattr(e, 'read') else ''))
+                  raise SystemExit(1)
+              lst = json.loads(t).get('notamList') or []
+              if not lst: break
+              n += len(lst); pages.append(t)
+          else:
+              print('::warning::stopped at 1,500 NOTAMs - later pages were not read or relayed')
+          print('FAA:', n, 'NOTAMs in', len(pages), 'pages')
+          if n and os.environ.get('RELAY_URL'):
+              r = urllib.request.urlopen(urllib.request.Request(os.environ['RELAY_URL'], '@@PAGE@@'.join(pages).encode(), {'Content-Type': 'text/plain'}), timeout=60)
+              print('bot:', r.read().decode()[:200])
+          elif not os.environ.get('RELAY_URL'):
+              print('::warning::secret NOTAM_RELAY_URL not set — read only')
+          EOF
