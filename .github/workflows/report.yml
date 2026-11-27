@@ -1,0 +1,54 @@
+name: Morning pattern report (owner only)
+# After the daily collector: pattern report for yesterday, per-plane labels for the bot, short message to the owner only.
+# Sends to Telegram ONLY when repository variable PATTERNS_SEND is 'true' and secrets TG_TOKEN + TG_OWNER exist
+# (the owner adds them himself). Otherwise the message is only shown in the job summary. Pattern system step 3 (27 Oct 2026).
+on:
+  workflow_run:
+    workflows: ['Daily history (adsb.lol → history-2025)']
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      day:
+        description: Day (YYYY-MM-DD, empty = newest)
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: data-branches
+  cancel-in-progress: false
+jobs:
+  report:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch the history
+        run: |
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir h && cd h && git init -q && git fetch -q --depth 1 "$R" history-2025 && git checkout -q FETCH_HEAD
+          cp ../patterns.py ../airports.json . && mkdir -p data && cp ../data/*.csv data/
+      - name: Build the report and the labels
+        working-directory: h
+        run: |
+          python3 patterns.py ${{ inputs.day }} --short > short.txt
+          python3 patterns.py ${{ inputs.day }} > full.txt
+          python3 patterns.py --labels
+          { echo '### Short message'; echo '```'; cat short.txt; echo '```'; echo '### Full report'; echo '```'; cat full.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish labels to the labels branch (read by the bot)
+        working-directory: h
+        run: |
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          mkdir ../lb && cp -r labels ../lb/ && cp patterns-*.json ../lb/ && cd ../lb
+          git init -q -b labels && git config user.name "backtest-bot" && git config user.email "backtest-bot@users.noreply.github.com"
+          if git fetch -q --depth 1 "$R" labels; then git reset -q --soft FETCH_HEAD; fi
+          git add -A && git commit -qm "Labels $(date -u +%F)" && git push -q "$R" HEAD:labels || echo "no change"
+      - name: Send the short message to the owner (owner only)
+        if: vars.PATTERNS_SEND == 'true'
+        working-directory: h
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_OWNER: ${{ secrets.TG_OWNER }}
+        run: |
+          [ -n "$TG_TOKEN" ] && [ -n "$TG_OWNER" ] || { echo "::warning::TG_TOKEN / TG_OWNER not set"; exit 0; }
+          curl -sf -X POST "https://api.telegram.org/bot$TG_TOKEN/sendMessage" --data-urlencode "chat_id=$TG_OWNER" \
+            --data-urlencode "text@short.txt" -d parse_mode=HTML -d disable_notification=true >/dev/null && echo sent

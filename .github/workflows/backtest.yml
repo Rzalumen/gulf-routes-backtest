@@ -1,0 +1,88 @@
+name: Route backtest (adsb.lol history)
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: First day (YYYY-MM-DD)
+        default: '2026-04-23'
+      end:
+        description: Last day (YYYY-MM-DD)
+        default: '2026-10-19'
+permissions:
+  contents: read
+jobs:
+  days:
+    runs-on: ubuntu-latest
+    outputs:
+      list: ${{ steps.d.outputs.list }}
+    steps:
+      - id: d
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import datetime, json
+          a = datetime.date.fromisoformat('${{ inputs.start }}'); b = datetime.date.fromisoformat('${{ inputs.end }}')
+          print('list=' + json.dumps([(a + datetime.timedelta(d)).isoformat() for d in range((b - a).days + 1)]))
+          EOF
+  extract:
+    needs: days
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        day: ${{ fromJson(needs.days.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stream the day archive and keep military / VIP aircraft only
+        run: |
+          D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=events-${{ matrix.day }}.csv
+          for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do   # staging / MLAT-only as last resort (24 Oct 2026)
+            TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
+            rm -f part.* "$OUT"
+            if curl -sfIL "$URL.aa" >/dev/null; then
+              # download EVERY part (.aa .ab .ac .ad …) completely first; any failed part → this archive is skipped (review 25 Oct 2026)
+              ok=1; for s in aa ab ac ad ae af ag ah; do
+                curl -sfIL "$URL.$s" >/dev/null || break
+                curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
+              done
+              [ "$ok" = 1 ] && cat part.* | python3 extract_day.py > "$OUT" || rm -f "$OUT"
+              rm -f part.*
+            elif curl -sfIL "$URL" >/dev/null; then   # some days are published as one .tar, not split parts (24 Oct 2026)
+              curl -sfL --retry 3 -o part.tar "$URL" && python3 extract_day.py < part.tar > "$OUT" || rm -f "$OUT"
+              rm -f part.tar
+            fi
+            [ -s "$OUT" ] && { echo "$TAG → $(wc -l < "$OUT") events"; break; }
+          done
+          # no archive (or only broken ones) → fail this day visibly instead of saving an empty file that looks done
+          test -s "$OUT" || { echo "::error::no complete archive for ${{ matrix.day }}"; exit 1; }
+          gzip -9 "$OUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: events-${{ matrix.day }}
+          path: events-${{ matrix.day }}.csv.gz
+          retention-days: 14
+  build:
+    needs: extract
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: events-*
+          path: events
+          merge-multiple: true
+      - name: Replay every aircraft with the bot's route rules
+        run: |
+          gunzip events/*.gz
+          python3 build_routes.py
+          gzip -9k legs.csv legs_all.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: routes-result
+          path: |
+            routes.json
+            legs.csv.gz
+            legs_all.csv.gz
+          retention-days: 30

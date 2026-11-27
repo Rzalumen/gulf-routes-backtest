@@ -1,0 +1,72 @@
+name: Coverage check (adsb.lol day, all aircraft over CENTCOM)
+# Pattern system step 1 (27 Oct 2026): was a jump in military aircraft over CENTCOM real, or did receivers change?
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Days, space-separated (YYYY-MM-DD)
+        default: '2026-10-20 2026-10-23 2026-10-26'
+permissions:
+  contents: write
+jobs:
+  days:
+    runs-on: ubuntu-latest
+    outputs:
+      list: ${{ steps.d.outputs.list }}
+    steps:
+      - id: d
+        run: echo "list=$(python3 -c "import json;print(json.dumps('${{ inputs.days }}'.split()))")" >> "$GITHUB_OUTPUT"
+  check:
+    needs: days
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        day: ${{ fromJson(needs.days.outputs.list) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stream the day archive into the coverage check
+        run: |
+          D=$(echo "${{ matrix.day }}" | tr - .); Y=${D:0:4}; OUT=inspect-${{ matrix.day }}.json
+          for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do
+            TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
+            rm -f part.* "$OUT"; size=0
+            if curl -sfIL "$URL.aa" >/dev/null; then
+              ok=1; for s in aa ab ac ad ae af ag ah; do
+                curl -sfIL "$URL.$s" >/dev/null || break
+                curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
+              done
+              size=$(cat part.* | wc -c)
+              [ "$ok" = 1 ] && cat part.* | python3 inspect_day.py ${{ matrix.day }} > "$OUT" || rm -f "$OUT"
+              rm -f part.*
+            elif curl -sfIL "$URL" >/dev/null; then
+              curl -sfL --retry 3 -o part.tar "$URL" && size=$(wc -c < part.tar) && python3 inspect_day.py ${{ matrix.day }} < part.tar > "$OUT" || rm -f "$OUT"
+              rm -f part.tar
+            fi
+            [ -s "$OUT" ] && { python3 -c "import json,sys;d=json.load(open('$OUT'));d['archive']='$TAG';d['archive_bytes']=$size;json.dump(d,open('$OUT','w'))"; echo "$TAG $size bytes"; break; }
+          done
+          test -s "$OUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: inspect-${{ matrix.day }}
+          path: inspect-${{ matrix.day }}.json
+          retention-days: 7
+  commit:
+    needs: check
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: inspect-*
+          path: out
+          merge-multiple: true
+      - name: Commit results to the inspect branch
+        run: |
+          cd out && ls
+          git init -q -b inspect
+          git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git fetch -q --depth 1 "$R" inspect; then git reset -q --soft FETCH_HEAD; fi
+          git add -A && git commit -qm "Coverage check ${{ inputs.days }}" && git push "$R" HEAD:inspect
