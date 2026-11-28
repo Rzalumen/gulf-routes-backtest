@@ -7,13 +7,18 @@ make_patterns.py counts them like the adsb.lol and air-bot files.
   day-only row (lat/lon empty): the airframe's flying day counts, no area cell is invented.
 - Posts naming several airframes (digests) give day-only rows for each.
 - Also: claude/data/oct2026_flight_log.csv (DG / AA tracking, 1 Oct - 1 Nov 2026) → day-only rows (air-log-*).
-usage: chan_history.py OUT_DIR [LOG_CSV] [CITIES_JSON]"""
+28 Nov 2026 (audit item 56): the read is no longer the whole channel every night (12,400 posts = 13 min of a 30-min limit, growing ~0.5 min a day).
+With a CACHE_DIR (posts-YYYY-MM.jsonl.gz, kept on air-history under chan/) only the newest posts are read: back to 600 posts before the
+newest cached one, so edits and deletions of recent posts are still picked up. No cache = full read, as before.
+usage: chan_history.py OUT_DIR [LOG_CSV] [CITIES_JSON] [CACHE_DIR]"""
 import sys, os, re, csv, gzip, json, time, datetime, collections, urllib.request
 from html.parser import HTMLParser
 
 OUT = sys.argv[1]
 LOG = sys.argv[2] if len(sys.argv) > 2 else ''
 CITIES = sys.argv[3] if len(sys.argv) > 3 else ''
+CACHE = sys.argv[4] if len(sys.argv) > 4 else ''
+REREAD = 600   # newest cached posts read again every night (edits, deletions)
 os.makedirs(OUT, exist_ok=True)
 
 # display type in the post → ICAO type code (only the group matters downstream)
@@ -114,16 +119,57 @@ def main():
     unplaced = collections.Counter()
     before, n_posts, n_air, n_pos = 0, 0, 0, 0
     seen_ids = set()
+    cached = {}
+    if CACHE and os.path.isdir(CACHE):
+        for fn in sorted(os.listdir(CACHE)):
+            if fn.startswith('posts-') and fn.endswith('.jsonl.gz'):
+                with gzip.open(os.path.join(CACHE, fn), 'rt', encoding='utf-8') as fh:
+                    for ln in fh:
+                        if ln.strip():
+                            x = json.loads(ln); cached[x['id']] = x
+    stop_at = (max(cached) - REREAD) if cached else 0
+    fresh = {}; n_pages = 0
     while True:
-        p = Page(); p.feed(fetch(before))
+        p = Page(); p.feed(fetch(before)); n_pages += 1
         posts = [x for x in p.posts if x['id'] not in seen_ids]
         if not posts:
             break
         for x in posts:
-            seen_ids.add(x['id']); n_posts += 1
+            seen_ids.add(x['id']); fresh[x['id']] = {'id': x['id'], 't': x['t'], 'text': ''.join(x['text'])}
+        before = min(x['id'] for x in posts)
+        if before <= 1 or before <= stop_at:
+            break
+        time.sleep(0.4)
+    low = min(fresh) if fresh else 0
+    if cached and fresh:   # inside the range read tonight the channel is the truth (a cached post missing there was deleted); below it the cache
+        allp = dict((i, x) for i, x in cached.items() if i < low); allp.update(fresh)
+    else:
+        allp = fresh or cached
+    print('pages read: %d, posts read: %d, from cache: %d' % (n_pages, len(fresh), len(allp) - len(fresh)))
+    if CACHE and fresh:
+        os.makedirs(CACHE, exist_ok=True)
+        bym = collections.defaultdict(list)
+        for i in sorted(allp):
+            bym[(allp[i]['t'] or '0000-00')[:7]].append(allp[i])
+        keep = set()
+        for mth, xs in bym.items():
+            fn = 'posts-%s.jsonl.gz' % mth; keep.add(fn)
+            body = ''.join(json.dumps(x, ensure_ascii=False, separators=(',', ':')) + '\n' for x in xs)
+            pth = os.path.join(CACHE, fn)
+            try:
+                with gzip.open(pth, 'rt', encoding='utf-8') as fh: same = fh.read() == body
+            except OSError:
+                same = False
+            if not same:   # a month that did not change keeps its file byte for byte (no git churn)
+                with gzip.GzipFile(pth, 'wb', mtime=0) as fh: fh.write(body.encode('utf-8'))
+        for fn in os.listdir(CACHE):
+            if fn.startswith('posts-') and fn.endswith('.jsonl.gz') and fn not in keep: os.remove(os.path.join(CACHE, fn))
+    for i in sorted(allp, reverse=True):
+        if True:
+            x = allp[i]; n_posts += 1
             if not x['t']:
                 continue
-            text = ''.join(x['text'])
+            text = x['text']
             hexes = list(dict.fromkeys(re.findall(r'\bhex\s+~?([0-9a-f]{6})\b', text, flags=re.I)))
             # every ACARS post (line due or not) and every 📋 line: the self-check needs both to spot a missing or a wrong line (16 Nov)
             ml = [ln.strip() for ln in text.split('\n') if ln.strip().startswith('📋')]
@@ -156,10 +202,6 @@ def main():
                     n_pos += 1
                 else:
                     rows[day].add((hx, typ, reg if len(hexes) == 1 else '', cs, str(minute), '', '', ''))
-        before = min(x['id'] for x in posts)
-        if before <= 1:
-            break
-        time.sleep(0.4)
     for day, rs in sorted(rows.items()):
         with gzip.open(os.path.join(OUT, 'air-chan-%s.csv.gz' % day), 'wt') as fh:
             csv.writer(fh).writerows(sorted(rs))

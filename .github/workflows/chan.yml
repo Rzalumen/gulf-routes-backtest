@@ -23,10 +23,11 @@ jobs:
         run: |
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           git fetch -q --depth 1 "$R" map-service && git show FETCH_HEAD:map/cities.json > cities.json
-          mkdir out && python3 chan_history.py out data/oct2026_flight_log.csv cities.json
           mkdir air && cd air && git init -q -b air-history
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
           git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD
+          # 28 Nov 2026: posts already read are kept in chan/ on air-history; only the newest are read from t.me each night
+          cd .. && mkdir out && python3 chan_history.py out data/oct2026_flight_log.csv cities.json air/chan && cd air
           # 27 Nov 2026 audit: an empty or cut-short read of t.me used to delete the whole channel history with a green run. The old files are replaced only when tonight's read has at least 90 % as many day files.
           new=$(ls ../out/air-chan-*.csv.gz 2>/dev/null | wc -l); old=$(ls air/air-chan-*.csv.gz 2>/dev/null | wc -l)
           if [ "$new" -lt $(( old * 9 / 10 )) ]; then echo "::error::channel read gave $new day files, air-history has $old - history NOT replaced"; exit 1; fi
