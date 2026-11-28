@@ -284,11 +284,14 @@ def badge_img(b):
     words = set(re.findall(r'[A-Z]+', force.upper()))
     try:
         if not b.get('gov'):
-            if cc == 'us' or (cc in ('', 'us') and force.startswith('US')):
+            # 27 Nov 2026 audit item 48: with no country from the bot, "Indian Air Force (IAF)" got the Israeli roundel, "RAF Oman" the RAF
+            # one and any text starting with US the star. Now the force text must name the service itself.
+            fu = force.upper().strip()
+            if cc == 'us' or (cc == '' and bool(re.match(r'(USAF|USN|USMC|USCG|USSF|US (AIR|NAVY|ARMY|MARINE|COAST|SPACE))\b', fu))):
                 return _roundel('us')
-            if cc == 'gb' or (cc in ('', 'gb') and 'RAF' in words):
+            if cc == 'gb' or (cc == '' and bool(re.match(r'(RAF|ROYAL AIR FORCE)\b', fu)) and not (words & {'OMAN', 'SAUDI', 'JORDANIAN', 'MALAYSIAN', 'AUSTRALIAN', 'CANADIAN', 'DANISH', 'NORWEGIAN', 'NETHERLANDS', 'THAI', 'MOROCCAN', 'BAHRAINI', 'NZ', 'ZEALAND'})):
                 return _roundel('gb')
-            if cc == 'il' or (cc in ('', 'il') and bool(words & {'IAF', 'IDF', 'IASF'})):
+            if cc == 'il' or (cc == '' and (fu == 'IAF' or bool(words & {'IDF', 'IASF', 'ISRAELI', 'ISRAEL'}))):
                 return _roundel('il')
         f = _flag(cc)
         if f is None:
@@ -655,6 +658,27 @@ def _widen_to_land(X0, X1, Y0, Y1, need=0.4, max_w=60):
         hw *= 1.4; hh *= 1.4
     return cx - hw, cx + hw, cy - hh, cy + hh
 
+def _kv(fig, xk, xv, y, key, v, kfs, vfs):
+    """One panel data row: key at pixel xk (left), value right-aligned at xv. 27 Nov 2026 audit item 48: the two were never measured
+    ('TRACK START' + '15:15 UTC' printed over each other in every 2-plane group; long ROUTE / UNIT values ran over their key and off the
+    panel). The value shrinks (down to 70 %), then the key, then the value is cut with '…' — measured, so they never touch."""
+    tk = fig.text(xk / W, y / H, str(key).upper(), color='#7d8893', fontsize=kfs, va='center', zorder=12)
+    tv = fig.text(xv / W, y / H, str(v), color=_row_col(key), fontsize=vfs, fontweight='bold', ha='right', va='center', zorder=12)
+    room = lambda: xv - xk - tk.get_window_extent().width - 5
+    fs = vfs
+    while fs > vfs * 0.7 and tv.get_window_extent().width > room():
+        fs -= 0.5; tv.set_fontsize(fs)
+    if tv.get_window_extent().width > room():
+        tk.set_fontsize(kfs * 0.85)
+    sv = str(v)
+    while len(sv) > 2 and tv.get_window_extent().width > room():
+        sv = sv[:-2].rstrip() + '…'; sv = sv[:-1] if sv.endswith('……') else sv
+        tv.set_text(sv)
+
+
+_FAR_KM = 1500   # a wingman or numbered nearby plane further than this from the lead is not used to frame the picture
+
+
 def _fit_text(fig, x, y, s, maxpx, **kw):
     """Text at pixel (x, y) cut with '…' so it is never wider than maxpx pixels (measured, not guessed)."""
     t = fig.text(x / W, y / H, s, **kw)
@@ -689,9 +713,9 @@ def _group_panel(fig, planes, cat, PW):
             if i and sec >= 14:
                 fig.patches.append(matplotlib.patches.Rectangle((18 / W, (top - i * sec) / H), (PW - 40) / W, 1 / H, transform=fig.transFigure, color='#9dbb6b', zorder=12))
             fs = max(4.5, min(13, sec * 0.5)); cy = (top - i * sec - sec / 2) / H
-            fig.text(18 / W, cy, str(pn.get('callsign', ''))[:16], color='#ffffff', fontsize=fs, fontweight='bold', va='center', zorder=12)
-            fig.text((PW - 18) / W, cy, textwrap.shorten(pn.get('type') or p.get('type_code') or '', 14, placeholder='…'), color='#cfd6dd', fontsize=fs * 0.75,
-                     ha='right', va='center', zorder=12)
+            t2 = fig.text((PW - 18) / W, cy, textwrap.shorten(pn.get('type') or p.get('type_code') or '', 14, placeholder='…'), color='#cfd6dd', fontsize=fs * 0.75,
+                          ha='right', va='center', zorder=12)
+            _fit_text(fig, 18, cy * H, str(pn.get('callsign', ''))[:16], PW - 36 - t2.get_window_extent().width - 6, color='#ffffff', fontsize=fs, fontweight='bold', va='center', zorder=12)
             continue
         mid = sec < 78   # 9-12 planes: header only (callsign, type, role) — operator, photo and rows do not fit in the section
         if i:
@@ -704,11 +728,13 @@ def _group_panel(fig, planes, cat, PW):
             fig.figimage(np.asarray(b), xo=int(PW - 16 - b.width), yo=int(y - 12 - b.height / 2), zorder=13)
         y -= 26 if mid else 30
         role = pn.get('role') or icons.lookup(p.get('type_code'), p.get('category'))[0] or (cat if not i else '')   # a nearby plane never takes the lead's role
-        fig.text(18 / W, (y - 8) / H, textwrap.shorten(pn.get('type') or p.get('type_code') or '', 30, placeholder='…'), color='#cfd6dd', fontsize=11,
-                 va='center', zorder=12)
+        rt = None
         if role:
-            fig.text((PW - 18) / W, (y - 8) / H, role, color='#111418', fontsize=8, fontweight='bold', ha='right', va='center', zorder=12,
-                     bbox=dict(boxstyle='round,pad=0.25', facecolor=icons.CAT_COLOR.get(role, '#9dbb6b'), edgecolor='none'))
+            rt = fig.text((PW - 18) / W, (y - 8) / H, role, color='#111418', fontsize=8, fontweight='bold', ha='right', va='center', zorder=12,
+                          bbox=dict(boxstyle='round,pad=0.25', facecolor=icons.CAT_COLOR.get(role, '#9dbb6b'), edgecolor='none'))
+        # the type name is cut to the room left of the role tag (measured): 'Boeing KC-135R Stratotanker' ran under 'MARITIME PATROL'
+        _fit_text(fig, 18, y - 8, textwrap.shorten(pn.get('type') or p.get('type_code') or '', 30, placeholder='…'),
+                  PW - 36 - ((rt.get_window_extent().width + 14) if rt else 0), color='#cfd6dd', fontsize=11, va='center', zorder=12)
         if mid:
             continue
         y -= 20
@@ -735,8 +761,7 @@ def _group_panel(fig, planes, cat, PW):
                 yy = y - k * step
                 if yy - 8 < ybot:
                     break
-                fig.text(x0 / W, (yy - 8) / H, key.upper(), color='#7d8893', fontsize=7.5, va='center', zorder=12)
-                fig.text((PW - 18) / W, (yy - 8) / H, str(v), color=_row_col(key), fontsize=10, fontweight='bold', ha='right', va='center', zorder=12)
+                _kv(fig, x0, PW - 18, yy - 8, key, v, 7.5, 10)
             continue
         y -= 4
         cw = (PW - 40) / 2
@@ -744,8 +769,7 @@ def _group_panel(fig, planes, cat, PW):
             cx = 18 + (k % 2) * (cw + 4); yy = y - (k // 2) * 24
             if yy - 8 < ybot:   # rows that do not fit in this plane's section are left out, never printed over the next plane (7460, 14 Nov 2026)
                 break
-            fig.text(cx / W, (yy - 8) / H, key.upper(), color='#7d8893', fontsize=7.5, va='center', zorder=12)
-            fig.text((cx + cw - 6) / W, (yy - 8) / H, str(v), color=_row_col(key), fontsize=10, fontweight='bold', ha='right', va='center', zorder=12)
+            _kv(fig, cx, cx + cw - 6, yy - 8, key, v, 7.5, 10)
 
 
 def _clean_track(raw):
@@ -813,11 +837,28 @@ def draw(d):
     panel = d.get('panel')
     others = [o for o in (d.get('others') or []) if o.get('track')]  # group alert: wingmen flying with the lead (the owner 25 Oct 2026, DEXTER1/2)
     # "Also airborne nearby" planes: small numbered pins matching the alert's numbered list (the owner 26 Oct 2026)
-    near = [o for o in (d.get('near') or []) if isinstance(o, dict) and isinstance(o.get('lat'), (int, float))
-            and isinstance(o.get('lon'), (int, float)) and abs(o['lat']) < 85][:9]
+    # 27 Nov 2026 audit item 48: a nearby plane at 0,0 ("position unknown") or far from the lead, or a wingman with a bad position, widened
+    # the picture to half the world. Positions sent as text are read; anything over _FAR_KM from the lead is left out of the frame (it keeps its number and panel section).
+    def _num(v):
+        try: return float(v)
+        except (TypeError, ValueError): return None
+    _lead = track[-1]
+    def _far(lon, lat):
+        if lon is None or lat is None or abs(lat) >= 85 or (abs(lat) < 0.01 and abs(lon) < 0.01): return True
+        a = math.radians(lat - _lead[1]); b = math.radians(lon - _lead[0])
+        h = math.sin(a / 2) ** 2 + math.cos(math.radians(lat)) * math.cos(math.radians(_lead[1])) * math.sin(b / 2) ** 2
+        return 12742 * math.asin(min(1, math.sqrt(h))) > _FAR_KM
+    near = []
+    for o in (d.get('near') or []):
+        if isinstance(o, dict):
+            la, lo = _num(o.get('lat')), _num(o.get('lon'))
+            if la is not None and lo is not None and abs(la) < 85:
+                near.append(dict(o, lat=la, lon=lo, _far=_far(lo, la)))   # a far one keeps its panel section and number; it is only left out of the frame
+    near = near[:9]
     PW = 330 if panel else 0  # left info panel width (px), like ADS-B Exchange / Flightradar24
     # group: frame fitted to where the planes are now (close-up, like the DEXTER picture), lead centred; tracks may run off the edge
-    fpts = [(float(o['track'][-1][0]), float(o['track'][-1][1])) for o in others] + [track[-1]] if others else track
+    fpts = [(float(o['track'][-1][0]) - 360 * round((float(o['track'][-1][0]) - _lead[0]) / 360), float(o['track'][-1][1])) for o in others
+            if not _far(float(o['track'][-1][0]), float(o['track'][-1][1]))] + [track[-1]] if others else track   # a wingman just across the 180° line is framed next to the lead, not a world away
     orb = None if (others or d.get('bbox')) else orbit_focus(track)
     if orb:   # orbiting: frame the orbit and the plane closely, earlier track runs off the edge (the owner 25 Oct 2026)
         X0, X1, Y0, Y1 = frame(orb, None, W - PW, H, 3.0)   # orbit clearly visible + coast and place names around it
@@ -828,6 +869,8 @@ def draw(d):
     if near:   # widen just enough (same centre) to fit every numbered plane
         cx, cy = (X0 + X1) / 2, (Y0 + Y1) / 2; hw, hh = (X1 - X0) / 2, (Y1 - Y0) / 2; r = hw / hh
         for o in near:
+            if o.get('_far'):
+                continue
             x, y = merc_xy(o['lon'], o['lat'])
             hw = max(hw, abs(x - cx) * 1.15, abs(y - cy) * 1.2 * r)
         X0, X1, Y0, Y1 = cx - hw, cx + hw, cy - hw / r, cy + hw / r
@@ -1017,12 +1060,13 @@ def draw(d):
     fig.patches.append(matplotlib.patches.Rectangle((0, 1 - 58 / H), 1, 58 / H, transform=fig.transFigure, color=S['bar'], alpha=0.85, zorder=10))
     fig.figimage(LOGO, xo=14, yo=H - 54, zorder=12)
     fig.text(76 / W, 1 - 30 / H, 'gulf situation', color='#7d8893', fontsize=11, va='center', zorder=11)
-    if panel:  # category already sits in the side panel → title bar just says PLANE WATCH (the owner 24 Oct 2026)
-        fig.text(180 / W, 1 - 30 / H, d.get('title') or 'PLANE WATCH', color='#e6ebef', fontsize=21, fontweight='bold', va='center', zorder=11)
-    else:
-        fig.text(180 / W, 1 - 30 / H, d.get('title') or cat or 'PLANE WATCH', color=icons.CAT_COLOR.get(cat, S['bar_text']), fontsize=21, fontweight='bold', va='center', zorder=11)
     sq = str(d.get('squawk') or '').strip()
     EMG = {'7700': 'EMERGENCY', '7600': 'RADIO FAILURE', '7500': 'HIJACK'}
+    tw = W - 180 - 24 - (300 if sq in EMG else 0)   # a long title is cut before the emergency-squawk box / the right edge (27 Nov 2026 audit item 48)
+    if panel:  # category already sits in the side panel → title bar just says PLANE WATCH (the owner 24 Oct 2026)
+        _fit_text(fig, 180, H - 30, d.get('title') or 'PLANE WATCH', tw, color='#e6ebef', fontsize=21, fontweight='bold', va='center', zorder=11)
+    else:
+        _fit_text(fig, 180, H - 30, d.get('title') or cat or 'PLANE WATCH', tw, color=icons.CAT_COLOR.get(cat, S['bar_text']), fontsize=21, fontweight='bold', va='center', zorder=11)
     if sq in EMG:  # emergency squawk, top right, red (the owner 24 Oct 2026)
         fig.text(1 - 20 / W, 1 - 30 / H, 'SQUAWK ' + sq + ' · ' + EMG[sq], color='#ff9a9a', fontsize=11.5, fontweight='semibold', ha='right', va='center',
                  zorder=12, bbox=dict(boxstyle='round,pad=0.45', facecolor='#3a1717', edgecolor='#d65a5a', linewidth=1))
@@ -1063,8 +1107,11 @@ def draw(d):
             fig.text(18 / W, (y - 10) / H, panel['role'], color='#111418', fontsize=10, fontweight='bold', va='center', zorder=12,
                      bbox=dict(boxstyle='round,pad=0.3', facecolor=icons.CAT_COLOR.get(panel['role'], '#9dbb6b'), edgecolor='none'))
             y -= 36
-        fig.text(18 / W, (y - 14) / H, panel.get('callsign', ''), color='#ffffff', fontsize=24, fontweight='bold', va='center', zorder=12)
         bimg = badge_img(d.get('badge') or {})
+        tcs = fig.text(18 / W, (y - 14) / H, panel.get('callsign', ''), color='#ffffff', fontsize=24, fontweight='bold', va='center', zorder=12)
+        csw = PW - 36 - ((bimg.width + 8) if bimg is not None else 0); cfs = 24   # a long callsign shrinks to the room left of the badge (27 Nov 2026 audit item 48: 'IRAN06 / EP-IGF HEAVY' ran off the panel)
+        while cfs > 12 and tcs.get_window_extent().width > csw:
+            cfs -= 1; tcs.set_fontsize(cfs)
         if bimg is not None:  # roundel (US / RAF / IAF military) or country flag (state planes), right side of the name line
             fig.figimage(np.asarray(bimg), xo=int(PW - 16 - bimg.width), yo=int(y - 14 - bimg.height / 2), zorder=13)
         y -= 42
@@ -1104,8 +1151,7 @@ def draw(d):
         for k, v in panel.get('rows', []):
             if v in (None, ''):
                 continue
-            fig.text(18 / W, (y - 8) / H, k.upper(), color='#7d8893', fontsize=9, va='center', zorder=12)
-            fig.text((PW - 22) / W, (y - 8) / H, str(v), color=_row_col(k), fontsize=12, fontweight='bold', ha='right', va='center', zorder=12)
+            _kv(fig, 18, PW - 22, y - 8, k, v, 9, 12)
             y -= 30
             if y < bot + 20:
                 break

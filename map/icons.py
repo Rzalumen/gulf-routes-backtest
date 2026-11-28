@@ -97,6 +97,17 @@ _add('ARMY / UTILITY', 'turboprop', 16, 'SW4', 'C26')   # C-26 Metro (US Army / 
 _add('ARMY / UTILITY', 'twin', 16, 'C560', 'UC35')
 _add('HELICOPTER', 'helicopter', 22, 'H47', 'CH47')
 _add('HELICOPTER', 'helicopter', 18, 'H60', 'S70', 'H64', 'H53', 'H53S', 'NH90', 'EH10')
+# 27 Nov 2026 audit item 48: types that were drawn as a twin-engine airliner (shape only where the role is not certain: '' = no role tag)
+_add('TANKER', 'heavy4', 36, 'K35T', 'IL78')
+_add('HELICOPTER', 'helicopter', 18, 'W159', 'LYNX', 'B412', 'B212', 'B06', 'A139', 'A149', 'A109', 'MI8', 'MI17', 'MI24', 'AS32', 'AS65', 'EC25', 'EC35', 'EC45',
+     'H135', 'H145', 'H160', 'UH1', 'UH1Y', 'AH1', 'AH1Z', 'S92', 'S61', 'H500', 'PUMA')
+_add('FIGHTER', 'fighter', 20, 'F18H', 'F18', 'F14', 'F4', 'F5', 'RFAL', 'MIR2', 'SU24', 'SU27', 'SU30', 'SU35', 'MG29', 'JF17', 'J10', 'AV8B', 'HAR')
+_add('', 'fighter', 20, 'A10', 'T38', 'HAWK')
+_add('MARITIME PATROL', 'turboprop', 30, 'P3')
+_add('', 'heavy4', 36, 'IL76', 'A342', 'A343', 'A345', 'A346', 'IL62')
+_add('', 'heavy4', 38, 'B741', 'B742', 'B748', 'A388')
+_add('', 'heavy4', 42, 'A124')
+_add('', 'turboprop', 30, 'AN12', 'C160')
 
 CAT_COLOR = {'TANKER': '#9dbb6b', 'AIRLIFT': '#6fa8dc', 'ISR / RECON': '#e8a33d', 'AIRBORNE EARLY WARNING': '#b07fd8',
              'COMMAND & COMMS': '#8e9eff', 'MARITIME PATROL': '#4fc3c7', 'ELECTRONIC WARFARE': '#e8a33d', 'DRONE': '#d4d46a', 'BOMBER': '#e06c5a',
