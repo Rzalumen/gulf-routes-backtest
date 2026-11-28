@@ -10,9 +10,8 @@ on:
     types: [sight]
 permissions:
   contents: write
-concurrency:
-  group: data-branches
-  cancel-in-progress: false
+# 27 Nov 2026 (audit item 55): no shared queue any more. In the shared 'data-branches' queue a waiting run is cancelled when a newer one
+# arrives, and its rows are gone for good (the bot does not send them twice). Runs may now overlap; the push below is retried instead.
 jobs:
   add:
     runs-on: ubuntu-latest
@@ -26,9 +25,7 @@ jobs:
           R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
           mkdir air && cd air && git init -q -b air-history
           git config user.name "backtest-bot"; git config user.email "backtest-bot@users.noreply.github.com"
-          git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD
-          mkdir -p air
-          python3 - <<'PY'
+          cat > /tmp/add_air.py <<'PY'
           import os, csv, io, gzip, datetime, re
           by = {}
           for r in csv.reader(io.StringIO(os.environ.get('ROWS', ''))):
@@ -54,8 +51,7 @@ jobs:
           # Movement log (the owner 4 Nov 2026 "bot must record everything"): moves/moves-YYYY-MM.csv.gz, one row per event,
           # minute,hex,reg,callsign,type,category,event,place,lat,lon,alt,note  (events: atlantic-east / -west / -crossed / -centcom,
           # eucom>centcom, centcom>eucom, landed, alert-posted, update-posted)
-          mkdir -p moves
-          python3 - <<'PY'
+          cat > /tmp/add_moves.py <<'PY'
           import os, csv, io, gzip, datetime, re
           by = {}
           for r in csv.reader(io.StringIO(os.environ.get('MOVES', ''))):
@@ -77,4 +73,15 @@ jobs:
                   csv.writer(fh).writerows(rows)
               print(f, len(old), '+', len(new))
           PY
-          git add -A && { git diff --cached --quiet && echo "unchanged"; } || { git commit -qm "Bot sightings" && git push "$R" HEAD:air-history; }   # a failed push fails the run
+          # daily.yml / air.yml / chan.yml push to air-history too: when one of them gets in first the push is refused. Start again from the
+          # new branch head and add the rows again (up to 5 tries) instead of failing and losing them.
+          for i in 1 2 3 4 5; do
+            git fetch -q --depth 1 "$R" air-history && git reset -q --hard FETCH_HEAD && git clean -qfd
+            mkdir -p air moves
+            python3 /tmp/add_air.py && python3 /tmp/add_moves.py || exit 1
+            git add -A
+            if git diff --cached --quiet; then echo "unchanged"; exit 0; fi
+            git commit -qm "Bot sightings" && git push "$R" HEAD:air-history && exit 0
+            echo "push refused (try $i) - another job pushed first"; sleep $((i * 7))
+          done
+          echo "::error::air-history push failed 5 times - these rows are lost"; exit 1

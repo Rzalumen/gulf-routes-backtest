@@ -58,6 +58,12 @@ def main(fl, ov, dst):
     f, o = flares(fl), osm(ov)
     if len(f) < 500:   # the Gulf box holds ~2,000 flare sites; fewer = a failed download — keep the old file
         sys.exit('only %d flare sites — not writing %s' % (len(f), dst))
+    try:   # 27 Nov 2026 (audit item 56): an empty or cut-off OpenStreetMap answer dropped every platform / refinery — keep the old file then
+        old = sum(1 for s in json.load(open(dst, encoding='utf-8')).get('sites', []) if s[2] != 'flare')
+    except (OSError, ValueError):
+        old = 0
+    if len(o) < 0.5 * old:
+        sys.exit('only %d OpenStreetMap sites (the file has %d) — not writing %s' % (len(o), old, dst))
     json.dump({'_built': datetime.date.today().isoformat(),
                '_src': 'EOG VIIRS Nightfire MYC25Q4 (CC BY-NC 4.0) + OpenStreetMap contributors (ODbL)',
                'sites': f + o}, open(dst, 'w'), separators=(',', ':'))

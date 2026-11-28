@@ -3,13 +3,19 @@
 and write compact events: hex,type,reg,ownOp,callsign,time_min,lat,lon,alt (alt -1 = ground).
 Low points (<= 1,500 ft) within 6 km of an airfield are kept, but a stay at the same airfield is merged into its
 first and last point (parked / taxiing planes report every few seconds). The first point at/above 3,000 ft after
-each low point is kept as the take-off marker. Same airfield list and distance as the bot (airports.json)."""
+each low point is kept as the take-off marker. Same airfield list and distance as the bot (airports.json).
+27 Nov 2026 (audit item 45): "low" and "3,000 ft" are measured ABOVE THE AIRFIELD (airports_elev.json, OurAirports elevations of 300 ft+;
+sea level before, so no landing was ever counted at Muwaffaq Salti 1,706 ft, Prince Sultan 1,651 ft or Riyadh 2,049 ft). The alt column of a
+low point is now the height above the airfield (0-1,500), so every reader of the events files keeps its "under 3,000 = low" rule."""
 import sys, tarfile, gzip, json, csv, math, collections
 VIP_REGS = {'4X-ISR', 'EP-GDS', 'EP-PLN', 'A7-MHH'}
 LOW, AIR, APT_KM = 1500, 3000, 6
 grid = collections.defaultdict(list)
 for a in json.load(open('airports.json')):
     grid[(int(a[2] // 100), int(a[3] // 100))].append(a)
+try: ELEV = json.load(open('airports_elev.json'))
+except Exception: ELEV = {}
+ELEV_MAX = max(ELEV.values(), default=0)
 def near(lat, lon):
     best, bd, k = None, APT_KM, math.cos(math.radians(lat))
     for dy in (-1, 0, 1):
@@ -72,18 +78,19 @@ for m in tf:
         tm = round((base + p[0]) / 60, 1)
         if aw and a >= AIR and int(tm // 15) != ab and abox(p[1], p[2]):
             ab = int(tm // 15); aw.writerow([hx, t, reg, cs, tm, round(p[1], 3), round(p[2], 3), int(a)])
-        if a <= LOW:
-            ap = near(p[1], p[2])
-            if not ap:
-                continue
-            alt = -1 if p[3] == 'ground' else int(a)
+        ap = near(p[1], p[2]) if a <= LOW + ELEV_MAX else None
+        el = ELEV.get(ap[1], 0) if ap else 0
+        if a <= LOW and not ap:
+            continue
+        if ap and (p[3] == 'ground' or a <= LOW + el):
+            alt = -1 if p[3] == 'ground' else max(0, int(a - el))
             if ap[1] == code and low:                  # still at the same airfield: just remember the latest points
                 last = row(tm, p[1], p[2], alt)
                 if alt == -1: lastg = last
                 continue
             flush(); last = lastg = None               # close the previous stay
             w.writerow(row(tm, p[1], p[2], alt)); code, low = ap[1], True
-        elif a >= AIR and low:
+        elif a >= AIR + ELEV.get(code, 0) and low:
             flush(); last = lastg = None
             w.writerow(row(tm, p[1], p[2], int(a))); low, code = False, None
     flush()

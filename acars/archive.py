@@ -242,6 +242,18 @@ def latest(d, now):
         if len(x['msgs']) < 3: x['msgs'].append(slim(m))
     out = {'t': now.isoformat(timespec='seconds'), 'stats': STATS, 'planes': sorted(per.values(), key=lambda x: str(x['last']), reverse=True),
            'recent': [[m.get('timestamp'), m.get('_hex'), (m.get('airframe') or {}).get('tail') or '', callsign(m.get('text')), m.get('label') or '', (m.get('text') or '')[:240]] for m in rows[:40]]}
+    # 27 Nov 2026 (audit item 56): the bot only caches this file under 99,000 characters (it was 122 KB, so it was not cached). Keep it under
+    # 95,000: message lists of the planes heard longest ago go first, then their decoded text, then those planes.
+    size = lambda: len(json.dumps(out, separators=(',', ':')))
+    cut = 0
+    for x in reversed(out['planes']):
+        if size() <= 95000: break
+        if x['msgs']: x['msgs'] = []; cut += 1
+    for x in reversed(out['planes']):
+        if size() <= 95000: break
+        if x.get('dmsg') and x['dmsg'].get('dec'): x['dmsg']['dec'] = ''
+    while len(out['planes']) > 1 and size() > 95000: out['planes'].pop(); cut += 1
+    if cut: print('latest.json trimmed to', size(), 'chars,', cut, 'plane entries shortened')
     json.dump(out, open(os.path.join(d, 'latest.json'), 'w'), separators=(',', ':'))
     print('latest planes', len(per), 'messages 24h', len(rows))
 

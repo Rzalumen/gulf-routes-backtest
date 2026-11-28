@@ -9,13 +9,15 @@ D=${DAY//-/.}; Y=${D:0:4}
 for n in prod-0 prod-1 prod-2 prod-0tmp prod-1tmp staging-0 mlatonly-0; do
   TAG=v$D-planes-readsb-$n; URL=https://github.com/adsblol/globe_history_$Y/releases/download/$TAG/$TAG.tar
   rm -f part.* "$OUT"
-  if curl -sfIL "$URL.aa" >/dev/null; then
+  # 27 Nov 2026 (audit item 56): the "does this part exist" checks retry on time-outs and 5xx (a 404 is not retried), so one failed check in the
+  # middle of a split archive no longer ends the part list early and passes a cut-off day on as a complete one
+  if curl -sfIL --retry 3 "$URL.aa" >/dev/null; then
     ok=1; for s in aa ab ac ad ae af ag ah; do
-      curl -sfIL "$URL.$s" >/dev/null || break
+      curl -sfIL --retry 3 "$URL.$s" >/dev/null || break
       curl -sfL --retry 3 -o "part.$s" "$URL.$s" || { ok=0; break; }
     done
     [ "$ok" = 1 ] && cat part.* | "$@" > "$OUT" || rm -f "$OUT"
-  elif curl -sfIL "$URL" >/dev/null; then
+  elif curl -sfIL --retry 3 "$URL" >/dev/null; then
     curl -sfL --retry 3 -o part.tar "$URL" && "$@" < part.tar > "$OUT" || rm -f "$OUT"
   fi
   B=$(cat part.* 2>/dev/null | wc -c); rm -f part.*
